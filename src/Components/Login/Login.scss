@@ -1,0 +1,154 @@
+.loginPage {
+    background-color: rgba(246, 231, 203, 0.846);
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    overflow: hiden;
+    box-shadow: 0 7px 50px black;
+
+    .container {
+        height: 75vh;
+        width: 60%;
+        margin: auto;
+        justify-content: space-between;
+        border-radius: 0;
+        background-color: rgb(169, 103, 3);
+        border: 10 px solid red;
+    }
+
+    .videoDiv {
+        position: relative;
+        display: flex;
+        flex-basis: 50%;
+        width: 70%;
+        height: 100%;
+        padding: 0 1.5rem;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        border-radius: 10px;
+        overflow: hidden;
+
+        video,
+        .footerDiv {
+            position: absolute;
+        }
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        .textDiv {
+            border: 3px solid blue;
+            position: relative;
+
+            .title {
+                color: white;
+                font-size: 35px;
+                font-weight: 800;
+            }
+
+            p {
+                color: var(--whiteColor);
+                padding: 1rem;
+                font-weight: 400;
+            }
+        }
+
+        .footerDiv {
+            bottom: 10px;
+            padding: 0 1rem;
+            height: 60px;
+            background-color: rgb(207, 135, 3);
+            left: 10px;
+            right: 0;
+            justify-content: space-beetween;
+            backdrop-filter: blur(1px);
+            border-radius: 10px;
+
+            .text {
+                color: var(--whiteColor);
+            }
+
+            .btn {
+                background: whitesmoke;
+                color: var(--primaryColor);
+                padding: 0.8rem 1.5rem;
+                border-radius: 10px;
+                font-weight: 400;
+                transition: 0.3s ease;
+                border: 2px solid red;
+
+                &hover {
+                    border: 2px solid red;
+                    background: var(--hoverColor);
+                    color: var(--blackColor);
+                }
+            }
+        }
+    }
+
+    .formDiv {
+        flex-basis: 50%;
+        margin: auto;
+        flex-direction: column;
+        gap: 1.5;
+        transform: translateY(-1rem);
+        background-color: orange;
+
+        .headerDiv {
+            text-align: center;
+            padding: 1.5rem 0;
+
+            img {
+                width: 60px;
+                padding-bottom: 0.5rem;
+            }
+
+            h3 {
+                font-size: 25px;
+                color: var(--blackColor);
+                font-weight: 600;
+            }
+        }
+
+        .form {
+            gap: 1rem;
+
+            .inputDiv {
+                .icon {
+                    color: var(--greyText);
+                }
+
+                input {
+                    background: none;
+                    outline: none;
+                    border: none;
+                    width: 200px;
+                }
+
+                label {
+                    color: var(--blackColor);
+                    font-weight: 400;
+                    font-size: 14px;
+                    padding: 0.5rem 0;
+                    display: block;
+                }
+                .input {
+                    gap: 0.5rem;
+                    padding: 1rem;
+                    background-color: var(--inputColor);
+                }
+            }
+        }
+    }
+}
+
+.titleDiv {
+    background-color: rgb(241, 193, 0);
+}

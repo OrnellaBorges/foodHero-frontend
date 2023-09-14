@@ -1,4 +1,4 @@
-//Import fonts
+/* //Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
 
 * {
@@ -8,10 +8,10 @@
     font-family: "Montserrat", sans-serif;
 }
 
-//SET UP default styling
+/* //SET UP default styling */
 
 :root {
-    //colors
+    /* //colors */
     --primaryColor: hsl(94, 55%, 56%);
     --hoverColor: hsl(93, 75%, 76%);
     --paleGreen: hsl(96, 75%, 89%);
@@ -21,7 +21,7 @@
     --bgColor: hsl(113, 11%, 85%);
     --inputColor: hsl(330, 12%, 97%);
 
-    //font and typo
+    /* //font and typo */
     --biggestFontSize: 2.5rem;
     --h1FontSize: 1.5rem;
     --h2FontSize: 1.25rem;
@@ -62,7 +62,7 @@ video {
 }
 
 .message {
-    display: none; //
+    display: none;
 }
 
 .showMessage {
