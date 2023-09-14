@@ -4,15 +4,20 @@ import { Link } from "react-router-dom";
 
 //import Icons
 import { FaUserShield } from "react-icons/fa";
+import { BsShieldLockFill } from "react-icons/bs";
+import { AiOutlineSwapRight } from "react-icons/ai";
+
+//import { Logo } from "../../assets/vite.svg";
 
 // import assets:
-import video from "../../assets/movie.mp4";
-import loginImage from "../../assets/loginImage.jpg";
+//import video from "../../assets/movie.mp4";
+//import loginImage from "../../assets/loginImage.jpg";
 
 const Login = () => {
     return (
         <div className="loginPage flex ">
             <h1>LOGIN PAGE</h1>
+
             <div className="textdiv">
                 <h2 className="title">FOODHERO</h2>
                 <p>Un hero se cache en vous</p>
@@ -20,12 +25,12 @@ const Login = () => {
 
             <div className="formDiv flex">
                 <div className="headerDiv">
-                    {/* <img src="" alt="" /> */} {/* LOGO */}
+                    {/* <img src={Logo} alt="logo" /> */}
                     <h3>Welcome Back!</h3>
                 </div>
                 <form className="form grid">
                     <span>Login Status will go here</span>
-                    <div className="inpuDiv">
+                    <div className="inputDiv">
                         <label htmlFor="username">Username</label>
                         <div className="input flex"></div>
                         <FaUserShield className="icon" />
@@ -35,6 +40,23 @@ const Login = () => {
                             placeholder="Enter Username"
                         />
                     </div>
+                    <div className="inputDiv">
+                        <label htmlFor="password">Password</label>
+                        <div className="input flex"></div>
+                        <BsShieldLockFill className="icon" />
+                        <input
+                            type="text"
+                            id="passeword"
+                            placeholder="Enter Password"
+                        />
+                    </div>
+                    <button type="submit" className="btn flex">
+                        <span>Login</span>
+                        <AiOutlineSwapRight className="icon" />
+                    </button>
+
+                    <span className="forgotPassword">Forgot your password</span>
+                    <a href="">Click here</a>
                 </form>
             </div>
 
@@ -49,17 +71,3 @@ const Login = () => {
 };
 
 export default Login;
-
-{
-    /* <div className="container flex">
-                {/* <div className="videoDiv">
-                    <video src={video} autoPlay muted loop></video>
-                    
-                </div>
-            </div>
-            <a href="/register">To Register</a>
-            <a href="/dashboard">To Dashboard</a> 
-
-            {<button>To Register</button>
-            <button>To Dashboard</button> } */
-}
