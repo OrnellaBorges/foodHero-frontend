@@ -15,7 +15,7 @@ import { AiOutlineSwapRight } from "react-icons/ai";
 
 const Login = () => {
     return (
-        <div className="loginPage flex ">
+        <div className="registerPage flex ">
             <div className="container">
                 <div className="titleDiv">
                     <h1>LOGIN PAGE</h1>
