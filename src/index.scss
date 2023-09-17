@@ -89,3 +89,96 @@ video {
     color: var(--primaryColor);
     background: var(--paleGreen);
 }
+
+//================== MEDIA QUERIES ======================//
+
+//================== SMALL DEVICES ======================//
+
+@media screen and (max-width: 500px) {
+    .heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 918px) {
+    .heading {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+//================== MEDIA QUERIES ======================//
+// For Login and Register
+
+@media screen and (maw-width: 602px) {
+    .loginPage,
+    .registerPage {
+        .container {
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        .videoDiv {
+            width: 100%;
+            .textDiv {
+                .title {
+                    font-size: 20px;
+                }
+
+                p {
+                    padding: 1rem;
+                    /* transform: translateY(-.5rem) */
+                }
+            }
+        }
+
+        .footerDiv {
+            .text {
+                font-size: 12px;
+            }
+
+            .btn {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        .formDiv {
+            gap: 1rem;
+            transform: translateY(-0.5rem);
+
+            .headerDiv {
+                padding: 1rem 0;
+
+                img {
+                    width: 40px;
+                }
+
+                h3 {
+                    font-size: 20px;
+                }
+                .form {
+                    gap: 0.5rem;
+
+                    .inputDiv {
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
