@@ -39,7 +39,7 @@ const Register = () => {
         // mais on a a besoin de la librairie axios alorq il faut installer axios
 
         // INFO > on peut creer les axios dans une autre page a part mais on le garde ici pour l'instant
-        Axios.post(`${apiUrl}/create`, {
+        Axios.post(`${apiUrl}/api/v1/user/create`, {
             Email: email,
             UserName: userName,
             Password: password,
