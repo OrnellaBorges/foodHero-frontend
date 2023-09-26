@@ -63,14 +63,14 @@ const Register = () => {
                 <div className="titleDiv">
                     <h1>Register PAGE</h1>
                     <h2 className="title">FOODHERO</h2>
-                    <p>Un hero se cache en vous</p>
-                    {/*                <img src="loginImage.jpg" alt="" /> */}
+                    <p>Un hero se cache dans votre frigo!</p>
+                    {/*<img src="loginImage.jpg" alt="" /> */}
                 </div>
 
                 <div className="formDiv flex">
                     <div className="headerDiv">
                         {/* <img src={Logo} alt="logo" /> */}
-                        <h3>HI !</h3>
+                        <h3>Welcome !</h3>
                     </div>
                     <form className="form grid" name="loginForm">
                         {/* // INFO > En cas de soucis on fait un ternaire qui
@@ -95,7 +95,7 @@ const Register = () => {
                                 }}
                             />
                         </div>
-                        <div className="inputDigv">
+                        <div className="inputDiv">
                             <label htmlFor="username">Username</label>
                             <div className="input flex"></div>
                             <FaUserShield className="icon" />
@@ -132,6 +132,7 @@ const Register = () => {
                         {/* //INFO > Faire une route forgot dans le back */}
                         <p className="forgotPassword">Forgot your password</p>
                         <a href="">Click here</a>
+                        <a href="">Continue without register</a>
                     </form>
                 </div>
 

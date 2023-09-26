@@ -244,3 +244,17 @@ video {
         }
     }
 }
+
+@media screen and (maw-width: 927px) {
+    .loginPage,
+    .registerPage {
+        .container {
+            width: 85%;
+        }
+    }
+}
+
+//HIDE SCROLL BAR
+::-webkit-scrollbar {
+    display: none;
+}

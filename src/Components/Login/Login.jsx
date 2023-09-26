@@ -59,10 +59,14 @@ const Login = () => {
                             <AiOutlineSwapRight className="icon" />
                         </button>
 
+                        <a href="/dashboard">Dashboard</a>
+
                         <span className="forgotPassword">
                             Forgot your password
                         </span>
                         <a href="">Click here</a>
+
+                        <a href="">Continue without login</a>
                     </form>
                 </div>
 
