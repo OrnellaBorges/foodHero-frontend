@@ -35,8 +35,8 @@ const Register = () => {
 
     //ONCLICK Variable
     const createUser = () => {
-        // ici on met un fetch qui va permettre de faire appel a la route d'enregistrement d'un utilisateur
-        // mais on a a besoin de la librairie axios
+        // ici on met une requete Ajax qui va permettre de faire appel a la route d'enregistrement d'un utilisateur
+        // mais on a a besoin de la librairie axios alorq il faut installer axios
 
         // INFO > on peut creer les axios dans une autre page a part mais on le garde ici pour l'instant
         Axios.post(`${apiUrl}/create`, {
@@ -84,42 +84,45 @@ const Register = () => {
                         ) : null}
                         <div className="inputDiv">
                             <label htmlFor="email">Email</label>
-                            <div className="input flex"></div>
-                            <MdMarkEmailRead className="icon" />
-                            <input
-                                type="email"
-                                id="email"
-                                placeholder="Enter Your Email"
-                                onChange={(event) => {
-                                    setEmail(event.target.value);
-                                }}
-                            />
+                            <div className="input flex">
+                                <MdMarkEmailRead className="icon" />
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Enter Your Email"
+                                    onChange={(event) => {
+                                        setEmail(event.target.value);
+                                    }}
+                                />
+                            </div>
                         </div>
                         <div className="inputDiv">
                             <label htmlFor="username">Username</label>
-                            <div className="input flex"></div>
-                            <FaUserShield className="icon" />
-                            <input
-                                type="text"
-                                id="email"
-                                placeholder="Enter Username"
-                                onChange={(event) => {
-                                    setUserName(event.target.value);
-                                }}
-                            />
+                            <div className="input flex">
+                                <FaUserShield className="icon" />
+                                <input
+                                    type="text"
+                                    id="email"
+                                    placeholder="Enter Username"
+                                    onChange={(event) => {
+                                        setUserName(event.target.value);
+                                    }}
+                                />
+                            </div>
                         </div>
                         <div className="inputDiv">
                             <label htmlFor="password">Password</label>
-                            <div className="input flex"></div>
-                            <BsShieldLockFill className="icon" />
-                            <input
-                                type="text"
-                                id="passeword"
-                                placeholder="Enter Password"
-                                onChange={(event) => {
-                                    setPassword(event.target.value);
-                                }}
-                            />
+                            <div className="input flex">
+                                <BsShieldLockFill className="icon" />
+                                <input
+                                    type="text"
+                                    id="passeword"
+                                    placeholder="Enter Password"
+                                    onChange={(event) => {
+                                        setPassword(event.target.value);
+                                    }}
+                                />
+                            </div>
                         </div>
                         <button
                             type="submit"
