@@ -1,18 +1,18 @@
-.dashboard {
+/* .dashboard {
     height: 100vh;
     width: 90%;
-    background-color: aquamarine;
+    background-color: var(--bgColor);
     justify-content: center;
     margin: auto;
 
     .dashboardContainer {
         height: 95vh;
-        width: 95%;
+        width: 100%;
         border-radius: 10px;
-        overflow: hidden;
-        border: 2px solid red;
+        overflow: hidden; 
+        background-color: rgb(68, 12, 12);
     }
-}
+} */
 
 // RESPONSIVE
 @media screen and (max-width: 500px) {
