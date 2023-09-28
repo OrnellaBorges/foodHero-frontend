@@ -9,6 +9,7 @@ import { AiOutlinePieChart } from "react-icons/ai";
 import { BiTrendingUp } from "react-icons/bi";
 //import { IoCalendarNumberOutline } from "react-icons/io";
 import { BsCreditCard2Back } from "react-icons/bs";
+import { BsQuestionCircle } from "react-icons/bs";
 
 //import style
 import "./sidebar.scss";
@@ -23,7 +24,7 @@ const Sidebar = () => {
             <div className="logoDiv flex">
                 <img src={logo} alt="logo" />
             </div>
-            <h2 className="">FOODHERO</h2>
+            {/* <h2 className="">FOODHERO</h2> */}
 
             <div className="menuDiv">
                 <h3 className="divTitle">QUICK MENU</h3>
@@ -83,6 +84,17 @@ const Sidebar = () => {
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div className="sidebarCard">
+                <BsQuestionCircle className="icon" />
+                <div className="cardContent">
+                    <div className="circle1"></div>
+                    <div className="circle1"></div>
+
+                    <h3>Help Center</h3>
+                    <p>Having trouble in Planti, contact us.</p>
+                    <button className="btn">Go to help center</button>
+                </div>
             </div>
         </div>
     );

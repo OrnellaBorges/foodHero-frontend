@@ -1,5 +1,5 @@
 :root {
-    /* //colors */
+    /* colors */
     --primaryColor: hsl(94, 55%, 56%);
     --hoverColor: hsl(93, 75%, 76%);
     --paleGreen: hsl(96, 75%, 89%);
@@ -9,7 +9,7 @@
     --bgColor: hsl(113, 11%, 85%);
     --inputColor: hsl(330, 12%, 97%);
 
-    /* //font and typo */
+    /* font and typo */
     --biggestFontSize: 2.5rem;
     --h1FontSize: 1.5rem;
     --h2FontSize: 1.25rem;
@@ -20,7 +20,7 @@
 }
 
 .sidebar {
-    background-color: var(--whiteColor);
+    background-color: rgb(156, 38, 38);
     box-shadow: 1px 0px 4px var(--greyText);
     width: 18%;
     height: 100%;
@@ -36,6 +36,127 @@
             background: var(--inputColor);
             border-radius: 2px;
             padding: 0.2rem;
+        }
+
+        h2 {
+            font-size: var(--h2FontSize);
+            color: var(--primaryColor);
+        }
+    }
+}
+
+.menuDiv,
+.settingsDiv {
+    font-size: var(--h3FontSize);
+    color: var(--blackColor);
+    padding: 0 1.5rem 1.5rem;
+    background-color: antiquewhite;
+
+    .menuList {
+        .listItems {
+            padding: 0.2rem 1.5rem;
+            width: 100%;
+            position: relative;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            left: 0;
+            width: 5px;
+            bottom: 0;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: var(--primaryColor);
+        }
+
+        .menuLink {
+            color: var(--greyText);
+            font-weight: 500;
+            transition: 0;
+
+            .icon {
+                margin-right: 0.5rem;
+            }
+        }
+
+        &:hover .menuLink {
+            color: var(--primaryColor);
+            transition: 0;
+        }
+
+        &:hover::before {
+            height: 100%;
+            transform: 0.3s ease;
+        }
+    }
+}
+
+.sidebarCard {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+
+    .icon {
+        position: absolute;
+        background: var(--hoverColor);
+        border: 10px solid green;
+        font-size: 3rem;
+        border-radius: 50%;
+        top: -8px;
+        right: 50%;
+        transform: translate(50%);
+        z-index: 100;
+    }
+
+    .cardContent {
+        position: relative;
+        padding: 1rem;
+        background: var(--hoverColor);
+        border-radius: 10px;
+        overflow: hidden;
+
+        h3 {
+            font-size: var(--h3FontSize);
+            margin-top: 1rem;
+            padding: 1rem 0;
+            font-weight: 800;
+            color: var(--blackColor);
+        }
+
+        p {
+            font-size: var(--normalFontSize);
+            color: var(--textColor);
+            padding-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            position: relative;
+            color: var(--textColor);
+            z-index: 1000;
+        }
+        .circle1,
+        .circle2 {
+            position: absolute;
+            background: var(--paleGreen);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+        .circle1 {
+            height: 100px;
+            width: 100px;
+            top: -50px;
+            left: -50px;
+        }
+
+        .circle2 {
+            height: 150px;
+            width: 150px;
+            top: -80px;
+            left: -70px;
+            z-index: 1;
         }
     }
 }
