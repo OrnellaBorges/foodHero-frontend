@@ -1,7 +1,7 @@
-/* .dashboard {
+.dashboard {
     height: 100vh;
     width: 90%;
-    background-color: var(--bgColor);
+    background-color: red;
     justify-content: center;
     margin: auto;
 
@@ -9,10 +9,10 @@
         height: 95vh;
         width: 100%;
         border-radius: 10px;
-        overflow: hidden; 
-        background-color: rgb(68, 12, 12);
+        overflow: hidden;
+        background-color: var(--inputColor);
     }
-} */
+}
 
 // RESPONSIVE
 @media screen and (max-width: 500px) {

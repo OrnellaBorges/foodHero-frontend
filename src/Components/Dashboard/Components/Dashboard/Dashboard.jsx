@@ -9,11 +9,12 @@ import "../../../../index.scss";
 const Dashboard = () => {
     return (
         <div className="dashboard flex">
-            <div className="dashboardContainer flex"></div>
-            {/* <h1>DASHBOARD PAGE</h1> */}
-            <Sidebar />
-            <Body />
-            {/* <a href="/">Log Out</a> */}
+            <div className="dashboardContainer flex">
+                {/* <h1>DASHBOARD PAGE</h1> */}
+                <Sidebar />
+                <Body />
+                {/* <a href="/">Log Out</a> */}
+            </div>
         </div>
     );
 };

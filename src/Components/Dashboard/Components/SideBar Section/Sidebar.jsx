@@ -5,9 +5,13 @@ import { IoMdSpeedometer } from "react-icons/io";
 import { MdDeliveryDining } from "react-icons/md";
 import { MdOutlineExplore } from "react-icons/md";
 import { BsTrophy } from "react-icons/bs";
+import { AiOutlinePieChart } from "react-icons/ai";
+import { BiTrendingUp } from "react-icons/bi";
+//import { IoCalendarNumberOutline } from "react-icons/io";
+import { BsCreditCard2Back } from "react-icons/bs";
 
 //import style
-import "./sidebar.css";
+import "./sidebar.scss";
 import "../../../../index.scss";
 
 //import assets and images
@@ -57,25 +61,25 @@ const Sidebar = () => {
                     <li className="listItem">
                         <a href="#" className="menuLink flex">
                             <AiOutlinePieChart className="icon" />
-                            <span className="smallText">Dash board</span>
+                            <span className="smallText">Charts</span>
                         </a>
                     </li>
                     <li className="listItem">
                         <a href="#" className="menuLink flex">
-                            <MdDeliveryDining className="icon" />
-                            <span className="smallText">My Orders</span>
+                            <BiTrendingUp className="icon" />
+                            <span className="smallText">Trends</span>
                         </a>
                     </li>
                     <li className="listItem">
                         <a href="#" className="menuLink flex">
-                            <MdOutlineExplore className="icon" />
-                            <span className="smallText">Explore</span>
+                            {/* <IoCalendarNumberOutline className="icon" /> */}
+                            <span className="smallText">Contact</span>
                         </a>
                     </li>
                     <li className="listItem">
                         <a href="#" className="menuLink flex">
-                            <BsTrophy className="icon" />
-                            <span className="smallText">Products</span>
+                            <BsCreditCard2Back className="icon" />
+                            <span className="smallText">Billing</span>
                         </a>
                     </li>
                 </ul>
