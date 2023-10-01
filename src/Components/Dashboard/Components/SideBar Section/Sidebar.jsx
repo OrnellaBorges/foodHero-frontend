@@ -2,14 +2,11 @@ import React from "react";
 
 //IMPORT ICONS FROM REACT ICONS
 import { IoMdSpeedometer } from "react-icons/io";
-import { MdDeliveryDining } from "react-icons/md";
-import { MdOutlineExplore } from "react-icons/md";
-import { BsTrophy } from "react-icons/bs";
+import { MdDeliveryDining, MdOutlineExplore } from "react-icons/md";
+import { BsTrophy, BsCreditCard2Back, BsQuestionCircle } from "react-icons/bs";
 import { AiOutlinePieChart } from "react-icons/ai";
 import { BiTrendingUp } from "react-icons/bi";
 //import { IoCalendarNumberOutline } from "react-icons/io";
-import { BsCreditCard2Back } from "react-icons/bs";
-import { BsQuestionCircle } from "react-icons/bs";
 
 //import style
 import "./sidebar.scss";

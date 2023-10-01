@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./body.scss";
-import Top from "../Top section/Top";
+import Top from ".././Top section/Top";
 import Listing from "../Listing section/Listing";
 
 import Activity from "../ActivitySection/Activity";
