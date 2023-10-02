@@ -25,7 +25,7 @@ const Listing = () => {
                 </div>
             </div>
             <div className="sellers flex">
-                <div className="topsellers">
+                <div className="topSellers">
                     <div className="heading flex">
                         <h3>Top Sellers</h3>
                         <button className="btn flex">
@@ -33,21 +33,49 @@ const Listing = () => {
                             <BsArrowBarRight className="icon" />
                         </button>
                     </div>
+                    <div className="card flex">
+                        <div className="users">
+                            <img src={user} alt="user image" />
+                            <img src={user} alt="user image" />
+                            <img src={user} alt="user image" />
+                            <img src={user} alt="user image" />
+                        </div>
+                        <div className="cardText">
+                            <span>
+                                Lorem ipsum dolor sit amet consectetur. <br />
+                                <small>
+                                    21 Sellers
+                                    <span className="date">7 Days</span>
+                                </small>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div className="card flex">
-                <div className="users">
-                    <img src={user} alt="user image" />
-                </div>
-                <div className="cardText">
-                    <span>
-                        Lorem ipsum dolor sit amet consectetur. <br />
-                        <small>
-                            21 Sellers
-                            <span className="date">7 Days</span>
-                        </small>
-                    </span>
+                <div className="featuredSellers">
+                    <div className="heading flex">
+                        <h3>Featured Sellers</h3>
+                        <button className="btn flex">
+                            See All
+                            <BsArrowBarRight className="icon" />
+                        </button>
+                    </div>
+                    <div className="card flex">
+                        <div className="users">
+                            <img src={user} alt="user image" />
+                            <img src={user} alt="user image" />
+                            <img src={user} alt="user image" />
+                            <img src={user} alt="user image" />
+                        </div>
+                        <div className="cardText">
+                            <span>
+                                Lorem ipsum dolor sit amet consectetur. <br />
+                                <small>
+                                    21 Sellers
+                                    <span className="date">7 Days</span>
+                                </small>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
