@@ -2,10 +2,8 @@ import React from "react";
 
 //import style
 import "./top.scss";
-//import "../../../../index.scss";
 
 //import images
-//import img from "../../../../assets/loginImage.jpg";
 import user from "../../../../assets/avatar3.jpg";
 import video from "../../../../assets/movie.mp4";
 

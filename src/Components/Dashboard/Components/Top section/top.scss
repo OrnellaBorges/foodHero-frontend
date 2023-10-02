@@ -161,8 +161,9 @@
                 height: 200px;
                 border-radius: 1rem;
                 justify-content: space-between;
+                background: var(--paleGreen);
 
-                /*&::before {
+                /* &::before {
                     content: "";
                     position: absolute;
                     height: 100%;
@@ -171,7 +172,6 @@
                     left: 0;
                     bottom: 0;
                     border-radius: 1rem;
-                    z-index: 99;
                 } */
                 .texDiv {
                     h1 {
