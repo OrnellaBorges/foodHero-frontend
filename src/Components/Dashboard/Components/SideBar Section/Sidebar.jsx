@@ -3,7 +3,7 @@ import React from "react";
 //IMPORT ICONS FROM REACT ICONS
 import { IoMdSpeedometer } from "react-icons/io";
 import { MdDeliveryDining, MdOutlineExplore } from "react-icons/md";
-import { BsTrophy, BsCreditCard2Back, BsQuestionCircle } from "react-icons/bs";
+import { BsTrophy, BsCreditCard2Back } from "react-icons/bs";
 import { AiOutlinePieChart } from "react-icons/ai";
 import { BiTrendingUp } from "react-icons/bi";
 //import { IoCalendarNumberOutline } from "react-icons/io";
@@ -81,17 +81,6 @@ const Sidebar = () => {
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div className="sidebarCard">
-                <BsQuestionCircle className="icon" />
-                <div className="cardContent">
-                    <div className="circle1"></div>
-                    <div className="circle1"></div>
-
-                    <h3>Help Center</h3>
-                    <p>Having trouble in Planti, contact us.</p>
-                    <button className="btn">Go to help center</button>
-                </div>
             </div>
         </div>
     );
