@@ -12,6 +12,7 @@ import video from "../../../../assets/movie.mp4";
 import { BiSearch } from "react-icons/bi";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import { BsArrowRightShort } from "react-icons/bs";
+import { LuConciergeBell } from "react-icons/lu";
 
 //import { IoNotificationsCircleSharp } from "react-icons/io";
 
@@ -30,7 +31,7 @@ const Top = () => {
 
                 <div className="adminDiv flex">
                     <TbMessageCircle2Filled className="icon" />
-                    <TbMessageCircle2Filled className="icon" />
+                    <LuConciergeBell className="icon" />
 
                     <div className="adminImage flex">
                         <img src={user} alt="adminImage" />
