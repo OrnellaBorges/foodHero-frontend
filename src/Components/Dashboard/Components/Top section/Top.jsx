@@ -11,7 +11,7 @@ import video from "../../../../assets/movie.mp4";
 
 import { BiSearch } from "react-icons/bi";
 import { TbMessageCircle2Filled } from "react-icons/tb";
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort, BsQuestionCircle } from "react-icons/bs";
 import { LuConciergeBell } from "react-icons/lu";
 
 //import { IoNotificationsCircleSharp } from "react-icons/io";
@@ -71,19 +71,17 @@ const Top = () => {
                         <div className="imgDiv">
                             <img src={user} alt="Image name" />
                         </div>
+                    </div>
 
-                        <div className="sidebarCard">
-                            <BsQuestionCircle className="icon" />
-                            <div className="cardContent">
-                                <div className="circle1"></div>
-                                <div className="circle2"></div>
+                    <div className="sidebarCard">
+                        <BsQuestionCircle className="icon" />
+                        <div className="cardContent">
+                            <div className="circle1"></div>
+                            <div className="circle2"></div>
 
-                                <h3>Help Center</h3>
-                                <p>Having trouble in Planti, contact us.</p>
-                                <button className="btn">
-                                    Go to help center
-                                </button>
-                            </div>
+                            <h3>Help Center</h3>
+                            <p>Having trouble in Planti, contact us.</p>
+                            <button className="btn">Go to help center</button>
                         </div>
                     </div>
                 </div>

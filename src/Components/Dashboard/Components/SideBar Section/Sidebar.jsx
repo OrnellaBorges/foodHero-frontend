@@ -13,7 +13,7 @@ import "./sidebar.scss";
 import "../../../../index.scss";
 
 //import assets and images
-import logo from "../../../../assets/logo.png";
+import logo from "../../../../assets/logo2.png";
 
 const Sidebar = () => {
     return (
