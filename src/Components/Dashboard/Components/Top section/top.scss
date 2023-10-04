@@ -295,6 +295,94 @@
         .rightCard,
         .leftCard {
             width: 100%;
+            flex-basis: 100%;
+        }
+        .leftCard {
+            align-self: flex-start;
+            height: 10px !important;
+
+            .sidebarCard {
+                display: block !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 918px) {
+    .headerSection {
+        .searchBar {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .cardSection {
+        .leftCard {
+            .main {
+                width: 100%;
+            }
+            .sidebarCard {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .headerSection {
+        .adminDiv {
+            display: none;
+        }
+        .title {
+            text-align: center;
+            margin: auto;
+        }
+    }
+
+    .cardSection {
+        .rightCard {
+            text-align: center;
+
+            .buttons {
+                margin: auto;
+                flex-direction: column;
+
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+        .leftCard {
+            .main {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .textDiv {
+                    margin: auto;
+                }
+                &::before {
+                    width: 100% !important;
+                }
+
+                .imgDiv {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 390px) {
+    .topSection {
+        .cardSection {
+            .rightCard {
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: var(--h2FontSize);
+            }
         }
     }
 }

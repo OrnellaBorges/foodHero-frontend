@@ -1,0 +1,142 @@
+:root {
+    /* colors */
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
+
+    /* font and typo */
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
+}
+
+.ActivitySection {
+    flex-basis: 50%;
+
+    .heading {
+        width: 100%;
+        justify-content: space-between;
+
+        h1 {
+            font-size: var(--h2FontSize);
+            color: red;
+            font-weight: 700;
+        }
+
+        .btn {
+            border: 1px solid transparent;
+            font-weight: 500;
+
+            &:hover {
+                border: 1px solid var(--primaryColor);
+            }
+        }
+    }
+
+    secContainer {
+        margin-top: 1rem;
+
+        .singleCustomer {
+            align-items: flex-start;
+            justify-content: space-between;
+
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: 0 2px 4px var(--itemCardColor);
+                margin-right: 1rem;
+            }
+
+            .customerDetails {
+                flex: 1;
+
+                .name {
+                    font-size: var(--h3FontSize);
+                    font-weight: 600;
+                    color: var(--blackColor);
+                    display: block;
+                }
+
+                small {
+                    font-weight: 500;
+                    color: var(--textColor);
+                    font-size: var(--smallestFontSize);
+                }
+                .duration {
+                    color: var(--textColor);
+                }
+            }
+        }
+
+        .icon {
+            position: absolute;
+            top: 80%;
+            right: 10%;
+
+            color: var(--primaryColor);
+            font-size: 30px;
+        }
+
+        h3 {
+            font-size: var(--h3FontSize);
+            color: var(--whiteColor);
+            padding: 1rem;
+            text-align: center;
+        }
+    }
+
+    .sellers {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: flex-start;
+
+        .topSellers,
+        .featuredSellers {
+            .heading {
+                padding: 1rem 0;
+
+                .btn {
+                    padding: 0.5rem 1rem;
+                }
+            }
+
+            .card {
+                padding: 1rem;
+                border-radius: 1rem;
+                background: var(--whiteColor);
+                gap: 1rem;
+                box-shadow: 0 2px 2px var(--inputColor);
+
+                .users {
+                    padding-right: 1rem;
+                    border-right: 2px solid var(--greyText);
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        border: 2px solid var(--inputColor);
+                        transition: 0.5s ease;
+
+                        &:hover {
+                            transform: translateY(-10px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
