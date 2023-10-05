@@ -1,85 +1,114 @@
 :root {
-    /* colors */
-    --primaryColor: hsl(94, 55%, 56%);
-    --hoverColor: hsl(93, 75%, 76%);
-    --paleGreen: hsl(96, 75%, 89%);
-    --whiteColor: hsl(0, 0%, 100%);
-    --blackColor: hsl(0, 0%, 18%);
-    --greyText: hsl(0, 0%, 75%);
-    --bgColor: hsl(113, 11%, 85%);
-    --inputColor: hsl(330, 12%, 97%);
+  /* colors */
+  --primaryColor: hsl(94, 55%, 56%);
+  --hoverColor: hsl(93, 75%, 76%);
+  --paleGreen: hsl(96, 75%, 89%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(113, 11%, 85%);
+  --inputColor: hsl(330, 12%, 97%);
 
-    /* font and typo */
-    --biggestFontSize: 2.5rem;
-    --h1FontSize: 1.5rem;
-    --h2FontSize: 1.25rem;
-    --h3FontSize: 1rem;
-    --normalFontSize: 0.938rem;
-    --smallFontSize: 0.813rem;
-    --smallestFontSize: 0.75rem;
+  /* font and typo */
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
 }
 
 .activitySection {
-    flex-basis: 50%;
+  flex-basis: 50%;
 
-    .heading {
-        width: 100%;
-        justify-content: space-between;
+  .heading {
+    width: 100%;
+    justify-content: space-between;
 
-        h1 {
-            font-size: var(--h2FontSize);
-            color: red;
-            font-weight: 700;
-        }
-
-        .btn {
-            border: 1px solid transparent;
-            font-weight: 500;
-
-            &:hover {
-                border: 1px solid var(--primaryColor);
-            }
-        }
+    h1 {
+      font-size: var(--h2FontSize);
+      color: red;
+      font-weight: 700;
     }
 
-    .secContainer {
-        margin-top: 1rem;
+    .btn {
+      border: 1px solid transparent;
+      font-weight: 500;
 
-        .singleCustomer {
-            align-items: flex-start;
-            justify-content: space-between;
+      &:hover {
+        border: 1px solid var(--primaryColor);
+      }
+    }
+  }
 
-            img {
-                width: 40px;
-                height: 40px;
-                object-fit: cover;
-                border-radius: 50%;
-                box-shadow: 0 2px 4px var(--itemCardColor);
-                margin-right: 1rem;
-            }
+  .secContainer {
+    margin-top: 1rem;
 
-            .customerDetails {
-                flex: 1;
+    .singleCustomer {
+      align-items: flex-start;
+      justify-content: space-between;
 
-                .name {
-                    font-size: var(--h3FontSize);
-                    font-weight: 600;
-                    color: var(--blackColor);
-                    display: block;
-                }
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px var(--itemCardColor);
+        margin-right: 1rem;
+      }
 
-                small {
-                    font-size: var(--smallFontSize);
-                    font-weight: 500;
-                    color: var(--textColor);
-                }
-            }
+      .customerDetails {
+        flex: 1;
+
+        .name {
+          font-size: var(--h3FontSize);
+          font-weight: 600;
+          color: var(--blackColor);
+          display: block;
         }
-    }
 
-    .duration {
-        color: var(--textColor);
-        font-weight: 500;
-        font-size: var(--smallestFontSize);
+        small {
+          font-size: var(--smallFontSize);
+          font-weight: 500;
+          color: var(--textColor);
+        }
+      }
     }
+  }
+
+  .duration {
+    color: var(--textColor);
+    font-weight: 500;
+    font-size: var(--smallestFontSize);
+  }
+}
+
+//===============MEDIA QUERIES=============
+
+@media screen and (max-width: 990px) {
+  .activitySection {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 918px) {
+  .listingSection {
+    .singleItem {
+      .card {
+        width: 200px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .listingSection {
+    .sellers {
+      flex-direction: column;
+      .card {
+        flex-direction: column;
+      }
+    }
+  }
 }
