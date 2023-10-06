@@ -50,6 +50,11 @@ const Sidebar = () => {
                             <span className="smallText">Products</span>
                         </a>
                     </li>
+                    <li className="listItem">
+                        <a href="/" className="menuLink flex">
+                            Home Page
+                        </a>
+                    </li>
                 </ul>
             </div>
 

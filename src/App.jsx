@@ -2,6 +2,7 @@ import "./App.css";
 import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
+import HomePage from "./Components/HomePage/HomePage";
 
 // import React react dom
 
@@ -11,6 +12,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
     {
         path: "/",
+        element: (
+            <div>
+                <HomePage />
+            </div>
+        ),
+    },
+    {
+        path: "/login",
         element: (
             <div>
                 <Login />
@@ -30,6 +39,14 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <Dashboard />
+            </div>
+        ),
+    },
+    {
+        path: "/basket",
+        element: (
+            <div>
+                <BasketOrder />
             </div>
         ),
     },
