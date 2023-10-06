@@ -4,7 +4,7 @@ import React from "react";
 import "./cookie.css";
 
 //import assets
-import cookie from "../../assets/cookie.jpg";
+import cookies from "../../assets/cookie.jpg";
 
 const Cookie = () => {
     return (
