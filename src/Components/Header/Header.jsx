@@ -6,7 +6,6 @@ import { BiSolidCart } from "react-icons/bi";
 import "./header.css";
 
 //import assets
-
 import hero from "../../assets/banner.jpg";
 
 import { Link } from "react-router-dom";
