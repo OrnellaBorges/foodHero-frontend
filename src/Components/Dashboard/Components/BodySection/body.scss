@@ -1,13 +1,23 @@
 .mainContent {
-  width: 82%;
-  height: 100%;
-  padding: 2rem;
-  overflow: auto;
+    width: 82%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
 
-  .bottom {
-    margin-top: 2rem;
-    gap: 2rem;
-    align-items: flex-start;
-    background-color: orange;
-  }
+    .bottom {
+        margin-top: 2rem;
+        gap: 2rem;
+        align-items: flex-start;
+        background-color: orange;
+    }
+}
+
+// =============== Media Queries ====================//
+
+@media screen and (max-width: 768px) {
+    .mainContent {
+        .bottom {
+            flex-direction: column;
+        }
+    }
 }
