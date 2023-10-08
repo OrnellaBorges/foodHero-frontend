@@ -11,9 +11,9 @@ import { BsShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
 //import assets:
-//import video from "../../assets/movie.mp4";
+import logginMovie from "../../assets/movie.mp4";
 //import loginImage from "../../assets/loginImage.jpg";
-//import { Logo } from "../../assets/vite.svg";
+import Logo from "../../assets/logo2.png";
 
 const Login = () => {
     //USESTATES HOOK to store input // pour les input
@@ -61,87 +61,95 @@ const Login = () => {
     };
     return (
         <div className="registerPage flex ">
-            <button onClick={() => handleClick()}>Test</button>
+            {/* <button onClick={() => handleClick()}>Test</button> */}
             <div className="container">
                 <div className="titleDiv">
                     <h1>LOGIN PAGE</h1>
                     <h2 className="title">FOODHERO</h2>
                     <p>Un héro se cache dans votre frigo!</p>
-                    {/*                <img src="loginImage.jpg" alt="" /> */}
-                </div>
-
-                <div className="formDiv flex">
-                    <div className="headerDiv">
-                        {/* <img src={Logo} alt="logo" /> */}
-                        <h3>Welcome Back!</h3>
+                    <div className="videoDiv">
+                        <video src={logginMovie} autoPlay loop muted></video>
                     </div>
-                    <form className="form grid" name="loginForm">
-                        <span className="showMessage">
-                            Login Status will go here
-                        </span>
-                        <div className="inputDiv">
-                            <label htmlFor="username">Username</label>
-                            <div className="input flex">
-                                <FaUserShield className="icon" />
-                                <input
-                                    type="text"
-                                    id="username"
-                                    placeholder="Enter Username"
-                                    onChange={(event) => {
-                                        console.log("event", event);
-                                        console.log(
-                                            "event",
-                                            event.target.value
-                                        );
-                                        setLoginUserName(event.target.value);
-                                    }}
-                                />
-                            </div>
-                        </div>
-                        <div className="inputDiv">
-                            <label htmlFor="password">Password</label>
-                            <div className="input flex">
-                                <BsShieldLockFill className="icon" />
-                                <input
-                                    type="text"
-                                    id="passeword"
-                                    placeholder="Enter Password"
-                                    onChange={(e) => {
-                                        console.log(e);
-                                        console.log(
-                                            "e.target.value",
-                                            e.target.value
-                                        );
-                                        setLoginPassword(e.target.value);
-                                    }}
-                                />
-                            </div>
-                        </div>
-                        <button
-                            type="submit"
-                            className="btn flex"
-                            onClick={loginUser}
-                        >
-                            <span>Login</span>
-                            <AiOutlineSwapRight className="icon" />
-                        </button>
-
-                        <a href="/dashboard">Dashboard</a>
-
-                        <span className="forgotPassword">
-                            Forgot your password
-                        </span>
-                        <a href="">Click here</a>
-
-                        <a href="">Continue without login</a>
-                    </form>
                 </div>
 
-                <div className="footerDiv flex">
-                    <span className="text">Create account</span>
-                    <Link to={"/register"}>
-                        <button className="btn">Sign up</button>
-                    </Link>
+                <div className="container-right">
+                    <div className="formDiv flex">
+                        <div className="headerFormDiv">
+                            <div className="img-container">
+                                <img src={Logo} alt="logo" />
+                            </div>
+                            <h3>Welcome Back!</h3>
+                        </div>
+                        <form className="form grid" name="loginForm">
+                            <span className="showMessage">
+                                Login Status will go here
+                            </span>
+                            <div className="inputDiv">
+                                <label htmlFor="username">Username</label>
+                                <div className="input flex">
+                                    <FaUserShield className="icon" />
+                                    <input
+                                        type="text"
+                                        id="username"
+                                        placeholder="Enter Username"
+                                        onChange={(event) => {
+                                            console.log("event", event);
+                                            console.log(
+                                                "event",
+                                                event.target.value
+                                            );
+                                            setLoginUserName(
+                                                event.target.value
+                                            );
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                            <div className="inputDiv">
+                                <label htmlFor="password">Password</label>
+                                <div className="input flex">
+                                    <BsShieldLockFill className="icon" />
+                                    <input
+                                        type="text"
+                                        id="passeword"
+                                        placeholder="Enter Password"
+                                        onChange={(e) => {
+                                            console.log(e);
+                                            console.log(
+                                                "e.target.value",
+                                                e.target.value
+                                            );
+                                            setLoginPassword(e.target.value);
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                            <button
+                                type="submit"
+                                className="btn flex"
+                                onClick={loginUser}
+                            >
+                                <span>Login</span>
+                                <AiOutlineSwapRight className="icon" />
+                            </button>
+
+                            <a href="/dashboard">Dashboard</a>
+
+                            <span className="forgotPassword">
+                                Forgot your password
+                            </span>
+                            <a href="">Click here</a>
+
+                            <a href="">Continue without login</a>
+                        </form>
+                    </div>
+
+                    <div className="footerDiv flex">
+                        <span className="text">Create account</span>
+                        <Link to={"/register"}>
+                            <button className="btn">Sign up</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ import { faCartShopping, faHome, faPersonFalling, faGears, faBeerMugEmpty , faRi
 
 const Header = () => {
     return (
-        <div>
+        <div className="head-cont">
             <header className="header-nav">
                 <nav className="navItems">
                     <div className="list1">
@@ -42,7 +42,7 @@ const Header = () => {
                         <Link to="/login">Se connecter</Link>
                         <Link to="/basket">
                             <BiSolidCart className="icon" />
-                            <p>Go to basket</p>
+                            <a href="/basket">Basket</a>
                         </Link>
                     </div>
                 </nav>

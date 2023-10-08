@@ -3,6 +3,8 @@ import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import HomePage from "./Components/HomePage/HomePage";
+import Cookie from "./Components/Cookie/Cookie";
+import BasketOrder from "./Components/BasketOrder/BasketOrder";
 
 // import React react dom
 
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <Dashboard />
+            </div>
+        ),
+    },
+    {
+        path: "/cookie",
+        element: (
+            <div>
+                <Cookie />
             </div>
         ),
     },
