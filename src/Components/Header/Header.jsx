@@ -1,15 +1,12 @@
 import React from "react";
 
-import { BsFillHouseDoorFill } from "react-icons/bs";
-import { BiSolidCart } from "react-icons/bi";
-
 import "./header.css";
 
-//import assets
-import hero from "../../assets/banner.jpg";
+//import components
+import Nav from ".././Nav/Nav";
 
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo2.png";
+//import assets
+
 /* import {useSelector} from "react-redux"
 import {selectUser} from "../slices/userSlice"
 import {selectBasket} from "../slices/basketSlice"
@@ -18,46 +15,11 @@ import { faCartShopping, faHome, faPersonFalling, faGears, faBeerMugEmpty , faRi
  */
 
 const Header = () => {
-    return (
-        <div className="head-cont">
-            <header className="header-nav">
-                <nav className="navItems">
-                    <div className="list1">
-                        <Link to="/">
-                            <BsFillHouseDoorFill className="icon" />
-                            <p>HOME</p>
-                        </Link>
-                        <Link to="/dashboard"> Dashboard</Link>
-                    </div>
-
-                    <Link to="/">
-                        <div className="logo-container">
-                            <img src={logo} className="logo" />
-                        </div>
-                    </Link>
-                    {/* cette partie devra etre un ternaire si l'user est connecté ou pas  */}
-                    {/* <div className="list2"></div> */}
-                    <div className="userNav list2">
-                        <Link to="/register">S'enregistrer</Link>
-                        <Link to="/login">Se connecter</Link>
-                        <Link to="/basket">
-                            <BiSolidCart className="icon" />
-                            <a href="/basket">Basket</a>
-                        </Link>
-                    </div>
-                </nav>
-                <section className="header-pict">
-                    <div className="hero">
-                        <img src={hero} alt="hero" />
-                    </div>
-                    <h1>
-                        Vous entrez dans un monde merveilleux et savoureux.
-                        Bienvenue dans la cuisine de vos voisins
-                    </h1>
-                </section>
-            </header>
-        </div>
-    );
+  return (
+    <header className="header">
+      <Nav />
+    </header>
+  );
 };
 
 export default Header;

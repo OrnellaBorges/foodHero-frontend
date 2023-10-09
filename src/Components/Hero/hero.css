@@ -1,0 +1,9 @@
+.hero {
+  text-align: center;
+  /*padding: 180px 0 80px 0;
+       background-image: url(assets/cook.jpg);
+      text-shadow: 0 2px 0 black, 0 -2px 0 black; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
