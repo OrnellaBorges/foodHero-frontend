@@ -132,7 +132,11 @@
     margin-right: 50px;
   }
 
-  .activNav {
+  .activeNav {
     top: 6rem;
+  }
+
+  .closedNav {
+    display: none;
   }
 }

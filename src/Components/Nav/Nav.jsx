@@ -1,5 +1,6 @@
-import React /* , { useState } */ from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 // import icons
 import { BsFillHouseDoorFill, BsFillGrid3X3GapFill } from "react-icons/bs";
@@ -13,20 +14,21 @@ import "./nav.css";
 
 //navbar event
 //const [isActiv, setIsActiv] = useState("menuList");
-//const [isClosed, setIsClosed] = useState("menuList");
+const [isClosed, setIsClosed] = useState("navMenuDiv");
 
 const showNav = () => {
-  console.log("first", first);
-  /* setIsActiv('menuList activNav') */
+  console.log("first");
+  setIsActiv("menuList activNav");
 };
 
 const handleClickClose = () => {
   console.log("je suis fermé");
+  setIsClosed("navMenuDiv activNav ");
 };
 
 const Nav = () => {
   return (
-    <nav className="navMenuDiv flex">
+    <nav className={isClosed}>
       <ul className="menuList leftMenu flex">
         <li className="closeNav navItem" onClick={() => handleClickClose()}>
           <AiFillCloseCircle className="icon" />
@@ -61,7 +63,7 @@ const Nav = () => {
           </Link>
         </li>
 
-        <li className="menuIcon navItem" onClick={showNav}>
+        <li className="menuIcon navItem" onClick={() => showNav()}>
           <BsFillGrid3X3GapFill className="icon" />
         </li>
       </ul>
