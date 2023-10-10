@@ -1,9 +1,68 @@
 .hero {
-  text-align: center;
-  /*padding: 180px 0 80px 0;
+    text-align: center;
+    /*padding: 180px 0 80px 0;
        background-image: url(assets/cook.jpg);
       text-shadow: 0 2px 0 black, 0 -2px 0 black; */
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 1, 0.42), rgba(0, 0, 1, 0.549)),
+        url(../../assets/food1.jpg);
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 3rem;
+    position: absolute;
+}
+
+.heroText-container {
+    border: 10px solid red;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    justify-content: flex-end;
+    padding: 0 50px 50px;
+}
+
+.spanText {
+    color: white;
+    padding: 2rem 0;
+    font-size: 40px;
+}
+
+.heroTitle {
+    color: white;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+strong {
+    font-weight: 800;
+    color: white;
+}
+
+.btn {
+    border: 2px solid white;
+    color: white;
+    font-size: 13px;
+    transition: 0.3s;
+    width: 120px;
+    padding: 10px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: red;
+    font-size: 13px;
+    font-weight: 600;
 }

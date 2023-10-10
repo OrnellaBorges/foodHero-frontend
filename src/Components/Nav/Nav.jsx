@@ -16,7 +16,7 @@ import "./nav.css";
 
 const Nav = () => {
     //const [isActiv, setIsActiv] = useState("menuList");
-    const [isMenuOpen, setIsMenuOpen] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <nav className="navMenuDiv">
@@ -56,7 +56,7 @@ const Nav = () => {
                     <Link to="/" className="menuLink">
                         <div className="logo-container">
                             <img src={logo} className="logo" />
-                            <p className="brand">FOODHERO</p>
+                            <p className="brand">.FOODHERO</p>
                         </div>
                     </Link>
                 </li>

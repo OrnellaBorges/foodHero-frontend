@@ -31,9 +31,9 @@
     display: none;
 }
 
-/*test*/
+/*test
 .menuDiv {
-}
+}*/
 
 .menuIcon {
     display: none;
@@ -62,6 +62,17 @@
     color: black;
     font-size: 18px;
     padding: 1rem;
+}
+
+.menuLink:hover {
+    border-bottom: 3px solid white;
+    color: white;
+}
+
+/* FONCTIONNE PAS */
+.navItem:hover {
+    border-bottom: 3px solid white;
+    color: white;
 }
 
 /*=============== MEDIA QUERIES ================*/
@@ -93,8 +104,13 @@
     }
 
     .rightMenu {
-        top: 140%;
+        top: 203%;
         padding-bottom: 1rem;
+    }
+
+    .logo {
+        display: none; /* display none la balise est toujour dans le dom mais ça masque */
+        /* visibility: hidden;*/ /*sa balise n'est pas suupprimé ça laisse un trou a la place a l'ecran*/
     }
 
     .centerMenu {
