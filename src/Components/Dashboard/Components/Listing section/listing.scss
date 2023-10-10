@@ -47,13 +47,12 @@
         margin: 1rem 0;
         gap: 1rem;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
 
     .singleItem {
         position: relative;
-        width: 150px;
-        height: 170px;
+        width: 200px;
+        height: 200px;
         align-items: center;
         flex-direction: column;
         border-radius: 10px;

@@ -20,14 +20,13 @@
 }
 
 .sidebar {
-    background-color: rgb(62, 20, 20);
+    background-color: rgb(236, 181, 0);
     box-shadow: 1px 0px 4px var(--greyText);
     width: 18%;
     height: 100%;
     gap: 3rem;
 
     .logoDiv {
-        /* padding: 0.3rem; */
         cursor: pointer;
 
         img {
@@ -44,49 +43,40 @@
     }
 }
 
-.menuDiv,
+.sidebarMenu,
 .settingsDiv {
+    display: flex;
+    flex-direction: column;
     font-size: var(--h3FontSize);
     color: var(--blackColor);
-    padding: 0 1.5rem 1.5rem;
-    background-color: var(--whiteColor);
 
-    .menuList {
+    .list {
+        text-decoration: none;
+    }
+    .sidebar-settingList {
         .listItems {
             padding: 0.2rem 1.5rem;
             width: 100%;
             position: relative;
         }
-        &::before {
-            position: absolute;
-            content: "";
-            height: 100%;
-            left: 0;
-            width: 5px;
-            bottom: 0;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            background: var(--primaryColor);
-        }
 
-        .menuLink {
-            color: var(--greyText);
-            font-weight: 500;
-            transition: 0;
+        .sidebarList {
+            /* font-family: ; */
+            border: 3px solid transparent;
+            color: black;
+            font-size: 15px;
+            padding: 0.5rem;
+            text-align: center;
 
-            .icon {
+            &:hover {
+                border: 3px solid white;
+                color: white;
+                transition: 0s;
+            }
+
+            .sidebar-icon {
                 margin-right: 0.5rem;
             }
-        }
-
-        &:hover .menuLink {
-            color: var(--primaryColor);
-            transition: 0;
-        }
-
-        &:hover::before {
-            height: 100%;
-            transform: 0.3s ease;
         }
     }
 }

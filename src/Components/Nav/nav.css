@@ -59,7 +59,7 @@
     font-weight: 700;
 }
 
-.menuLink {
+.navLink {
     text-decoration: none;
     /* font-family: ; */
     border: 3px solid transparent;
@@ -69,7 +69,7 @@
     text-align: center;
 }
 
-.menuLink:hover {
+.navLink:hover {
     border: 3px solid white;
     color: white;
 }
@@ -113,7 +113,7 @@
         padding-bottom: 1rem;
     }
 
-    .logo {
+    .logoNav {
         display: none; /* display none la balise est toujour dans le dom mais ça masque */
         /* visibility: hidden;*/ /*sa balise n'est pas suupprimé ça laisse un trou a la place a l'ecran*/
     }
@@ -147,7 +147,7 @@
         color: white;
     }
 
-    .menuIcon {
+    .navIcon {
         display: flex;
         font-size: 25px;
         margin-right: 50px;

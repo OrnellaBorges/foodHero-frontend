@@ -5,6 +5,7 @@ import Register from "./Components/Register/Register";
 import Home from "./Components/HomePage/Home";
 import Cookie from "./Components/Cookie/Cookie";
 import BasketOrder from "./Components/BasketOrder/BasketOrder";
+import CreateAds from "./Components/Forms/CreateAds";
 import Account from "./Components/Account/Account";
 
 // import React react dom
@@ -58,6 +59,14 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <Cookie />
+            </div>
+        ),
+    },
+    {
+        path: "/create",
+        element: (
+            <div>
+                <CreateAds />
             </div>
         ),
     },

@@ -33,19 +33,19 @@ const Nav = () => {
                 </li>
 
                 <li className="navItem">
-                    <Link to="/" className="menuLink">
+                    <Link to="/" className="navLink">
                         {/* <BsFillHouseDoorFill className="icon" /> */}
                         Home
                     </Link>
                 </li>
 
                 <li className="navItem">
-                    <Link to="/register" className="menuLink">
+                    <Link to="/register" className="navLink">
                         S'enregistrer
                     </Link>
                 </li>
                 <li className="navItem">
-                    <Link to="/login" className="menuLink">
+                    <Link to="/login" className="navLink">
                         Se connecter
                     </Link>
                 </li>
@@ -53,16 +53,16 @@ const Nav = () => {
 
             <ul className="menuList centerMenu flex">
                 <li className="navItem">
-                    <Link to="/" className="menuLink">
+                    <Link to="/" className="navLink">
                         <div className="logo-container">
-                            <img src={logo} className="logo" />
+                            <img src={logo} className="logoNav" />
                             <p className="brand">.FOODHERO</p>
                         </div>
                     </Link>
                 </li>
 
                 <li
-                    className="menuIcon navItem"
+                    className="navIcon navItem"
                     onClick={() => setIsMenuOpen(true)}
                 >
                     <BsFillGrid3X3GapFill className="icon" />
@@ -77,17 +77,17 @@ const Nav = () => {
                 }`}
             >
                 <li className="navItem">
-                    <Link to="/dashboard" className="menuLink">
+                    <Link to="/dashboard" className="navLink">
                         Dashboard
                     </Link>
                 </li>
                 <li className="navItem">
-                    <Link to="/account" className="menuLink">
+                    <Link to="/account" className="navLink">
                         Mon compte
                     </Link>
                 </li>
                 <li className="navItem">
-                    <Link to="/basket" className="menuLink">
+                    <Link to="/basket" className="navLink">
                         {/* <BiSolidCart className="icon" /> */}
                         Panier
                     </Link>

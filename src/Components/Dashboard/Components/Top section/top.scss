@@ -1,170 +1,175 @@
 :root {
-  /* //colors */
-  --primaryColor: hsl(94, 55%, 56%);
-  --hoverColor: hsl(93, 75%, 76%);
-  --paleGreen: hsl(96, 75%, 89%);
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(0, 0%, 18%);
-  --greyText: hsl(0, 0%, 75%);
-  --bgColor: hsl(113, 11%, 85%);
-  --inputColor: hsl(330, 12%, 97%);
+    /* //colors */
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
 
-  /* //font and typo */
-  --biggestFontSize: 2.5rem;
-  --h1FontSize: 1.5rem;
-  --h2FontSize: 1.25rem;
-  --h3FontSize: 1rem;
-  --normalFontSize: 0.938rem;
-  --smallFontSize: 0.813rem;
-  --smallestFontSize: 0.75rem;
+    /* //font and typo */
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
 }
 
 .topSection {
-  .headerSection {
-    display: flex;
-    justify-content: space-between;
-
-    .title {
-      h1 {
-        font-size: var(--h1FontSize);
-        color: red;
-        font-weight: 700;
-      }
-      p {
-        font-size: var(--normalFontSize);
-        color: var(--textColor);
-        font-weight: 500;
-      }
-    }
-
-    .searchBar {
-      padding: 1rem 2rem;
-      background: var(--whiteColor);
-      border-radius: 5px;
-      gap: 1rem;
-      box-shadow: 0 2px 4px var(--inputColor);
-
-      input {
-        border: none;
-        outline: none;
-        background: none;
-      }
-      .icon {
-        color: var(--textColor);
-        &:hover {
-          color: var(--primaryColor);
-        }
-      }
-    }
-
-    .adminDiv {
-      gap: 1rem;
-
-      .icon {
-        font-size: var(--biggestFontSize);
-        background: var(--whiteColor);
-        border-radius: 5px;
-        padding: 5px;
-        box-shadow: 0 2px 4px var(--inputColor);
-        color: var(--textColor);
-      }
-
-      .adminImage {
-        border: 3px solid white;
-        border-radius: 10px;
-        width: 2.5rem;
-        overflow: hidden;
-        box-shadow: 0 2px 4px var(--inputColor);
-      }
-    }
-  }
-
-  .cardSection {
-    margin-top: 3rem;
-    gap: 1rem;
-    background-color: red;
-
-    .rightCard {
-      position: relative;
-      flex-basis: 70%;
-      height: 200px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-      padding: 2rem;
-      border-radius: 1rem;
-      background-size: cover;
-      overflow: hidden;
-
-      .videoDiv {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-
-        video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      h1,
-      p,
-      .btn {
-        z-index: 100;
-      }
-
-      h1 {
-        font-size: var(--h1FontSize);
-        color: var(--whiteColor);
-        font-weight: 800;
-      }
-      p {
-        padding: 1rem;
-        color: var(--paleGreen);
-        font-weight: 500;
-      }
-
-      .buttons {
-        gap: 1rem;
-
-        .btn {
-          box-shadow: none;
-          padding: 0.8rem 1.5rem;
-          color: var(--primayColor);
-          border: 2px solid transparent;
-        }
-
-        .transparent {
-          background: none;
-          border: 2px solid transparent;
-          color: var(--paleGreen);
-
-          &:hover {
-            background: var(--paleGreen);
-            color: var(--primaryColor);
-          }
-        }
-      }
-    }
-
-    .leftCard {
-      flex-basis: 50%;
-
-      .main {
-        position: relative;
-        padding: 1rem;
-        height: 200px;
-        border-radius: 1rem;
+    .headerSection {
+        display: flex;
         justify-content: space-between;
-        background: var(--paleGreen);
 
-        /* &::before {
+        .title {
+            h1 {
+                font-size: var(--h1FontSize);
+                color: red;
+                font-weight: 700;
+            }
+            p {
+                font-size: var(--normalFontSize);
+                color: var(--textColor);
+                font-weight: 500;
+            }
+        }
+
+        .searchBar {
+            padding: 1rem 2rem;
+            background: var(--whiteColor);
+            border-radius: 5px;
+            gap: 1rem;
+            box-shadow: 0 2px 4px var(--inputColor);
+
+            input {
+                border: none;
+                outline: none;
+                background: none;
+            }
+            .icon {
+                color: var(--textColor);
+                &:hover {
+                    color: var(--primaryColor);
+                }
+            }
+        }
+
+        .adminDiv {
+            gap: 1rem;
+
+            .icon {
+                font-size: var(--biggestFontSize);
+                background: var(--whiteColor);
+                border-radius: 5px;
+                padding: 5px;
+                box-shadow: 0 2px 4px var(--inputColor);
+                color: var(--textColor);
+            }
+
+            .adminImage {
+                border: 3px solid white;
+                border-radius: 10px;
+                width: 2.5rem;
+                overflow: hidden;
+                box-shadow: 0 2px 4px var(--inputColor);
+            }
+        }
+    }
+
+    .cardSection {
+        margin-top: 3rem;
+        gap: 1rem;
+        background-color: red;
+
+        .rightCard,
+        .leftCard {
+            width: 100%;
+        }
+
+        .rightCard {
+            position: relative;
+            flex-basis: 70%;
+            height: 200px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-size: cover;
+            overflow: hidden;
+
+            .videoDiv {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            h1,
+            p,
+            .btn {
+                z-index: 100;
+            }
+
+            h1 {
+                font-size: var(--h1FontSize);
+                color: var(--whiteColor);
+                font-weight: 800;
+            }
+            p {
+                padding: 1rem;
+                color: var(--paleGreen);
+                font-weight: 500;
+            }
+
+            .buttons {
+                gap: 1rem;
+
+                .btn {
+                    box-shadow: none;
+                    padding: 0.8rem 1.5rem;
+                    color: var(--primayColor);
+                    border: 2px solid transparent;
+                }
+
+                .transparent {
+                    background: none;
+                    border: 2px solid transparent;
+                    color: var(--paleGreen);
+
+                    &:hover {
+                        background: var(--paleGreen);
+                        color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+
+        .leftCard {
+            flex-basis: 50%;
+
+            .main {
+                position: relative;
+                padding: 1rem;
+                height: 200px;
+                border-radius: 1rem;
+                justify-content: space-between;
+                background: var(--paleGreen);
+
+                /* &::before {
                     content: "";
                     position: absolute;
                     height: 100%;
@@ -174,222 +179,222 @@
                     bottom: 0;
                     border-radius: 1rem;
                 } */
-        .texDiv {
-          h1 {
-            font-size: var(--h1FontSize);
-            padding-bottom: 1rem;
-            color: var(--blackColor);
-          }
+                .texDiv {
+                    h1 {
+                        font-size: var(--h1FontSize);
+                        padding-bottom: 1rem;
+                        color: var(--blackColor);
+                    }
 
-          .flex {
-            gap: 1.5rem;
-            font-weight: 500;
-            color: var(--blackColor);
-            small {
-              font-size: var(--smallestFontSize);
-              display: block;
-              color: var(--primaryColor);
-              font-weight: 500;
-              padding: 0.5rem 0;
+                    .flex {
+                        gap: 1.5rem;
+                        font-weight: 500;
+                        color: var(--blackColor);
+                        small {
+                            font-size: var(--smallestFontSize);
+                            display: block;
+                            color: var(--primaryColor);
+                            font-weight: 500;
+                            padding: 0.5rem 0;
+                        }
+                    }
+
+                    .link {
+                        margin-top: 2rem;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: var(--primaryColor);
+                            .icon {
+                                transform: translateX(10px);
+                                transition: 0.3s ease;
+                            }
+                        }
+                    }
+                }
+
+                .imgDiv {
+                    transform: translateY(-20px) img {
+                        width: 200px;
+                    }
+                }
             }
-          }
 
-          .link {
-            margin-top: 2rem;
-            cursor: pointer;
+            .helpCard {
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                position: relative;
 
-            &:hover {
-              color: var(--primaryColor);
-              .icon {
-                transform: translateX(10px);
-                transition: 0.3s ease;
-              }
+                .icon {
+                    position: absolute;
+                    background: var(--hoverColor);
+                    border: 10px solid green;
+                    font-size: 3rem;
+                    border-radius: 50%;
+                    top: -8px;
+                    right: 50%;
+                    transform: translate(50%);
+                    z-index: 100;
+                }
+
+                .cardContent {
+                    position: relative;
+                    padding: 1rem;
+                    background: var(--hoverColor);
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    h3 {
+                        font-size: var(--h3FontSize);
+                        margin-top: 1rem;
+                        padding: 1rem 0;
+                        font-weight: 800;
+                        color: var(--blackColor);
+                    }
+
+                    p {
+                        font-size: var(--normalFontSize);
+                        color: var(--textColor);
+                        padding-bottom: 1rem;
+                        font-weight: 500;
+                    }
+
+                    .btn {
+                        position: relative;
+                        color: var(--textColor);
+                        z-index: 1000;
+                    }
+                    .circle1,
+                    .circle2 {
+                        position: absolute;
+                        background: var(--paleGreen);
+                        border-radius: 50%;
+                        opacity: 0.7;
+                    }
+                    .circle1 {
+                        height: 100px;
+                        width: 100px;
+                        top: -50px;
+                        left: -50px;
+                    }
+
+                    .circle2 {
+                        height: 150px;
+                        width: 150px;
+                        top: -80px;
+                        left: -70px;
+                        z-index: 1;
+                    }
+                }
             }
-          }
         }
-
-        .imgDiv {
-          transform: translateY(-20px) img {
-            width: 200px;
-          }
-        }
-      }
-
-      .helpCard {
-        width: 100%;
-        padding: 1rem;
-        text-align: center;
-        position: relative;
-
-        .icon {
-          position: absolute;
-          background: var(--hoverColor);
-          border: 10px solid green;
-          font-size: 3rem;
-          border-radius: 50%;
-          top: -8px;
-          right: 50%;
-          transform: translate(50%);
-          z-index: 100;
-        }
-
-        .cardContent {
-          position: relative;
-          padding: 1rem;
-          background: var(--hoverColor);
-          border-radius: 10px;
-          overflow: hidden;
-
-          h3 {
-            font-size: var(--h3FontSize);
-            margin-top: 1rem;
-            padding: 1rem 0;
-            font-weight: 800;
-            color: var(--blackColor);
-          }
-
-          p {
-            font-size: var(--normalFontSize);
-            color: var(--textColor);
-            padding-bottom: 1rem;
-            font-weight: 500;
-          }
-
-          .btn {
-            position: relative;
-            color: var(--textColor);
-            z-index: 1000;
-          }
-          .circle1,
-          .circle2 {
-            position: absolute;
-            background: var(--paleGreen);
-            border-radius: 50%;
-            opacity: 0.7;
-          }
-          .circle1 {
-            height: 100px;
-            width: 100px;
-            top: -50px;
-            left: -50px;
-          }
-
-          .circle2 {
-            height: 150px;
-            width: 150px;
-            top: -80px;
-            left: -70px;
-            z-index: 1;
-          }
-        }
-      }
     }
-  }
 }
 
 /*===================MEDIA QUERIES================*/
 
 @media screen and (max-width: 990px) {
-  .cardSection {
-    flex-direction: column;
+    .cardSection {
+        flex-direction: column;
 
-    .rightCard,
-    .leftCard {
-      width: 100%;
-      flex-basis: 100%;
-    }
-    .leftCard {
-      align-self: flex-start;
-      height: 10px !important;
+        .rightCard,
+        .leftCard {
+            width: 100%;
+            flex-basis: 100%;
+        }
+        .leftCard {
+            align-self: flex-start;
+            height: 10px !important;
 
-      .helpCard {
-        display: block !important;
-      }
+            .helpCard {
+                display: block !important;
+            }
+        }
     }
-  }
 }
 
 @media screen and (max-width: 918px) {
-  .headerSection {
-    .searchBar {
-      display: none;
+    .headerSection {
+        .searchBar {
+            display: none;
+        }
     }
-  }
 }
 
 @media screen and (max-width: 725px) {
-  .topSection {
-    .cardSection {
-      .leftCard {
-        display: flex;
-        flex-direction: column;
-        .main {
-          width: 100%;
+    .topSection {
+        .cardSection {
+            .leftCard {
+                display: flex;
+                flex-direction: column;
+                .main {
+                    width: 100%;
+                }
+                .helpCard {
+                    /* display: none; */
+                    padding: 0;
+                    margin-top: 1rem;
+                }
+            }
         }
-        .helpCard {
-          /* display: none; */
-          padding: 0;
-          margin-top: 1rem;
-        }
-      }
     }
-  }
 }
 
 @media screen and (max-width: 490px) {
-  .headerSection {
-    .adminDiv {
-      display: none;
-    }
-    .title {
-      text-align: center;
-      margin: auto;
-    }
-  }
-
-  .cardSection {
-    .rightCard {
-      text-align: center;
-
-      .buttons {
-        margin: auto;
-        flex-direction: column;
-
-        .btn {
-          width: 100%;
+    .headerSection {
+        .adminDiv {
+            display: none;
         }
-      }
+        .title {
+            text-align: center;
+            margin: auto;
+        }
     }
-    .leftCard {
-      .main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
-        .textDiv {
-          margin: auto;
-        }
-        &::before {
-          width: 100% !important;
-        }
+    .cardSection {
+        .rightCard {
+            text-align: center;
 
-        .imgDiv {
-          display: none;
+            .buttons {
+                margin: auto;
+                flex-direction: column;
+
+                .btn {
+                    width: 100%;
+                }
+            }
         }
-      }
+        .leftCard {
+            .main {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .textDiv {
+                    margin: auto;
+                }
+                &::before {
+                    width: 100% !important;
+                }
+
+                .imgDiv {
+                    display: none;
+                }
+            }
+        }
     }
-  }
 }
 @media screen and (max-width: 390px) {
-  .topSection {
-    .cardSection {
-      .rightCard {
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-      h1 {
-        font-size: var(--h2FontSize);
-      }
+    .topSection {
+        .cardSection {
+            .rightCard {
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: var(--h2FontSize);
+            }
+        }
     }
-  }
 }
