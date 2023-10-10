@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     border: 3px solid red;
+    background-color: transparent;
+    padding: 1rem 1rem;
 }
 
 .menuList {
@@ -24,6 +26,8 @@
 .centerMenu {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     border: 3px solid blue;
 }
 
@@ -41,9 +45,8 @@
     align-items: center;
     font-size: large;
 }
-
 .logo-container {
-    width: 170px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,21 +62,23 @@
 .menuLink {
     text-decoration: none;
     /* font-family: ; */
+    border: 3px solid transparent;
     color: black;
-    font-size: 18px;
-    padding: 1rem;
+    font-size: 15px;
+    padding: 0.5rem;
+    text-align: center;
 }
 
 .menuLink:hover {
-    border-bottom: 3px solid white;
+    border: 3px solid white;
     color: white;
 }
 
 /* FONCTIONNE PAS */
-.navItem:hover {
+/* .navItem:hover {
     border-bottom: 3px solid white;
     color: white;
-}
+} */
 
 /*=============== MEDIA QUERIES ================*/
 

@@ -6,7 +6,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 100vh;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 1, 0.42), rgba(0, 0, 1, 0.549)),
         url(../../assets/food1.jpg);
@@ -20,7 +19,7 @@
 }
 
 .heroText-container {
-    border: 10px solid red;
+    border: 10px solid rgb(238, 255, 0);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -28,13 +27,14 @@
     top: 0;
     bottom: 0;
     justify-content: flex-end;
-    padding: 0 50px 50px;
+    padding: 0 20% 20%;
+    width: 100%;
 }
 
 .spanText {
     color: white;
     padding: 2rem 0;
-    font-size: 40px;
+    font-size: 500;
 }
 
 .heroTitle {
@@ -56,7 +56,7 @@ strong {
     color: white;
     font-size: 13px;
     transition: 0.3s;
-    width: 120px;
+    width: max-content;
     padding: 10px;
 }
 

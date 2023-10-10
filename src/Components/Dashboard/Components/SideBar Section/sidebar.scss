@@ -1,177 +1,177 @@
 :root {
-  /* colors */
-  --primaryColor: hsl(94, 55%, 56%);
-  --hoverColor: hsl(93, 75%, 76%);
-  --paleGreen: hsl(96, 75%, 89%);
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(0, 0%, 18%);
-  --greyText: hsl(0, 0%, 75%);
-  --bgColor: hsl(113, 11%, 85%);
-  --inputColor: hsl(330, 12%, 97%);
+    /* colors */
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
 
-  /* font and typo */
-  --biggestFontSize: 2.5rem;
-  --h1FontSize: 1.5rem;
-  --h2FontSize: 1.25rem;
-  --h3FontSize: 1rem;
-  --normalFontSize: 0.938rem;
-  --smallFontSize: 0.813rem;
-  --smallestFontSize: 0.75rem;
+    /* font and typo */
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
 }
 
 .sidebar {
-  background-color: rgb(62, 20, 20);
-  box-shadow: 1px 0px 4px var(--greyText);
-  width: 18%;
-  height: 100%;
-  gap: 3rem;
+    background-color: rgb(62, 20, 20);
+    box-shadow: 1px 0px 4px var(--greyText);
+    width: 18%;
+    height: 100%;
+    gap: 3rem;
 
-  .logoDiv {
-    /* padding: 0.3rem; */
-    cursor: pointer;
+    .logoDiv {
+        /* padding: 0.3rem; */
+        cursor: pointer;
 
-    img {
-      margin-right: 0.5rem;
-      border-radius: 2px;
-      padding: 0.2rem;
-      background: white;
+        img {
+            margin-right: 0.5rem;
+            border-radius: 2px;
+            padding: 0.2rem;
+            background: white;
+        }
+
+        h2 {
+            font-size: var(--h2FontSize);
+            color: var(--primaryColor);
+        }
     }
-
-    h2 {
-      font-size: var(--h2FontSize);
-      color: var(--primaryColor);
-    }
-  }
 }
 
 .menuDiv,
 .settingsDiv {
-  font-size: var(--h3FontSize);
-  color: var(--blackColor);
-  padding: 0 1.5rem 1.5rem;
-  background-color: var(--whiteColor);
+    font-size: var(--h3FontSize);
+    color: var(--blackColor);
+    padding: 0 1.5rem 1.5rem;
+    background-color: var(--whiteColor);
 
-  .menuList {
-    .listItems {
-      padding: 0.2rem 1.5rem;
-      width: 100%;
-      position: relative;
-    }
-    &::before {
-      position: absolute;
-      content: "";
-      height: 100%;
-      left: 0;
-      width: 5px;
-      bottom: 0;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-      background: var(--primaryColor);
-    }
+    .menuList {
+        .listItems {
+            padding: 0.2rem 1.5rem;
+            width: 100%;
+            position: relative;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            left: 0;
+            width: 5px;
+            bottom: 0;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: var(--primaryColor);
+        }
 
-    .menuLink {
-      color: var(--greyText);
-      font-weight: 500;
-      transition: 0;
+        .menuLink {
+            color: var(--greyText);
+            font-weight: 500;
+            transition: 0;
 
-      .icon {
-        margin-right: 0.5rem;
-      }
-    }
+            .icon {
+                margin-right: 0.5rem;
+            }
+        }
 
-    &:hover .menuLink {
-      color: var(--primaryColor);
-      transition: 0;
-    }
+        &:hover .menuLink {
+            color: var(--primaryColor);
+            transition: 0;
+        }
 
-    &:hover::before {
-      height: 100%;
-      transform: 0.3s ease;
+        &:hover::before {
+            height: 100%;
+            transform: 0.3s ease;
+        }
     }
-  }
 }
 
 .helpCard {
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-
-  .icon {
-    position: absolute;
-    background: var(--hoverColor);
-    border: 10px solid green;
-    font-size: 3rem;
-    border-radius: 50%;
-    top: -8px;
-    right: 50%;
-    transform: translate(50%);
-    z-index: 100;
-  }
-
-  .cardContent {
-    position: relative;
+    width: 100%;
     padding: 1rem;
-    background: var(--hoverColor);
-    border-radius: 10px;
-    overflow: hidden;
+    text-align: center;
+    position: relative;
 
-    h3 {
-      font-size: var(--h3FontSize);
-      margin-top: 1rem;
-      padding: 1rem 0;
-      font-weight: 800;
-      color: var(--blackColor);
-    }
-
-    p {
-      font-size: var(--normalFontSize);
-      color: var(--textColor);
-      padding-bottom: 1rem;
-      font-weight: 500;
+    .icon {
+        position: absolute;
+        background: var(--hoverColor);
+        border: 10px solid green;
+        font-size: 3rem;
+        border-radius: 50%;
+        top: -8px;
+        right: 50%;
+        transform: translate(50%);
+        z-index: 100;
     }
 
-    .btn {
-      position: relative;
-      color: var(--textColor);
-      z-index: 1000;
-    }
-    .circle1,
-    .circle2 {
-      position: absolute;
-      background: var(--paleGreen);
-      border-radius: 50%;
-      opacity: 0.7;
-    }
-    .circle1 {
-      height: 100px;
-      width: 100px;
-      top: -50px;
-      left: -50px;
-    }
+    .cardContent {
+        position: relative;
+        padding: 1rem;
+        background: var(--hoverColor);
+        border-radius: 10px;
+        overflow: hidden;
 
-    .circle2 {
-      height: 150px;
-      width: 150px;
-      top: -80px;
-      left: -70px;
-      z-index: 1;
+        h3 {
+            font-size: var(--h3FontSize);
+            margin-top: 1rem;
+            padding: 1rem 0;
+            font-weight: 800;
+            color: var(--blackColor);
+        }
+
+        p {
+            font-size: var(--normalFontSize);
+            color: var(--textColor);
+            padding-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            position: relative;
+            color: var(--textColor);
+            z-index: 1000;
+        }
+        .circle1,
+        .circle2 {
+            position: absolute;
+            background: var(--paleGreen);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+        .circle1 {
+            height: 100px;
+            width: 100px;
+            top: -50px;
+            left: -50px;
+        }
+
+        .circle2 {
+            height: 150px;
+            width: 150px;
+            top: -80px;
+            left: -70px;
+            z-index: 1;
+        }
     }
-  }
 }
 
 /*==================MEDIA QUERIES===============*/
 
 @media screen and (max-width: 390px) {
-  .topSection {
-    .cardSection {
-      .rightCard {
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-      h1 {
-        font-size: var(--h2FontSize);
-      }
+    .topSection {
+        .cardSection {
+            .rightCard {
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: var(--h2FontSize);
+            }
+        }
     }
-  }
 }
