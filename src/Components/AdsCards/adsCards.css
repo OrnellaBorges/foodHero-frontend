@@ -1,0 +1,39 @@
+/* 
+    .secContainer {
+        width: 100%;
+        margin: 1rem 0;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    } */
+.cards {
+    border: 10px solid green;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cardsContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Alignement horizontal vers le début */
+    align-items: flex-start; /* Alignement vertical vers le début */
+}
+
+.singleCard {
+    width: calc(100% / 4);
+    height: 250px;
+    border-radius: 10px;
+    background-color: rgb(205, 0, 250);
+    overflow: hidden;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.singleCard:hover {
+    background-color: rgb(254, 202, 106);
+    box-shadow: 0 2px 2px var(--inputColor);
+}
+
+img {
+    max-width: 100%;
+}

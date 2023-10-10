@@ -5,30 +5,23 @@
       text-shadow: 0 2px 0 black, 0 -2px 0 black; */
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+
     width: 100%;
     background: linear-gradient(rgba(0, 0, 1, 0.42), rgba(0, 0, 1, 0.549)),
         url(../../assets/food1.jpg);
     background-position: center;
     object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     row-gap: 3rem;
-    position: absolute;
 }
 
 .heroText-container {
     border: 10px solid rgb(238, 255, 0);
+    /* padding: 0 20% 20%; */
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
     justify-content: flex-end;
-    padding: 0 20% 20%;
-    width: 100%;
 }
 
 .spanText {

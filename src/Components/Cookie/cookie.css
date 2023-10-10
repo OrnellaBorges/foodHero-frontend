@@ -29,9 +29,6 @@
     align-items: flex-end;
 }
 
-.test {
-    background-color: rgb(223, 11, 11);
-}
 .cookie.hide {
     opacity: 0;
     pointer-events: none;
