@@ -74,6 +74,10 @@
     color: white;
 }
 
+.navIcon {
+    display: none;
+}
+
 /* FONCTIONNE PAS */
 /* .navItem:hover {
     border-bottom: 3px solid white;

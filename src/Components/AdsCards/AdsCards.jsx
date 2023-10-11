@@ -22,7 +22,25 @@ const AdsCards = () => {
                         <div className="imgCard-container">
                             <img src={pasta} alt="" />
                         </div>
-                        <h4 className="textTitle">Pâtes au poulets</h4>
+                        <h4 className="textTitle">Pâtes au poulet</h4>
+                        <h5>Prix : 3€</h5>
+                        <p>Lille</p>
+
+                        <div className="buttonContainer flex">
+                            <button
+                                className="cardBtn"
+                                onClick={() => console.log("coucou")}
+                            >
+                                Voir l'annonce
+                            </button>
+
+                            {/* <button
+                                className="cardBtn"
+                                onClick={() => console.log("coucou")}
+                            >
+                                Reserver
+                            </button> */}
+                        </div>
                     </div>
 
                     <div className="singleCard">

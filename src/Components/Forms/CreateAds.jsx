@@ -11,12 +11,11 @@ const CreateAds = () => {
 
     return (
         <>
-            <div className="formHeader">
-                <h2>Create</h2>
-            </div>
-
             <div className="formContainer flex">
-                <form className="Adsform grid" name="createForm">
+                <div className="formHeader">
+                    <h2 className="formTitle">Create New Ad</h2>
+                </div>
+                <form className="Adsform" name="createForm">
                     <div className="inputDiv">
                         <label htmlFor="Title">Title</label>
                         <div className="input flex">
@@ -122,7 +121,7 @@ const CreateAds = () => {
                     </div>
                     <button
                         type="submit"
-                        className="btn flex"
+                        className="formBtn flex"
                         onClick={console.log("coucou")}
                     >
                         <span>SAVE</span>

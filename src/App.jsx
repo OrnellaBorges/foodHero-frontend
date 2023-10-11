@@ -7,6 +7,7 @@ import Cookie from "./Components/Cookie/Cookie";
 import BasketOrder from "./Components/BasketOrder/BasketOrder";
 import CreateAds from "./Components/Forms/CreateAds";
 import Account from "./Components/Account/Account";
+import OneAd from "./Components/OneAd/OneAd";
 
 // import React react dom
 
@@ -51,6 +52,14 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <Dashboard />
+            </div>
+        ),
+    },
+    {
+        path: "/OneAd",
+        element: (
+            <div>
+                <OneAd />
             </div>
         ),
     },
