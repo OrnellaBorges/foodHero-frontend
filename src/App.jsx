@@ -1,11 +1,12 @@
 import "./App.css";
 import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
+import Container from "./Components/Dashboard/Components/Container";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Home from "./Components/HomePage/Home";
 import Cookie from "./Components/Cookie/Cookie";
 import Orders from "./Components/Orders/Orders";
-import CreateAds from "./Components/Forms/CreateAds";
+import CreateAds from "./Components/Dashboard/Forms/CreateAds";
 import Account from "./Components/Account/Account";
 import OneAd from "./Components/OneAd/OneAd";
 
@@ -52,6 +53,14 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Dashboard />
+      </div>
+    ),
+  },
+  {
+    path: "/container",
+    element: (
+      <div>
+        <Container />
       </div>
     ),
   },

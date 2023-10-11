@@ -10,17 +10,17 @@ const Listing = () => {
   return (
     <div className="listingSection">
       <div className="heading flex">
-        <h1>My Listing</h1>
+        <h1>My ads</h1>
         <button className="btn flex">
           See All
           <BsArrowBarRight className="icon" />
         </button>
       </div>
       <div className="secContainer flex">
-        <div className="singleItem">
-          <AiFillHeart className="icon" />
+        <div className="singleCard">
+          <AiFillHeart className="singleCard-icon" />
           <AiOutlineHeart className="icon" />
-          <img src={pasta} alt="image name" />
+          <img src={pasta} alt="image" />
           <h3>PASTA</h3>
         </div>
         <div className="singleItem">
