@@ -3,8 +3,10 @@ import {config} from '../config'
 const token = window.localStorage.getItem('b4y-token')
 
 
-export function displayBeers(){
-    return axios.get(`${config.api_url}/api/v1/beer/all`)
+
+//POUR LA PAGE HOME DE TOUTES LES ANNONCES 
+export function allAds(){
+    return axios.get(`${config.api_url}/api/v1/ads/getAllAds`)
     .then((res)=>{
         return res.data
     })
@@ -14,7 +16,7 @@ export function displayBeers(){
 }
 
 export function takeOneBeer(id){
-    return axios.get(`${config.api_url}/api/v1/beer/one/${id}`)
+    return axios.get(`${config.api_url}/api/v1/ads/getOneAd/${id}`)
     .then((res)=>{
         return res.data
     })
