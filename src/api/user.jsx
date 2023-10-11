@@ -1,4 +1,4 @@
-import axios from 'axios'
+/* import axios from 'axios'
 import {config} from '../config'
 const token = window.localStorage.getItem('b4y-token')
 
@@ -40,4 +40,4 @@ export function checkMyToken(){
     .catch((err) => {
         return err
     })
-}
+} */

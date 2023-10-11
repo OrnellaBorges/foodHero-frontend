@@ -35,6 +35,8 @@
     .btn {
       border: 1px solid transparent;
       font-weight: 500;
+      padding: 0.5rem;
+      border-radius: 10px;
 
       &:hover {
         border: 1px solid var(--primaryColor);

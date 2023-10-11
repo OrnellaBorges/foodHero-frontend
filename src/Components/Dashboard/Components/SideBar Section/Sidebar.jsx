@@ -1,7 +1,7 @@
 import React from "react";
 
 //IMPORT ICONS FROM REACT ICONS
-import { IoMdSpeedometer } from "react-icons/io";
+import { GiHamburger } from "react-icons/gi";
 import { MdDeliveryDining, MdOutlineExplore } from "react-icons/md";
 import { BsTrophy, BsCreditCard2Back } from "react-icons/bs";
 import { AiOutlinePieChart } from "react-icons/ai";
@@ -16,81 +16,78 @@ import "../../../../index.scss";
 import logo from "../../../../assets/logo2.png";
 
 const Sidebar = () => {
-    return (
-        <>
-            <div className="sidebar grid">
-                {/* <div className="logoDiv flex">
-                <img src={logo} alt="logo" />
-            </div> */}
-                <h2 className="brand">.FOODHERO</h2>
+  return (
+    <>
+      <div className="sidebar grid">
+        <div className="sidebarHeader flex">
+          <div className="sidebarLogo">
+            <GiHamburger className="sidebarIcon" />
+          </div>
 
-                <div className="sidebarMenu">
-                    <h3 className="divTitle">QUICK MENU</h3>
-                    <ul className=" list sideBarList grid">
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                <IoMdSpeedometer className="icon" />
-                                <span className="smallText">Dash board</span>
-                            </a>
-                        </li>
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                <MdDeliveryDining className="icon" />
-                                <span className="smallText">My Orders</span>
-                            </a>
-                        </li>
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                <MdOutlineExplore className="icon" />
-                                <span className="smallText">Explore</span>
-                            </a>
-                        </li>
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                <BsTrophy className="icon" />
-                                <span className="smallText">Products</span>
-                            </a>
-                        </li>
-                        <li className="listItem">
-                            <a href="/" className="menuLink flex">
-                                Home Page
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+          <h2 className="brand">FOODIE</h2>
+        </div>
 
-                <div className="settingsDiv">
-                    <h3 className="divTitle">SETTINGS</h3>
-                    <ul className="list settingList grid">
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                <AiOutlinePieChart className="icon" />
-                                <span className="smallText">Charts</span>
-                            </a>
-                        </li>
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                <BiTrendingUp className="icon" />
-                                <span className="smallText">Trends</span>
-                            </a>
-                        </li>
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                {/* <IoCalendarNumberOutline className="icon" /> */}
-                                <span className="smallText">Contact</span>
-                            </a>
-                        </li>
-                        <li className="listItem">
-                            <a href="#" className="menuLink flex">
-                                <BsCreditCard2Back className="icon" />
-                                <span className="smallText">Billing</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </>
-    );
+        <div className="sidebarMenu">
+          <h3 className="divTitle">QUICK MENU</h3>
+          <ul className=" list sideBarList grid">
+            <li className="listItem">
+              <a href="#" className="menuLink flex">
+                <MdDeliveryDining className="icon" />
+                <span className="smallText">My Orders</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <a href="#" className="menuLink flex">
+                <MdOutlineExplore className="icon" />
+                <span className="smallText">Explore</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <a href="#" className="menuLink flex">
+                <BsTrophy className="icon" />
+                <span className="smallText">My ads</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <a href="/" className="menuLink flex">
+                Home Page
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* <div className="settingsDiv">
+          <h3 className="divTitle">SETTINGS</h3>
+          <ul className="list settingList grid">
+            <li className="listItem">
+              <a href="#" className="menuLink flex">
+                <AiOutlinePieChart className="icon" />
+                <span className="smallText">Charts</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <a href="#" className="menuLink flex">
+                <BiTrendingUp className="icon" />
+                <span className="smallText">Trends</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <a href="#" className="menuLink flex">
+                {/* <IoCalendarNumberOutline className="icon" /> 
+                <span className="smallText">Contact</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <a href="#" className="menuLink flex">
+                <BsCreditCard2Back className="icon" />
+                <span className="smallText">Billing</span>
+              </a>
+            </li>
+          </ul>
+        </div> */}
+      </div>
+    </>
+  );
 };
 
 export default Sidebar;
