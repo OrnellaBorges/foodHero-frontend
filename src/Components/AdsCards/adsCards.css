@@ -1,15 +1,8 @@
-/* 
-    .secContainer {
-        width: 100%;
-        margin: 1rem 0;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    } */
 .cards {
     border: 10px solid green;
     width: 90%;
     margin: 0 auto;
+    padding: 2% 0;
 }
 
 .cardsContainer {
@@ -22,7 +15,6 @@
 
 .singleCard {
     width: calc(100% / 4);
-    height: 300px;
     border-radius: 10px;
     background-color: rgb(205, 0, 250);
     overflow: hidden;
@@ -48,6 +40,7 @@ img {
     border: 3px solid white;
     border-radius: 10px;
     color: white;
+    font-size: 20px;
     font-weight: 800;
     align-items: center;
     margin: auto;
@@ -63,4 +56,14 @@ img {
 .cardBtn:hover {
     background: white;
     color: rgb(226, 184, 0);
+}
+
+/* =============== Media Queries ====================*/
+
+@media screen and (max-width: 768px) {
+    .cardBtn {
+        width: 70%;
+        font-size: 8px;
+        padding: 4%;
+    }
 }

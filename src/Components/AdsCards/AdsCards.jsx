@@ -22,7 +22,7 @@ const AdsCards = () => {
                         <div className="imgCard-container">
                             <img src={pasta} alt="" />
                         </div>
-                        <h4 className="textTitle">Pâtes au poulet</h4>
+                        <h4 className="cardTitle">Pâtes au poulet</h4>
                         <h5>Prix : 3€</h5>
                         <p>Lille</p>
 
@@ -33,13 +33,6 @@ const AdsCards = () => {
                             >
                                 Voir l'annonce
                             </button>
-
-                            {/* <button
-                                className="cardBtn"
-                                onClick={() => console.log("coucou")}
-                            >
-                                Reserver
-                            </button> */}
                         </div>
                     </div>
 
@@ -47,34 +40,53 @@ const AdsCards = () => {
                         <div className="imgCard-container">
                             <img src={lasagnes} alt="lasagnes végétariennes" />
                         </div>
-                        <h4 className="textTitle">Lasagnes végé</h4>
+                        <h4 className="cardTitle">Lasagnes végé</h4>
+                        <h5>Prix : 3€</h5>
+                        <p>Lille</p>
+
+                        <div className="buttonContainer flex">
+                            <button
+                                className="cardBtn"
+                                onClick={() => console.log("coucou")}
+                            >
+                                Voir l'annonce
+                            </button>
+                        </div>
                     </div>
 
                     <div className="singleCard">
                         <div className="imgCard-container">
                             <img src={cookie} alt="cookies au chocolat" />
                         </div>
-                        <h4 className="textTitle">Cookies</h4>
+                        <h4 className="cardTitle">Cookies</h4>
+                        <h5>Prix : 3€</h5>
+                        <p>Lille</p>
+
+                        <div className="buttonContainer flex">
+                            <button
+                                className="cardBtn"
+                                onClick={() => console.log("coucou")}
+                            >
+                                Voir l'annonce
+                            </button>
+                        </div>
                     </div>
                     <div className="singleCard">
                         <div className="imgCard-container">
                             <img src={pasta} alt="" />
                         </div>
-                        <h4 className="textTitle">Pâtes au poulets</h4>
-                    </div>
+                        <h4 className="cardTitle">Pâtes au poulets</h4>
+                        <h5>Prix : 3€</h5>
+                        <p>Lille</p>
 
-                    <div className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={lasagnes} alt="lasagnes végétariennes" />
+                        <div className="buttonContainer flex">
+                            <button
+                                className="cardBtn"
+                                onClick={() => console.log("coucou")}
+                            >
+                                Voir l'annonce
+                            </button>
                         </div>
-                        <h4 className="textTitle">Lasagnes végé</h4>
-                    </div>
-
-                    <div className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={cookie} alt="cookies au chocolat" />
-                        </div>
-                        <h4 className="textTitle">Cookies</h4>
                     </div>
                 </div>
             </div>

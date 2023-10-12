@@ -6,25 +6,32 @@ function Footer() {
         <footer className="footer">
             <h1 className="footerTitle">Footer</h1>
             <section className="footer-section">
-                <h2>À propos</h2>
-                <ul className="footerList">
-                    <li>Qui sommes-nous ?</li>
-                    <li>Contactez-nous</li>
-                    <li>Blog</li>
-                </ul>
-
-                <h2>Légal</h2>
-                <ul className="footerList">
-                    <li>Conditions d'utilisation</li>
-                    <li>Politique de confidentialité</li>
-                </ul>
-                <h2>Suivez-nous</h2>
-                <ul className="footerList">
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>Instagram</li>
-                    <li>LinkedIn</li>
-                </ul>
+                <div className="containerFooterMenu">
+                    <div className="">
+                        <h2>À propos</h2>
+                        <ul className="footerList">
+                            <li>Qui sommes-nous ?</li>
+                            <li>Contactez-nous</li>
+                            <li>Blog</li>
+                        </ul>
+                    </div>
+                    <div className="">
+                        <h2>Légal</h2>
+                        <ul className="footerList">
+                            <li>Conditions d'utilisation</li>
+                            <li>Politique de confidentialité</li>
+                        </ul>
+                    </div>
+                    <div className="">
+                        <h2>Suivez-nous</h2>
+                        <ul className="footerList">
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>LinkedIn</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
         </footer>
     );

@@ -3,20 +3,23 @@
     color: #fff;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 .footerTitle {
     color: #fff;
+    width: 20%;
 }
 
 .footer-section {
-    flex-basis: 25%;
     display: flex;
+    gap: 10%;
+    border: 3px solid red;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .footer h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
@@ -38,4 +41,10 @@
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+.containerFooterMenu {
+    width: 100%;
+    display: flex;
+    gap: 10%;
 }
