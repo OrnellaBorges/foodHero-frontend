@@ -1,105 +1,105 @@
 :root {
-  /* colors */
-  --primaryColor2: hsl(0, 0%, 28%);
-  --hoverColor: hsl(93, 75%, 76%);
-  --paleGreen: hsl(96, 75%, 89%);
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(0, 0%, 18%);
-  --greyText: hsl(0, 0%, 75%);
-  --bgColor: hsl(113, 11%, 85%);
-  --inputColor: hsl(330, 12%, 97%);
+    /* colors */
+    --primaryColor2: hsl(0, 0%, 28%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
 
-  /* font and typo */
-  --biggestFontSize: 2.5rem;
-  --h1FontSize: 1.5rem;
-  --h2FontSize: 1.25rem;
-  --h3FontSize: 1rem;
-  --normalFontSize: 0.938rem;
-  --smallFontSize: 0.813rem;
-  --smallestFontSize: 0.75rem;
+    /* font and typo */
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
 }
 
 .sidebar {
-  background-color: #090125;
+    background-color: #090125;
 
-  width: 20%;
-  height: 100%;
-  gap: 5rem;
-  flex-direction: column;
-  align-items: center;
-
-  .sidebarLogo {
-    cursor: pointer;
-    color: white;
-  }
-
-  .sidebarHeader {
-    border: 3px solid blue;
-    width: 100%;
-    justify-content: center;
+    width: 20%;
+    height: 100%;
+    gap: 5rem;
+    flex-direction: column;
     align-items: center;
-    padding: 40px;
 
-    .icon {
-      font-size: 25px;
-      padding-right: 2px;
+    .sidebarLogo {
+        cursor: pointer;
+        color: white;
     }
-    .brand {
-      font-weight: 600;
-      font-size: 30px;
-      color: aliceblue;
-      font-family: "Montserrat", sans-serif;
+
+    .sidebarHeader {
+        border: 3px solid blue;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+
+        .icon {
+            font-size: 25px;
+            padding-right: 2px;
+        }
+        .brand {
+            font-weight: 600;
+            font-size: 30px;
+            color: aliceblue;
+            font-family: "Montserrat", sans-serif;
+        }
     }
-  }
 }
 
 .sidebarUser {
-  text-align: center;
-  color: white;
-  .containerImg {
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 400px;
-    overflow: hidden;
-    border: 3px solid rgb(152, 167, 241);
-  }
-  p {
-    padding-top: 10px;
-  }
-  .userName {
-    font-weight: bold;
-  }
+    text-align: center;
+    color: white;
+    .containerImg {
+        width: 65%;
+        margin: 0 auto;
+        border-radius: 400px;
+        overflow: hidden;
+        border: 5px solid rgb(152, 167, 241);
+    }
+    p {
+        padding-top: 10px;
+    }
+    .userName {
+        font-weight: bold;
+    }
 }
 
 .sidebarMenu {
-  border: 3px solid green;
-  width: 100%;
+    border: 3px solid green;
+    width: 100%;
 
-  .sideBarList {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .sidebarMenu-link {
-    color: white;
-    align-items: center;
-    border: 2px solid transparent;
-    &:hover {
-      color: rgb(152, 167, 241);
-      border-bottom: 2px solid rgb(152, 167, 241);
+    .sideBarList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-  }
 
-  .iconMenu {
-    font-size: 20px;
-  }
+    .sidebarMenu-link {
+        color: white;
+        align-items: center;
+        border: 2px solid transparent;
+        &:hover {
+            color: rgb(152, 167, 241);
+            border-bottom: 2px solid rgb(152, 167, 241);
+        }
+    }
 
-  .smallText {
-    font-size: 18px;
-    padding: 0.3rem;
-  }
+    .iconMenu {
+        font-size: 20px;
+    }
+
+    .smallText {
+        font-size: 18px;
+        padding: 0.3rem;
+    }
 }
 /*   .sidebarFooter {
 
@@ -108,13 +108,13 @@
 
 .sidebarUser,
 .sidebarMenu {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
 }
 .list {
-  text-decoration: none;
-  list-style: none;
+    text-decoration: none;
+    list-style: none;
 }
 
 /* .helpCard {
@@ -168,51 +168,51 @@
 /*==================MEDIA QUERIES===============*/
 
 @media screen and (max-width: 768px) {
-  .topSection {
-    .cardSection {
-      .rightCard {
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-      h1 {
-        font-size: var(--h2FontSize);
-      }
+    .topSection {
+        .cardSection {
+            .rightCard {
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: var(--h2FontSize);
+            }
+        }
     }
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .topSection {
-    .cardSection {
-      .rightCard {
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-      h1 {
-        font-size: var(--h2FontSize);
-      }
-    }
-  }
-
-  .sidebarMenu {
-    border: 3px solid green;
-    width: 100%;
-
-    .sideBarList {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    .topSection {
+        .cardSection {
+            .rightCard {
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: var(--h2FontSize);
+            }
+        }
     }
 
-    .sidebarMenu-link {
-      .smallText {
-        display: none;
-      }
-    }
+    .sidebarMenu {
+        border: 3px solid green;
+        width: 100%;
 
-    .iconMenu {
-      font-size: 30px;
+        .sideBarList {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebarMenu-link {
+            .smallText {
+                display: none;
+            }
+        }
+
+        .iconMenu {
+            font-size: 30px;
+        }
     }
-  }
 }

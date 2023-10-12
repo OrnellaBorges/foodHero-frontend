@@ -7,10 +7,10 @@ import "./Activity.scss";
 import { BsArrowRightShort } from "react-icons/bs";
 
 //import images
-import mikael from "../../../../assets/mikael.jpg";
-import gustavo from "../../../../assets/gustavo.jpg";
-import ronald from "../../../../assets/ronald.jpg";
-import andrea from "../../../../assets/andrea.jpg";
+import mikael from "../../../../assets/users/mikael.jpg";
+import gustavo from "../../../../assets/users/gustavo.jpg";
+import ronald from "../../../../assets/users/ronald.jpg";
+import andrea from "../../../../assets/users/andrea.jpg";
 
 const Activity = () => {
     return (
