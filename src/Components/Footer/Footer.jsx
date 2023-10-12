@@ -1,10 +1,37 @@
 import React from "react";
 import "./Footer.css"; // Assurez-vous d'ajouter un fichier CSS pour le style
 
+import footerIcon1 from "../../assets/icons/footerIcon1.png";
+
 function Footer() {
     return (
         <footer className="footer">
-            <h1 className="footerTitle">Footer</h1>
+            <div className="footerTitleContainer">
+                <h1 className="footerTitle">Footer</h1>
+                <ul className="containerIcons flex">
+                    <li className="iconItem">
+                        <img src={footerIcon1} alt="icon" />
+                    </li>
+                    <li className="iconItem">
+                        <img src={footerIcon1} alt="icon" />
+                    </li>
+                    <li className="iconItem">
+                        <img src={footerIcon1} alt="icon" />
+                    </li>
+                    <li className="iconItem">
+                        <img src={footerIcon1} alt="icon" />
+                    </li>
+                    <li className="iconItem">
+                        <img src={footerIcon1} alt="icon" />
+                    </li>
+                    <li className="iconItem">
+                        <img src={footerIcon1} alt="icon" />
+                    </li>
+                    <li className="iconItem">
+                        <img src={footerIcon1} alt="icon" />
+                    </li>
+                </ul>
+            </div>
             <section className="footer-section">
                 <div className="containerFooterMenu">
                     <div className="">

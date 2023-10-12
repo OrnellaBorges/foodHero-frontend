@@ -5,9 +5,25 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.footerTitleContainer {
+    border: 3px solid blue;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .footerTitle {
     color: #fff;
     width: 20%;
+}
+
+.containerIcons {
+    justify-content: space-evenly;
+}
+
+.iconItem {
+    width: 8%;
 }
 
 .footer-section {
@@ -16,6 +32,7 @@
     border: 3px solid red;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .footer h2 {

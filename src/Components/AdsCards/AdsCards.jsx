@@ -16,6 +16,7 @@ const AdsCards = () => {
     return (
         <>
             <div className="cards">
+                <h1 className="mainTitle">Toutes les annonces</h1>
                 {/* Mapper la liste apres le axios.get por recuperer toute les annonces et le mettre dans un useeffect */}
                 <div className="cardsContainer">
                     <div className="singleCard">
