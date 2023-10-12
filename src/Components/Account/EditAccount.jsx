@@ -93,8 +93,10 @@ function EditAccount() {
                     {/* <FontAwesomeIcon icon={faPencilAlt} /> */}
                 </div>
             </div>
-            <div className="save-button">
-                <button>Enregistrer les modifications</button>
+            <div className="save-buttonContainer">
+                <button className="editButton">
+                    Enregistrer les modifications
+                </button>
             </div>
         </div>
     );

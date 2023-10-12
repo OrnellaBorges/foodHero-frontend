@@ -11,7 +11,6 @@ import video from "../../../../assets/movie.mp4";
 
 import { BiSearch } from "react-icons/bi";
 import { TbMessageCircle2Filled } from "react-icons/tb";
-import { BsArrowRightShort, BsQuestionCircle } from "react-icons/bs";
 import { LuConciergeBell } from "react-icons/lu";
 
 //import { IoNotificationsCircleSharp } from "react-icons/io";
@@ -35,12 +34,17 @@ const Top = () => {
             </div>
             <div className="cardSection flex">
                 <div className="rightCard flex">
-                    <h1>Au four et au moulin.</h1>
-                    <p>Faites bouillir la marmite!.</p>
-                    <div className="buttons flex">
-                        <button className="btn">Explore</button>
-                        <button className="btn transparent">Top Sellers</button>
+                    <div className="cardContent">
+                        <h1>Au four et au moulin.</h1>
+                        <p>Faites bouillir la marmite!.</p>
+                        <div className="topCardButtons flex">
+                            <button className="fillBtn">Explore</button>
+                            <button className="transparentBtn">
+                                Top Sellers
+                            </button>
+                        </div>
                     </div>
+
                     <div className="videoDiv">
                         <video src={video} autoPlay loop muted></video>
                     </div>
@@ -49,7 +53,7 @@ const Top = () => {
                     <div className="main flex">
                         <div className="statContainer">
                             <h1>My Stat</h1>
-                            <div className="flex infoContainer">
+                            <div className="flex statInfo">
                                 <span
                                     className="
                                 info"
@@ -59,9 +63,8 @@ const Top = () => {
                                 <span className="info">
                                     This Month <br /> <small>127 Orders</small>
                                 </span>
-                                <button className="flex btn">
+                                <button className="flex orderButton">
                                     Go to my orders
-                                    <BsArrowRightShort className="icon" />
                                 </button>
                             </div>
                         </div>

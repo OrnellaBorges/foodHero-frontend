@@ -3,8 +3,9 @@ import React from "react";
 //import Styles
 import "./Activity.scss";
 
+import SeeAllBtn from "../Buttons/SeeAll/SeeAllBtn";
+
 // import icons
-import { BsArrowRightShort } from "react-icons/bs";
 
 //import images
 import mikael from "../../../../assets/users/mikael.jpg";
@@ -15,12 +16,9 @@ import andrea from "../../../../assets/users/andrea.jpg";
 const Activity = () => {
     return (
         <div className="activitySection">
-            <div className="heading flex">
-                <h1>Recent Activity</h1>
-                <button className="btn flex">
-                    See All
-                    <BsArrowRightShort className="icon" />
-                </button>
+            <div className="activityHeading flex">
+                <h1 className="ActivityTitle">Recent Activity</h1>
+                <SeeAllBtn />
             </div>
             <div className="secContainer grid">
                 <div className="singleCustomer flex">

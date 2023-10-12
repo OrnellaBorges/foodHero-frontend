@@ -21,14 +21,15 @@ import adminImage from "../../../../assets/users/albert4.png";
 const Sidebar = () => {
     // useEffect qui permet de recup si l'user est bien connecté et recup ses datas
 
-    //USER DATA
-    const userData = [
-        {
-            firstName: "Albert",
-            lastName: "Einstein",
-            userImage: { adminImage },
-        },
-    ];
+    // Les données de l'utilisateur
+    const user = {
+        firstName: "Albert",
+        lastName: "Einstein",
+        email: "e=mc2@lycos.fr",
+        address: "53 rue de la Relativité ",
+        phone: "+1 555-123-4567",
+        profileImage: { adminImage },
+    };
 
     return (
         <>
@@ -46,7 +47,7 @@ const Sidebar = () => {
                     </div>
                     <p>Welcom,</p>
                     <p className="userName">
-                        `${userData.firstName}${userData.lastName}`
+                        {user.firstName} {user.lastName}
                     </p>
                 </div>
 

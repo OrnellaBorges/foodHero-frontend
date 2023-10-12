@@ -18,7 +18,7 @@ function UserProfile() {
 
     return (
         <div className="profile">
-            <div className="sidebar">
+            <div className="profilSidebar">
                 <h1 className="titleAccount">USER PROFIL</h1>
                 <div className="user-info">
                     <div className="userImage">

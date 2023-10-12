@@ -18,7 +18,7 @@ h1 {
     color: #333;
 }
 
-button {
+editButton {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -29,7 +29,7 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+editButton:hover {
     background-color: #0056b3;
 }
 
@@ -59,13 +59,13 @@ input {
     font-size: 16px;
 }
 
-svg {
+/* svg {
     color: #007bff;
     cursor: pointer;
     font-size: 18px;
-}
+} */
 
-.save-button {
+.save-buttonContainer {
     text-align: center;
     margin-top: 20px;
 }
