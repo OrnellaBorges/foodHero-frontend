@@ -52,7 +52,7 @@ const Sidebar = () => {
                 </div>
 
                 <div className="sidebarMenu">
-                    <ul className=" list sideBarList grid">
+                    <ul className=" list sideBarList flex">
                         <li className="listItem flex">
                             <Link to="/" className="sidebarMenu-link flex">
                                 <BiSolidHome className="iconMenu" />

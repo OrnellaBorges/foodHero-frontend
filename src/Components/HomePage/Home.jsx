@@ -13,8 +13,8 @@ const Home = () => {
             {/* <Cookie /> */}
             <Hero />
             <AdsCards />
-            {/*  <Footer />
-            HOME PAGE
+            <Footer />
+            {/*
             <p className="test">je suis un test</p>
             <a href="/dashboard">Dashboard</a>
             <a href="/login">Login</a>

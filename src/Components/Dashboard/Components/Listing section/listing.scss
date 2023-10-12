@@ -21,6 +21,7 @@
 
 .listingSection {
     flex-basis: 70%;
+    padding: 10px;
 
     .linstingHeading {
         width: 100%;
@@ -147,6 +148,8 @@
 
 @media screen and (max-width: 768px) {
     .listingSection {
+        width: 100%;
+
         .heading {
             display: flex;
             flex-direction: column;
@@ -155,14 +158,6 @@
             justify-content: center;
             align-items: center;
         }
-
-        /* .sellers {
-            flex-direction: column;
-            .card {
-                display: flex;
-                flex-direction: column;
-            }
-        } */
     }
 }
 

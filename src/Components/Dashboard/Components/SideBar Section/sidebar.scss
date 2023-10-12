@@ -23,7 +23,7 @@
     background-color: #090125;
 
     width: 20%;
-    height: 100%;
+    height: 100vh;
     gap: 5rem;
     flex-direction: column;
     align-items: center;
@@ -74,6 +74,7 @@
 .sidebarMenu {
     border: 3px solid green;
     width: 100%;
+    padding: 5px;
 
     .sideBarList {
         display: flex;
@@ -94,6 +95,7 @@
 
     .iconMenu {
         font-size: 20px;
+        padding: 1px;
     }
 
     .smallText {
@@ -168,32 +170,6 @@
 /*==================MEDIA QUERIES===============*/
 
 @media screen and (max-width: 768px) {
-    .topSection {
-        .cardSection {
-            .rightCard {
-                text-align: center;
-                padding: 2rem 1rem;
-            }
-            h1 {
-                font-size: var(--h2FontSize);
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .topSection {
-        .cardSection {
-            .rightCard {
-                text-align: center;
-                padding: 2rem 1rem;
-            }
-            h1 {
-                font-size: var(--h2FontSize);
-            }
-        }
-    }
-
     .sidebarMenu {
         border: 3px solid green;
         width: 100%;
@@ -206,6 +182,10 @@
         }
 
         .sidebarMenu-link {
+            .iconMenu {
+                font-size: 18px;
+            }
+            font-size: 15px;
             .smallText {
                 display: none;
             }
