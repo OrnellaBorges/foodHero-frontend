@@ -12,11 +12,11 @@ import adminImage from "../../assets/users/albert4.png";
 const Account = () => {
     return (
         <>
-            <section className="accountContainer flex">
+            <section className="accountContainer">
                 {/* <h1>DASHBOARD PAGE</h1> */}
 
-                <div className="sidebarAccount">
-                    <div className="sidebarAccountHeader">
+                <div className="sidebarProfil">
+                    <div className="profilHeader">
                         <h1 className="titleAccount">My account</h1>
                     </div>
                     <div className="userContainer">
@@ -30,35 +30,38 @@ const Account = () => {
                     </div>
                 </div>
 
-                <div className="body">
-                    <ul className="userInfo">
-                        <li className="infoItem">
-                            <h3>email:</h3>
-                            <p>e=mc2@lycos.fr</p>
-                        </li>
-                        <li className="infoItem">
-                            <h3>address:</h3>
-                            <p>53 rue de la Relativité </p>
-                        </li>
+                <div>
+                    <div className="body">
+                        <ul className="userInfo">
+                            <li className="infoItem">
+                                <h3>email:</h3>
+                                <p>e=mc2@lycos.fr</p>
+                            </li>
+                            <li className="infoItem">
+                                <h3>address:</h3>
+                                <p>53 rue de la Relativité </p>
+                            </li>
 
-                        <li className="infoItem">
-                            <h3>City</h3>
-                            <p>Montcul</p>
-                        </li>
-                        <li className="infoItem">
-                            <h3>Zip</h3>
-                            <p>62468</p>
-                        </li>
-                        <li className="infoItem">
-                            <h3>Tel</h3>
-                            <p>0689547698</p>
-                        </li>
-                    </ul>
-                </div>
-                <div className="accountFooter">
-                    <button to="/EditAccount" className="editBtn">
-                        Edit
-                    </button>
+                            <li className="infoItem">
+                                <h3>City</h3>
+                                <p>Montcul</p>
+                            </li>
+                            <li className="infoItem">
+                                <h3>Zip</h3>
+                                <p>62468</p>
+                            </li>
+                            <li className="infoItem">
+                                <h3>Tel</h3>
+                                <p>0689547698</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <Link to="/EditAccount" /* className="accountFooter" */>
+                        <button className="editBtn">Edit</button>
+                    </Link>
+                    <Link to="/UserProfile" /* className="accountFooter" */>
+                        <button className="editBtn">UserProfile</button>
+                    </Link>
                 </div>
             </section>
         </>

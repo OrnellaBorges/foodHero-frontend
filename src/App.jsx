@@ -7,6 +7,9 @@ import Cookie from "./Components/Cookie/Cookie";
 import Orders from "./Components/Orders/Orders";
 import CreateAds from "./Components/FormsAds/CreateAds";
 import Account from "./Components/Account/Account";
+import UserProfile from "./Components/Account/UserProfile";
+
+import EditAccount from "./Components/Account/EditAccount";
 import OneAd from "./Components/OneAd/OneAd";
 
 // import React react dom
@@ -44,6 +47,22 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <Account />
+            </div>
+        ),
+    },
+    {
+        path: "/editaccount",
+        element: (
+            <div>
+                <EditAccount />
+            </div>
+        ),
+    },
+    {
+        path: "/userProfile",
+        element: (
+            <div>
+                <UserProfile />
             </div>
         ),
     },
