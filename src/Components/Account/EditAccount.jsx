@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { FontAwesomeIcon } from "@fortawesome/fontawesome-svg-core";
 
+import Button from "../Buttons/Button";
+
 //import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 //import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -94,9 +96,16 @@ function EditAccount() {
                 </div>
             </div>
             <div className="save-buttonContainer">
-                <button className="editButton">
-                    Enregistrer les modifications
-                </button>
+                <Button text="Enregistrer les modifications" />
+                <Link to="/dashboard">
+                    <Button text="Back to Dashboard" />
+                </Link>
+                <Link to="/userProfile">
+                    <Button text="Back to user profile" />
+                </Link>
+                <Link to="/account">
+                    <Button text="Back to account" />
+                </Link>
             </div>
         </div>
     );

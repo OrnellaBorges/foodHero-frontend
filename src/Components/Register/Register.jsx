@@ -59,7 +59,7 @@ const Register = () => {
 
     return (
         <>
-            <div className="RegisterPage flex ">
+            <div className="registerPage">
                 {/* <div className="container">
                 <div className="titleDiv">
                     <h1>Register PAGE</h1>
@@ -68,12 +68,12 @@ const Register = () => {
                     <img src="loginImage.jpg" alt="" />
                 </div> */}
 
-                <div className="form flex">
+                <div className="form">
                     <div className="hheader">
                         {/* <img src={Logo} alt="logo" /> */}
                         <h3>Welcome !</h3>
                     </div>
-                    <form className="formContainer  grid" name="loginForm">
+                    <form className="formContainer" name="loginForm">
                         {/* // INFO > En cas de soucis on fait un ternaire qui
                         renvoi le msg d'erreur en rouge si ça rentre dans le
                         catch de l'axios au dessus comme isError sera a true*/}
@@ -139,8 +139,7 @@ const Register = () => {
                         <a href="">Continue without register</a>
                     </form>
                 </div>
-
-                <div className="footerflex">
+                <div className="formFooter">
                     <span className="text">Have an account?</span>
                     <Link to={"/login"}>
                         <button className="btn">Sign in</button>

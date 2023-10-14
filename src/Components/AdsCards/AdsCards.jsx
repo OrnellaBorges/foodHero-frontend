@@ -76,7 +76,7 @@ const AdsCards = () => {
                         <div className="imgCard-container">
                             <img src={pasta} alt="" />
                         </div>
-                        <h4 className="cardTitle">Pâtes au poulets</h4>
+                        <h4 className="cardTitle">Pâtes au poulet</h4>
                         <h5>Prix : 3€</h5>
                         <p>Lille</p>
 

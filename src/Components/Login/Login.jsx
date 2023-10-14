@@ -4,15 +4,17 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Login.scss";
 
+// import components
+import Button from "../Buttons/Button";
+
 //import Icons
 /* import { FaUserShield } from "react-icons/fa";
-import { BsShieldLockFill } from "react-icons/bs";
-import { AiOutlineSwapRight } from "react-icons/ai"; */
+import { BsShieldLockFill } from "react-icons/bs"; */
 
 //import assets:
 //import logginMovie from "../../assets/movie.mp4";
 //import loginImage from "../../assets/loginImage.jpg";
-import Logo from "../../assets/logo2.png";
+//import Logo from "../../assets/logo2.png";
 
 const Login = () => {
     //USESTATES HOOK to store input // pour les input
@@ -22,7 +24,7 @@ const Login = () => {
     const [isError, setIsError] = useState(false);
 
     // Stockage de l'url
-    const apiUrl = "http://localhost:9600";
+    const apiUrl = "http://localhost:9600/";
 
     //ONCLICK Variable
     const loginUser = () => {
@@ -30,7 +32,7 @@ const Login = () => {
         // mais on a a besoin de la librairie axios alorq il faut installer axios
 
         // INFO > on peut creer les axios dans une autre page a part mais on le garde ici pour l'instant
-        Axios.post(`${apiUrl}/api/v1/user/login`, {
+        Axios.post(`${apiUrl}api/v1/user/login`, {
             loginUserName: loginUserName,
             loginPassword: loginPassword,
         })
@@ -60,27 +62,27 @@ const Login = () => {
     };
 
     return (
-        <div className="loginPage flex ">
+        <div className="loginPage ">
             <div className="hheader">
-                <div className="img-container">
+                {/* <div className="img-container">
                     <img src={Logo} alt="logo" />
-                </div>
+                </div> */}
                 <h3>Welcome Back!</h3>
             </div>
 
-            <div className="formContainer flex">
-                <form className="form grid" name="loginForm">
+            <div className="formContainer">
+                <form className="form" name="loginForm">
                     <span className="showMessage">
                         Login Status will go here
                     </span>
                     <div className="inputDiv">
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username">Email</label>
                         <div className="input flex">
                             {/* <FaUserShield className="icon" /> */}
                             <input
                                 type="text"
                                 id="username"
-                                placeholder="Enter Username"
+                                placeholder="Enter your email"
                                 onChange={(event) => {
                                     console.log("event", event);
                                     console.log("event", event.target.value);
@@ -108,26 +110,24 @@ const Login = () => {
                             />
                         </div>
                     </div>
-                    <button
-                        type="submit"
-                        className="btn flex"
-                        onClick={loginUser}
-                    >
-                        <span>Login</span>
-                        {/* <AiOutlineSwapRight className="icon" /> */}
+                    <Button text="Login" />
+                    <button type="submit" className="btnn" onClick={loginUser}>
+                        Login a remplacer qui fait l'axios
                     </button>
 
                     <a href="/dashboard">Dashboard</a>
 
-                    <span className="forgotPassword">Forgot your password</span>
+                    <span className="forgotPassword">
+                        Forgot your password?
+                    </span>
                     <a href="">Click here</a>
 
                     <a href="">Continue without login</a>
                 </form>
-                <div className="footer">
+                <div className="formFooter">
                     <span className="text">Create account</span>
                     <Link to={"/register"}>
-                        <button className="btn">Sign up</button>
+                        <Button text="Sign up" />
                     </Link>
                 </div>
             </div>

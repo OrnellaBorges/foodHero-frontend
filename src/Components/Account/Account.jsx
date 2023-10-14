@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//import components
+import Button from "../Buttons/Button";
+
 import "./account.scss";
 
 import adminImage from "../../assets/users/albert4.png";
@@ -57,10 +60,7 @@ const Account = () => {
                         </ul>
                     </div>
                     <Link to="/EditAccount" /* className="accountFooter" */>
-                        <button className="editBtn">Edit</button>
-                    </Link>
-                    <Link to="/UserProfile" /* className="accountFooter" */>
-                        <button className="editBtn">UserProfile</button>
+                        <Button text="Edit profile" />
                     </Link>
                 </div>
             </section>

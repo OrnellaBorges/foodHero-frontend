@@ -1,17 +1,18 @@
 .profile {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
     padding: 20px;
     border: 1px solid #ddd;
-    background-color: #f9f9f9;
+    background-color: orange;
     border-radius: 5px;
+    width: 80%;
+
+    height: 100vh;
+    margin: 0 auto;
 }
 
 .profilSidebar {
     flex: 1;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 2px solid green;
     border-radius: 5px;
     text-align: center;
 }
@@ -46,13 +47,14 @@ user-info h2 {
 
 .user-details h3 {
     padding: 1rem;
-    text-align: center;
+    text-align: left;
 }
 
 .infoContainer {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    text-align: left;
+    width: 100%;
     border-radius: 10px;
     background-color: rgb(188, 175, 250);
 }
@@ -67,11 +69,9 @@ user-info h2 {
     gap: 3px;
 }
 
-user-details {
+.infoContainer {
     flex: 2;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid red;
     border-radius: 5px;
 }
 
@@ -85,9 +85,12 @@ user-details p {
     color: #555;
 }
 
-footer {
-    text-align: center;
-    /*     margin: 20px 0; */
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(255, 255, 182);
 }
 
 footer button {
@@ -103,4 +106,9 @@ footer button {
 
 footer button:hover {
     background-color: #0056b3;
+}
+
+/* ============== MEDIA QUERIES ===========*/
+
+@media screen and (maw-width: 768px) {
 }

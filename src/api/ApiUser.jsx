@@ -1,10 +1,10 @@
 import axios from "axios";
 import { config } from "../config";
-const token = window.localStorage.getItem("b4y-token");
+//const token = window.localStorage.getItem("b4y-token");
 
-export function addOneUser(datas) {
+export function createOneUser(datas) {
     return axios
-        .post(`${config.api_url}/api/v1/user/save`, datas)
+        .post(`${config.api_url}api/v1/user/create`, datas)
         .then((res) => {
             return res.data;
         })
@@ -15,7 +15,7 @@ export function addOneUser(datas) {
 
 export function loginUser(datas) {
     return axios
-        .post(`${config.api_url}/api/v1/user/login`, datas)
+        .post(`${config.api_url}api/v1/user/login`, datas)
         .then((res) => {
             return res.data;
         })
@@ -26,7 +26,7 @@ export function loginUser(datas) {
 
 export function updateProfil(datas, id) {
     return axios
-        .put(`${config.api_url}/api/v1/user/update/${id}`, datas, {
+        .put(`${config.api_url}api/v1/user/update/${id}`, datas, {
             headers: { "x-access-token": token },
         })
         .then((res) => {
@@ -37,9 +37,9 @@ export function updateProfil(datas, id) {
         });
 }
 
-export function checkMyToken() {
+export function checkUserToken() {
     return axios
-        .get(`${config.api_url}/api/v1/user/checkToken`, {
+        .get(`${config.api_url}api/v1/user/checkToken`, {
             headers: { "x-access-token": token },
         })
         .then((res) => {

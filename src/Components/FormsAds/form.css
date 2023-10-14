@@ -17,8 +17,12 @@
     background-color: rgb(41, 104, 163);
 }
 
-.msg {
-    padding: 1rem;
+.hideMessage {
+    display: none;
+}
+
+.showMessage {
+    display: block;
     color: var(--whiteColor);
     background-color: red;
     border-radius: 3px;
@@ -43,7 +47,12 @@ textarea {
     width: 100%;
 }
 
-.formBtn {
+.formButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+/* .formBtn {
     padding: 0.8rem;
     background: transparent;
     border: 3px solid white;
@@ -63,4 +72,4 @@ textarea {
 .formBtn:hover {
     background: white;
     color: rgb(226, 184, 0);
-}
+} */

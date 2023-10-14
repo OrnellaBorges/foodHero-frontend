@@ -71,7 +71,7 @@ const Sidebar = () => {
                         <li className="listItem">
                             <Link to="/" className="sidebarMenu-link flex">
                                 <MdOutlineExplore className="iconMenu" />
-                                <span className="smallText">Explore</span>
+                                <span className="smallText">Exploree</span>
                             </Link>
                         </li>
                         <li className="listItem">
@@ -85,7 +85,7 @@ const Sidebar = () => {
                         </li>
                         <li className="listItem">
                             <Link
-                                to="/account"
+                                to="/userProfile"
                                 className="sidebarMenu-link flex"
                             >
                                 <LuUser2 className="iconMenu" />

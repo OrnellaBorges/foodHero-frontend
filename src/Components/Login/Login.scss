@@ -1,9 +1,8 @@
 .loginPage,
 .registerPage {
     background-color: rgba(246, 231, 203, 0.846);
-    width: 100%;
-    margin: auto;
-    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
     .hheader {
         text-align: center;
         padding: 1rem 0;
@@ -62,7 +61,7 @@
             width: 200px;
         }
 
-        .btn {
+        /* .btn {
             padding: 0.8rem;
             background: whitesmoke;
             border-radius: 10px;
@@ -81,7 +80,7 @@
                 background: var(--hoverColor);
                 color: var(--blackColor);
             }
-        }
+        } */
 
         .icon {
             font-size: 25px;
@@ -111,7 +110,7 @@
             }
         }
     }
-    .footer {
+    .formFooter {
         bottom: 10px;
         padding: 0 1rem;
         height: 20%;
