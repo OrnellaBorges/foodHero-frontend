@@ -1,5 +1,5 @@
 .card {
-    border: 1px solid #eaeaea;
+    border: 3px solid #eaeaea;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -59,4 +59,53 @@
 
 .icon-container i:hover {
     color: #007bff;
+}
+
+/* MAPED LIST STYLE*/
+/* Style du conteneur du composant AnnoncesList */
+.mappedList {
+    background-color: #007bff;
+    text-align: center;
+}
+.mappedList h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.testUl {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.testLi {
+    width: 30%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.titre {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.texte {
+    padding: 5px 0;
+}
+
+/* Style pour l'auteur */
+p:last-child {
+    font-weight: 600;
 }

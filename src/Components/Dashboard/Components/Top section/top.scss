@@ -82,7 +82,6 @@
     .cardSection {
         margin-top: 3rem;
         gap: 1rem;
-        background-color: red;
 
         .rightCard,
         .leftCard {
@@ -98,8 +97,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: auto;
-            padding: 2rem;
+
+            padding: 0.5rem;
             border-radius: 1rem;
             background-size: cover;
             overflow: hidden;
@@ -110,6 +109,15 @@
 
                 p {
                     color: white;
+                }
+                .statContainer {
+                    justify-content: center;
+                    align-items: center;
+                }
+                .statItems {
+                    .ammount {
+                        font-size: large;
+                    }
                 }
                 .topCardButtons {
                     gap: 1rem;
@@ -167,8 +175,8 @@
                 font-weight: 800;
             }
             p {
-                padding: 1rem;
-                color: var(--paleGreen);
+                padding: 0.5rem;
+                color: white;
                 font-weight: 500;
             }
 
@@ -205,9 +213,6 @@
                     }
 
                     .flex {
-                        gap: 1.5rem;
-                        font-weight: 500;
-                        color: var(--blackColor);
                         small {
                             font-size: var(--smallestFontSize);
                             display: block;
@@ -278,109 +283,113 @@
                         font-weight: 500;
                     }
                 }
+
+                .cardContent-right {
+                    text-align: center;
+                }
             }
         }
     }
-}
 
-/*===================MEDIA QUERIES================*/
+    /*===================MEDIA QUERIES================*/
 
-@media screen and (max-width: 990px) {
-    .cardSection {
-        flex-direction: column;
-
-        .rightCard,
-        .leftCard {
-            width: 100%;
-            flex-basis: 100%;
-        }
-        .leftCard {
-            align-self: flex-start;
-            height: 10px !important;
-
-            .helpCard {
-                display: block !important;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 918px) {
-    .headerSection {
-        .searchBar {
-            display: none;
-        }
-    }
-}
-
-@media screen and (max-width: 725px) {
-    .topSection {
+    @media screen and (max-width: 990px) {
         .cardSection {
+            flex-direction: column;
+
+            .rightCard,
             .leftCard {
-                display: flex;
-                flex-direction: column;
-                .main {
-                    width: 100%;
-                }
+                width: 100%;
+                flex-basis: 100%;
+            }
+            .leftCard {
+                align-self: flex-start;
+                height: 10px !important;
+
                 .helpCard {
-                    /* display: none; */
-                    padding: 0;
-                    margin-top: 1rem;
+                    display: block !important;
                 }
             }
         }
     }
-}
 
-@media screen and (max-width: 490px) {
-    .headerSection {
-        .adminDiv {
-            display: none;
-        }
-        .title {
-            text-align: center;
-            margin: auto;
+    @media screen and (max-width: 918px) {
+        .headerSection {
+            .searchBar {
+                display: none;
+            }
         }
     }
 
-    .cardSection {
-        .rightCard {
-            text-align: center;
+    @media screen and (max-width: 725px) {
+        .topSection {
+            .cardSection {
+                .leftCard {
+                    display: flex;
+                    flex-direction: column;
+                    .main {
+                        width: 100%;
+                    }
+                    .helpCard {
+                        /* display: none; */
+                        padding: 0;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
 
-            .buttons {
+    @media screen and (max-width: 490px) {
+        .headerSection {
+            .adminDiv {
+                display: none;
+            }
+            .title {
+                text-align: center;
                 margin: auto;
-                flex-direction: column;
             }
         }
-        .leftCard {
-            .main {
-                display: flex;
-                align-items: center;
-                justify-content: center;
 
-                .textDiv {
-                    margin: auto;
-                }
-                &::before {
-                    width: 100% !important;
-                }
-
-                .imgDiv {
-                    display: none;
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: 390px) {
-    .topSection {
         .cardSection {
             .rightCard {
                 text-align: center;
-                padding: 2rem 1rem;
+
+                .buttons {
+                    margin: auto;
+                    flex-direction: column;
+                }
             }
-            h1 {
-                font-size: var(--h2FontSize);
+            .leftCard {
+                .main {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .textDiv {
+                        margin: auto;
+                    }
+                    &::before {
+                        width: 100% !important;
+                    }
+
+                    .imgDiv {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 390px) {
+        .topSection {
+            .cardSection {
+                .rightCard {
+                    text-align: center;
+                    padding: 2rem 1rem;
+                }
+                h1 {
+                    font-size: var(--h2FontSize);
+                }
             }
         }
     }

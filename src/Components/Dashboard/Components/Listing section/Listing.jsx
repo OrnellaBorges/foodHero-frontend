@@ -18,6 +18,7 @@ const Listing = () => {
             </div>
 
             <Card />
+
             {/* <div className="secContainer flex">
                 <div className="singleCard">
                     <AiFillHeart className="singleCard-icon" />

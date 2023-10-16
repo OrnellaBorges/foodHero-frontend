@@ -14,6 +14,73 @@ import ronald from "../../../../assets/users/ronald.jpg";
 import andrea from "../../../../assets/users/andrea.jpg";
 
 const Activity = () => {
+    const ordersList = [
+        {
+            id: 1,
+            firstName: "Mikael",
+            lastname: "Borges",
+            pseudo: "Mika4ever",
+            image: { mikael },
+            date: "2023-10-01",
+            heure: "13:45",
+        },
+        {
+            id: 2,
+            firstName: "Mikael",
+            lastname: "Borges",
+            pseudo: "Mika4ever",
+            image: { mikael },
+            date: "2023-10-01",
+            heure: "13:45",
+        },
+        {
+            id: 3,
+            firstName: "Mikael",
+            lastname: "Borges",
+            pseudo: "Mika4ever",
+            image: { mikael },
+            date: "2023-10-01",
+            heure: "13:45",
+        },
+        {
+            id: 4,
+            firstName: "Mikael",
+            lastname: "Borges",
+            pseudo: "Mika4ever",
+            image: { mikael },
+            date: "2023-10-01",
+            heure: "13:45",
+        },
+        {
+            id: 5,
+            firstName: "Mikael",
+            lastname: "Borges",
+            pseudo: "Mika4ever",
+            image: { mikael },
+            date: "2023-10-01",
+            heure: "13:45",
+        },
+
+        {
+            id: 6,
+            firstName: "Mikael",
+            lastname: "Borges",
+            pseudo: "Mika4ever",
+            image: { mikael },
+            date: "2023-10-01",
+            heure: "13:45",
+        },
+        {
+            id: 7,
+            firstName: "Mikael",
+            lastname: "Borges",
+            pseudo: "Mika4ever",
+            image: { mikael },
+            date: "2023-10-01",
+            heure: "13:45",
+        },
+    ];
+
     return (
         <div className="activitySection">
             <div className="activityHeading flex">

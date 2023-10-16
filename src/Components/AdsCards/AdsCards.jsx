@@ -32,12 +32,6 @@ const AdsCards = () => {
                             <p>Lille</p>
                             <div className="buttonContainer flex">
                                 <Button text="More details" />
-                                {/* <button
-                                className="cardBtn"
-                                onClick={() => console.log("coucou")}
-                            >
-                                Voir l'annonce
-                            </button> */}
                             </div>
                         </div>
                     </li>
@@ -81,12 +75,6 @@ const AdsCards = () => {
                             <p>Lille</p>
                             <div className="buttonContainer flex">
                                 <Button text="More details" />
-                                {/* <button
-                                className="cardBtn"
-                                onClick={() => console.log("coucou")}
-                            >
-                                Voir l'annonce
-                            </button> */}
                             </div>
                         </div>
                     </li>
