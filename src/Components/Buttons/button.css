@@ -9,9 +9,19 @@
     transition: background-color 0.3s;
 }
 
-.submit {
+.submit-button-error {
     padding: 10px 20px;
     background-color: #b60000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-button-success {
+    padding: 10px 20px;
+    background-color: #0cec00;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -23,3 +33,37 @@
 .btn:hover {
     background-color: #0056b3;
 }
+
+/* @media screen and (max-width: 768px) {
+    .btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .submit-button-error {
+        padding: 10px 20px;
+        background-color: #b60000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .submit-button-success {
+        padding: 10px 20px;
+        background-color: #0cec00;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+} */

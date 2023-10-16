@@ -1,6 +1,7 @@
 import "./App.css";
 import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
 import Login from "./Components/Login/Login";
+import ForgotPassword from "./Components/ForgotPwd/ForgotPassword";
 import Register from "./Components/Register/Register";
 import Home from "./Components/HomePage/Home";
 import Cookie from "./Components/Cookie/Cookie";
@@ -39,6 +40,15 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <Register />
+            </div>
+        ),
+    },
+
+    {
+        path: "/forgotPassword",
+        element: (
+            <div>
+                <ForgotPassword />
             </div>
         ),
     },

@@ -1,0 +1,10 @@
+/* Style du conteneur de la carte */
+#map-container {
+    height: 400px;
+}
+
+/* Style de la carte Leaflet */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+}

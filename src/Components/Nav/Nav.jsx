@@ -17,6 +17,7 @@ import "./nav.css";
 const Nav = () => {
     //const [isActiv, setIsActiv] = useState("menuList");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLogged, setIsLogged] = useState(true);
 
     return (
         <nav className="navMenuDiv">
@@ -88,7 +89,6 @@ const Nav = () => {
                 </li>
                 <li className="navItem">
                     <Link to="/basket" className="navLink">
-                        {/* <BiSolidCart className="icon" /> */}
                         Panier
                     </Link>
                 </li>

@@ -3,7 +3,7 @@ import React from "react";
 //import Styles
 import "./Activity.scss";
 
-import SeeAllBtn from "../Buttons/SeeAll/SeeAllBtn";
+import SeeAllBtn from "../../../Buttons/SeeAll/SeeAllBtn";
 
 // import icons
 

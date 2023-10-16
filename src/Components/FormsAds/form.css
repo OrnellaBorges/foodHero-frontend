@@ -1,5 +1,7 @@
 .formContainer {
     background-color: rgb(242, 171, 4);
+    width: 80%;
+    margin: 0 auto;
 }
 .formHeader {
     height: 30px;
@@ -17,12 +19,7 @@
     background-color: rgb(41, 104, 163);
 }
 
-.hideMessage {
-    display: none;
-}
-
-.showMessage {
-    display: block;
+.errorMsg {
     color: var(--whiteColor);
     background-color: red;
     border-radius: 3px;

@@ -20,15 +20,14 @@
         }
     }
     .formContainer {
-        background-color: yellow;
-        .form {
+        .logForm {
             border: 3px solid;
             flex-basis: 50%;
             margin: auto;
             display: flex;
             flex-direction: column;
             gap: 1.5;
-            transform: translateY(-1rem);
+            /* transform: translateY(-1rem); */
         }
 
         .showMessage {
@@ -82,46 +81,50 @@
             }
         } */
 
-        .icon {
+        /*         .icon {
             font-size: 25px;
-            transition: 0.3s ease;
+            transition: 0.3s ease; */
 
-            &:hover {
+        /*             &:hover {
                 background: var(--hoverColor);
                 color: var(--blackColor);
 
                 icon {
                     color: var(--blackColor);
                     transition: translateX(5px);
-                }
-            }
-        }
+                } */
+    }
+}
+.login-linkContainer {
+    background-color: pink;
+    border: 3px solid yellow;
+    text-align: center;
 
-        .forgotPassword {
-            font-size: 13px;
-            color: var(--blackColor);
-            opacity: 0.7;
-            text-align: center;
+    .forgotPassword {
+        font-size: 13px;
+        color: var(--blackColor);
+        opacity: 0.7;
+        text-align: center;
 
-            a {
-                text-decoration: underline;
-                cursor: pointer;
-                opacity: 1;
-            }
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+            opacity: 1;
         }
     }
-    .formFooter {
-        bottom: 10px;
-        padding: 0 1rem;
-        height: 20%;
-        background-color: rgb(207, 135, 3);
-        left: 10px;
-        right: 0;
-        justify-content: space-beetween;
-        backdrop-filter: blur(1px);
+}
 
-        .text {
-            color: var(--whiteColor);
-        }
+.loginFooter {
+    bottom: 10px;
+    padding: 0 1rem;
+    height: 20%;
+    background-color: rgb(207, 135, 3);
+    left: 10px;
+    right: 0;
+    justify-content: space-beetween;
+    backdrop-filter: blur(1px);
+
+    .text {
+        color: var(--whiteColor);
     }
 }

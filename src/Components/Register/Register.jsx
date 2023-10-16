@@ -68,7 +68,7 @@ const Register = () => {
                     <img src="loginImage.jpg" alt="" />
                 </div> */}
 
-                <div className="form">
+                <div className="logform">
                     <div className="hheader">
                         {/* <img src={Logo} alt="logo" /> */}
                         <h3>Welcome !</h3>
@@ -83,7 +83,7 @@ const Register = () => {
                                 essayer ultérieurement.
                             </p>
                         ) : null}
-                        <div className="form">
+                        <div className="logForm">
                             <label htmlFor="email">Email</label>
                             <div className="input flex">
                                 {/* <MdMarkEmailRead className="icon" /> */}
@@ -97,7 +97,7 @@ const Register = () => {
                                 />
                             </div>
                         </div>
-                        <div className="form">
+                        <div className="logForm">
                             <label htmlFor="username">Username</label>
                             <div className="input flex">
                                 {/*  <FaUserShield className="icon" /> */}
@@ -125,22 +125,22 @@ const Register = () => {
                                 />
                             </div>
                         </div>
-                        <button
-                            type="submit"
-                            className="btn flex"
-                            onClick={createUser}
-                        >
-                            <span>Register</span>
-                            {/* <AiOutlineSwapRight className="icon" /> */}
-                        </button>
-                        {/* //INFO > Faire une route forgot dans le back */}
-                        <p className="forgotPassword">Forgot your password</p>
-                        <a href="">Click here</a>
-                        <a href="">Continue without register</a>
                     </form>
                 </div>
-                <div className="formFooter">
-                    <span className="text">Have an account?</span>
+
+                <div className="login-linkContainer">
+                    <button
+                        type="submit"
+                        className="btn flex"
+                        onClick={createUser}
+                    >
+                        <span>Register</span>
+                    </button>
+                    {/* //INFO > Faire une route forgot dans le back */}
+                    <Link to={"/"}>Or continue without register</Link>
+                </div>
+                <div className="loginFooter">
+                    <p className="text">Have an account?</p>
                     <Link to={"/login"}>
                         <button className="btn">Sign in</button>
                     </Link>

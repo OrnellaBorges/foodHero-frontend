@@ -44,7 +44,7 @@ export function OneAd(id) {
 }
 
 //CREER et SAUVEGARDER UNE ANNONCE
-export function createOneAdd(datas) {
+export function createOneAd(datas) {
     return axios
         .post(`${config.api_url}api/v1/ads/createOneAd`, datas, {
             headers: { "x-access-token": token },

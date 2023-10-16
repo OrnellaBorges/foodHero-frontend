@@ -64,6 +64,7 @@ const Login = () => {
     return (
         <div className="loginPage ">
             <div className="hheader">
+                <h1>header container</h1>
                 {/* <div className="img-container">
                     <img src={Logo} alt="logo" />
                 </div> */}
@@ -71,7 +72,8 @@ const Login = () => {
             </div>
 
             <div className="formContainer">
-                <form className="form" name="loginForm">
+                <form className="logform" name="loginForm">
+                    <h1>form container</h1>
                     <span className="showMessage">
                         Login Status will go here
                     </span>
@@ -110,21 +112,22 @@ const Login = () => {
                             />
                         </div>
                     </div>
+                </form>
+
+                <div className="login-linkContainer">
+                    <h1>link container</h1>
                     <Button text="Login" />
+
                     <button type="submit" className="btnn" onClick={loginUser}>
-                        Login a remplacer qui fait l'axios
+                        Login bouton a remplacer qui fait l'axios de requete
                     </button>
 
-                    <a href="/dashboard">Dashboard</a>
-
-                    <span className="forgotPassword">
-                        Forgot your password?
-                    </span>
-                    <a href="">Click here</a>
-
-                    <a href="">Continue without login</a>
-                </form>
-                <div className="formFooter">
+                    <Link to={"/dashboard"}>go to dashboard</Link>
+                    <Link to={"/forgotPassword"}>Forgot your password?</Link>
+                    <Link to={"/"}>Continue without login</Link>
+                </div>
+                <div className="loginFooter">
+                    <h1>footer container</h1>
                     <span className="text">Create account</span>
                     <Link to={"/register"}>
                         <Button text="Sign up" />

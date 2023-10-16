@@ -14,12 +14,6 @@ const Home = () => {
             <Hero />
             <AdsCards />
             <Footer />
-            {/*
-            <p className="test">je suis un test</p>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-            <a href="/basket">Basket</a> */}
         </div>
     );
 };
