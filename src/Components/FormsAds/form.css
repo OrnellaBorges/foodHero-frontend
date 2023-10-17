@@ -26,6 +26,13 @@
     text-align: center;
 }
 
+.sucessMsg {
+    color: var(--whiteColor);
+    background-color: rgb(16, 199, 25);
+    border-radius: 3px;
+    text-align: center;
+    padding: 5px;
+}
 label {
     color: var(--blackColor);
     font-weight: 400;

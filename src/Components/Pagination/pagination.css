@@ -1,0 +1,13 @@
+paginateContainer {
+    border: 3px solid white;
+    padding: 10px;
+    display: flex;
+}
+
+.paginateButtons {
+    color: red;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid transparent;
+}

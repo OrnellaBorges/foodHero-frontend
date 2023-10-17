@@ -75,13 +75,11 @@
 .testUl {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .testLi {
-    width: 30%;
+    width: 100%;
     margin: 10px 0;
     padding: 10px;
     background-color: #f7f7f7;
@@ -108,4 +106,22 @@ img {
 /* Style pour l'auteur */
 p:last-child {
     font-weight: 600;
+}
+
+/*============== MEDIA QUERIES =================*/
+
+@media screen and (min-width: 768px) {
+    .testUl {
+        display: flex;
+        gap: 1%;
+        flex-wrap: wrap;
+    }
+    .testLi {
+        margin-bottom: 0.5%;
+        width: 30%;
+    }
+
+    .imgCard-container {
+        max-width: 300px;
+    }
 }
