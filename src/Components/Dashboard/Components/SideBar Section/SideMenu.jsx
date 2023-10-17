@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //IMPORT ICONS FROM REACT ICONS
 import { GiHamburger } from "react-icons/gi";
@@ -27,21 +28,21 @@ const SideMenu = () => {
                 <h3 className="">QUICK MENU</h3>
                 <ul className="">
                     <li className="">
-                        <a href="#" className="">
+                        <Link href="#" className="">
                             <MdDeliveryDining className="" />
-                            <span className="">My Orders</span>
-                        </a>
+                            <p className="">My Orders</p>
+                        </Link>
                     </li>
                     <li className="">
                         <a href="#" className="">
                             <MdOutlineExplore className="" />
-                            <span className="">Explore</span>
+                            <p className="">Explore</p>
                         </a>
                     </li>
                     <li className="">
                         <a href="#" className="">
                             <BsTrophy className="" />
-                            <span className="">My ads</span>
+                            <p className="">My ads</p>
                         </a>
                     </li>
                     <li className="">

@@ -12,9 +12,9 @@ const Hero = () => {
                     <img src={hero} alt="hero" />
                 </div> */}
                 <div className="heroText-container">
-                    <span className="spanText">
+                    <p className="heroText">
                         LAAHBD KSKZKZB KSH NJDHHDVC KJ BDGHD .
-                    </span>
+                    </p>
 
                     <div className="heroTitle">
                         <strong>Lorem ipsum dolor sit amet consectetur.</strong>

@@ -134,7 +134,7 @@ const Register = () => {
                         className="btn flex"
                         onClick={createUser}
                     >
-                        <span>Register</span>
+                        <p>Register</p>
                     </button>
                     {/* //INFO > Faire une route forgot dans le back */}
                     <Link to={"/"}>Or continue without register</Link>

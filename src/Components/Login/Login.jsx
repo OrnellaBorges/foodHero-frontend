@@ -74,9 +74,7 @@ const Login = () => {
             <div className="formContainer">
                 <form className="logform" name="loginForm">
                     <h1>form container</h1>
-                    <span className="showMessage">
-                        Login Status will go here
-                    </span>
+                    <p className="showMessage">Login Status will go here</p>
                     <div className="inputDiv">
                         <label htmlFor="username">Email</label>
                         <div className="input flex">
@@ -128,7 +126,7 @@ const Login = () => {
                 </div>
                 <div className="loginFooter">
                     <h1>footer container</h1>
-                    <span className="text">Create account</span>
+                    <p className="text">Create account</p>
                     <Link to={"/register"}>
                         <Button text="Sign up" />
                     </Link>

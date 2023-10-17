@@ -3,7 +3,9 @@ import React, { useState } from "react";
 //ici on défragmente les props
 
 const Pagination = ({ currentPage, total, limit, onChangePage }) => {
-    const nbrPage = 55;
+    //ici on fait le calcul du nombre de page necessaire et j'utilise Math.ceil pour arrondir vers le haut le resultat du calcul que e stock dans la constante
+    const pagesCount = Math.ceil(total / limit);
+    console.log("pagesCount", pagesCount);
 
     return (
         <>

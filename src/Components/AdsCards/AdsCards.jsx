@@ -82,7 +82,50 @@ const AdsCards = () => {
             description: "Ceci est la description de l'annonce.",
             auteur: "Auteur 3",
         },
+        {
+            id: 27,
+            titre: "Annonce 27",
+            urlimage: "image3.jpg",
+            prix: 3.5,
+            date: "2023-10-03",
+            description: "Ceci est la description de l'annonce.",
+            auteur: "Auteur 3",
+        },
+        {
+            id: 28,
+            titre: "Annonce 28",
+            urlimage: "image3.jpg",
+            prix: 3.5,
+            date: "2023-10-03",
+            description: "Ceci est la description de l'annonce.",
+            auteur: "Auteur 3",
+        },
+        {
+            id: 29,
+            titre: "Annonce 29",
+            urlimage: "image3.jpg",
+            prix: 3.5,
+            date: "2023-10-03",
+            description: "Ceci est la description de l'annonce.",
+            auteur: "Auteur 3",
+        },
+        {
+            id: 30,
+            titre: "Annonce 30",
+            urlimage: "image3.jpg",
+            prix: 3.5,
+            date: "2023-10-03",
+            description: "Ceci est la description de l'annonce.",
+            auteur: "Auteur 3",
+        },
     ];
+
+    //ici on recup le nombre total d'annonce et on stock dans la constante total
+    const total = 500;
+
+    // on met ici la limite du nombre d'elements qu'on veut voir à l'ecran
+    const limit = 20;
+
     return (
         <>
             <div className="cards-container">
@@ -181,7 +224,7 @@ const AdsCards = () => {
 
                 <div className="mappedList">
                     <h2>
-                        Liste d'Annonces mappé de la plus récente a la plus
+                        Liste d'Annonces mappé de la plus récente à la plus
                         ancienne
                     </h2>
                     <ul className="testUl">
@@ -212,8 +255,8 @@ const AdsCards = () => {
                     */}
                     <Pagination
                         currentPage={currentPage}
-                        total={30}
-                        limit={20}
+                        total={total}
+                        limit={limit}
                         onChangePage={(page) => setCurrentPage(page)}
                     />
                 </div>

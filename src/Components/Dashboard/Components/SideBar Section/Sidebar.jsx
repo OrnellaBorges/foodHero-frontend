@@ -56,7 +56,7 @@ const Sidebar = () => {
                         <li className="listItem flex">
                             <Link to="/" className="sidebarMenu-link flex">
                                 <BiSolidHome className="iconMenu" />
-                                <span className="smallText">Home</span>
+                                <p className="smallText">Home</p>
                             </Link>
                         </li>
                         <li className="listItem">
@@ -65,13 +65,13 @@ const Sidebar = () => {
                                 className="sidebarMenu-link flex"
                             >
                                 <MdDeliveryDining className="iconMenu" />
-                                <span className="smallText">My Orders</span>
+                                <p className="smallText">My Orders</p>
                             </Link>
                         </li>
                         <li className="listItem">
                             <Link to="/" className="sidebarMenu-link flex">
                                 <MdOutlineExplore className="iconMenu" />
-                                <span className="smallText">Exploree</span>
+                                <p className="smallText">Exploree</p>
                             </Link>
                         </li>
                         <li className="listItem">
@@ -80,7 +80,7 @@ const Sidebar = () => {
                                 className="sidebarMenu-link flex"
                             >
                                 <BsTrophy className="iconMenu" />
-                                <span className="smallText">My ads</span>
+                                <p className="smallText">My ads</p>
                             </Link>
                         </li>
                         <li className="listItem">
@@ -89,7 +89,7 @@ const Sidebar = () => {
                                 className="sidebarMenu-link flex"
                             >
                                 <LuUser2 className="iconMenu" />
-                                <span className="smallText">My account</span>
+                                <p className="smallText">My account</p>
                             </Link>
                         </li>
                     </ul>

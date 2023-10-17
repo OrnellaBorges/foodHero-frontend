@@ -91,7 +91,7 @@ const Activity = () => {
                 <div className="singleCustomer flex">
                     <img src={mikael} alt="customer image" />
                     <div className="customerDetails">
-                        <span className="name"> Ola Mikael</span>
+                        <p className="name"> Ola Mikael</p>
                         <small>Ordered a new recipe</small>
                     </div>
                     <div className="duration">2 min ago</div>
@@ -101,7 +101,7 @@ const Activity = () => {
                 <div className="singleCustomer flex">
                     <img src={ronald} alt="customer image" />
                     <div className="customerDetails">
-                        <span className="name"> Ola Mikael</span>
+                        <p className="name"> Ola Mikael</p>
                         <small>Ordered a new recipe</small>
                     </div>
                     <div className="duration">2 min ago</div>
@@ -111,7 +111,7 @@ const Activity = () => {
                 <div className="singleCustomer flex">
                     <img src={andrea} alt="customer image" />
                     <div className="customerDetails">
-                        <span className="name"> Ola Mikael</span>
+                        <p className="name"> Ola Mikael</p>
                         <small>Ordered a new recipe</small>
                     </div>
                     <div className="duration">2 min ago</div>
@@ -121,7 +121,7 @@ const Activity = () => {
                 <div className="singleCustomer flex">
                     <img src={gustavo} alt="customer image" />
                     <div className="customerDetails">
-                        <span className="name"> Ola Mikael</span>
+                        <p className="name"> Ola Mikael</p>
                         <small>Ordered a new recipe</small>
                     </div>
                     <div className="duration">2 min ago</div>
