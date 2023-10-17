@@ -103,7 +103,7 @@ function Card(props) {
                 </div> */}
                 </div>
             </ul>
-            <div className="mappedList">
+            <div className="mappedList-container">
                 <h2>Liste d'Annonces mappé</h2>
                 <ul className="testUl">
                     {/* .map pour chaque annonce tu retournes un li */}
@@ -118,6 +118,7 @@ function Card(props) {
                             <p className="texte">Date : {annonce.date}</p>
                             <p className="texte">{annonce.description}</p>
                             <p className="texte">Auteur : {annonce.auteur}</p>
+                            <Button text="More details" />
                         </li>
                     ))}
                 </ul>
