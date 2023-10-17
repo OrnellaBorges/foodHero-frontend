@@ -19,8 +19,13 @@ const Pagination = ({ currentPage, total, limit, onPageChange }) => {
     console.log("pagesCount", pagesCount);
 
     return (
-        <>
-            <ul className="paginateContainer">
+        <div className="paginateContainer">
+            {/* au click sur previous il faut faire currentPage - 1*/}
+            <button className="paginateButtons">Previous</button>
+
+            {/*Entre les deux boutons il faut mapper sur la liste du nombre de page s*/}
+
+            <ul className="pagination">
                 {pages.map((page) => (
                     <PaginationItem
                         page={page}
@@ -29,15 +34,10 @@ const Pagination = ({ currentPage, total, limit, onPageChange }) => {
                         onePageChange={onPageChange}
                     />
                 ))}
-                {/* au click sur previous il faut faire currentPage - 1*/}
-                <button className="paginateButtons">Previous</button>
-
-                {/*Entre les deux boutons il faut mapper sur la liste du nombre de page s*/}
-
-                {/* au click sur next il faut faire currentPage + 1*/}
-                <button className="paginateButtons">Next</button>
             </ul>
-        </>
+            {/* au click sur next il faut faire currentPage + 1*/}
+            <button className="paginateButtons">Next</button>
+        </div>
     );
 };
 

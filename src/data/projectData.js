@@ -9,7 +9,7 @@ import IMG6 from '../assets/portfolio6.jpg' */
 //import FoodHero from "../assets/fh.png";
 //import Sushi from '../assets/sushi.png'
 
-export const userData = [
+/* export const userData = [
     {
         id: 1,
         image: SASS,
@@ -17,4 +17,4 @@ export const userData = [
         github: "https://github.com/OrnellaBorges",
         demo: '"https://dribbble.com/Alien_pixels',
     },
-];
+]; */

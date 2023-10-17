@@ -6,17 +6,17 @@ import Body from "../BodySection/Body";
 import "./dashboard.scss";
 import "../../../../index.scss";
 import Sidebar from "../SideBar Section/Sidebar";
+import Footer from "../../../Footer/Footer";
 
 const Dashboard = () => {
     return (
         <>
-            <div className="dashboard flex">
+            <div className="dashboard">
                 <div className="dashboardContainer flex">
-                    {/* <h1>DASHBOARD PAGE</h1> */}
                     <Sidebar />
                     <Body />
-                    {/* <a href="/">Log Out</a> */}
                 </div>
+                <Footer />
             </div>
         </>
     );

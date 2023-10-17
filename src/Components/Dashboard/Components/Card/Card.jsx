@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css"; // Assurez-vous d'ajouter un fichier CSS pour le style
 
 import testImage from "../../../../assets/food/riz.jpg";
 import Button from "../../../Buttons/Button";
+import Pagination from "../../../Pagination/Pagination";
 
 function Card(props) {
+    const [currentPage, setCurrentPage] =
+        useState(
+            1
+        ); /* par defaut on initialise la current page a la page 1 qu'on stock dans un state */
+    //ici on recup le nombre total d'annonce et on stock dans la constante total
+    const total = 500;
+
+    // on met ici la limite du nombre d'elements qu'on veut voir à l'ecran
+    const limit = 20;
+
     const annonces = [
         {
             id: 1,
@@ -122,6 +133,12 @@ function Card(props) {
                         </li>
                     ))}
                 </ul>
+                <Pagination
+                    currentPage={currentPage}
+                    total={total}
+                    limit={limit}
+                    onChangePage={(page) => setCurrentPage(page)}
+                />
             </div>
         </>
     );

@@ -3,7 +3,6 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "./Listing.scss";
 
 import SeeAllBtn from "../../../Buttons/SeeAll/SeeAllBtn";
-
 import Card from "../Card/Card";
 
 //import pasta from "../../../../assets/pasta.jpg";

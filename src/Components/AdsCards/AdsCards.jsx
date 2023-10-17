@@ -22,7 +22,11 @@ const AdsCards = () => {
         useState(
             1
         ); /* par defaut on initialise la current page a la page 1 qu'on stock dans un state */
+    //ici on recup le nombre total d'annonce et on stock dans la constante total
+    const total = 500;
 
+    // on met ici la limite du nombre d'elements qu'on veut voir à l'ecran
+    const limit = 20;
     {
         /* Recup toutes les annonces recentes et stocker dans annonces recentes*/
     }
@@ -119,12 +123,6 @@ const AdsCards = () => {
             auteur: "Auteur 3",
         },
     ];
-
-    //ici on recup le nombre total d'annonce et on stock dans la constante total
-    const total = 500;
-
-    // on met ici la limite du nombre d'elements qu'on veut voir à l'ecran
-    const limit = 20;
 
     return (
         <>
@@ -242,6 +240,7 @@ const AdsCards = () => {
                                 <p className="texte">
                                     Auteur : {annonce.auteur}
                                 </p>
+                                <Button text="More details" />
                             </li>
                         ))}
                     </ul>
