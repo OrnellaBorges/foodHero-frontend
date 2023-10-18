@@ -9,7 +9,8 @@ import Orders from "./Components/Orders/Orders";
 import CreateAds from "./Components/FormsAds/CreateAds";
 import Account from "./Components/Account/Account";
 import UserProfile from "./Components/Account/UserProfile";
-
+import Test from "./Components/SearchBar/TestComponent/Test";
+import Filter from "./Components/FilterComponent/FilterContainer";
 import EditAccount from "./Components/Account/EditAccount";
 import OneAd from "./Components/OneAd/OneAd";
 
@@ -27,6 +28,24 @@ const router = createBrowserRouter([
             </div>
         ),
     },
+
+    {
+        path: "/test",
+        element: (
+            <div>
+                <Test />
+            </div>
+        ),
+    },
+
+    {
+        path: "/filter",
+        element: (
+            <div>
+                <Filter />
+            </div>
+        ),
+    },
     {
         path: "/login",
         element: (
@@ -39,7 +58,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: (
             <div>
-                <Register />
+                <Register props="madataici" />
             </div>
         ),
     },

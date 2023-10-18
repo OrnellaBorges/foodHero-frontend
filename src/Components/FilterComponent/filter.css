@@ -1,0 +1,27 @@
+/* Styles.css */
+
+.app-container {
+    text-align: center;
+}
+
+.element-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.element-list li {
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.element-list li:hover {
+    background-color: #ddd;
+}
+
+/* Styles for the filtering menu */
+#categorie {
+    padding: 8px;
+    font-size: 16px;
+}
