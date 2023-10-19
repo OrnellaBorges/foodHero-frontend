@@ -17,6 +17,7 @@ const Body = () => {
             {/* <FilterIcon /> */}
             <div className="dashbordBody flex">
                 <Listing />
+
                 <Activity />
             </div>
         </div>

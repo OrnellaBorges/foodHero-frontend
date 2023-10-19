@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Card.css"; // Assurez-vous d'ajouter un fichier CSS pour le style
 
-import testImage from "../../../../assets/food/riz.jpg";
-import Button from "../../../Buttons/Button";
-import Pagination from "../../../Pagination/Pagination";
+//import testImage from "../../../assets/food/riz.jpg";
+import Button from "../../../../Buttons/Button";
+import Pagination from "../../../../Pagination/Pagination";
 
-function Card(props) {
+const Card = (props) => {
     const [currentPage, setCurrentPage] =
         useState(
             1
@@ -74,7 +74,7 @@ function Card(props) {
         },
     ];
 
-    const userAdList = {
+    /*  const userAdList = {
         title: "Test",
         id: "1",
         description: " 1 portion de 200 grames de paella réalisé hier soir. ",
@@ -82,40 +82,12 @@ function Card(props) {
         userPseudo: "Marie.S",
         date: "12 mai 2023",
         profileImage: { testImage },
-    };
+    }; */
 
     return (
         <>
-            <ul className="card">
-                <div className="image-container">
-                    <img
-                        src={testImage}
-                        alt="Image de la carte"
-                        className="card-image"
-                    />
-                </div>
-                <div className="card-details">
-                    <div className="card-content">
-                        <h2 className="card-title">{userAdList.title}</h2>
-                        <p className="card-price">{`${userAdList.price} €`}</p>
-                        <p className="card-description">{`${userAdList.description}`}</p>
-                        <p className="cardAuthor">{`${userAdList.userPseudo}`}</p>{" "}
-                        {/*ici on doit pouvoir consulter le profil du cuisinier qui a realisé le plat en cliquant sur son nom*/}
-                        <p className="date">{`${userAdList.date}`}</p>
-                    </div>
-
-                    <div className="buttonContainer">
-                        <Button text="More details" />
-                    </div>
-                    {/* <div className="icon-container">
-                    <i className="fas fa-heart"></i>
-                    <i className="fas fa-share"></i>
-                    <i className="fas fa-shopping-cart"></i>
-                </div> */}
-                </div>
-            </ul>
-            <div className="mappedList-container">
-                <h2>Liste d'Annonces mappé</h2>
+            <section className="mappedList-container">
+                <h2>Annonces enregistrées</h2>
                 <ul className="testUl">
                     {/* .map pour chaque annonce tu retournes un li */}
                     {annonces.slice(0, 6).map((annonce) => (
@@ -139,9 +111,40 @@ function Card(props) {
                     limit={limit}
                     onChangePage={(page) => setCurrentPage(page)}
                 />
-            </div>
+            </section>
         </>
     );
-}
+};
 
 export default Card;
+
+{
+    /* <ul className="card">
+                <div className="image-container">
+                    <img
+                        src={testImage}
+                        alt="Image de la carte"
+                        className="card-image"
+                    />
+                </div>
+                <div className="card-details">
+                    <div className="card-content">
+                        <h2 className="card-title">{userAdList.title}</h2>
+                        <p className="card-price">{`${userAdList.price} €`}</p>
+                        <p className="card-description">{`${userAdList.description}`}</p>
+                        <p className="cardAuthor">{`${userAdList.userPseudo}`}</p>{" "}
+                        ici on doit pouvoir consulter le profil du cuisinier qui a realisé le plat en cliquant sur son nom
+                        <p className="date">{`${userAdList.date}`}</p>
+                    </div>
+
+                    <div className="buttonContainer">
+                        <Button text="More details" />
+                    </div>
+                    <div className="icon-container">
+                    <i className="fas fa-heart"></i>
+                    <i className="fas fa-share"></i>
+                    <i className="fas fa-shopping-cart"></i>
+                </div>
+                </div>
+            </ul> */
+}

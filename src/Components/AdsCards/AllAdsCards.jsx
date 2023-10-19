@@ -3,7 +3,7 @@ import React, { useState } from "react";
 //import { useEffect } from "react";
 //import axios from "axios";
 
-import "./adsCards.css";
+import "./AllAdsCards.css";
 
 import Button from "../Buttons/Button";
 import Pagination from "../Pagination/Pagination";
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 //import icons
 
-const AdsCards = () => {
+const AllAdsCards = () => {
     /* STATES  */
     const [currentPage, setCurrentPage] =
         useState(
@@ -126,101 +126,13 @@ const AdsCards = () => {
 
     return (
         <>
-            <div className="cards-container">
+            <section className="cards-container">
                 <h1 className="mainTitle">Toutes les annonces</h1>
-
-                <ul className="cards-list">
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={pasta} alt="" />
-                        </div>
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Pâtes au poulet</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={lasagnes} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Lasagnes végé</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={cookie} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Cookies</h4>
-                            <h5>Prix : 3.5€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={pasta} alt="" />
-                        </div>
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Pâtes au poulet</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={lasagnes} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Lasagnes végé</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={cookie} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Cookies</h4>
-                            <h5>Prix : 3.5€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-                </ul>
 
                 {/* Mapper la liste annoncesRecente
                 la liste doit faire apparaitre toutes les annonces les plus recentes dans le temps et 10 max */}
 
-                <div className="mappedList">
+                <section className="mappedList">
                     <h2>
                         Liste d'Annonces mappé de la plus récente à la plus
                         ancienne
@@ -258,10 +170,100 @@ const AdsCards = () => {
                         limit={limit}
                         onChangePage={(page) => setCurrentPage(page)}
                     />
-                </div>
-            </div>
+                </section>
+            </section>
         </>
     );
 };
 
-export default AdsCards;
+export default AllAdsCards;
+
+{
+    /* <ul className="cards-list">
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img className="imageZoom" src={pasta} alt="" />
+                        </div>
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Pâtes au poulet</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={lasagnes} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Lasagnes végé</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={cookie} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Cookies</h4>
+                            <h5>Prix : 3.5€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={pasta} alt="" />
+                        </div>
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Pâtes au poulet</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <MoreDetailButton text="More details" />
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={lasagnes} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Lasagnes végé</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={cookie} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Cookies</h4>
+                            <h5>Prix : 3.5€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+                </ul> */
+}

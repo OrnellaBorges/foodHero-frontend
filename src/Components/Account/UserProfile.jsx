@@ -29,9 +29,9 @@ function UserProfile() {
         setPhone(user.infos.phone)
     }, [user]) */
 
-    const [data, setData] = useState(null);
+    //const [data, setData] = useState(null);
     // USEEFFCT POUR RECUP LES INFOS DUN USER
-    useEffect(() => {
+    /* useEffect(() => {
         // Utilisation du hook useEffect pour effectuer une requête Axios GET
         axios
             .get("https://api.example.com/data")
@@ -42,7 +42,7 @@ function UserProfile() {
             .catch((error) => {
                 console.error("Erreur lors de la requête GET :", error);
             });
-    }, []);
+    }, []); */
 
     return (
         <>

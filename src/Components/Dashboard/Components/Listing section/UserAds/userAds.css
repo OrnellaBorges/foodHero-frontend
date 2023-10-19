@@ -6,7 +6,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
     } */
-.cards {
+.userCards-container {
     border: 10px solid green;
     width: 90%;
     margin: 0 auto;

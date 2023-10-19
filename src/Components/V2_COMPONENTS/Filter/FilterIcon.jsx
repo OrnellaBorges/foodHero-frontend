@@ -1,21 +1,22 @@
 import React from "react";
-
+// FROM CHATGPT
 import "./filterIcon.css";
 
 const FilterIcon = () => {
     return (
         <>
-            <div class="filter-container">
-                <div class="filter-option">
+            {/*il faut mapper une liste d'icon pour generer des Li autant de fois qu'il y a d'icone de filtrage*/}
+            <ul class="filterIcon-container">
+                <li class="filterIcon-option">
                     <i class="fas fa-filter"></i>
-                </div>
-                <div class="filter-option">
+                </li>
+                <li class="filter-option">
                     <i class="fas fa-sort-amount-up"></i>
-                </div>
-                <div class="filter-option">
+                </li>
+                <li class="filter-option">
                     <i class="fas fa-sort-amount-down"></i>
-                </div>
-            </div>
+                </li>
+            </ul>
         </>
     );
 };

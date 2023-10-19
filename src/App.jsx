@@ -9,9 +9,10 @@ import Orders from "./Components/Orders/Orders";
 import CreateAds from "./Components/FormsAds/CreateAds";
 import Account from "./Components/Account/Account";
 import UserProfile from "./Components/Account/UserProfile";
-import Test from "./Components/SearchBar/TestComponent/Test";
+import SearchBar from "./Components/SearchBar/SearchBarContainer";
 import Filter from "./Components/FilterComponent/FilterContainer";
 import EditAccount from "./Components/Account/EditAccount";
+import EditAd from "./Components/FormsAds/EditAd";
 import OneAd from "./Components/OneAd/OneAd";
 
 // import React react dom
@@ -30,10 +31,10 @@ const router = createBrowserRouter([
     },
 
     {
-        path: "/test",
+        path: "/searchBar",
         element: (
             <div>
-                <Test />
+                <SearchBar />
             </div>
         ),
     },
@@ -84,6 +85,14 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <EditAccount />
+            </div>
+        ),
+    },
+    {
+        path: "/editad",
+        element: (
+            <div>
+                <EditAd />
             </div>
         ),
     },

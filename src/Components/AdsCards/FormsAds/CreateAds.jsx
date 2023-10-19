@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 // import components
-import SubmitButton from "../Buttons/submitButton";
+import SubmitButton from "../../Buttons/submitButton";
 
 import "./form.css";
 //import { createOneAd } from "../../api/ApiAds";

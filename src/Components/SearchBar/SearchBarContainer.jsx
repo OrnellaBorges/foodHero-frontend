@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import SearchBar from "./SearchBar";
-import ImageList from "../../ImageList/ImageList";
+import ImageList from "./ImageList";
 
 import "./test.css";
 

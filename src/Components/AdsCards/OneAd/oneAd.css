@@ -9,10 +9,10 @@
 } */
 
 .adInfo {
-    border-radius: 10px;
     background-color: rgb(205, 0, 250);
     color: rgb(228, 199, 248);
 }
+
 .adInfo .jesaispas p {
     padding: 1rem;
 }
@@ -40,7 +40,7 @@
     padding: 0.5rem;
 }
 
-img {
+.imgAd {
     max-width: 100%;
 }
 

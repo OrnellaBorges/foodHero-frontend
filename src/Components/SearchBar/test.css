@@ -54,14 +54,18 @@ h1 {
     cursor: pointer;
 }
 
-img {
+.imageCard-container {
+    width: 100%;
+}
+
+.searchImg {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     transition: transform 0.2s;
 }
 
-img:hover {
+.searchImg:hover {
     transform: scale(1.1);
 }
 

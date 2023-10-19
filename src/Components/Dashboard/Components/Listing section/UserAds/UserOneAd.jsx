@@ -5,6 +5,8 @@ import React from "react";
 
 import "./oneAd.css";
 
+import Button from "../../../../Buttons/Button";
+
 //import assets
 import pasta from "../../assets/pasta.jpg";
 
@@ -17,8 +19,13 @@ const OneAd = () => {
                 {/* Mapper la liste apres le axios.get por recuperer toute les annonces et le mettre dans un useeffect */}
 
                 <div className="containerInfo">
-                    <div className="imgCard-container">
-                        <img src={pasta} alt="" />
+                    <div className="imageCard-container">
+                        <img
+                            className="
+                        imgAd"
+                            src={pasta}
+                            alt="pates au poulet et aux champignons"
+                        />
                     </div>
 
                     <div className="adInfo">
@@ -57,12 +64,14 @@ const OneAd = () => {
                         </div>
 
                         <div className="buttonContainer flex">
-                            <button
+                            <EditButton text="modifier mon annonce" />
+                            <DeleteButton text="supprimer mon annonce" />
+                            {/* <button
                                 className="addCart-btn"
                                 onClick={() => console.log("coucou")}
                             >
                                 Reserver le plat
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>

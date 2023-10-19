@@ -41,10 +41,14 @@ const Top = () => {
                         <h1>Au four et au moulin.</h1>
                         <p>Faites bouillir la marmite!.</p>
                         <div className="topCardButtons flex">
-                            <button className="fillBtn">Explore</button>
+                            <Link to="/">
+                                <button className="fillBtn">Explore</button>
+                            </Link>
+                            {/* <Link to="/">
                             <button className="transparentBtn">
                                 Top Sellers
                             </button>
+                            </Link> */}
                         </div>
                     </div>
 

@@ -1,13 +1,11 @@
 .dashboard {
     width: 90%;
-    background-color: red;
     justify-content: center;
     margin: auto;
     height: 100vh;
 
     .dashboardContainer {
         width: 100%;
-        border-radius: 10px;
         overflow: hidden;
         background-color: var(--inputColor);
     }
