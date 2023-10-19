@@ -6,7 +6,7 @@ import React from "react";
 // ICI ON A UN COMPOSANT QUI FAIT
 //APPARAITRE TOUTES LES ANNONCES D'un USER sur sa page donc toutes les annonces dont l'userId est === id de l'user connecté
 
-import "./adsCards.css";
+import "./userAds.css";
 
 import MoreDetailButton from "../../../../Buttons/MoreDetailButton";
 
@@ -15,7 +15,7 @@ import MoreDetailButton from "../../../../Buttons/MoreDetailButton";
 import lasagnes from "../../assets/lasagna1.jpeg";
 import cookie from "../../assets/cookie3.jpeg"; */
 
-//import icons
+import image from "../../../../../assets/food/riz.jpg";
 
 const UserAds = () => {
     // ici on va faire un fetch
@@ -27,7 +27,7 @@ const UserAds = () => {
             description: "description du plat",
             date: "12/03/2023",
             ville: "LILLE",
-            recipeImage: { recipeImage },
+            image: { image },
             userId: 3,
             userPseudo: "mika4ever",
         },
@@ -38,38 +38,29 @@ const UserAds = () => {
             description: "description du plat",
             date: "12/03/2023",
             ville: "LILLE",
-            image: { recipeImage },
+            image: { image },
             userId: 3,
             userPseudo: "mika4ever",
         },
     ];
     return (
         <>
-            {/* // si l'utilisateur a >= 1 annonces on affiche les annonces sinon il a === 0 alors on affiche un message sur la page:
-         "vous n'avez pas d'annonce" */}
-
-            <section className="userCards">
-                {/* Mapper la liste apres le axios.get pour recuperer toute les annonces et le mettre dans un useeffect */}
-
-                <h2>Annonces de l'user mappé</h2>
-                <p>dans l'ordre de plus ancienne a plus récente</p>
-                <ul className="userCards-container">
-                    {/* .map pour chaque annonce tu retournes un li avec les datas dedans*/}
+            <section className="mappedList-container">
+                <h2>Annonces de l'user</h2>
+                <ul className="testUl">
+                    {/* .map pour chaque annonce tu retournes un li */}
                     {recupUserAnnonces.slice(0, 6).map((annonce) => (
-                        <li key={annonce.id} className="userCards-item">
-                            <img src={annonce.image} alt={annonce.title} />
-                            <h3 className="userCard-title">{annonce.title}</h3>
-                            <p className="userCard-price">
-                                Prix : {annonce.price} €
+                        <li key={annonce.id} className="testLi">
+                            <img src={annonce.image} alt={annonce.titre} />
+                            <h3 className="titre">{annonce.titre}</h3>
+                            <p className="texte">
+                                Prix : {annonce.prix} €
                             </p>{" "}
                             {/* ici il n'y a pas d'interpolation ???? */}
                             <p className="texte">Date : {annonce.date}</p>
                             <p className="texte">{annonce.description}</p>
-                            <p className="texte">
-                                Auteur : {annonce.userPseudo}
-                            </p>
-                            <MoreDetailButton text="More details" />
-                            {/* // ici ce bouton affiche l'annonce de l'user qu'il peut modifier ou compléter */}
+                            <p className="texte">Auteur : {annonce.auteur}</p>
+                            <Button text="More details" />
                         </li>
                     ))}
                 </ul>
@@ -80,8 +71,39 @@ const UserAds = () => {
 
 export default UserAds;
 
-{
-    /* <div className="cardsContainer">
+/* <>
+            // si l'utilisateur a >= 1 annonces on affiche les annonces sinon il a === 0 alors on affiche un message sur la page:
+         "vous n'avez pas d'annonce"
+
+            <section className="userCards">
+                 Mapper la liste apres le axios.get pour recuperer toute les annonces et le mettre dans un useeffect
+
+                <h2>Annonces de l'user mappé</h2>
+                <p>dans l'ordre de plus ancienne a plus récente</p>
+                <ul className="userCards-container">
+                    .map pour chaque annonce tu retournes un li avec les datas dedans
+                    {recupUserAnnonces.slice(0, 6).map((annonce) => (
+                        <li key={annonce.id} className="userCards-item">
+                            <img src={annonce.image} alt={annonce.title} />
+                            <h3 className="userCard-title">{annonce.title}</h3>
+                            <p className="userCard-price">
+                                Prix : {annonce.price} €
+                            </p>{" "}
+                             ici il n'y a pas d'interpolation ????
+                            <p className="texte">Date : {annonce.date}</p>
+                            <p className="texte">{annonce.description}</p>
+                            <p className="texte">
+                                Auteur : {annonce.userPseudo}
+                            </p>
+                            <MoreDetailButton text="More details" />
+                             // ici ce bouton affiche l'annonce de l'user qu'il peut modifier ou compléter 
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        </> */
+
+/* <div className="cardsContainer">
                     <div className="singleCard">
                         <div className="imgCard-container">
                             <img src={pasta} alt="" />
@@ -134,4 +156,3 @@ export default UserAds;
                         <h4 className="textTitle">Cookies</h4>
                     </div> 
                 </div>*/
-}

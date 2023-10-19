@@ -1,18 +1,38 @@
-import React from "react";
+import { useEffect, useState } from "react";
 //import { useState } from "react";
-//import { useEffect } from "react";
+
 //import axios from "axios";
+
+import { useParams } from "react-router-dom";
 
 import "./oneAd.css";
 
 import Button from "../../Buttons/Button";
 
 //import assets
-import pasta from "../../assets/pasta.jpg";
+import pasta from "../../../assets/pasta.jpg";
 
 //import icons
+import { oneAd } from "../../../api/ApiAds";
 
 const OneAd = () => {
+    //ici on stock grace a useParams l'id de l'annonce qui a été mis dans le link de allAdsCard
+    const { adId } = useParams();
+    console.log("adId", adId);
+
+    const [ad, setAd] = useState([]);
+
+    useEffect(() => {
+        oneAd(adId)
+            .then((res) => {
+                console.log("res.data.oneAd[0]", res.data.oneAd[0]);
+                setAd(res.data.oneAd[0]);
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
+    }, []);
+
     return (
         <>
             <div className="oneAd">
@@ -29,24 +49,19 @@ const OneAd = () => {
                     </div>
 
                     <div className="adInfo">
-                        <h4 className="adTitle">Pene au poulet</h4>
+                        <h4 className="adTitle">{ad.title}</h4>
                         <div className="jesaispas">
-                            <p className="adDescription">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Laboriosam veritatis dolores
-                                praesentium corrupti eius? Neque ipsam maiores
-                                nulla quod sed.
-                            </p>
-                            <p className="price">prix: 3€</p>
+                            <p className="adDescription">{ad.description}</p>
+                            <p className="price">prix: {ad.price} €</p>
 
-                            <p className="cooker">
+                            {/* <p className="cooker">
                                 Cuisiné par : <a href="">Marie.S</a>
-                            </p>
+                            </p> */}
                             <a href="">Contacter</a>
                         </div>
 
                         {/*Mapper la liste pour generer des li*/}
-                        <div className="ingredientContainer">
+                        {/*  <div className="ingredientContainer">
                             <h5>Ingredients:</h5>
                             <ul className=" list ingredientsList flex">
                                 <li className="ingredient">Pene</li>
@@ -61,7 +76,7 @@ const OneAd = () => {
 
                                 <li className="ingredient">poivre</li>
                             </ul>
-                        </div>
+                        </div> */}
 
                         <div className="buttonContainer flex">
                             <Button text="Reserver le plat" />

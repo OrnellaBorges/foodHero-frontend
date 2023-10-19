@@ -30,17 +30,14 @@ function UserProfile() {
     }, [user]) */
 
     //const [data, setData] = useState(null);
-    // USEEFFCT POUR RECUP LES INFOS DUN USER
     /* useEffect(() => {
-        // Utilisation du hook useEffect pour effectuer une requête Axios GET
-        axios
-            .get("https://api.example.com/data")
-            .then((response) => {
-                // Mise à jour de l'état local avec les données reçues
-                setData(response.data);
+        oneUser(adId)
+            .then((res) => {
+                console.log("res.data.oneAd[0]", res.data.oneAd[0]);
+                setAd(res.data.oneAd[0]);
             })
-            .catch((error) => {
-                console.error("Erreur lors de la requête GET :", error);
+            .catch((err) => {
+                console.log("err", err);
             });
     }, []); */
 

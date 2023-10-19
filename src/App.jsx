@@ -6,14 +6,14 @@ import Register from "./Components/Register/Register";
 import Home from "./Components/HomePage/Home";
 import Cookie from "./Components/Cookie/Cookie";
 import Orders from "./Components/Orders/Orders";
-import CreateAds from "./Components/FormsAds/CreateAds";
+import CreateAds from "./Components/AdsCards/FormsAds/CreateAds";
 import Account from "./Components/Account/Account";
 import UserProfile from "./Components/Account/UserProfile";
 import SearchBar from "./Components/SearchBar/SearchBarContainer";
 import Filter from "./Components/FilterComponent/FilterContainer";
 import EditAccount from "./Components/Account/EditAccount";
-import EditAd from "./Components/FormsAds/EditAd";
-import OneAd from "./Components/OneAd/OneAd";
+import EditAd from "./Components/AdsCards/FormsAds/EditAd";
+import OneAd from "./Components/AdsCards/OneAd/OneAd";
 
 // import React react dom
 
@@ -29,7 +29,6 @@ const router = createBrowserRouter([
             </div>
         ),
     },
-
     {
         path: "/searchBar",
         element: (
@@ -59,11 +58,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: (
             <div>
-                <Register props="madataici" />
+                <Register />
             </div>
         ),
     },
-
     {
         path: "/forgotPassword",
         element: (
@@ -113,7 +111,7 @@ const router = createBrowserRouter([
         ),
     },
     {
-        path: "/OneAd",
+        path: "/oneAd/:adId",
         element: (
             <div>
                 <OneAd />

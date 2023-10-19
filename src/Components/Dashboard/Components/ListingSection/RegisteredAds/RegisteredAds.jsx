@@ -5,7 +5,7 @@ import "./Card.css"; // Assurez-vous d'ajouter un fichier CSS pour le style
 import Button from "../../../../Buttons/Button";
 import Pagination from "../../../../Pagination/Pagination";
 
-const Card = (props) => {
+const RegisteredCards = (props) => {
     const [currentPage, setCurrentPage] =
         useState(
             1
@@ -20,7 +20,7 @@ const Card = (props) => {
         {
             id: 1,
             titre: "Annonce 1",
-            urlimage: "https://xxxxx.com",
+            urlimage: "url de l'image",
             prix: 100,
             date: "2023-10-01",
             description: "Ceci est la description de l'annonce 1.",
@@ -116,7 +116,7 @@ const Card = (props) => {
     );
 };
 
-export default Card;
+export default RegisteredCards;
 
 {
     /* <ul className="card">

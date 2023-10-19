@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Login.scss";
@@ -18,16 +17,16 @@ import { BsShieldLockFill } from "react-icons/bs"; */
 
 const Login = () => {
     //USESTATES HOOK to store input // pour les input
-    const [loginUserName, setLoginUserName] = useState("");
-    const [loginPassword, setLoginPassword] = useState("");
-
-    const [isError, setIsError] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [disabled, setDisabled] = useState(true); // au depart le bouton est desactivé donc en gris
+    const [isError, setIsError] = useState(null);
 
     // Stockage de l'url
     const apiUrl = "http://localhost:9600/";
 
     //ONCLICK Variable
-    const loginUser = () => {
+    /* const loginUser = () => {
         // ici on met une requete Ajax qui va permettre de faire appel a la route d'enregistrement d'un utilisateur
         // mais on a a besoin de la librairie axios alorq il faut installer axios
 
@@ -47,19 +46,21 @@ const Login = () => {
                 // lorsqu'il y aura un soucis celui- ci permettra de l'utiliser afin de renvoyer un composant d'avertissement à l'utilisateur afin d'avertur qu'il y a eu un soucis
                 setIsError(true);
             });
+    }; */
+
+    const onSubmitForm = (e) => {
+        e.preventDefault();
+        const data = {
+            email: e.target.email.value,
+            password: e.target.password.value,
+        };
+        console.log("data", data);
     };
 
-    const handleClick = () => {
-        axios
-            .get(`${apiUrl}/api/v1/user/test`)
-            .then((res) => {
-                console.log("succès");
-                console.log("res.data", res.data);
-            })
-            .catch(() => {
-                console.log("error");
-            });
-    };
+    useEffect(() => {
+        if (email !== "" && password !== "") setDisabled(false);
+        else setDisabled(true);
+    }, [email, password]);
 
     return (
         <div className="loginPage ">
@@ -72,22 +73,24 @@ const Login = () => {
             </div>
 
             <div className="formContainer">
-                <form className="logform" name="loginForm">
+                <form
+                    className="logform"
+                    name="loginForm"
+                    onSubmit={(e) => onSubmitForm(e)}
+                >
                     <h1>form container</h1>
                     <p className="showMessage">Login Status will go here</p>
                     <div className="inputDiv">
                         <label htmlFor="username">Email</label>
                         <div className="input flex">
-                            {/* <FaUserShield className="icon" /> */}
                             <input
                                 type="text"
-                                id="username"
+                                id="email"
+                                name="email"
                                 placeholder="Enter your email"
-                                onChange={(event) => {
-                                    console.log("event", event);
-                                    console.log("event", event.target.value);
-                                    setLoginUserName(event.target.value);
-                                }}
+                                onChange={(event) =>
+                                    setEmail(event.target.value)
+                                }
                             />
                         </div>
                     </div>
@@ -97,22 +100,27 @@ const Login = () => {
                             {/* <BsShieldLockFill className="icon" /> */}
                             <input
                                 type="text"
-                                id="passeword"
+                                id="password"
+                                name="password"
                                 placeholder="Enter Password"
                                 onChange={(e) => {
-                                    console.log(e);
-                                    console.log(
-                                        "e.target.value",
-                                        e.target.value
-                                    );
-                                    setLoginPassword(e.target.value);
+                                    setPassword(e.target.value);
                                 }}
                             />
                         </div>
                     </div>
+                    <button disabled={disabled} type="submit">
+                        {" "}
+                        Se connecter
+                    </button>
                 </form>
+                {isError && (
+                    <p style={{ color: "red" }}>
+                        Il y a eu un problème lors de la connexion
+                    </p>
+                )}
 
-                <div className="login-linkContainer">
+                {/* <div className="login-linkContainer">
                     <h1>link container</h1>
                     <Button text="Login" />
 
@@ -123,7 +131,7 @@ const Login = () => {
                     <Link to={"/dashboard"}>go to dashboard</Link>
                     <Link to={"/forgotPassword"}>Forgot your password?</Link>
                     <Link to={"/"}>Continue without login</Link>
-                </div>
+                </div> */}
                 <div className="loginFooter">
                     <h1>footer container</h1>
                     <p className="text">Create account</p>

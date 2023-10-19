@@ -83,7 +83,7 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className="navItem">
-                        <Link to="/account" className="navLink">
+                        <Link to="/userProfile" className="navLink">
                             <AiOutlineUser />
                             Mon compte
                         </Link>

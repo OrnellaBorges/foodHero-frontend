@@ -6,7 +6,7 @@ import Top from ".././Top section/Top";
 
 /* import FilterIcon from "../../Filter/FilterIcon"; */
 
-import Listing from "../Listing section/Listing";
+import Listing from "../ListingSection/Listing";
 
 import Activity from "../ActivitySection/Activity";
 

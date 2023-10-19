@@ -1,5 +1,5 @@
 import axios from "axios";
-import { config } from "../config";
+import { config } from "../../config";
 
 //ICI C'est un fichier spécifique qui regroupe uniquement des fonctions qui permettent de faire des requetes axios
 //on pourra faire appel de ses fonctions dans les useEffect plus tard dans les composants
@@ -32,11 +32,11 @@ export function allUserAds() {
 }
 
 // OBTENIR LE DETAIL D'UNE ANNONCE
-export function OneAd(id) {
+export function oneAd(adId) {
     return axios
-        .get(`${config.api_url}api/v1/ads/getOneAd/${id}`)
+        .get(`${config.api_url}api/v1/ads/getOneAd/${adId}`)
         .then((res) => {
-            return res.data;
+            return res;
         })
         .catch((err) => {
             return err;
