@@ -23,7 +23,7 @@ const Login = () => {
     const [isError, setIsError] = useState(null);
 
     // Stockage de l'url
-    const apiUrl = "http://localhost:9600/";
+    //const apiUrl = "http://localhost:9600/";
 
     //ONCLICK Variable
     /* const loginUser = () => {

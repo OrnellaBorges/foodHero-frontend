@@ -1,4 +1,62 @@
+/* Style de la section de profil */
 .profile {
+    padding: 20px;
+    background-color: #f7f7f7;
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Style de la barre latérale du profil */
+.profilSidebar {
+    padding: 20px;
+    background-color: #090125;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    color: #f7f7f7;
+}
+
+.titleAccount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f7f7f7;
+}
+
+.user-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.userImage img {
+    max-width: 100px;
+    border-radius: 50%;
+    /* Ajout de styles pour un cercle */
+    border: 3px solid #007bff; /* Bordure bleue */
+}
+
+.user-info h2 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style de la partie centrale d'informations du profil */
+.infoContainer {
+    padding: 20px;
+    background-color: #ffffff;
+}
+.listItem {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.buttonsContainer {
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .profile {
     padding: 20px;
     border: 1px solid #ddd;
     background-color: orange;
@@ -28,8 +86,6 @@ user-info {
     align-items: center;
 }
 
-/* .userImage {
-} */
 
 user-info img {
     width: 100px;
@@ -112,5 +168,11 @@ footer button:hover {
 @media screen and (min-width: 768px) {
     .profile {
         display: flex;
+    }
+    .profilSidebar {
+        flex: 1;
+    }
+    .infoContainer {
+        flex: 2;
     }
 }

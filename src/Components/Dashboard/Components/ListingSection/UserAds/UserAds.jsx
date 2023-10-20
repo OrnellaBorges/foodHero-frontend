@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { allUserAds } from "../../../../../api/ApiAds";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import { useState } from "react";
 //import { useEffect } from "react";
 //import axios from "axios";
@@ -10,7 +11,7 @@ import { useParams } from "react-router-dom";
 
 import "./userAds.css";
 
-import MoreDetailButton from "../../../../Buttons/MoreDetailButton";
+import Button from "../../../../Buttons/MoreDetailButton";
 
 //import assets
 /* import pasta from "../../assets/pasta.jpg";
@@ -52,7 +53,8 @@ const UserAds = () => {
     //const { userId } = useParams(3);
 
     const [userAds, setUserAds] = useState([]);
-    const [status, setStatus] = useState(0);
+    const [isError, setIsError] = useState(false);
+    //const [status, setStatus] = useState(0);
 
     console.log("userAds", userAds);
 
@@ -68,8 +70,10 @@ const UserAds = () => {
                         setUserAds(res.userAds);
                     }
                 }
-                // console.log("res.status", res.status);
-                //setStatus(res.status);
+
+                if (res.status !== 200) {
+                    setIsError(true);
+                }
             })
             .catch((err) => {
                 console.log("err", err);
@@ -85,18 +89,22 @@ const UserAds = () => {
                         {/* .map pour chaque annonce tu retournes un li */}
                         {userAds.map((annonce) => (
                             <li key={annonce.id} className="testLi">
-                                <img src={annonce.image} alt={annonce.titre} />
-                                <h3 className="titre">{annonce.titre}</h3>
+                                {/* <img src={annonce.image} alt={annonce.titre} /> */}
+                                <h3 className="titre">{annonce.title}</h3>
                                 <p className="texte">
-                                    Prix : {annonce.prix} €
+                                    Prix : {annonce.price} €
                                 </p>{" "}
                                 {/* ici il n'y a pas d'interpolation ???? */}
-                                <p className="texte">Date : {annonce.date}</p>
-                                <p className="texte">{annonce.description}</p>
                                 <p className="texte">
-                                    Auteur : {annonce.auteur}
+                                    Date : {annonce.creationDate}
                                 </p>
-                                <MoreDetailButton text="More details" />
+                                <p className="texte">{annonce.description}</p>
+                                {/* <p className="texte">
+                                    Auteur : {annonce.auteur}
+                                </p> */}
+                                <Link to="userOneAd">
+                                    <Button text="More details" />
+                                </Link>
                             </li>
                         ))}
                     </ul>

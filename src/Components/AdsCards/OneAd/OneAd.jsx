@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-//import { useState } from "react";
-
-//import axios from "axios";
-
 import { useParams } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import "./oneAd.css";
 
 import Button from "../../Buttons/Button";
 
 //import assets
-import pasta from "../../../assets/pasta.jpg";
+import soupe from "../../../assets/soupe.jpg";
 
 //import icons
 import { oneAd } from "../../../api/ApiAds";
@@ -21,6 +17,7 @@ const OneAd = () => {
     console.log("adId", adId);
 
     const [ad, setAd] = useState([]);
+    console.log("ad.userId", ad.userId);
 
     useEffect(() => {
         oneAd(adId)
@@ -35,7 +32,7 @@ const OneAd = () => {
 
     return (
         <>
-            <div className="oneAd">
+            <section className="oneAd">
                 {/* Mapper la liste apres le axios.get por recuperer toute les annonces et le mettre dans un useeffect */}
 
                 <div className="containerInfo">
@@ -43,7 +40,7 @@ const OneAd = () => {
                         <img
                             className="
                         imgAd"
-                            src={pasta}
+                            src={soupe}
                             alt="pates au poulet et aux champignons"
                         />
                     </div>
@@ -57,7 +54,6 @@ const OneAd = () => {
                             {/* <p className="cooker">
                                 Cuisiné par : <a href="">Marie.S</a>
                             </p> */}
-                            <a href="">Contacter</a>
                         </div>
 
                         {/*Mapper la liste pour generer des li*/}
@@ -79,7 +75,10 @@ const OneAd = () => {
                         </div> */}
 
                         <div className="buttonContainer flex">
-                            <Button text="Reserver le plat" />
+                            {/* <Button text="Reserver le plat" /> */}
+                            <Link to={`userProfile/${ad.userId}`}>
+                                <Button text="Contacter le cooker" />
+                            </Link>
                             {/* <button
                                 className="addCart-btn"
                                 onClick={() => console.log("coucou")}
@@ -89,7 +88,7 @@ const OneAd = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

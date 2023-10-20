@@ -14,6 +14,7 @@ import Filter from "./Components/FilterComponent/FilterContainer";
 import EditAccount from "./Components/Account/EditAccount";
 import EditAd from "./Components/AdsCards/FormsAds/EditAd";
 import OneAd from "./Components/AdsCards/OneAd/OneAd";
+import UserOneAd from "./Components/Dashboard/Components/ListingSection/UserAds/UserOneAd";
 
 // import React react dom
 
@@ -79,7 +80,7 @@ const router = createBrowserRouter([
         ),
     },
     {
-        path: "/editaccount",
+        path: "/editAccount",
         element: (
             <div>
                 <EditAccount />
@@ -87,7 +88,7 @@ const router = createBrowserRouter([
         ),
     },
     {
-        path: "/editad",
+        path: "/editAd",
         element: (
             <div>
                 <EditAd />
@@ -115,6 +116,14 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <OneAd />
+            </div>
+        ),
+    },
+    {
+        path: "/userOneAd",
+        element: (
+            <div>
+                <UserOneAd />
             </div>
         ),
     },

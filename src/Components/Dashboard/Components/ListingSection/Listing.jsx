@@ -3,10 +3,9 @@ import React from "react";
 import "./Listing.scss";
 
 import SeeAllBtn from "../../../Buttons/SeeAll/SeeAllBtn";
-import RegisteredAds from "./RegisteredAds/RegisteredAds";
+//import RegisteredAds from "./RegisteredAds/RegisteredAds";
 import UserAds from "./UserAds/UserAds";
 //import AdsOfUser from "./UserAds/AdsOfUser";
-
 //import pasta from "../../../../assets/pasta.jpg";
 //import user from "../../../../assets/users/avatar3.jpg";
 
@@ -19,7 +18,7 @@ const Listing = () => {
             </header>
             <div className="listingContent">
                 <UserAds />
-                <RegisteredAds />
+                {/* <RegisteredAds /> */}
             </div>
         </section>
     );

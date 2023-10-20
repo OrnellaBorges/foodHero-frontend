@@ -5,10 +5,10 @@ import { useState, useEffect } from "react";
 // import components
 import SubmitButton from "../../Buttons/submitButton";
 
-import "./form.css";
+import "./editAd.css";
 //import { createOneAd } from "../../api/ApiAds";
 
-const CreateAds = () => {
+const EditAd = () => {
     // STATES
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -65,15 +65,11 @@ const CreateAds = () => {
 
     return (
         <>
-            <div className="formContainer">
+            <section className="formContainer">
                 <div className="formHeader">
                     <h2 className="formTitle">EDIT AD</h2>
                 </div>
-                <form
-                    className="Adsform"
-                    name="createForm"
-                    onSubmit={onSubmitForm}
-                >
+                <form className="" name="createForm" onSubmit={onSubmitForm}>
                     <div className="inputDiv">
                         <div className="input">
                             <label htmlFor="Title">Title</label>
@@ -122,17 +118,6 @@ const CreateAds = () => {
                             />
                         </div>
                     </div>
-                    {/*   IMAGE <div>
-                        <label for="imageUpload">
-                            Sélectionnez une image :
-                        </label>
-                        <input
-                            type="file"
-                            id="imageUpload"
-                            name="image"
-                            accept="image/*"
-                        ></input>
-                    </div> */}
                     <div className="inputDiv">
                         <label htmlFor="description">Descriptions</label>
                         <textarea
@@ -187,9 +172,9 @@ const CreateAds = () => {
                         </button>
                     </div>
                 </form>
-            </div>
+            </section>
         </>
     );
 };
 
-export default CreateAds;
+export default EditAd;

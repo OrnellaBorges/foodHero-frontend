@@ -43,8 +43,8 @@ function UserProfile() {
 
     return (
         <>
-            <div className="profile">
-                <div className="profilSidebar">
+            <section className="profile">
+                <aside className="profilSidebar">
                     <h1 className="titleAccount">USER PROFIL</h1>
                     <div className="user-info">
                         <div className="userImage">
@@ -59,7 +59,7 @@ function UserProfile() {
                             {user.firstName} {user.lastName}
                         </h2>
                     </div>
-                </div>
+                </aside>
 
                 <div className="infoContainer">
                     <div className="user-details">
@@ -85,11 +85,14 @@ function UserProfile() {
                             <Button text="Modifier le profil" />
                         </Link>
                         <Link to="/dashboard">
+                            <Button text="Supprimer le profil" />
+                        </Link>
+                        <Link to="/dashboard">
                             <Button text="Back to Dashboard" />
                         </Link>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }
