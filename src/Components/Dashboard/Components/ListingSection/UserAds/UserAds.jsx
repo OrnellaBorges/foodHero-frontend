@@ -1,4 +1,6 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { allUserAds } from "../../../../../api/ApiAds";
+import { useParams } from "react-router-dom";
 //import { useState } from "react";
 //import { useEffect } from "react";
 //import axios from "axios";
@@ -14,12 +16,11 @@ import MoreDetailButton from "../../../../Buttons/MoreDetailButton";
 /* import pasta from "../../assets/pasta.jpg";
 import lasagnes from "../../assets/lasagna1.jpeg";
 import cookie from "../../assets/cookie3.jpeg"; */
-
-import image from "../../../../../assets/food/riz.jpg";
+//import image from "../../../../../assets/food/riz.jpg";
 
 const UserAds = () => {
     // ici on va faire un fetch
-    const recupUserAnnonces = [
+    /* const recupUserAnnonces = [
         {
             id: 1,
             title: "Lasagnes",
@@ -42,28 +43,66 @@ const UserAds = () => {
             userId: 3,
             userPseudo: "mika4ever",
         },
-    ];
+    ]; */
+
+    //ici on stock grace a useParams l'id de l'utilisateur connecté qui a été mis dans le link de allAdsCard
+
+    const userId = 3;
+
+    //const { userId } = useParams(3);
+
+    const [userAds, setUserAds] = useState([]);
+    const [status, setStatus] = useState(0);
+
+    console.log("userAds", userAds);
+
+    useEffect(() => {
+        //console.log("userId", userId);
+        // appel de la fonction allUserAds()
+        allUserAds(userId)
+            .then((res) => {
+                /* console.log("res", res.userAds);
+                console.log("res", res); */
+                if (res.status === 200) {
+                    if (res.userAds.length > 0) {
+                        setUserAds(res.userAds);
+                    }
+                }
+                // console.log("res.status", res.status);
+                //setStatus(res.status);
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
+    }, []);
+
     return (
         <>
             <section className="mappedList-container">
                 <h2>Annonces de l'user</h2>
-                <ul className="testUl">
-                    {/* .map pour chaque annonce tu retournes un li */}
-                    {recupUserAnnonces.slice(0, 6).map((annonce) => (
-                        <li key={annonce.id} className="testLi">
-                            <img src={annonce.image} alt={annonce.titre} />
-                            <h3 className="titre">{annonce.titre}</h3>
-                            <p className="texte">
-                                Prix : {annonce.prix} €
-                            </p>{" "}
-                            {/* ici il n'y a pas d'interpolation ???? */}
-                            <p className="texte">Date : {annonce.date}</p>
-                            <p className="texte">{annonce.description}</p>
-                            <p className="texte">Auteur : {annonce.auteur}</p>
-                            <MoreDetailButton text="More details" />
-                        </li>
-                    ))}
-                </ul>
+                {userAds.length > 0 ? (
+                    <ul className="testUl">
+                        {/* .map pour chaque annonce tu retournes un li */}
+                        {userAds.map((annonce) => (
+                            <li key={annonce.id} className="testLi">
+                                <img src={annonce.image} alt={annonce.titre} />
+                                <h3 className="titre">{annonce.titre}</h3>
+                                <p className="texte">
+                                    Prix : {annonce.prix} €
+                                </p>{" "}
+                                {/* ici il n'y a pas d'interpolation ???? */}
+                                <p className="texte">Date : {annonce.date}</p>
+                                <p className="texte">{annonce.description}</p>
+                                <p className="texte">
+                                    Auteur : {annonce.auteur}
+                                </p>
+                                <MoreDetailButton text="More details" />
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>Pas d'annonces</p>
+                )}
             </section>
         </>
     );

@@ -67,6 +67,19 @@ img {
     color: rgb(226, 184, 0);
 }
 
+.containerMessage {
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+}
+
+.statusError {
+    color: red;
+}
+
 /* =============== Media Queries ====================*/
 
 @media screen and (min-width: 768px) {

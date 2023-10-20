@@ -60,7 +60,7 @@ const UserAds = () => {
                             <p className="texte">Date : {annonce.date}</p>
                             <p className="texte">{annonce.description}</p>
                             <p className="texte">Auteur : {annonce.auteur}</p>
-                            <Button text="More details" />
+                            <MoreDetailButton text="More details" />
                         </li>
                     ))}
                 </ul>

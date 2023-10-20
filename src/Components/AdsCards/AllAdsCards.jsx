@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { allAds } from "../../api/ApiAds";
-//import { useState } from "react";
-//import { useEffect } from "react";
 //import axios from "axios";
 
 import "./AllAdsCards.css";
@@ -10,9 +8,9 @@ import Button from "../Buttons/Button";
 import Pagination from "../Pagination/Pagination";
 
 //import assets
-import pasta from "../../assets/pasta.jpg";
+/* import pasta from "../../assets/pasta.jpg";
 import lasagnes from "../../assets/lasagna1.jpeg";
-import cookie from "../../assets/cookie3.jpeg";
+import cookie from "../../assets/cookie3.jpeg"; */
 import { Link } from "react-router-dom";
 
 //import icons
@@ -20,6 +18,8 @@ import { Link } from "react-router-dom";
 const AllAdsCards = () => {
     /* STATES  */
     const [annoncesRecentes, setAnnoncesRecentes] = useState([]);
+    const [status, setStatus] = useState(0);
+
     const [currentPage, setCurrentPage] =
         useState(
             1
@@ -131,6 +131,8 @@ const AllAdsCards = () => {
         allAds()
             .then((res) => {
                 console.log("res.allAds", res.allAds);
+                console.log("res.status", res.status);
+                setStatus(res.status);
                 setAnnoncesRecentes(res.allAds);
             })
             .catch((err) => {
@@ -140,56 +142,69 @@ const AllAdsCards = () => {
 
     return (
         <>
-            <section className="cards-container">
-                <h1 className="mainTitle">Toutes les annonces</h1>
+            {status === 200 ? (
+                <section className="cards-container">
+                    <h1 className="mainTitle">Toutes les annonces</h1>
 
-                {/* Mapper la liste annoncesRecente
+                    {/* Mapper la liste annoncesRecente
                 la liste doit faire apparaitre toutes les annonces les plus recentes dans le temps et 10 max */}
 
-                <section className="mappedList">
-                    <h2>
-                        Liste d'Annonces mappé de la plus récente à la plus
-                        ancienne
-                    </h2>
-                    <ul className="testUl">
-                        {/* .map pour chaque annonce tu retournes un li */}
-                        {annoncesRecentes.slice(0, 6).map((annonce) => (
-                            <li key={annonce.id} className="testLi">
-                                {/* <img src={annonce.image} alt={annonce.title} /> */}
-                                <h3 className="titre">{annonce.title}</h3>
-                                <p className="texte">
-                                    Prix : {annonce.price} €
-                                </p>{" "}
-                                {/* ici il n'y a pas d'interpolation ???? */}
-                                <p className="texte">
-                                    Date : {annonce.creationDate}
-                                </p>
-                                <p className="texte">{annonce.description}</p>
-                                {/* <p className="texte">
+                    <div className="mappedList">
+                        <h2>
+                            Liste d'Annonces mappé de la plus récente à la plus
+                            ancienne
+                        </h2>
+                        <ul className="testUl">
+                            {/* .map pour chaque annonce tu retournes un li */}
+                            {annoncesRecentes.slice(0, 6).map((annonce) => (
+                                <li key={annonce.id} className="testLi">
+                                    {/* <img src={annonce.image} alt={annonce.title} /> */}
+                                    <h3 className="titre">{annonce.title}</h3>
+                                    <p className="texte">
+                                        Prix : {annonce.price} €
+                                    </p>{" "}
+                                    {/* ici il n'y a pas d'interpolation ???? */}
+                                    <p className="texte">
+                                        Date : {annonce.creationDate}
+                                    </p>
+                                    <p className="texte">
+                                        {annonce.description}
+                                    </p>
+                                    {/* <p className="texte">
                                     Auteur : {annonce.auteur}
                                 </p> */}
-                                <Link to={`oneAd/${annonce.id}`}>
-                                    <Button text="More details" />
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                                    <Link to={`oneAd/${annonce.id}`}>
+                                        <Button text="More details" />
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
 
-                    {/* dans pagination on passe des props qui serviront dans le composant
+                        {/* dans pagination on passe des props qui serviront dans le composant
                     currentPage >> pour l'etat de la page actuelle 
                     total >>est le nombre totale de page existante
                     limit  >> est la limite des elements à afficher sur la page 
                     On affecte aussi un ecouteur d'evenment qui au changement mettra a jour le state currentPage
                     
                     */}
-                    <Pagination
-                        currentPage={currentPage}
-                        total={total}
-                        limit={limit}
-                        onChangePage={(page) => setCurrentPage(page)}
-                    />
+                        <Pagination
+                            currentPage={currentPage}
+                            total={total}
+                            limit={limit}
+                            onChangePage={(page) => setCurrentPage(page)}
+                        />
+                    </div>
                 </section>
-            </section>
+            ) : (
+                <section className="cards-container">
+                    <h1 className="mainTitle">Toutes les annonces</h1>
+                    <div className="containerMessage">
+                        <h2 className="statusError">
+                            OOPS... Nous avons rencontré un problème.
+                        </h2>
+                    </div>
+                </section>
+            )}
         </>
     );
 };
