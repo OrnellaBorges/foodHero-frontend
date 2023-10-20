@@ -48,7 +48,7 @@ const UserAds = () => {
 
     //ici on stock grace a useParams l'id de l'utilisateur connecté qui a été mis dans le link de allAdsCard
 
-    const userId = 3;
+    const userId = 1;
 
     //const { userId } = useParams(3);
 

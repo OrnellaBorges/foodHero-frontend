@@ -1,14 +1,93 @@
+/* Style for the entire section */
 .cards-container {
+    padding: 0px;
     border: 5px solid green;
     width: 90%;
     margin: 0 auto;
     padding: 2% 0;
 }
+
+/* Style for the main title */
 .mainTitle {
-    padding: 2%;
-    background-color: pink;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    background-color: aqua;
     text-align: center;
 }
+
+/* Style for the mapped list */
+.mappedList {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Style for the "Liste d'Annonces mappé..." heading */
+.mappedList h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style for the unordered list */
+.testUl {
+    list-style: none;
+    padding: 0;
+    border: 3px solid orange;
+    width: 100%;
+}
+
+/* Style for each list item */
+.testLi {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    width: 100%;
+}
+
+/* Style for the announcement title */
+.title-card {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff; /* Blue title color */
+}
+img {
+    width: 100%;
+}
+.imageZoom:hover {
+    transform: scale(1.1);
+}
+
+/* Style for the announcement text, price, and date */
+.text {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Style for the button inside the list item */
+.testLi a {
+    text-decoration: none;
+}
+
+/* Style for the error message container */
+.containerMessage {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Style for the error message text */
+.statusError {
+    font-size: 20px;
+    color: #ff0000; /* Red error message color */
+}
+
+/*
 .cards-list {
     border: 3px solid orange;
     max-width: max-content;
@@ -18,11 +97,10 @@
     border-radius: 10px;
     background-color: rgb(205, 0, 250);
     overflow: hidden;
-    /* margin-right: 10px;
-    margin-bottom: 10px; 
-    max-width: 300px;*/
     margin-bottom: 10px;
 }
+
+
 .singleCard:hover {
     background-color: rgb(254, 202, 106);
     box-shadow: 0 2px 2px var(--inputColor);
@@ -78,18 +156,28 @@ img {
 
 .statusError {
     color: red;
-}
+} */
 
 /* =============== Media Queries ====================*/
 
 @media screen and (min-width: 768px) {
-    .cards-list {
+    .testUl {
+        list-style: none;
+        padding: 0;
+        border: 3px solid orange;
+        width: 100%;
         display: flex;
-        gap: 3px;
+        gap: 10px;
         flex-wrap: wrap;
-
-        gap: 8px;
     }
+
+    .mappedList {
+    }
+
+    .testLi {
+        width: 300px;
+    }
+
     .singleCard {
         margin-bottom: 0px;
     }

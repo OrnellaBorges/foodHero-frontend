@@ -156,11 +156,13 @@ const AllAdsCards = () => {
                         </h2>
                         <ul className="testUl">
                             {/* .map pour chaque annonce tu retournes un li */}
-                            {annoncesRecentes.slice(0, 6).map((annonce) => (
+                            {annoncesRecentes.slice(0, 20).map((annonce) => (
                                 <li key={annonce.id} className="testLi">
                                     {/* <img src={annonce.image} alt={annonce.title} /> */}
-                                    <h3 className="titre">{annonce.title}</h3>
-                                    <p className="texte">
+                                    <h3 className="title-card">
+                                        {annonce.title}
+                                    </h3>
+                                    <p className="text">
                                         Prix : {annonce.price} €
                                     </p>{" "}
                                     {/* ici il n'y a pas d'interpolation ???? */}
