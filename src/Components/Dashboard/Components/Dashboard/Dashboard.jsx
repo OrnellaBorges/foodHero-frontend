@@ -9,15 +9,6 @@ import Sidebar from "../SideBar Section/Sidebar";
 import Footer from "../../../Footer/Footer";
 
 const Dashboard = () => {
-    /* useEffect(()=>{
-        getAllAds()
-        .then((res)=>{
-            if(res.status === 200) {
-                setOrders(res.result)
-            }
-        })
-        .catch(err=>console.log(err))
-    }, []) */
     return (
         <>
             <div className="dashboard">

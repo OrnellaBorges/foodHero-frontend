@@ -5,7 +5,6 @@ import Footer from "../Footer/Footer";
 import AllAdsCards from "../AdsCards/AllAdsCards";
 import Rgpd from "../Concent/RgpdBanner";
 //import Cookie from "../Cookie/Cookie";
-//import BasketOrder from "../BasketOrder/BasketOrder";
 
 const Home = (props) => {
     return (

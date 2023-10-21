@@ -18,7 +18,7 @@ const RgpdBanner = () => {
     const handleAccept = () => {
         // L'utilisateur donne son consentement
         setConsentGiven(true);
-        Cookies.set("rgpdConsent", "true", { expires: 365 }); // Stocke le consentement pendant 1 an
+        Cookies.set("rgpdConsent", "true", { expires: 0.1 }); // Stocke le consentement pendant 1 an
         setShowBanner(false);
     };
 
