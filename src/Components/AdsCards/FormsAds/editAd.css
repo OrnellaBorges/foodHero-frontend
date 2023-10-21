@@ -55,6 +55,10 @@ label {
     background-color: #ffcccc;
     color: #ff0000;
 }
+.formButtonContainer {
+    display: flex;
+    justify-content: center;
+}
 
 .successMsg {
     background-color: #ccffcc;

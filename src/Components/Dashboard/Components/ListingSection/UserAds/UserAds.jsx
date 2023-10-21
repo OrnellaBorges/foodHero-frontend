@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 // ICI ON A UN COMPOSANT QUI FAIT
 //APPARAITRE TOUTES LES ANNONCES D'un USER sur sa page donc toutes les annonces dont l'userId est === id de l'user connecté
 
-import "./userAds.css";
+import "./userAds2.css";
 
 import Button from "../../../../Buttons/MoreDetailButton";
 
@@ -82,8 +82,8 @@ const UserAds = () => {
 
     return (
         <>
-            <section className="mappedList-container">
-                <h2>Annonces de l'user</h2>
+            <section className="cardsContainer">
+                <h2 className="title-container">Annonces de l'user</h2>
                 {userAds.length > 0 ? (
                     <ul className="testUl">
                         {/* .map pour chaque annonce tu retournes un li */}

@@ -1,11 +1,3 @@
-/* 
-    .secContainer {
-        width: 100%;
-        margin: 1rem 0;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    } */
 .userCards-container {
     border: 10px solid green;
     width: 90%;
@@ -18,6 +10,8 @@
     flex-wrap: wrap;
     justify-content: flex-start; /* Alignement horizontal vers le début */
     align-items: flex-start; /* Alignement vertical vers le début */
+}
+.title-container {
 }
 
 .singleCard {

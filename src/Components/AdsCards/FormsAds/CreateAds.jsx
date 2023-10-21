@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 // import components
 import SubmitButton from "../../Buttons/submitButton";
 
-import "./form.css";
+import "./editAd.css";
 //import { createOneAd } from "../../api/ApiAds";
 
 const CreateAds = () => {
@@ -175,16 +175,16 @@ const CreateAds = () => {
                         </p>
                     )}
 
-                    <div className="formButtonContainer flex">
+                    <div className="formButtonContainer">
                         <SubmitButton text="SUBMIT" />
-                        <button
+                        {/* <button
                             type="submit"
                             className={`submit-button ${
                                 isFormError ? "submit-button-error" : ""
                             } ${isSuccess ? "submit-button-success" : ""}`}
                         >
                             SUBMIT
-                        </button>
+                        </button> */}
                     </div>
                 </form>
             </div>
