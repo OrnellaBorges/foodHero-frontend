@@ -20,7 +20,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
     const [userInfos, setUserInfos] = useState({}); // infos de l'utilisateur loggué
-    console.warn("infos de l'utilisateur loggué", userInfos);
     const [isLogged, setIsLogged] = useState(false);
 
     const handleLoginUser = (userInfos, isLoggedStatus) => {

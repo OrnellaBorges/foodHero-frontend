@@ -22,22 +22,7 @@ import "./nav.css";
 
 const Nav = (props) => {
     const { isLogged, userId } = props; // Destructuration de props pour éviter d'écrire "props."
-
-    console.log("userId", userId);
-    //const [isActiv, setIsActiv] = useState("menuList");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    /*  useEffect(() => {
-        console.log("userId", userId);
-        getOneUser(userId)
-            .then((res) => {
-                console.log("res", res);
-                //setCooker(res.data.oneUser[0]);
-            })
-            .catch((err) => {
-                console.log("err", err);
-            });
-    }, []); */
 
     return (
         <nav className="navMenuDiv">
@@ -58,7 +43,6 @@ const Nav = (props) => {
                         Home
                     </Link>
                 </li>
-
                 {isLogged && (
                     <li className="navItem">
                         <Link to="/create" className="navLink">
@@ -87,7 +71,7 @@ const Nav = (props) => {
             </ul>
 
             {/* cette partie devra etre un ternaire si l'user est connecté ou pas voir beer4you header */}
-            {isLogged ? (
+            {props.isLogged ? (
                 <ul
                     className={`menuList rightMenu flex ${
                         isMenuOpen ? "" : "closedNav"
