@@ -78,12 +78,6 @@ const Login = (props) => {
                         firstName: firstName,
                     };
 
-<<<<<<< HEAD
-                    console.log("type", typeof userInfos.id);
-=======
-                    console.warn("type", typeof userInfos.id);
->>>>>>> abf43cf563cda9d1545aee4b52c420d8d8f7b4b2
-
                     const isLoggedStatus = true;
 
                     props.loginUser(userInfos, isLoggedStatus);
