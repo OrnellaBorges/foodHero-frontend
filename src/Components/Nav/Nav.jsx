@@ -20,10 +20,9 @@ import "./nav.css";
 
 //navbar event
 
-const Nav = () => {
+const Nav = (props) => {
     //const [isActiv, setIsActiv] = useState("menuList");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isLogged, setIsLogged] = useState(true);
 
     return (
         <nav className="navMenuDiv">
@@ -45,11 +44,13 @@ const Nav = () => {
                     </Link>
                 </li>
 
-                <li className="navItem">
-                    <Link to="/create" className="navLink">
-                        <Button text="Creer une annonce" />
-                    </Link>
-                </li>
+                {props.isLogged && (
+                    <li className="navItem">
+                        <Link to="/create" className="navLink">
+                            <Button text="Creer une annonce" />
+                        </Link>
+                    </li>
+                )}
             </ul>
 
             <ul className="menuList centerMenu flex">
@@ -71,7 +72,7 @@ const Nav = () => {
             </ul>
 
             {/* cette partie devra etre un ternaire si l'user est connecté ou pas voir beer4you header */}
-            {isLogged ? (
+            {props.isLogged ? (
                 <ul
                     className={`menuList rightMenu flex ${
                         isMenuOpen ? "" : "closedNav"

@@ -2,9 +2,9 @@ import React from "react";
 //import "../index.scss";
 //import "./Login.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+import { createOneUser } from "../../api/ApiUser";
 
 //import './Register.css'
 //import './App.css'
@@ -25,37 +25,52 @@ import { MdMarkEmailRead } from "react-icons/md"; */
 const Register = () => {
     //Need UseState to hold our inputs = memorisation des inputs
     const [email, setEmail] = useState("");
-    const [userName, setUserName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [password, setPassword] = useState("");
+    const [disabled, setDisabled] = useState(true); // au depart le bouton est desactivé donc en gris
+    const [errorMsg, setErrorMsg] = useState("");
+    const [successMsg, setSuccessMsg] = useState("");
 
-    const [isError, setIsError] = useState(false);
+    const onSubmitForm = (e) => {
+        e.preventDefault(); // on block le rechargement de la page
 
-    // Stockage de l'url
-    const apiUrl = "http://localhost:9600";
+        // ICI ON RECUP LES DATA DU FORMULAIRE ET ON LES STOCK DANS UN OBJET DATAFORMlogin pret a etre envoyé au back
+        const dataFormRegister = {
+            firstName: e.target.firstName.value,
+            lastName: e.target.lastName.value,
+            email: e.target.email.value,
+            password: e.target.password.value,
+        };
 
-    //ONCLICK Variable
-    const createUser = () => {
-        // ici on met une requete Ajax qui va permettre de faire appel a la route d'enregistrement d'un utilisateur
-        // mais on a a besoin de la librairie axios alorq il faut installer axios
-
-        // INFO > on peut creer les axios dans une autre page a part mais on le garde ici pour l'instant
-        Axios.post(`${apiUrl}/api/v1/user/create`, {
-            Email: email,
-            UserName: userName,
-            Password: password,
-        })
-            //on utilise le .then en cas de succes il utilise cette methode et on passe en argument
-            .then(() => {
-                console.log("User has been created");
+        // on doit l'envoyer au back on utilise la fonction qui fait cette action et on lui passe en argument dataFormLogin
+        createOneUser(dataFormRegister)
+            .then((res) => {
+                // 1-si le status est différent de 200 alors on va chercher le msg d'erreur
+                if (res.status === 200) {
+                    setErrorMsg("");
+                    setSuccessMsg(res.msg);
+                } else {
+                    // 2-on stock se msg d'erreur dans un state
+                    setErrorMsg(res.msg); // on receptionne une string dans le state qu'on actualise
+                    setSuccessMsg("");
+                }
             })
-
-            // en cas d' erreur ça passe dans le catch et ça renvoit
-            .catch(() => {
-                // on cree un state error au dessus pour l'initialiser a false au départ
-                // lorsqu'il y aura un soucis celui- ci permettra de l'utiliser afin de renvoyer un composant d'avertissement à l'utilisateur afin d'avertur qu'il y a eu un soucis
-                setIsError(true);
+            .catch((err) => {
+                console.log("err", err);
             });
     };
+
+    useEffect(() => {
+        if (
+            email !== "" &&
+            password !== "" &&
+            firstName !== "" &&
+            lastName !== ""
+        )
+            setDisabled(false);
+        else setDisabled(true);
+    }, [email, password]);
 
     return (
         <>
@@ -73,16 +88,49 @@ const Register = () => {
                         {/* <img src={Logo} alt="logo" /> */}
                         <h3>Welcome !</h3>
                     </div>
-                    <form className="formContainer" name="loginForm">
+                    <form
+                        onSubmit={(e) => onSubmitForm(e)}
+                        className="formContainer"
+                        name="registerForm"
+                    >
                         {/* // INFO > En cas de soucis on fait un ternaire qui
                         renvoi le msg d'erreur en rouge si ça rentre dans le
                         catch de l'axios au dessus comme isError sera a true*/}
-                        {isError ? (
-                            <p className="showMessage">
-                                La création de votre compte a echoué. Veuillez
-                                essayer ultérieurement.
-                            </p>
-                        ) : null}
+
+                        {successMsg && (
+                            <p className="successMessage">{successMsg}</p>
+                        )}
+                        {errorMsg && <p className="showMessage">{errorMsg}</p>}
+
+                        <div className="logForm">
+                            <label htmlFor="firstName">firstName</label>
+                            <div className="input flex">
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    placeholder="Enter Your firstName"
+                                    onChange={(event) => {
+                                        setFirstName(event.target.value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div className="logForm">
+                            <label htmlFor="lastName">lastName</label>
+                            <div className="input flex">
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Enter Your lastName"
+                                    onChange={(event) => {
+                                        setLastName(event.target.value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+
                         <div className="logForm">
                             <label htmlFor="email">Email</label>
                             <div className="input flex">
@@ -90,6 +138,7 @@ const Register = () => {
                                 <input
                                     type="email"
                                     id="email"
+                                    name="email"
                                     placeholder="Enter Your Email"
                                     onChange={(event) => {
                                         setEmail(event.target.value);
@@ -97,10 +146,10 @@ const Register = () => {
                                 />
                             </div>
                         </div>
-                        <div className="logForm">
+                        {/* <div className="logForm">
                             <label htmlFor="username">Username</label>
                             <div className="input flex">
-                                {/*  <FaUserShield className="icon" /> */}
+                                <FaUserShield className="icon" />
                                 <input
                                     type="text"
                                     id="email"
@@ -110,13 +159,14 @@ const Register = () => {
                                     }}
                                 />
                             </div>
-                        </div>
+                        </div> */}
                         <div className="inputDiv">
                             <label htmlFor="password">Password</label>
                             <div className="input flex">
                                 {/* <BsShieldLockFill className="icon" /> */}
                                 <input
-                                    type="text"
+                                    name="password"
+                                    type="password"
                                     id="passeword"
                                     placeholder="Enter Password"
                                     onChange={(event) => {
@@ -125,10 +175,17 @@ const Register = () => {
                                 />
                             </div>
                         </div>
+                        <button
+                            disabled={disabled}
+                            type="submit"
+                            //className="btn flex"
+                        >
+                            Register
+                        </button>
                     </form>
                 </div>
 
-                <div className="login-linkContainer">
+                {/* <div className="login-linkContainer">
                     <button
                         type="submit"
                         className="btn flex"
@@ -136,9 +193,8 @@ const Register = () => {
                     >
                         <p>Register</p>
                     </button>
-                    {/* //INFO > Faire une route forgot dans le back */}
                     <Link to={"/"}>Or continue without register</Link>
-                </div>
+                </div> */}
                 <div className="loginFooter">
                     <p className="text">Have an account?</p>
                     <Link to={"/login"}>

@@ -30,6 +30,14 @@
             /* transform: translateY(-1rem); */
         }
 
+        .successMessage {
+            display: block;
+            color: var(--whiteColor);
+            background-color: green;
+            border-radius: 3px;
+            text-align: center;
+        }
+
         .showMessage {
             display: block;
             color: var(--whiteColor);

@@ -1,6 +1,7 @@
-import React from "react";
-
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getOneUser } from "../../../../api/ApiUser";
+import { useParams } from "react-router-dom";
 
 //IMPORT ICONS FROM REACT ICONS
 import { GiHamburger } from "react-icons/gi";
@@ -19,7 +20,13 @@ import "../../../../index.scss";
 import adminImage from "../../../../assets/users/albert4.png";
 
 const Sidebar = () => {
+    const { userId } = useParams();
+    console.log("userId", userId);
+
     // useEffect qui permet de recup si l'user est bien connecté et recup ses datas
+    useEffect(() => {
+        //getOneUser()
+    }, []);
 
     // Les données de l'utilisateur
     const user = {

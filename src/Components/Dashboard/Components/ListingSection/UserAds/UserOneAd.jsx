@@ -74,7 +74,7 @@ const UserOneAd = () => {
                                     <DeleteButton text="supprimer l'annonce" />
                                 </Link>
                             </div>
-                            {/* <Link to={`userProfile/${ad.userId}`}>
+                            {/* <Link to={`/userProfile/${ad.userId}`}>
                             <Button text="Contacter le cooker" />
                         </Link> */}
                         </div>

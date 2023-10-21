@@ -102,7 +102,7 @@ const UserAds = () => {
                                 {/* <p className="texte">
                                     Auteur : {annonce.auteur}
                                 </p> */}
-                                <Link to="userOneAd">
+                                <Link to="/userOneAd">
                                     <Button text="More details" />
                                 </Link>
                             </li>

@@ -76,8 +76,8 @@ const OneAd = () => {
 
                         <div className="buttonContainer flex">
                             {/* <Button text="Reserver le plat" /> */}
-                            <Link to={`userProfile/${ad.userId}`}>
-                                <Button text="Contacter le cooker" />
+                            <Link to={`/userProfile/${ad.userId}`}>
+                                <Button text="Contacter le cookers" />
                             </Link>
                             {/* <button
                                 className="addCart-btn"

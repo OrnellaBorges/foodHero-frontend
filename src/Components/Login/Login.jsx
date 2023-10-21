@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// sert a naviguer entre les pages c'est une REDIRECTION
+import { Link, useNavigate, Navigate } from "react-router-dom";
+// sert a remplacer les balises <a> et a naviguer aussi AU CLICK c'est un lien
+
 import "./Login.scss";
+import { loginUser } from "../../api/ApiUser";
 
 // import components
 import Button from "../Buttons/Button";
@@ -15,12 +19,14 @@ import { BsShieldLockFill } from "react-icons/bs"; */
 //import loginImage from "../../assets/loginImage.jpg";
 //import Logo from "../../assets/logo2.png";
 
-const Login = () => {
+const Login = (props) => {
+    const navigate = useNavigate();
     //USESTATES HOOK to store input // pour les input
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [disabled, setDisabled] = useState(true); // au depart le bouton est desactivé donc en gris
     const [isError, setIsError] = useState(null);
+    const [errorMsg, setErrorMsg] = useState("");
 
     // Stockage de l'url
     //const apiUrl = "http://localhost:9600/";
@@ -49,12 +55,46 @@ const Login = () => {
     }; */
 
     const onSubmitForm = (e) => {
-        e.preventDefault();
-        const data = {
+        e.preventDefault(); // on block le rechargement de la page
+
+        // ICI ON RECUP LES DATA DU FORMULAIRE ET ON LES STOCK DANS UN OBJET DATAFORMlogin pret a etre envoyé au back
+        const dataFormLogin = {
             email: e.target.email.value,
             password: e.target.password.value,
         };
-        console.log("data", data);
+        console.log("dataFormLogin", dataFormLogin);
+
+        // on doit l'envoyer au back on utilise la fonction qui fait cette action et on lui passe en argument dataFormLogin
+        loginUser(dataFormLogin)
+            .then((res) => {
+                console.log("res", res);
+                // 1-si le status est différent de 200 alors on va chercher le msg d'erreur
+                if (res.status === 200) {
+                    const { email, id, firstName } = res.user; // ici une destructuration
+
+                    const userInfos = {
+                        id: String(id),
+                        email: email,
+                        firstName: firstName,
+                    };
+
+                    console.warn("type", typeof userInfos.id);
+
+                    const isLoggedStatus = true;
+
+                    props.loginUser(userInfos, isLoggedStatus);
+
+                    localStorage.setItem("fh-token", res.token); // ICI ON ENVOI DAND LE LS
+                    console.log("res", res);
+                    navigate("/"); // on fait naviguer ver la home lorsqu'il se connect
+                } else {
+                    // 2-on stock se msg d'erreur dans un state
+                    setErrorMsg(res.msg); // on receptionne une string dans le state qu'on actualise
+                }
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
     };
 
     useEffect(() => {
@@ -79,7 +119,9 @@ const Login = () => {
                     onSubmit={(e) => onSubmitForm(e)}
                 >
                     <h1>form container</h1>
-                    <p className="showMessage">Login Status will go here</p>
+                    {/* // 3- on reutilise ce state errorMsg pour l'afficher dans le jsx */}
+
+                    {errorMsg && <p className="showMessage">{errorMsg}</p>}
                     <div className="inputDiv">
                         <label htmlFor="username">Email</label>
                         <div className="input flex">

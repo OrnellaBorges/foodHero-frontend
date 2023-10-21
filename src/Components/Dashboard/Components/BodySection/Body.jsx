@@ -18,7 +18,7 @@ const Body = () => {
             <div className="dashbordBody flex">
                 <Listing />
 
-                <Activity />
+                {/* <Activity /> */}
             </div>
         </div>
     );
