@@ -1,6 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+//import { getOneUser } from "../../api/ApiAds";
 
 // import icons
 import { BsFillHouseDoorFill, BsFillGrid3X3GapFill } from "react-icons/bs";
@@ -20,10 +20,24 @@ import "./nav.css";
 
 //navbar event
 
-const Nav = () => {
+const Nav = (props) => {
+    const { isLogged, userId } = props; // Destructuration de props pour éviter d'écrire "props."
+
+    console.log("userId", userId);
     //const [isActiv, setIsActiv] = useState("menuList");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isLogged, setIsLogged] = useState(true);
+
+    /*  useEffect(() => {
+        console.log("userId", userId);
+        getOneUser(userId)
+            .then((res) => {
+                console.log("res", res);
+                //setCooker(res.data.oneUser[0]);
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
+    }, []); */
 
     return (
         <nav className="navMenuDiv">
@@ -45,11 +59,13 @@ const Nav = () => {
                     </Link>
                 </li>
 
-                <li className="navItem">
-                    <Link to="/create" className="navLink">
-                        <Button text="Creer une annonce" />
-                    </Link>
-                </li>
+                {isLogged && (
+                    <li className="navItem">
+                        <Link to="/create" className="navLink">
+                            <Button text="Creer une annonce" />
+                        </Link>
+                    </li>
+                )}
             </ul>
 
             <ul className="menuList centerMenu flex">
@@ -83,7 +99,7 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className="navItem">
-                        <Link to="/userProfile" className="navLink">
+                        <Link to={`/userProfile/${userId}`} className="navLink">
                             <AiOutlineUser />
                             Mon compte
                         </Link>

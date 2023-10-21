@@ -175,7 +175,7 @@ const AllAdsCards = () => {
                                     {/* <p className="texte">
                                     Auteur : {annonce.auteur}
                                 </p> */}
-                                    <Link to={`oneAd/${annonce.id}`}>
+                                    <Link to={`/oneAd/${annonce.id}`}>
                                         <Button text="More details" />
                                     </Link>
                                 </li>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { config } from "../config";
+import { config } from "../../config";
 //const token = window.localStorage.getItem("b4y-token");
 
 export function createOneUser(datas) {
@@ -13,9 +13,22 @@ export function createOneUser(datas) {
         });
 }
 
-export function loginUser(datas) {
+// OBTENIR LE DETAIL D'UN USER
+export function getOneUser(userId) {
     return axios
-        .post(`${config.api_url}api/v1/user/login`, datas)
+        .get(`${config.api_url}api/v1/user/getOneUser/${userId}`)
+        .then((res) => {
+            return res;
+        })
+        .catch((err) => {
+            return err;
+        });
+}
+
+// cette fonction permet d'envoyer le gros objet dataFormLogin au back
+export function loginUser(dataFormLogin) {
+    return axios
+        .post(`${config.api_url}api/v1/user/login`, dataFormLogin)
         .then((res) => {
             return res.data;
         })

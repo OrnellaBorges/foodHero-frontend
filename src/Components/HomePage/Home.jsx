@@ -6,10 +6,10 @@ import AllAdsCards from "../AdsCards/AllAdsCards";
 //import Cookie from "../Cookie/Cookie";
 //import BasketOrder from "../BasketOrder/BasketOrder";
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div className="hp">
-            <Header />
+            <Header isLogged={props.isLogged} userId={props.userId} />
             {/* <Cookie /> */}
             <Hero />
             <AllAdsCards />

@@ -56,7 +56,7 @@ const Top = () => {
                         <video src={video} autoPlay loop muted></video>
                     </div>
                 </div>
-                <div className="TopCard rightCard">
+                {/* <div className="TopCard rightCard">
                     <div className="cardContent-right ">
                         <div className="statContainer">
                             <div className="statItems flex">
@@ -100,8 +100,8 @@ const Top = () => {
               <p>Having trouble in Planti, contact us.</p>
               <button className="btn">Go to help center</button>
             </div>
-          </div> */}
-                </div>
+          </div> 
+                </div> */}
             </div>
         </div>
     );

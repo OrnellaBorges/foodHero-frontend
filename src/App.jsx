@@ -15,145 +15,160 @@ import EditAccount from "./Components/Account/EditAccount";
 import EditAd from "./Components/AdsCards/FormsAds/EditAd";
 import OneAd from "./Components/AdsCards/OneAd/OneAd";
 import UserOneAd from "./Components/Dashboard/Components/ListingSection/UserAds/UserOneAd";
-
-// import React react dom
-
+import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// creation du router ??? // on met dans un tableau des objets
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: (
-            <div>
-                <Home />
-            </div>
-        ),
-    },
-    {
-        path: "/searchBar",
-        element: (
-            <div>
-                <SearchBar />
-            </div>
-        ),
-    },
-
-    {
-        path: "/filter",
-        element: (
-            <div>
-                <Filter />
-            </div>
-        ),
-    },
-    {
-        path: "/login",
-        element: (
-            <div>
-                <Login />
-            </div>
-        ),
-    },
-    {
-        path: "/register",
-        element: (
-            <div>
-                <Register />
-            </div>
-        ),
-    },
-    {
-        path: "/forgotPassword",
-        element: (
-            <div>
-                <ForgotPassword />
-            </div>
-        ),
-    },
-    {
-        path: "/account",
-        element: (
-            <div>
-                <Account />
-            </div>
-        ),
-    },
-    {
-        path: "/editAccount",
-        element: (
-            <div>
-                <EditAccount />
-            </div>
-        ),
-    },
-    {
-        path: "/editAd",
-        element: (
-            <div>
-                <EditAd />
-            </div>
-        ),
-    },
-    {
-        path: "/userProfile",
-        element: (
-            <div>
-                <UserProfile />
-            </div>
-        ),
-    },
-    {
-        path: "/dashboard",
-        element: (
-            <div>
-                <Dashboard />
-            </div>
-        ),
-    },
-    {
-        path: "/oneAd/:adId",
-        element: (
-            <div>
-                <OneAd />
-            </div>
-        ),
-    },
-    {
-        path: "/userOneAd",
-        element: (
-            <div>
-                <UserOneAd />
-            </div>
-        ),
-    },
-    {
-        path: "/cookie",
-        element: (
-            <div>
-                <Cookie />
-            </div>
-        ),
-    },
-    {
-        path: "/create",
-        element: (
-            <div>
-                <CreateAds />
-            </div>
-        ),
-    },
-    {
-        path: "/orders",
-        element: (
-            <div>
-                <Orders />
-            </div>
-        ),
-    },
-]);
-
 function App() {
+    const [userInfos, setUserInfos] = useState({}); // infos de l'utilisateur loggué
+    console.warn("infos de l'utilisateur loggué", userInfos);
+    const [isLogged, setIsLogged] = useState(false);
+
+    const handleLoginUser = (userInfos, isLoggedStatus) => {
+        setUserInfos(userInfos);
+        setIsLogged(isLoggedStatus);
+    };
+
+    const handleLogoutUser = () => {
+        setUserInfos({});
+        setIsLogged(false);
+    };
+
+    // creation du router ??? // on met dans un tableau des objets
+    const router = createBrowserRouter([
+        {
+            path: "/userProfile/:cookerId",
+            element: (
+                <div>
+                    <UserProfile
+                        logoutUser={handleLogoutUser}
+                        userId={userInfos.id}
+                    />
+                </div>
+            ),
+        },
+        {
+            path: "/login",
+            element: (
+                <div>
+                    <Login loginUser={handleLoginUser} />
+                </div>
+            ),
+        },
+        {
+            path: "/",
+            element: (
+                <div>
+                    <Home isLogged={isLogged} userId={userInfos.id} />
+                </div>
+            ),
+        },
+        {
+            path: "/searchBar",
+            element: (
+                <div>
+                    <SearchBar />
+                </div>
+            ),
+        },
+
+        {
+            path: "/filter",
+            element: (
+                <div>
+                    <Filter />
+                </div>
+            ),
+        },
+        {
+            path: "/register",
+            element: (
+                <div>
+                    <Register />
+                </div>
+            ),
+        },
+        {
+            path: "/forgotPassword",
+            element: (
+                <div>
+                    <ForgotPassword />
+                </div>
+            ),
+        },
+        {
+            path: "/account",
+            element: (
+                <div>
+                    <Account />
+                </div>
+            ),
+        },
+        {
+            path: "/editAccount",
+            element: (
+                <div>
+                    <EditAccount />
+                </div>
+            ),
+        },
+        {
+            path: "/editAd",
+            element: (
+                <div>
+                    <EditAd />
+                </div>
+            ),
+        },
+        {
+            path: "/dashboard",
+            element: (
+                <div>
+                    <Dashboard />
+                </div>
+            ),
+        },
+        {
+            path: "/oneAd/:adId",
+            element: (
+                <div>
+                    <OneAd />
+                </div>
+            ),
+        },
+        {
+            path: "/userOneAd",
+            element: (
+                <div>
+                    <UserOneAd />
+                </div>
+            ),
+        },
+        {
+            path: "/cookie",
+            element: (
+                <div>
+                    <Cookie />
+                </div>
+            ),
+        },
+        {
+            path: "/create",
+            element: (
+                <div>
+                    <CreateAds />
+                </div>
+            ),
+        },
+        {
+            path: "/orders",
+            element: (
+                <div>
+                    <Orders />
+                </div>
+            ),
+        },
+    ]);
+
     return (
         <>
             <RouterProvider router={router} />
