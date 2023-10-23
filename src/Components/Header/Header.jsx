@@ -17,7 +17,11 @@ import { faCartShopping, faHome, faPersonFalling, faGears, faBeerMugEmpty , faRi
 const Header = (props) => {
     return (
         <header className="header">
-            <Nav isLogged={props.isLogged} userId={props.userId} />
+            <Nav
+                isLogged={props.isLogged}
+                userId={props.userId}
+                name={props.name}
+            />
         </header>
     );
 };

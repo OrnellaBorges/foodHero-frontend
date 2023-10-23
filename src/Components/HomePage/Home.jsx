@@ -9,7 +9,11 @@ import Rgpd from "../Concent/RgpdBanner";
 const Home = (props) => {
     return (
         <div className="hp">
-            <Header isLogged={props.isLogged} userId={props.userId} />
+            <Header
+                isLogged={props.isLogged}
+                userId={props.userId}
+                name={props.userName}
+            />
             {/* <Cookie /> */}
             <Hero />
             <Rgpd />

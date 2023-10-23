@@ -2,9 +2,7 @@
     text-align: left;
     display: flex;
     justify-content: center;
-    border: 3px solid red;
     background-color: transparent;
-    padding: 1rem 1rem;
 }
 
 .menuList {
@@ -14,13 +12,9 @@
     align-items: center;
 }
 
-.navItem {
-    list-style-type: none;
-}
-
 .leftMenu,
 .rightMenu {
-    background-color: orange;
+    background-color: #090125;
 }
 
 .centerMenu {
@@ -28,7 +22,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 3px solid blue;
 }
 
 .closeNav {
@@ -46,7 +39,7 @@
     font-size: large;
 }
 .logo-container {
-    width: 150px;
+    width: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,13 +50,14 @@
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
+    padding: 10px;
 }
 
 .navLink {
     text-decoration: none;
     /* font-family: ; */
     border: 3px solid transparent;
-    color: black;
+    color: white;
     font-size: 15px;
     padding: 0.5rem;
     text-align: center;
@@ -72,6 +66,7 @@
 .navLink:hover {
     border: 3px solid white;
     color: white;
+    border-radius: 10px;
 }
 
 .navIcon {
@@ -98,7 +93,7 @@
 
         width: 80%;
         border-radius: 10px;
-        padding: 0 1rem 0rem;
+        padding: 1rem 0rem;
         transform: translate(-50%);
         transition: 0.3s ease;
         z-index: 3000;
@@ -139,7 +134,7 @@
 
     .closeNav {
         display: block;
-        color: black;
+        color: white;
         position: absolute;
         font-size: 25px;
 
@@ -155,6 +150,7 @@
         display: flex;
         font-size: 25px;
         margin-right: 50px;
+        color: white;
     }
 
     .activeNav {
@@ -163,5 +159,9 @@
 
     .closedNav {
         display: none;
+    }
+
+    .navLink:hover {
+        border: 0px;
     }
 }

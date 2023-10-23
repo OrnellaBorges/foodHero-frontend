@@ -19,20 +19,206 @@ const AllAdsCards = () => {
     /* STATES  */
     const [annoncesRecentes, setAnnoncesRecentes] = useState([]);
     const [status, setStatus] = useState(0);
-
     const [currentPage, setCurrentPage] =
         useState(
             1
         ); /* par defaut on initialise la current page a la page 1 qu'on stock dans un state */
     //ici on recup le nombre total d'annonce et on stock dans la constante total
-    const total = 500;
+    const [total, setTotal] = useState(0);
+
+    console.log("total", total);
 
     // on met ici la limite du nombre d'elements qu'on veut voir à l'ecran
-    const limit = 20;
+    const limit = 10;
     {
         /* Recup toutes les annonces recentes et stocker dans annonces recentes*/
     }
-    /* const annoncesRecentes = [
+
+    function timestampToDate(timestamp) {
+        const date = new Date(timestamp * 1000); // Convertir le timestamp Unix en millisecondes
+        const day = String(date.getDate()).padStart(2, "0"); // Jour (avec zéro initial si nécessaire)
+        const month = String(date.getMonth() + 1).padStart(2, "0"); // Mois (ajouter 1 car les mois commencent à 0)
+        const year = date.getFullYear(); // Année
+
+        return `${day}/${month}/${year}`;
+    }
+
+    useEffect(() => {
+        // appel de la fonction allAds()
+        allAds()
+            .then((res) => {
+                console.log("res.allAds", res.allAds);
+                setStatus(res.status);
+                setAnnoncesRecentes(res.allAds);
+                setTotal(res.allAds.length);
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
+    }, []);
+
+    return (
+        <>
+            {status === 200 ? (
+                <section className="cards-container">
+                    <h1 className="mainTitle">Toutes les annonces</h1>
+
+                    {/* Mapper la liste annoncesRecente
+                la liste doit faire apparaitre toutes les annonces les plus recentes dans le temps et 10 max */}
+
+                    <div className="mappedList">
+                        <h2>
+                            Liste d'Annonces mappé de la plus récente à la plus
+                            ancienne
+                        </h2>
+                        <ul className="testUl">
+                            {/* .map pour chaque annonce tu retournes un li */}
+                            {annoncesRecentes.slice(0, 10).map((annonce) => (
+                                <li key={annonce.id} className="testLi">
+                                    {/* <img src={annonce.image} alt={annonce.title} /> */}
+                                    <h3 className="title-card">
+                                        {annonce.title}
+                                    </h3>
+                                    <p className="text">
+                                        Prix : {annonce.price} €
+                                    </p>{" "}
+                                    {/* ici il n'y a pas d'interpolation ???? */}
+                                    <p className="texte">
+                                        Date :
+                                        {timestampToDate(annonce.creationDate)}
+                                    </p>
+                                    <p className="texte">
+                                        {annonce.description}
+                                    </p>
+                                    {/* <p className="texte">
+                                    Auteur : {annonce.auteur}
+                                </p> */}
+                                    <Link to={`/oneAd/${annonce.id}`}>
+                                        <Button text="More details" />
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* dans pagination on passe des props qui serviront dans le composant
+                    currentPage >> pour l'etat de la page actuelle 
+                    total >>est le nombre totale de page existante
+                    limit  >> est la limite des elements à afficher sur la page 
+                    On affecte aussi un ecouteur d'evenment qui au changement mettra a jour le state currentPage
+                    
+                    */}
+                        <Pagination
+                            currentPage={currentPage}
+                            total={total}
+                            limit={limit}
+                            onChangePage={(page) => setCurrentPage(page)}
+                        />
+                    </div>
+                </section>
+            ) : (
+                <section className="cards-container">
+                    <h1 className="mainTitle">Toutes les annonces</h1>
+                    <div className="containerMessage">
+                        <h2 className="statusError">
+                            OOPS... Nous avons rencontré un problème.
+                        </h2>
+                    </div>
+                </section>
+            )}
+        </>
+    );
+};
+
+export default AllAdsCards;
+
+/* <ul className="cards-list">
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img className="imageZoom" src={pasta} alt="" />
+                        </div>
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Pâtes au poulet</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={lasagnes} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Lasagnes végé</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={cookie} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Cookies</h4>
+                            <h5>Prix : 3.5€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={pasta} alt="" />
+                        </div>
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Pâtes au poulet</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <MoreDetailButton text="More details" />
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={lasagnes} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Lasagnes végé</h4>
+                            <h5>Prix : 3€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+                    <li className="singleCard">
+                        <div className="imgCard-container">
+                            <img src={cookie} alt="lasagnes végétariennes" />
+                        </div>
+
+                        <div className="adsCard-content">
+                            <h4 className="cardTitle">Cookies</h4>
+                            <h5>Prix : 3.5€</h5>
+                            <p>Lille</p>
+                            <div className="buttonContainer flex">
+                                <Button text="More details" />
+                            </div>
+                        </div>
+                    </li>
+                </ul> */
+/* const annoncesRecentes = [
         {
             id: 21,
             titre: "Annonce 21",
@@ -125,180 +311,3 @@ const AllAdsCards = () => {
             auteur: "Auteur 3",
         },
     ]; */
-
-    useEffect(() => {
-        // appel de la fonction allAds()
-        allAds()
-            .then((res) => {
-                console.log("res.allAds", res.allAds);
-                console.log("res.status", res.status);
-                setStatus(res.status);
-                setAnnoncesRecentes(res.allAds);
-            })
-            .catch((err) => {
-                console.log("err", err);
-            });
-    }, []);
-
-    return (
-        <>
-            {status === 200 ? (
-                <section className="cards-container">
-                    <h1 className="mainTitle">Toutes les annonces</h1>
-
-                    {/* Mapper la liste annoncesRecente
-                la liste doit faire apparaitre toutes les annonces les plus recentes dans le temps et 10 max */}
-
-                    <div className="mappedList">
-                        <h2>
-                            Liste d'Annonces mappé de la plus récente à la plus
-                            ancienne
-                        </h2>
-                        <ul className="testUl">
-                            {/* .map pour chaque annonce tu retournes un li */}
-                            {annoncesRecentes.slice(0, 20).map((annonce) => (
-                                <li key={annonce.id} className="testLi">
-                                    {/* <img src={annonce.image} alt={annonce.title} /> */}
-                                    <h3 className="title-card">
-                                        {annonce.title}
-                                    </h3>
-                                    <p className="text">
-                                        Prix : {annonce.price} €
-                                    </p>{" "}
-                                    {/* ici il n'y a pas d'interpolation ???? */}
-                                    <p className="texte">
-                                        Date : {annonce.creationDate}
-                                    </p>
-                                    <p className="texte">
-                                        {annonce.description}
-                                    </p>
-                                    {/* <p className="texte">
-                                    Auteur : {annonce.auteur}
-                                </p> */}
-                                    <Link to={`/oneAd/${annonce.id}`}>
-                                        <Button text="More details" />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-
-                        {/* dans pagination on passe des props qui serviront dans le composant
-                    currentPage >> pour l'etat de la page actuelle 
-                    total >>est le nombre totale de page existante
-                    limit  >> est la limite des elements à afficher sur la page 
-                    On affecte aussi un ecouteur d'evenment qui au changement mettra a jour le state currentPage
-                    
-                    */}
-                        <Pagination
-                            currentPage={currentPage}
-                            total={total}
-                            limit={limit}
-                            onChangePage={(page) => setCurrentPage(page)}
-                        />
-                    </div>
-                </section>
-            ) : (
-                <section className="cards-container">
-                    <h1 className="mainTitle">Toutes les annonces</h1>
-                    <div className="containerMessage">
-                        <h2 className="statusError">
-                            OOPS... Nous avons rencontré un problème.
-                        </h2>
-                    </div>
-                </section>
-            )}
-        </>
-    );
-};
-
-export default AllAdsCards;
-
-{
-    /* <ul className="cards-list">
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img className="imageZoom" src={pasta} alt="" />
-                        </div>
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Pâtes au poulet</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={lasagnes} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Lasagnes végé</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={cookie} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Cookies</h4>
-                            <h5>Prix : 3.5€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={pasta} alt="" />
-                        </div>
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Pâtes au poulet</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <MoreDetailButton text="More details" />
-                            </div>
-                        </div>
-                    </li>
-
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={lasagnes} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Lasagnes végé</h4>
-                            <h5>Prix : 3€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="singleCard">
-                        <div className="imgCard-container">
-                            <img src={cookie} alt="lasagnes végétariennes" />
-                        </div>
-
-                        <div className="adsCard-content">
-                            <h4 className="cardTitle">Cookies</h4>
-                            <h5>Prix : 3.5€</h5>
-                            <p>Lille</p>
-                            <div className="buttonContainer flex">
-                                <Button text="More details" />
-                            </div>
-                        </div>
-                    </li>
-                </ul> */
-}

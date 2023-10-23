@@ -21,7 +21,7 @@ export function allAds() {
 
 //fonction quoi permet de recup toutes les annonces d'un utilisateur
 export function allUserAds(userId) {
-    console.log("userId hjhb", userId);
+    //console.log("userId hjhb", userId);
     return axios
         .get(`${config.api_url}api/v1/ads/getAllUserAd/${userId}`)
         .then((res) => {

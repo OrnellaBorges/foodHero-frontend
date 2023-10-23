@@ -21,7 +21,7 @@ import "./nav.css";
 //navbar event
 
 const Nav = (props) => {
-    const { isLogged, userId } = props; // Destructuration de props pour éviter d'écrire "props."
+    const { isLogged, userId, name } = props; // Destructuration de props pour éviter d'écrire "props."
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -40,7 +40,7 @@ const Nav = (props) => {
 
                 <li className="navItem">
                     <Link to="/" className="navLink">
-                        Home
+                        Bienvenue sur FoodHero
                     </Link>
                 </li>
                 {isLogged && (
@@ -54,11 +54,11 @@ const Nav = (props) => {
 
             <ul className="menuList centerMenu flex">
                 <li className="navItem">
-                    <Link to="/" className="navLink">
+                    <Link to="/" className="logo-homeLink">
                         <div className="logo-container">
                             <img src={logo} className="logoNav" />
-                            <p className="brand">.FOODHERO</p>
                         </div>
+                        <p className="brand">.FOODHERO</p>
                     </Link>
                 </li>
 
@@ -71,7 +71,7 @@ const Nav = (props) => {
             </ul>
 
             {/* cette partie devra etre un ternaire si l'user est connecté ou pas voir beer4you header */}
-            {props.isLogged ? (
+            {isLogged ? (
                 <ul
                     className={`menuList rightMenu flex ${
                         isMenuOpen ? "" : "closedNav"
@@ -84,15 +84,18 @@ const Nav = (props) => {
                     </li>
                     <li className="navItem">
                         <Link to={`/userProfile/${userId}`} className="navLink">
-                            <AiOutlineUser />
+                            {/* <AiOutlineUser /> */}
                             Mon compte
                         </Link>
                     </li>
                     <li className="navItem">
+                        <p>Bonjour {name}</p>
+                    </li>
+                    {/* <li className="navItem">
                         <Link to="/orders" className="navLink">
                             Orders
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             ) : (
                 <ul
@@ -102,7 +105,7 @@ const Nav = (props) => {
                 >
                     <li className="navItem">
                         <Link to="/login" className="navLink">
-                            <Button text="Se connecter" />
+                            Se connecter
                         </Link>
                     </li>
                 </ul>

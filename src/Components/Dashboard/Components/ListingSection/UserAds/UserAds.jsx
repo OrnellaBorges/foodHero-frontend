@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { allUserAds } from "../../../../../api/ApiAds";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-//import { useState } from "react";
-//import { useEffect } from "react";
-//import axios from "axios";
 
 // ICI ON A UN COMPOSANT QUI FAIT
 //APPARAITRE TOUTES LES ANNONCES D'un USER sur sa page donc toutes les annonces dont l'userId est === id de l'user connecté
@@ -19,7 +16,9 @@ import lasagnes from "../../assets/lasagna1.jpeg";
 import cookie from "../../assets/cookie3.jpeg"; */
 //import image from "../../../../../assets/food/riz.jpg";
 
-const UserAds = () => {
+const UserAds = (props) => {
+    //const { userId } = useParams();
+
     // ici on va faire un fetch
     /* const recupUserAnnonces = [
         {
@@ -48,16 +47,20 @@ const UserAds = () => {
 
     //ici on stock grace a useParams l'id de l'utilisateur connecté qui a été mis dans le link de allAdsCard
 
-    const userId = 1;
+    const userId = props.userId;
+
+    console.log("userId", userId);
 
     //const { userId } = useParams(3);
+
+    //const userId = 1;
 
     const [userAds, setUserAds] = useState([]);
     const [isError, setIsError] = useState(false);
     //const [status, setStatus] = useState(0);
 
     console.log("userAds", userAds);
-
+    console.log("userAds.length", userAds.length);
     useEffect(() => {
         //console.log("userId", userId);
         // appel de la fonction allUserAds()
@@ -83,25 +86,27 @@ const UserAds = () => {
     return (
         <>
             <section className="cardsContainer">
-                <h2 className="title-container">Annonces de l'user</h2>
+                <h2 className="title-container">Vos annonces :</h2>
                 {userAds.length > 0 ? (
                     <ul className="testUl">
                         {/* .map pour chaque annonce tu retournes un li */}
                         {userAds.map((annonce) => (
                             <li key={annonce.id} className="testLi">
                                 {/* <img src={annonce.image} alt={annonce.titre} /> */}
-                                <h3 className="titre">{annonce.title}</h3>
-                                <p className="texte">
+                                <h3 className="title-card">{annonce.title}</h3>
+                                <p className="text-card">
                                     Prix : {annonce.price} €
                                 </p>{" "}
                                 {/* ici il n'y a pas d'interpolation ???? */}
-                                <p className="texte">
+                                <p className="text-card">
                                     Date : {annonce.creationDate}
                                 </p>
-                                <p className="texte">{annonce.description}</p>
+                                <p className="texte-card">
+                                    {annonce.description}
+                                </p>
                                 {/* <p className="texte">
-                                    Auteur : {annonce.auteur}
-                                </p> */}
+                                Auteur : {annonce.auteur}
+                            </p> */}
                                 <Link to="/userOneAd">
                                     <Button text="More details" />
                                 </Link>
@@ -109,7 +114,7 @@ const UserAds = () => {
                         ))}
                     </ul>
                 ) : (
-                    <p>Pas d'annonces</p>
+                    <p className="message">Pas d'annonces</p>
                 )}
             </section>
         </>

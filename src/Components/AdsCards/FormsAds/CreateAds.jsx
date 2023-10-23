@@ -1,6 +1,6 @@
-import React from "react";
-
 import { useState, useEffect } from "react";
+
+import { Link } from "react-router-dom";
 
 // import components
 import SubmitButton from "../../Buttons/submitButton";
@@ -177,6 +177,8 @@ const CreateAds = () => {
 
                     <div className="formButtonContainer">
                         <SubmitButton text="SUBMIT" />
+                        <Link to="/dashboard">Back to Dashboard</Link>
+                        <Link to="/">Back to Home</Link>
                         {/* <button
                             type="submit"
                             className={`submit-button ${

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getOneUser } from "../../api/ApiUser";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { FontAwesomeIcon } from "@fortawesome/fontawesome-svg-core";
 
@@ -10,7 +11,16 @@ import Button from "../Buttons/Button";
 
 import "./edit.css";
 
-function EditAccount() {
+function EditAccount(props) {
+    const userId = props.userId;
+    console.log("userId", userId);
+
+    /* const [firstName, setFirstName] = useState(firstName);
+    const [lastName, setLastName] = useState(lastName);
+    const [email, setEmail] = useState(email);
+    const [adress, setAdress] = useState(adress);
+    const [phoneNumber, setPhoneNumber] = useState(phoneNumber); */
+
     const [user, setUser] = useState({
         firstName: "Albert",
         lastName: "Einstein",
@@ -21,9 +31,19 @@ function EditAccount() {
     });
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setUser({ ...user, [name]: value });
+        /* const { name, value } = event.target;
+        setUser({ ...user, [name]: value }); */
     };
+
+    useEffect(() => {
+        getOneUser(userId)
+            .then((res) => {
+                setCooker(res.data.oneUser[0]);
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
+    }, []);
 
     return (
         <div className="profile-edit">
@@ -84,16 +104,6 @@ function EditAccount() {
                     />
                     {/* <FontAwesomeIcon icon={faPencilAlt} /> */}
                 </div>
-                <div className="form-group">
-                    <label>Image de profil</label>
-                    <input
-                        type="url"
-                        name="profileImage"
-                        value={user.profileImage}
-                        onChange={handleInputChange}
-                    />
-                    {/* <FontAwesomeIcon icon={faPencilAlt} /> */}
-                </div>
             </div>
             <div className="save-buttonContainer">
                 <Button text="Enregistrer les modifications" />
@@ -101,7 +111,7 @@ function EditAccount() {
                     <Button text="Back to Dashboard" />
                 </Link>
                 <Link to="/userProfile">
-                    <Button text="Back to user profile" />
+                    <Button text="Back to userprofile" />
                 </Link>
                 <Link to="/account">
                     <Button text="Back to account" />
@@ -112,3 +122,14 @@ function EditAccount() {
 }
 
 export default EditAccount;
+
+/*<div className="form-group">
+                    <label>Image de profil</label>
+                    <input
+                        type="url"
+                        name="profileImage"
+                        value={user.profileImage}
+                        onChange={handleInputChange}
+                    />
+                <FontAwesomeIcon icon={faPencilAlt} />
+                </div>*/

@@ -9,15 +9,15 @@ import UserAds from "./UserAds/UserAds";
 //import pasta from "../../../../assets/pasta.jpg";
 //import user from "../../../../assets/users/avatar3.jpg";
 
-const Listing = () => {
+const Listing = (props) => {
+    const userId = props.userId;
     return (
         <section className="listingSection">
             <header className="linstingHeading flex">
                 <h1 className="listingTitle">Listing Section</h1>
-                <SeeAllBtn />
             </header>
             <div className="listingContent">
-                <UserAds />
+                <UserAds userId={userId} />
                 {/* <RegisteredAds /> */}
             </div>
         </section>

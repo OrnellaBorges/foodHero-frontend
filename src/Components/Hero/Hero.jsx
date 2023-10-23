@@ -1,8 +1,9 @@
 import React from "react";
-
-import hero from "../../assets/hero.jpg";
+import { Link } from "react-router-dom";
 
 import "./hero.css";
+
+import video from "../../assets/banana.mp4";
 
 const Hero = () => {
     return (
@@ -10,17 +11,41 @@ const Hero = () => {
             <section className="hero">
                 {/* <div className="hero-imgContainer">
                     <img src={hero} alt="hero" />
-                </div> */}
+                </div> 
                 <div className="heroText-container">
-                    <p className="heroText">
-                        LAAHBD KSKZKZB KSH NJDHHDVC KJ BDGHD .
-                    </p>
+                    <p className="heroText">Vous êtes le chef en cuisine!</p>
 
                     <div className="heroTitle">
-                        <strong>Lorem ipsum dolor sit amet consectetur.</strong>
+                        <strong>
+                            Partagez, cuisinez, economisez... et si votre frigo
+                            pouvais parler? Il dirait quoi ?
+                        </strong>
                     </div>
+                    <Link to="/presentation">
+                        <button className="heroBtn">En savoir plus</button>
+                    </Link>
+                </div>*/}
+                <div className="cardSection flex">
+                    <div className="rightCard flex">
+                        <div className="cardContent">
+                            <h1>Au four et au moulin.</h1>
+                            <p>Faites bouillir la marmite!.</p>
+                            <div className="topCardButtons flex">
+                                <Link to="/">
+                                    <button className="fillBtn">Explore</button>
+                                </Link>
+                                {/* <Link to="/">
+                            <button className="transparentBtn">
+                                Top Sellers
+                            </button>
+                            </Link> */}
+                            </div>
+                        </div>
 
-                    <button className="heroBtn">Get in touch</button>
+                        <div className="videoDiv">
+                            <video src={video} autoPlay loop muted></video>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

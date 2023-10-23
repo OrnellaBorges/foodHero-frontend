@@ -4,7 +4,7 @@ import Login from "./Components/Login/Login";
 import ForgotPassword from "./Components/ForgotPwd/ForgotPassword";
 import Register from "./Components/Register/Register";
 import Home from "./Components/HomePage/Home";
-import Cookie from "./Components/Cookie/Cookie";
+import Cookie from "./Components/Concent/Cookie";
 import Orders from "./Components/Orders/Orders";
 import CreateAds from "./Components/AdsCards/FormsAds/CreateAds";
 import Account from "./Components/Account/Account";
@@ -19,8 +19,10 @@ import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-    const [userInfos, setUserInfos] = useState({}); // infos de l'utilisateur loggué
+    const [userInfos, setUserInfos] = useState({}); // infos de l'utilisateur loggué lorsque l'user s'est log dans la page loggin alors on a fait remonté les data dans app
     const [isLogged, setIsLogged] = useState(false);
+
+    console.warn("userInfos", userInfos);
 
     const handleLoginUser = (userInfos, isLoggedStatus) => {
         setUserInfos(userInfos);
@@ -57,7 +59,33 @@ function App() {
             path: "/",
             element: (
                 <div>
-                    <Home isLogged={isLogged} userId={userInfos.id} />
+                    <Home
+                        isLogged={isLogged}
+                        userId={userInfos.id}
+                        userName={userInfos.firstName}
+                    />
+                </div>
+            ),
+        },
+        {
+            path: "/editAccount",
+            element: (
+                <div>
+                    <EditAccount isLogged={isLogged} userId={userInfos.id} />
+                </div>
+            ),
+        },
+        {
+            path: "/dashboard",
+            element: (
+                <div>
+                    <Dashboard
+                        isLogged={isLogged}
+                        user={userInfos}
+                        userId={userInfos.id}
+                        firstName={userInfos.firstName}
+                        lastName={userInfos.lastName}
+                    />
                 </div>
             ),
         },
@@ -102,14 +130,7 @@ function App() {
                 </div>
             ),
         },
-        {
-            path: "/editAccount",
-            element: (
-                <div>
-                    <EditAccount />
-                </div>
-            ),
-        },
+
         {
             path: "/editAd",
             element: (
@@ -118,14 +139,7 @@ function App() {
                 </div>
             ),
         },
-        {
-            path: "/dashboard",
-            element: (
-                <div>
-                    <Dashboard />
-                </div>
-            ),
-        },
+
         {
             path: "/oneAd/:adId",
             element: (

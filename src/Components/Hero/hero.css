@@ -4,19 +4,18 @@
        background-image: url(assets/cook.jpg);
       text-shadow: 0 2px 0 black, 0 -2px 0 black; */
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 1, 0.42), rgba(0, 0, 1, 0.549)),
-        url(../../assets/food1.jpg);
-    background-position: center;
+    height: 400px;
+    background: url(../../assets/hero3.png);
+    background-position: bottom;
     object-fit: cover;
     row-gap: 3rem;
 }
 
 .heroText-container {
-    border: 10px solid rgb(238, 255, 0);
-    /* padding: 0 20% 20%; */
+    padding: 20% 10% 20%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -26,8 +25,8 @@
 
 .heroText {
     color: white;
-    padding: 2rem 0;
-    font-size: 500;
+    padding-bottom: 1rem;
+    font-size: 40px;
 }
 
 .heroTitle {
@@ -44,21 +43,155 @@ strong {
     color: white;
 }
 
-/* .btn {
-    border: 2px solid white;
+/*========================*/
+
+.cardSection {
+    margin-top: 3rem;
+    gap: 1rem;
+}
+.rightCard {
+    position: relative;
+    /*             flex-basis: 70%; */
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-size: cover;
+    overflow: hidden;
+}
+.transparentBtn {
+    border-radius: 10px;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid transparent;
     color: white;
-    font-size: 13px;
-    transition: 0.3s;
-    width: max-content;
-    padding: 10px;
+    font-weight: 600;
 }
 
-.btn:hover {
+.transparentBtn:hover {
+    background: white;
+    color: black;
+}
+
+p {
+    color: white;
+}
+.statContainer {
+    justify-content: center;
+    align-items: center;
+}
+.cardContent {
+    z-index: 2000;
+    text-align: center;
+}
+.topCardButtons {
+    gap: 1rem;
+    justify-content: center;
+}
+.fillBtn {
+    padding: 1rem;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 10px;
     background-color: white;
-    color: red;
-    font-size: 13px;
     font-weight: 600;
-} */
+}
+
+.videoDiv {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: var(--h1FontSize);
+    padding-bottom: 1rem;
+    color: var(--blackColor);
+}
+
+small {
+    font-size: var(--smallestFontSize);
+    display: block;
+    color: var(--primaryColor);
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+.main {
+    position: relative;
+    padding: 1rem;
+    height: 200px;
+    border-radius: 1rem;
+    justify-content: space-between;
+    background: var(--paleGreen);
+}
+.main {
+    position: relative;
+    padding: 1rem;
+    height: 200px;
+    border-radius: 1rem;
+    justify-content: space-between;
+    background: var(--paleGreen);
+
+    /*         .texDiv {
+            h1 {
+                font-size: var(--h1FontSize);
+                padding-bottom: 1rem;
+                color: var(--blackColor);
+            } */
+
+    /* .flex {
+                small {
+                    font-size: var(--smallestFontSize);
+                    display: block;
+                    color: var(--primaryColor);
+                    font-weight: 500;
+                    padding: 0.5rem 0;
+                } */
+
+    .link {
+        margin-top: 2rem;
+        cursor: pointer;
+    }
+
+    .cardContent {
+        position: relative;
+        padding: 1rem;
+        background: var(--hoverColor);
+        border-radius: 10px;
+        overflow: hidden;
+
+        h3 {
+            font-size: var(--h3FontSize);
+            margin-top: 1rem;
+            padding: 1rem 0;
+            font-weight: 800;
+            color: var(--blackColor);
+        }
+
+        p {
+            font-size: var(--normalFontSize);
+            color: var(--textColor);
+            padding-bottom: 1rem;
+            font-weight: 500;
+        }
+    }
+
+    .cardContent-right {
+        text-align: center;
+    }
+}
 
 .heroBtn {
     padding: 0.8rem;
@@ -81,4 +214,10 @@ strong {
 .heroBtn:hover {
     background: white;
     color: rgb(226, 184, 0);
+}
+
+@media screen and (min-width: 768px) {
+    .heroText-container {
+        /*padding: 10% 10% 20%;*/
+    }
 }

@@ -10,13 +10,13 @@ import Listing from "../ListingSection/Listing";
 
 import Activity from "../ActivitySection/Activity";
 
-const Body = () => {
+const Body = (props) => {
     return (
         <div className="mainContent">
             <Top />
             {/* <FilterIcon /> */}
             <div className="dashbordBody flex">
-                <Listing />
+                <Listing userId={props.userId} />
 
                 {/* <Activity /> */}
             </div>

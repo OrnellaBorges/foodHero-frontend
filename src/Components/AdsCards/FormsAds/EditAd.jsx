@@ -65,11 +65,15 @@ const EditAd = () => {
 
     return (
         <>
-            <section className="editFormPage">
+            <section className="loginPage">
                 <div className="formHeader">
                     <h2 className="formTitle">Edit Ad</h2>
                 </div>
-                <form className="" name="createForm" onSubmit={onSubmitForm}>
+                <form
+                    className="formContainer"
+                    name="createForm"
+                    onSubmit={onSubmitForm}
+                >
                     <div className="inputDiv">
                         <div className="input">
                             <label htmlFor="Title">Title</label>
@@ -83,42 +87,39 @@ const EditAd = () => {
                             />
                         </div>
                     </div>
-                    <div className="inputDiv">
-                        <div className="input">
-                            <label htmlFor="price">Price</label>
-                            <input
-                                type="number"
-                                id="price"
-                                placeholder="Enter Your Price"
-                                onChange={(e) => {
-                                    /* console.log(e);
+                    <div className="input">
+                        <label htmlFor="price">Price</label>
+                        <input
+                            type="number"
+                            id="price"
+                            placeholder="Enter Your Price"
+                            onChange={(e) => {
+                                /* console.log(e);
                                     console.log(
                                         "e.target.value",
                                         e.target.value
                                     ) */ setPrice(e.currentTarget.value);
-                                }}
-                            />
-                        </div>
+                            }}
+                        />
                     </div>
-                    <div className="inputDiv">
-                        <div className="input ">
-                            <label htmlFor="quantity">Quantity</label>
-                            <input
-                                type="number"
-                                id="quantity"
-                                placeholder="Enter quantity"
-                                onChange={(e) => {
-                                    /* console.log(e);
+
+                    <div className="input ">
+                        <label htmlFor="quantity">Quantity</label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            placeholder="Enter quantity"
+                            onChange={(e) => {
+                                /* console.log(e);
                                     console.log(
                                         "e.target.value",
                                         e.target.value
                                     ); */
-                                    setQuantity(e.currentTarget.value);
-                                }}
-                            />
-                        </div>
+                                setQuantity(e.currentTarget.value);
+                            }}
+                        />
                     </div>
-                    <div className="inputDiv">
+                    <div className="input">
                         <label htmlFor="description">Descriptions</label>
                         <textarea
                             className="
@@ -129,7 +130,7 @@ const EditAd = () => {
                             value={description}
                             rows="4"
                             cols="50"
-                            placeholder="Enter description"
+                            placeholder="Votre description"
                             onChange={(e) => {
                                 /* console.log(e);
                                 console.log("e.target.value", e.target.value); */

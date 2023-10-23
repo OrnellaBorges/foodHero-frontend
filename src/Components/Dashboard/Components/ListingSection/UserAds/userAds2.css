@@ -11,7 +11,11 @@
     justify-content: flex-start; /* Alignement horizontal vers le début */
     align-items: flex-start; /* Alignement vertical vers le début */
 }
-.title-container {
+
+.title-card {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff; /* Blue title color */
 }
 
 .singleCard {
@@ -57,4 +61,8 @@ img {
 .cardBtn:hover {
     background: white;
     color: rgb(226, 184, 0);
+}
+
+.message {
+    color: red;
 }

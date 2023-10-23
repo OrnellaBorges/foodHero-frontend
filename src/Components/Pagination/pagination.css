@@ -5,27 +5,26 @@
     border: 3px solid white;
     padding: 10px;
     display: flex;
-    border: 3px solid violet;
+    background-color: rgb(208, 208, 255);
 }
 
 .paginateButtons {
-    color: red;
+    color: black;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    border: 1px solid transparent;
+    border: 3px solid transparent;
 }
 
 .paginateButtons:hover {
-    color: red;
+    color: rgb(55, 55, 82);
     background-color: transparent;
     border-radius: 10px;
-    padding: 10px;
-    border: 1px solid white;
+    border: 3px solid rgb(55, 55, 82);
 }
 .pagination {
     display: inline-block;
-    padding-left: 0;
+    margin: 0 1rem;
     border-radius: 0.25rem;
 }
 .page-item {
@@ -46,8 +45,8 @@
     z-index: 2;
     color: #fff;
     cursor: default;
-    background-color: #5cb85c;
-    border-color: #5cb85c;
+    background-color: #007bff;
+    background-color: #007bff;
 }
 .page-item.disabled .page-link,
 .page-item.disabled .page-link:focus,
@@ -63,7 +62,7 @@
     float: left;
     padding: 0.5rem 0.75rem;
     margin-left: -1px;
-    color: #5cb85c;
+    color: rgb(55, 55, 82);
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -71,7 +70,7 @@
 }
 .page-link:focus,
 .page-link:hover {
-    color: #3d8b3d;
+    background-color: #007bff;
     background-color: #eceeef;
     border-color: #ddd;
 }

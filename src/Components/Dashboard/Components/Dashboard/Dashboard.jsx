@@ -8,13 +8,21 @@ import "../../../../index.scss";
 import Sidebar from "../SideBar Section/Sidebar";
 import Footer from "../../../Footer/Footer";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+    const user = props.user;
+    console.log("user", user);
     return (
         <>
             <div className="dashboard">
                 <div className="dashboardContainer flex">
-                    <Sidebar />
-                    <Body />
+                    <Sidebar
+                        isLogged={props.isLogged}
+                        user={props.user}
+                        userId={props.userId}
+                        firstName={props.firstName}
+                        lastName={props.lastName}
+                    />
+                    <Body userId={props.userId} />
                 </div>
                 <Footer />
             </div>

@@ -21,39 +21,12 @@ import { BsShieldLockFill } from "react-icons/bs"; */
 
 const Login = (props) => {
     const navigate = useNavigate();
-    //USESTATES HOOK to store input // pour les input
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [disabled, setDisabled] = useState(true); // au depart le bouton est desactivé donc en gris
     const [isError, setIsError] = useState(null);
     const [errorMsg, setErrorMsg] = useState("");
     const [successMsg, setSuccessMsg] = useState("");
-
-    // Stockage de l'url
-    //const apiUrl = "http://localhost:9600/";
-
-    //ONCLICK Variable
-    /* const loginUser = () => {
-        // ici on met une requete Ajax qui va permettre de faire appel a la route d'enregistrement d'un utilisateur
-        // mais on a a besoin de la librairie axios alorq il faut installer axios
-
-        // INFO > on peut creer les axios dans une autre page a part mais on le garde ici pour l'instant
-        Axios.post(`${apiUrl}api/v1/user/login`, {
-            loginUserName: loginUserName,
-            loginPassword: loginPassword,
-        })
-            //on utilise le .then en cas de succes il utilise cette methode et on passe en argument
-            .then(() => {
-                console.log("User has been loged");
-            })
-
-            // en cas d' erreur ça passe dans le catch et ça renvoit
-            .catch(() => {
-                // on cree un state error au dessus pour l'initialiser a false au départ
-                // lorsqu'il y aura un soucis celui- ci permettra de l'utiliser afin de renvoyer un composant d'avertissement à l'utilisateur afin d'avertur qu'il y a eu un soucis
-                setIsError(true);
-            });
-    }; */
 
     const onSubmitForm = (e) => {
         e.preventDefault(); // on block le rechargement de la page
@@ -65,27 +38,33 @@ const Login = (props) => {
         };
         console.log("dataFormLogin", dataFormLogin);
 
-        // on doit l'envoyer au back on utilise la fonction qui fait cette action et on lui passe en argument dataFormLogin
-        loginUser(dataFormLogin)
+        // Fonction envoyer a back les data recupéré des champs : on doit l'envoyer au back on utilise la fonction qui fait cette action et on lui passe en argument dataFormLogin
+        loginUser(dataFormLogin) //on passe l'objet dataFormLogin
             .then((res) => {
                 console.log("res", res);
                 // 1-si le status est différent de 200 alors on va chercher le msg d'erreur
                 if (res.status === 200) {
-                    const { email, id, firstName } = res.user; // ici une destructuration
+                    const { email, id, firstName, lastName } = res.user; // ici on fait une destructuration
 
+                    // 1.1 -on construit un objet userInfo
                     const userInfos = {
                         id: String(id),
                         email: email,
                         firstName: firstName,
+                        lastName: lastName,
                     };
 
+                    // 1.2 -on declare une constante isLoggedStatu qu'on met a true
                     const isLoggedStatus = true;
 
                     props.loginUser(userInfos, isLoggedStatus);
 
-                    localStorage.setItem("fh-token", res.token); // ICI ON ENVOI DAND LE LS
-                    console.log("res", res);
-                    navigate("/"); // on fait naviguer ver la home lorsqu'il se connect
+                    // 1.3 ICI ON ENVOI DAND LE LS le token qui a été fait par le back lors du submit
+                    localStorage.setItem("fh-token", res.token);
+                    //console.log("res", res);
+
+                    //  1.4 on redirige l'user vers la home lorsqu'il s'est connecté
+                    navigate("/");
                 } else {
                     // 2-on stock se msg d'erreur dans un state
                     setErrorMsg(res.msg); // on receptionne une string dans le state qu'on actualise
@@ -170,3 +149,29 @@ const Login = (props) => {
 };
 
 export default Login;
+
+// Stockage de l'url
+//const apiUrl = "http://localhost:9600/";
+
+//ONCLICK Variable
+/* const loginUser = () => {
+        // ici on met une requete Ajax qui va permettre de faire appel a la route d'enregistrement d'un utilisateur
+        // mais on a a besoin de la librairie axios alorq il faut installer axios
+
+        // INFO > on peut creer les axios dans une autre page a part mais on le garde ici pour l'instant
+        Axios.post(`${apiUrl}api/v1/user/login`, {
+            loginUserName: loginUserName,
+            loginPassword: loginPassword,
+        })
+            //on utilise le .then en cas de succes il utilise cette methode et on passe en argument
+            .then(() => {
+                console.log("User has been loged");
+            })
+
+            // en cas d' erreur ça passe dans le catch et ça renvoit
+            .catch(() => {
+                // on cree un state error au dessus pour l'initialiser a false au départ
+                // lorsqu'il y aura un soucis celui- ci permettra de l'utiliser afin de renvoyer un composant d'avertissement à l'utilisateur afin d'avertur qu'il y a eu un soucis
+                setIsError(true);
+            });
+    }; */

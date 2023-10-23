@@ -8,6 +8,10 @@
     font-family: "Montserrat", sans-serif;
 }
 
+ul {
+    list-style-type: none;
+}
+
 :root {
     /* //colors */
     --primaryColor: hsl(94, 55%, 56%);
@@ -57,10 +61,6 @@ img,
 video {
     height: auto;
     width: 100%;
-}
-
-.message {
-    display: none;
 }
 
 /* .btn {

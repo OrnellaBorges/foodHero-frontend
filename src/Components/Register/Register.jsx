@@ -1,15 +1,7 @@
-import React from "react";
-//import "../index.scss";
-//import "./Login.css";
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { createOneUser } from "../../api/ApiUser";
-
-//import './Register.css'
-//import './App.css'
-
-//import "../Login/Login.scss";
+import { useNavigate, Navigate } from "react-router-dom";
 
 import "../Login/form.css";
 
