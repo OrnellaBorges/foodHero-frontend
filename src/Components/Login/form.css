@@ -23,7 +23,7 @@
 }
 
 /* Styles for input divs */
-.inputDiv {
+.input {
     margin-bottom: 20px;
 }
 
@@ -62,7 +62,6 @@ label {
     background-color: #ccffcc;
     color: #009900;
 }
-
 .formButtonContainer {
     display: flex;
     justify-content: center;

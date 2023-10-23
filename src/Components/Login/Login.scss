@@ -1,6 +1,5 @@
 .loginPage,
 .registerPage {
-    background-color: rgba(246, 231, 203, 0.846);
     width: 80%;
     margin: 0 auto;
     .hheader {
@@ -20,15 +19,12 @@
         }
     }
     .formContainer {
-        .logForm {
-            border: 3px solid;
-            flex-basis: 50%;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5;
-            /* transform: translateY(-1rem); */
-        }
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        border-radius: 5px;
 
         .successMessage {
             display: block;
@@ -67,8 +63,42 @@
             border: none;
             width: 200px;
         }
+    }
 
-        /* .btn {
+    .loginFooter {
+        bottom: 10px;
+        padding: 0 1rem;
+        height: 20%;
+        left: 10px;
+        right: 0;
+        justify-content: space-beetween;
+        backdrop-filter: blur(1px);
+
+        .text {
+            color: var(--blackColor);
+        }
+    }
+
+    /* .login-linkContainer {
+    background-color: pink;
+    border: 3px solid yellow;
+    text-align: center;
+
+    .forgotPassword {
+        font-size: 13px;
+        color: var(--blackColor);
+        opacity: 0.7;
+        text-align: center;
+
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+} */
+
+    /* .btn {
             padding: 0.8rem;
             background: whitesmoke;
             border-radius: 10px;
@@ -89,50 +119,25 @@
             }
         } */
 
-        /*         .icon {
+    /*         .icon {
             font-size: 25px;
             transition: 0.3s ease; */
 
-        /*             &:hover {
+    /*             &:hover {
                 background: var(--hoverColor);
                 color: var(--blackColor);
 
                 icon {
                     color: var(--blackColor);
                     transition: translateX(5px);
-                } */
-    }
-}
-.login-linkContainer {
-    background-color: pink;
-    border: 3px solid yellow;
-    text-align: center;
+                } 
 
-    .forgotPassword {
-        font-size: 13px;
-        color: var(--blackColor);
-        opacity: 0.7;
-        text-align: center;
-
-        a {
-            text-decoration: underline;
-            cursor: pointer;
-            opacity: 1;
-        }
-    }
-}
-
-.loginFooter {
-    bottom: 10px;
-    padding: 0 1rem;
-    height: 20%;
-    background-color: rgb(207, 135, 3);
-    left: 10px;
-    right: 0;
-    justify-content: space-beetween;
-    backdrop-filter: blur(1px);
-
-    .text {
-        color: var(--whiteColor);
-    }
+                .logForm {
+                flex-basis: 50%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5;
+                    transform: translateY(-1rem);
+                }*/
 }

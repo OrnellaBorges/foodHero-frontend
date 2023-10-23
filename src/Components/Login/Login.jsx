@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 // sert a naviguer entre les pages c'est une REDIRECTION
 import { Link, useNavigate, Navigate } from "react-router-dom";
 // sert a remplacer les balises <a> et a naviguer aussi AU CLICK c'est un lien
 
-import "./Login.scss";
+//import "./Login.scss";
+import "./form.css";
 import { loginUser } from "../../api/ApiUser";
 
 // import components
@@ -27,6 +27,7 @@ const Login = (props) => {
     const [disabled, setDisabled] = useState(true); // au depart le bouton est desactivé donc en gris
     const [isError, setIsError] = useState(null);
     const [errorMsg, setErrorMsg] = useState("");
+    const [successMsg, setSuccessMsg] = useState("");
 
     // Stockage de l'url
     //const apiUrl = "http://localhost:9600/";
@@ -101,86 +102,70 @@ const Login = (props) => {
     }, [email, password]);
 
     return (
-        <div className="loginPage ">
-            <div className="hheader">
-                <h1>header container</h1>
-                {/* <div className="img-container">
-                    <img src={Logo} alt="logo" />
-                </div> */}
-                <h3>Welcome Back!</h3>
-            </div>
+        <>
+            <section className="loginPage ">
+                <div className="formHeader">
+                    <h1>Form Header Login</h1>
+                    <h3 className="formTitle">Welcome Back!</h3>
+                </div>
 
-            <div className="formContainer">
                 <form
-                    className="logform"
+                    className="formContainer"
                     name="loginForm"
                     onSubmit={(e) => onSubmitForm(e)}
                 >
-                    <h1>form container</h1>
+                    <h1>Form container</h1>
                     {/* // 3- on reutilise ce state errorMsg pour l'afficher dans le jsx */}
 
-                    {errorMsg && <p className="showMessage">{errorMsg}</p>}
-                    <div className="inputDiv">
+                    {errorMsg && <p className="errorMsg">{errorMsg}</p>}
+
+                    <div className="input">
                         <label htmlFor="username">Email</label>
-                        <div className="input flex">
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                onChange={(event) =>
-                                    setEmail(event.target.value)
-                                }
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            onChange={(event) => setEmail(event.target.value)}
+                        />
                     </div>
-                    <div className="inputDiv">
+
+                    <div className="input">
+                        {/* <BsShieldLockFill className="icon" /> */}
                         <label htmlFor="password">Password</label>
-                        <div className="input flex">
-                            {/* <BsShieldLockFill className="icon" /> */}
-                            <input
-                                type="text"
-                                id="password"
-                                name="password"
-                                placeholder="Enter Password"
-                                onChange={(e) => {
-                                    setPassword(e.target.value);
-                                }}
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            id="password"
+                            name="password"
+                            placeholder="Enter Password"
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                            }}
+                        />
                     </div>
                     <button disabled={disabled} type="submit">
                         {" "}
                         Se connecter
                     </button>
+
+                    {successMsg && <p className="successMsg">{successMsg}</p>}
+
+                    {isError && (
+                        <p className="errorMsg">
+                            Il y a eu un problème lors de la connexion
+                        </p>
+                    )}
+
+                    <div className="loginFooter">
+                        <h2>footer container</h2>
+                        <p className="text">Create account</p>
+                        <Link to={"/register"}>
+                            <Button text="Sign up" />
+                        </Link>
+                    </div>
                 </form>
-                {isError && (
-                    <p style={{ color: "red" }}>
-                        Il y a eu un problème lors de la connexion
-                    </p>
-                )}
-
-                {/* <div className="login-linkContainer">
-                    <h1>link container</h1>
-                    <Button text="Login" />
-
-                    <button type="submit" className="btnn" onClick={loginUser}>
-                        Login bouton a remplacer qui fait l'axios de requete
-                    </button>
-
-                    <Link to={"/dashboard"}>go to dashboard</Link>
-                    <Link to={"/forgotPassword"}>Forgot your password?</Link>
-                    <Link to={"/"}>Continue without login</Link>
-                </div> */}
-                <div className="loginFooter">
-                    <h1>footer container</h1>
-                    <p className="text">Create account</p>
-                    <Link to={"/register"}>
-                        <Button text="Sign up" />
-                    </Link>
-                </div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 };
 

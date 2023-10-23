@@ -65,9 +65,9 @@ const EditAd = () => {
 
     return (
         <>
-            <section className="formContainer">
+            <section className="editFormPage">
                 <div className="formHeader">
-                    <h2 className="formTitle">EDIT AD</h2>
+                    <h2 className="formTitle">Edit Ad</h2>
                 </div>
                 <form className="" name="createForm" onSubmit={onSubmitForm}>
                     <div className="inputDiv">

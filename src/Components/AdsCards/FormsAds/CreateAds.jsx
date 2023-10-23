@@ -65,12 +65,12 @@ const CreateAds = () => {
 
     return (
         <>
-            <div className="formContainer">
+            <section className="loginPage">
                 <div className="formHeader">
                     <h2 className="formTitle">Create New Ad</h2>
                 </div>
                 <form
-                    className="Adsform"
+                    className="formContainer"
                     name="createForm"
                     onSubmit={onSubmitForm}
                 >
@@ -187,7 +187,7 @@ const CreateAds = () => {
                         </button> */}
                     </div>
                 </form>
-            </div>
+            </section>
         </>
     );
 };
