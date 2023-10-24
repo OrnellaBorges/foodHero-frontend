@@ -37,7 +37,7 @@ const RgpdBanner = () => {
 
     return (
         showBanner && (
-            <aside className="container">
+            <aside className="cookie-container">
                 <div className="cookie">
                     <div className="cookie-img-container">
                         <img src={cookies} alt="image de cookies" />

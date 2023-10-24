@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-.container {
+.cookie-container {
     position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
     top: 0px;
     background-color: rgba(255, 255, 255, 0.8);
-    /* filter: blur(15px); */
+    /*filter: blur(15px); */
     z-index: 1;
 }
 .cookie {

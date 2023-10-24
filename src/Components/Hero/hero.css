@@ -45,22 +45,15 @@ strong {
 
 /*========================*/
 
-.cardSection {
-    margin-top: 3rem;
-    gap: 1rem;
-}
 .rightCard {
     position: relative;
-    /*             flex-basis: 70%; */
     height: 200px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    padding: 0.5rem;
-    border-radius: 1rem;
     background-size: cover;
     overflow: hidden;
+    height: fit-content;
 }
 .transparentBtn {
     border-radius: 10px;
