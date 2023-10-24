@@ -1,21 +1,20 @@
 .footer {
     background: #333;
     color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-.footerTitleContainer {
+.foodBanner {
     border: 3px solid blue;
-    width: 100%;
-    display: flex;
+    width: max-content;
     align-items: center;
+    align-items: end;
+    display: flex;
 }
 
-.footerTitle {
+.title-footer {
     color: #fff;
     width: 20%;
+    padding: 1rem;
 }
 
 .containerIcons {
@@ -23,16 +22,27 @@
 }
 
 .iconItem {
-    width: 8%;
+    width: 6%;
 }
 
-.footer-section {
-    display: flex;
-    gap: 10%;
+.containerFooterMenu {
     border: 3px solid red;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    margin: 20px 0;
+    text-align: center;
+}
+.footerList {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.container-menu {
+    margin-bottom: 30px;
+
+    width: max-content;
 }
 
 .footer h2 {
@@ -58,10 +68,4 @@
 
 .footer a:hover {
     text-decoration: underline;
-}
-
-.containerFooterMenu {
-    width: 100%;
-    display: flex;
-    gap: 10%;
 }

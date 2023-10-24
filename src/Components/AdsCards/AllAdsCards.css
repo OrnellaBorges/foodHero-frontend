@@ -21,6 +21,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
 }
 
 /* Style for the "Liste d'Annonces mappé..." heading */
@@ -85,77 +86,6 @@ img {
     color: #ff0000; /* Red error message color */
 }
 
-/*
-.cards-list {
-    border: 3px solid orange;
-    max-width: max-content;
-}
-
-.singleCard {
-    border-radius: 10px;
-    background-color: rgb(205, 0, 250);
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-
-
-.singleCard:hover {
-    background-color: rgb(254, 202, 106);
-    box-shadow: 0 2px 2px var(--inputColor);
-}
-
-img {
-    width: 100%;
-}
-.imageZoom:hover {
-    transform: scale(1.1);
-}
-
-.adsCard-content {
-    padding: 5px;
-}
-
-.buttonContainer {
-    flex-direction: column;
-}
-
-.cardBtn {
-    padding: 0.8rem;
-    background: transparent;
-    border: 3px solid white;
-    border-radius: 10px;
-    color: white;
-    font-size: 20px;
-    font-weight: 800;
-    align-items: center;
-    margin: auto;
-    justify-content: center;
-    font-size: 0.8rem;
-    width: max-content;
-    gap: 1rem;
-    transition: 0.3s ease;
-    padding: 0.8rem 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.cardBtn:hover {
-    background: white;
-    color: rgb(226, 184, 0);
-}
-
-.containerMessage {
-    border: 3px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 300px;
-}
-
-.statusError {
-    color: red;
-} */
-
 /* =============== Media Queries ====================*/
 
 @media screen and (min-width: 768px) {
@@ -166,6 +96,7 @@ img {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .testLi {

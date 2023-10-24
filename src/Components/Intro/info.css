@@ -1,0 +1,16 @@
+.bannerStyle {
+    position: relative;
+    text-align: center;
+    padding: 100px 0;
+    background-image: 'url("votre-image.jpg")';
+}
+
+.titleStyle {
+    font-size: 36px;
+    color: red;
+}
+
+.textBlockStyle {
+    text-align: "center";
+    padding: 20px;
+}

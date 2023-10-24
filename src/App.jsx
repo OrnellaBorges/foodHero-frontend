@@ -5,6 +5,7 @@ import ForgotPassword from "./Components/ForgotPwd/ForgotPassword";
 import Register from "./Components/Register/Register";
 import Home from "./Components/HomePage/Home";
 import Cookie from "./Components/Concent/Cookie";
+import Infos from "./Components/Intro/Infos";
 import Orders from "./Components/Orders/Orders";
 import CreateAds from "./Components/AdsCards/FormsAds/CreateAds";
 import Account from "./Components/Account/Account";
@@ -119,6 +120,15 @@ function App() {
             element: (
                 <div>
                     <ForgotPassword />
+                </div>
+            ),
+        },
+
+        {
+            path: "/infos",
+            element: (
+                <div>
+                    <Infos />
                 </div>
             ),
         },
