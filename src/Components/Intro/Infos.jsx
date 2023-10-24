@@ -3,7 +3,9 @@ import React from "react";
 import "./info.css";
 
 //import assets
-import pasta from "../../assets/pasta.jpg";
+import table from "../../assets/table.png";
+//import gaspi from "../../assets/gaspillage.jpg";
+import gaspi from "../../assets/gaspi.jpeg";
 
 const Infos = () => {
     return (
@@ -18,7 +20,7 @@ const Infos = () => {
             <div className="containerImgtext">
                 <div className="info-image-Container">
                     <img
-                        src="src/Components/Intro/assets/share.jpg"
+                        src={table}
                         alt="illustration pour la page info sur le projet"
                     />
                 </div>
@@ -60,6 +62,49 @@ const Infos = () => {
                         et garantir à chacun le droit à une alimentation
                         adéquate.
                     </p>
+                </div>
+            </div>
+            <div className="containerImgtext">
+                <div className="textBlock">
+                    <h2 className="text-title">
+                        Lutter contre le gaspillage alimentaire
+                    </h2>
+                    <p>
+                        Le gaspillage alimentaire en France est un problème
+                        préoccupant qui se manifeste par le jet de grandes
+                        quantités de nourriture encore comestible. Ce phénomène
+                        a des conséquences économiques, environnementales et
+                        sociales significatives. Chaque année, des millions de
+                        tonnes de nourriture sont gaspillées en France, depuis
+                        la production agricole jusqu'à la consommation finale.
+                        Les causes du gaspillage alimentaire sont diverses,
+                        allant des normes de beauté des produits alimentaires à
+                        la surproduction, en passant par les habitudes de
+                        consommation et le manque de sensibilisation. Ce
+                        gaspillage entraîne une perte de ressources précieuses,
+                        contribue aux émissions de gaz à effet de serre et
+                        aggrave les problèmes de sécurité alimentaire pour les
+                        populations vulnérables. Pourtant, la France a pris des
+                        mesures pour lutter contre le gaspillage alimentaire,
+                        notamment en introduisant des lois pour encourager les
+                        supermarchés à donner plutôt qu'à jeter la nourriture
+                        excédentaire. Les initiatives de sensibilisation se
+                        multiplient également, incitant les individus, les
+                        entreprises et les organisations à réduire leur
+                        gaspillage. La réduction du gaspillage alimentaire en
+                        France est un enjeu majeur pour la durabilité, la
+                        sécurité alimentaire et la justice sociale. L'éducation,
+                        la réglementation et l'engagement de tous les acteurs de
+                        la chaîne alimentaire sont essentiels pour relever ce
+                        défi et favoriser une gestion plus responsable des
+                        ressources alimentaires en France.
+                    </p>
+                </div>
+                <div className="info-image-Container">
+                    <img
+                        src={gaspi}
+                        alt="illustration pour la page info sur le projet"
+                    />
                 </div>
             </div>
         </>
