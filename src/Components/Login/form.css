@@ -11,7 +11,7 @@
 /* Styles for the form header */
 .formHeader {
     text-align: center;
-    background-color: red;
+    background-image: url();
     width: 80%;
     margin: 0 auto;
 }
@@ -19,7 +19,6 @@
 .formTitle {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
 }
 
 /* Styles for input divs */
@@ -51,6 +50,9 @@ label {
     border-radius: 5px;
     text-align: center;
     margin-top: 10px;
+}
+.btnContainer {
+    text-align: center;
 }
 
 .errorMsg {

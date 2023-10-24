@@ -61,6 +61,15 @@
     font-size: 15px;
     padding: 0.5rem;
     text-align: center;
+    white-space: nowrap;
+}
+
+.create {
+    background-color: #007bff;
+    border-radius: 10px;
+}
+.create:hover {
+    background-color: #0056b3;
 }
 
 .navLink:hover {

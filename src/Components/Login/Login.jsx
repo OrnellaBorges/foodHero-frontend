@@ -9,6 +9,7 @@ import { loginUser } from "../../api/ApiUser";
 
 // import components
 import Button from "../Buttons/Button";
+import SubmitButton from "../Buttons/submitButton";
 
 //import Icons
 /* import { FaUserShield } from "react-icons/fa";
@@ -84,7 +85,7 @@ const Login = (props) => {
         <>
             <section className="loginPage ">
                 <div className="formHeader">
-                    <h1>Form Header Login</h1>
+                    <h1>Log in </h1>
                     <h3 className="formTitle">Welcome Back!</h3>
                 </div>
 
@@ -93,7 +94,6 @@ const Login = (props) => {
                     name="loginForm"
                     onSubmit={(e) => onSubmitForm(e)}
                 >
-                    <h1>Form container</h1>
                     {/* // 3- on reutilise ce state errorMsg pour l'afficher dans le jsx */}
 
                     {errorMsg && <p className="errorMsg">{errorMsg}</p>}
@@ -122,22 +122,30 @@ const Login = (props) => {
                             }}
                         />
                     </div>
-                    <button disabled={disabled} type="submit">
+                    <div className="btnContainer">
+                        {/* <button disabled={disabled} type="submit">
                         {" "}
                         Se connecter
-                    </button>
+                    </button> */}
+                        <SubmitButton
+                            text="Se connecter"
+                            disabled={disabled}
+                            type="submit"
+                        />
 
-                    {successMsg && <p className="successMsg">{successMsg}</p>}
+                        {successMsg && (
+                            <p className="successMsg">{successMsg}</p>
+                        )}
 
-                    {isError && (
-                        <p className="errorMsg">
-                            Il y a eu un problème lors de la connexion
-                        </p>
-                    )}
+                        {isError && (
+                            <p className="errorMsg">
+                                Il y a eu un problème lors de la connexion
+                            </p>
+                        )}
+                    </div>
 
                     <div className="loginFooter">
-                        <h2>footer container</h2>
-                        <p className="text">Create account</p>
+                        <p className="text">Or create account</p>
                         <Link to={"/register"}>
                             <Button text="Sign up" />
                         </Link>

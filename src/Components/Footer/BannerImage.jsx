@@ -3,13 +3,12 @@ import "./banner.css"; // Assurez-vous de créer un fichier CSS pour les styles
 
 const BannerImage = () => {
     const stockImages = [
-        "../../assets/icons/ble.png",
-        "../../assets/icons/ble.png",
-        "../../assets/icons/ble.png",
-        "../../assets/icons/ble.png",
-        "../../assets/icons/ble.png",
+        "src/assets/cookie3.jpeg",
+        "../../icons/citron.png",
+        "../../icons/citron.png",
+        "../../icons/citron.png",
     ]; // Liste des chemins d'images
-    const imageWidth = 100; // Largeur d'une image (ajustez selon vos besoins)
+    const imageWidth = 500; // Largeur d'une image (ajustez selon vos besoins)
     const [scrollLeft, setScrollLeft] = useState(0);
     const stockRef = useRef(null);
 
@@ -40,7 +39,7 @@ const BannerImage = () => {
                 {stockImages.map((image, index) => (
                     <img
                         key={index}
-                        src={image}
+                        src="../../assets/icons/citron.png"
                         alt={`Image ${index}`}
                         style={{ width: imageWidth, height: "auto" }}
                     />

@@ -71,7 +71,7 @@ const Register = () => {
         <>
             <section className="registerPage">
                 <div className="formHeader">
-                    <h1>Form Header Register</h1>
+                    <h1>Register</h1>
                     <h3 className="formTitle">Welcome!</h3>
                 </div>
 

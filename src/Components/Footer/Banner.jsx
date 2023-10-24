@@ -41,17 +41,17 @@ const Banner = () => {
 
     return (
         <div className="stock-ticker-container">
-            <div className="stock-ticker" ref={stockRef}>
+            <ul className="stock-ticker" ref={stockRef}>
                 {stocks.map((stock, index) => (
-                    <div
+                    <li
                         key={index}
                         className="stock-item"
                         style={{ width: stockWidth }}
                     >
                         {stock}
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
         </div>
     );
 };

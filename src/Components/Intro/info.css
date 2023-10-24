@@ -1,16 +1,42 @@
 .bannerStyle {
-    position: relative;
+    position: sticky;
     text-align: center;
-    padding: 100px 0;
-    background-image: 'url("votre-image.jpg")';
+    /*  background-image: url("src/Components/Intro/assets/share.jpg");
+    background-size: contain;
+    background-repeat: no-repeat; */
+    position: relative;
+    opacity: 0.3;
+    background-color: #fbc35b;
 }
 
-.titleStyle {
-    font-size: 36px;
-    color: red;
+.titleBanner {
+    position: absolute;
+    font-size: 50px;
+    top: 100px;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    color: #fbc35b;
 }
 
-.textBlockStyle {
-    text-align: "center";
+.infoImg-container {
+    width: 100%;
+}
+
+.text-title {
+    margin-bottom: 2rem;
+}
+.textBlock {
+    text-align: left;
     padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.containerImgtext {
+    display: flex;
+}
+
+.info-image-Container {
+    width: 50%;
 }

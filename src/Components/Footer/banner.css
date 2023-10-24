@@ -47,7 +47,7 @@
     font-size: 24px;
     font-weight: bold;
     padding: 5px;
-    border-right: 2px solid #fff; /* Ligne de séparation entre les éléments */
+    margin: 0 10px;
     width: max-content; /* Largeur d'un élément (correspond à stockWidth dans le composant) */
 }
 

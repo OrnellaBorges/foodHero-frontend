@@ -9,8 +9,21 @@ const Infos = () => {
     return (
         <>
             <div className="bannerStyle">
-                <h1 className="titleStyle">Titre centré</h1>
-                <div className="textBlockStyle">
+                <img
+                    src="src/Components/Intro/assets/share.jpg"
+                    alt="illustration pour la page info sur le projet"
+                />
+            </div>
+            <h1 className="titleBanner">Et si vous en saviez plus ? </h1>
+            <div className="containerImgtext">
+                <div className="info-image-Container">
+                    <img
+                        src="src/Components/Intro/assets/share.jpg"
+                        alt="illustration pour la page info sur le projet"
+                    />
+                </div>
+                <div className="textBlock">
+                    <h2 className="text-title">Pourquoi FoodHero?</h2>
                     <p>
                         La précarité alimentaire en France est un problème qui
                         touche de nombreuses personnes dans le pays. Elle se
@@ -48,12 +61,16 @@ const Infos = () => {
                         adéquate.
                     </p>
                 </div>
-                <div className="infoImg">
-                    <img src="" alt="" />
-                </div>
             </div>
         </>
     );
 };
 
 export default Infos;
+
+/* <div className="infoImg-container">
+                    <img
+                        src="src/Components/Intro/assets/share.jpg"
+                        alt="illustration pour la page info sur le projet"
+                    />
+                </div> */

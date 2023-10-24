@@ -45,8 +45,8 @@ const Nav = (props) => {
                 </li>
                 {isLogged && (
                     <li className="navItem">
-                        <Link to="/create" className="navLink">
-                            <Button text="Creer une annonce" />
+                        <Link to="/create" className="navLink create">
+                            Creer une annonce
                         </Link>
                     </li>
                 )}
