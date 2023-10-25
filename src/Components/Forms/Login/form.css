@@ -1,4 +1,3 @@
-/* Styles for the form container */
 .formContainer {
     width: 80%;
     margin: 0 auto;
@@ -8,11 +7,8 @@
     border-radius: 5px;
 }
 
-/* Styles for the form header */
 .formHeader {
     text-align: center;
-    background-color: rgb(33, 15, 119);
-    color: white;
     width: 80%;
     margin: 0 auto;
 }
@@ -22,19 +18,16 @@
     font-weight: bold;
 }
 
-/* Styles for input divs */
-.inputDiv {
+.input {
     margin-bottom: 20px;
 }
 
-/* Styles for labels */
 label {
     display: block;
     font-weight: bold;
     color: #333;
 }
 
-/* Styles for input fields */
 .input {
     width: 100%;
     padding: 10px;
@@ -43,7 +36,6 @@ label {
     font-size: 16px;
 }
 
-/* Styles for the error and success messages */
 .errorMsg,
 .successMsg {
     font-weight: bold;
@@ -51,6 +43,9 @@ label {
     border-radius: 5px;
     text-align: center;
     margin-top: 10px;
+}
+.btnContainer {
+    text-align: center;
 }
 
 .errorMsg {
@@ -62,10 +57,10 @@ label {
     background-color: #ccffcc;
     color: #009900;
 }
-
 .formButtonContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Styles for the Save Modification button */

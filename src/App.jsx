@@ -1,21 +1,20 @@
 import "./App.css";
 import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
-import Login from "./Components/Login/Login";
+import Login from "./Components/Forms/Login/Login";
 import ForgotPassword from "./Components/ForgotPwd/ForgotPassword";
-import Register from "./Components/Register/Register";
+import Register from "./Components/Forms/Register/Register";
 import Home from "./Components/HomePage/Home";
 import Cookie from "./Components/Concent/Cookie";
 import Infos from "./Components/Intro/Infos";
-import Orders from "./Components/Orders/Orders";
-import CreateAds from "./Components/AdsCards/FormsAds/CreateAds";
-import Account from "./Components/Account/Account";
-import UserProfile from "./Components/Account/UserProfile";
-import SearchBar from "./Components/SearchBar/SearchBarContainer";
+import CreateAds from "./Components/Forms/FormsAds/CreateAds";
+//import Account from "./Components/Account/Account";
+import UserProfile from "./Components/Form/Account/UserProfile";
 import Filter from "./Components/FilterComponent/FilterContainer";
 import EditAccount from "./Components/Account/EditAccount";
-import EditAd from "./Components/AdsCards/FormsAds/EditAd";
+import EditAd from "./Components/Forms/FormsAds/EditAd";
 import OneAd from "./Components/AdsCards/OneAd/OneAd";
 import UserOneAd from "./Components/Dashboard/Components/ListingSection/UserAds/UserOneAd";
+
 import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -90,15 +89,6 @@ function App() {
                 </div>
             ),
         },
-        {
-            path: "/searchBar",
-            element: (
-                <div>
-                    <SearchBar />
-                </div>
-            ),
-        },
-
         {
             path: "/filter",
             element: (

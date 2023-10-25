@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./info.css";
 
@@ -6,6 +7,7 @@ import "./info.css";
 import table from "../../assets/table.png";
 //import gaspi from "../../assets/gaspillage.jpg";
 import gaspi from "../../assets/gaspi.jpeg";
+import Button from "../Buttons/Button";
 
 const Infos = () => {
     return (
@@ -65,6 +67,12 @@ const Infos = () => {
                 </div>
             </div>
             <div className="containerImgtext">
+                <div className="info-image-Container">
+                    <img
+                        src={gaspi}
+                        alt="illustration pour la page info sur le projet"
+                    />
+                </div>
                 <div className="textBlock">
                     <h2 className="text-title">
                         Lutter contre le gaspillage alimentaire
@@ -100,11 +108,21 @@ const Infos = () => {
                         ressources alimentaires en France.
                     </p>
                 </div>
-                <div className="info-image-Container">
-                    <img
-                        src={gaspi}
-                        alt="illustration pour la page info sur le projet"
-                    />
+            </div>
+            <div className="containerImgtext">
+                <div className="conclusion-container">
+                    <h2 className="text-title">Pour finir...</h2>
+                    <p>
+                        L'application FOODHERO ce destine directement à cibler
+                        le frigo des particuliers. Pour reduire la précarité
+                        alimentaire et le gaspillage nous avons tous un rôle à
+                        jouer.
+                    </p>
+                    <Link to="/">
+                        <button className=" btn infoBtn">
+                            Retour à la page d'acceuil
+                        </button>
+                    </Link>
                 </div>
             </div>
         </>
@@ -112,10 +130,3 @@ const Infos = () => {
 };
 
 export default Infos;
-
-/* <div className="infoImg-container">
-                    <img
-                        src="src/Components/Intro/assets/share.jpg"
-                        alt="illustration pour la page info sur le projet"
-                    />
-                </div> */

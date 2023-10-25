@@ -67,7 +67,6 @@ const AllAdsCards = () => {
                 la liste doit faire apparaitre toutes les annonces les plus recentes dans le temps et 10 max */}
 
                     <div className="mappedList">
-                        <h2>Liste d'Annonces mappé</h2>
                         <ul className="testUl">
                             {/* .map pour chaque annonce tu retournes un li */}
                             {annoncesRecentes.slice(0, 10).map((annonce) => (

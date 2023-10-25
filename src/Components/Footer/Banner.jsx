@@ -3,13 +3,11 @@ import "./banner.css"; // Assurez-vous de créer un fichier CSS pour les styles
 
 const Banner = () => {
     const stocks = [
-        "FOOD",
-        "HERO",
+        "FOODHERO",
         "PARTAGER",
         "ECONOMISER",
         "CUISINER",
-        "FOOD",
-        "HERO",
+        "FOODHERO",
         "PARTAGER",
         "ECONOMISER",
         "CUISINER",

@@ -31,7 +31,7 @@ const Hero = () => {
                             <h1>Ne jetez plus vendez !</h1>
                             <p>
                                 Partagez, cuisinez, economisez... et si votre
-                                frigo pouvais parler? Il dirait quoi ?
+                                frigo pouvais parler, il dirait quoi ?
                             </p>
                             <div className="topCardButtons flex">
                                 {/* <Link to="/">

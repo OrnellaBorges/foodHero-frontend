@@ -11,7 +11,8 @@
 /* Styles for the form header */
 .formHeader {
     text-align: center;
-    background-image: url();
+    background-color: #090125;
+    color: white;
     width: 80%;
     margin: 0 auto;
 }
@@ -22,7 +23,7 @@
 }
 
 /* Styles for input divs */
-.input {
+.inputDiv {
     margin-bottom: 20px;
 }
 
@@ -51,9 +52,6 @@ label {
     text-align: center;
     margin-top: 10px;
 }
-.btnContainer {
-    text-align: center;
-}
 
 .errorMsg {
     background-color: #ffcccc;
@@ -64,10 +62,10 @@ label {
     background-color: #ccffcc;
     color: #009900;
 }
+
 .formButtonContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /* Styles for the Save Modification button */

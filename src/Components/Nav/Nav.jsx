@@ -89,7 +89,7 @@ const Nav = (props) => {
                         </Link>
                     </li>
                     <li className="navItem">
-                        <p>Bonjour {name}</p>
+                        <p className="navLink">Bonjour {name}</p>
                     </li>
                     {/* <li className="navItem">
                         <Link to="/orders" className="navLink">
