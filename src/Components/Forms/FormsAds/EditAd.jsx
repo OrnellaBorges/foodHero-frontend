@@ -1,19 +1,33 @@
-import React from "react";
-
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 // import components
 import SubmitButton from "../../Buttons/submitButton";
 
 import "./editAd.css";
-//import { createOneAd } from "../../api/ApiAds";
+import { editOneAd } from "../../../api/ApiAds";
 
-const EditAd = () => {
-    // STATES
+const EditAd = (props) => {
+    const { adId } = useParams();
+    console.log("adId", adId);
+    //const userId = props.userId;
+    //const adId = props.adId
+
+    // STATES des elements d'origine  le champs doivent etre prerempli
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
+
+    const [disabled, setDisabled] = useState(true); // au depart le bouton est desactivé donc en gris
+
+    //on construit un nouvel objet pour l'envoyer au back
+    const newData = {
+        title: title,
+        description: description,
+        quantity: quantity,
+        price: price,
+    };
 
     // State pour faire apparaitre un msg en rouge  si user n'a pas rempli les champs
     const [isFormError, setIsFormError] = useState(false);
@@ -40,9 +54,9 @@ const EditAd = () => {
             setIsFormError(true);
         } else {
             // Partir vers l'api...demande des datas par ne requete ajax axios qui est dans la fonction :
-            //createOneAd()
+            editOneAd();
 
-            // On récupère la réponse de l'api et on stok la rep
+            // On récupère la réponse de l'api et on stock la rep
             const retourDeLapiPositif = true;
             if (retourDeLapiPositif) {
                 setIsApiError(false);
@@ -52,16 +66,30 @@ const EditAd = () => {
                 setIsApiError(true);
                 setIsFormError(false);
             }
-
-            // doit mettre le bouton en vert quand l'annonce est bien créé dans la BDD.
         }
-        // 3-faire appel a la fonction saveCompleteAd qui permet de :
     };
 
-    /*/FONCTION qui fait appel aux useEffect
-    const createAd = () => {
-        //cette fonction fait appel a la fonction qui fait la requete au back 
-    };*/
+    useEffect(() => {
+        // Récupérez les détails de l'annonce à éditer
+        //const adId = props.adId; pas besoin
+        getAdDetails(adId)
+            .then((adDetails) => {
+                // Utilisez les données pour initialiser les états correspondants
+                setTitle(adDetails.title);
+                setDescription(adDetails.description);
+                setPrice(adDetails.price);
+                setQuantity(adDetails.quantity);
+
+                // Activez le bouton après avoir pré-rempli les champs
+                setDisabled(false);
+            })
+            .catch((error) => {
+                console.error(
+                    "Erreur lors de la récupération des détails de l'annonce :",
+                    error
+                );
+            });
+    }, []);
 
     return (
         <>
@@ -94,11 +122,7 @@ const EditAd = () => {
                             id="price"
                             placeholder="Enter Your Price"
                             onChange={(e) => {
-                                /* console.log(e);
-                                    console.log(
-                                        "e.target.value",
-                                        e.target.value
-                                    ) */ setPrice(e.currentTarget.value);
+                                setPrice(e.currentTarget.value);
                             }}
                         />
                     </div>
@@ -157,19 +181,19 @@ const EditAd = () => {
 
                     {isSuccess && (
                         <p className="successMsg">
-                            Votre annonce à bien été créé!
+                            Votre annonce à bien été modifié!
                         </p>
                     )}
 
                     <div className="formButtonContainers">
-                        <SubmitButton text="save modif" />
+                        <SubmitButton text="sauvegarder les modifications" />
                         <button
                             type="submit"
                             className={`submit-button ${
                                 isFormError ? "submit-button-error" : ""
                             } ${isSuccess ? "submit-button-success" : ""}`}
                         >
-                            Save modification
+                            Sauvegarder les modifications
                         </button>
                     </div>
                 </form>

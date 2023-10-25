@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getOneUser } from "../../../api/ApiUser";
+import { updateProfil } from "../../../api/ApiUser";
 
 import Button from "../../Buttons/Button";
 

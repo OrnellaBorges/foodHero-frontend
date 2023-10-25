@@ -3,7 +3,6 @@ import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
 
 import ForgotPassword from "./Components/ForgotPwd/ForgotPassword";
 import Home from "./Components/HomePage/Home";
-import Cookie from "./Components/Concent/Cookie";
 
 import Infos from "./Components/Intro/Infos";
 
@@ -118,7 +117,7 @@ function App() {
         },
 
         {
-            path: "/editAd",
+            path: "/editAd/:adId",
             element: (
                 <div>
                     <EditAd />
@@ -139,14 +138,6 @@ function App() {
             element: (
                 <div>
                     <UserOneAd />
-                </div>
-            ),
-        },
-        {
-            path: "/cookie",
-            element: (
-                <div>
-                    <Cookie />
                 </div>
             ),
         },

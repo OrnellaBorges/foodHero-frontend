@@ -3,13 +3,9 @@ import { useState, useEffect } from "react";
 //import { getOneUser } from "../../api/ApiAds";
 
 // import icons
-import { BsFillHouseDoorFill, BsFillGrid3X3GapFill } from "react-icons/bs";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
 
-import {
-    AiFillCloseCircle,
-    AiOutlineUser,
-    AiOutlinePlusCircle,
-} from "react-icons/ai";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 // import assets
 import logo from "../../assets/logo2.png";
@@ -17,8 +13,6 @@ import logo from "../../assets/logo2.png";
 import Button from "../Buttons/Button";
 
 import "./nav.css";
-
-//navbar event
 
 const Nav = (props) => {
     const { isLogged, userId, name } = props; // Destructuration de props pour éviter d'écrire "props."
@@ -70,7 +64,6 @@ const Nav = (props) => {
                 </li>
             </ul>
 
-            {/* cette partie devra etre un ternaire si l'user est connecté ou pas voir beer4you header */}
             {isLogged ? (
                 <ul
                     className={`menuList rightMenu flex ${
@@ -84,18 +77,12 @@ const Nav = (props) => {
                     </li>
                     <li className="navItem">
                         <Link to={`/userProfile/${userId}`} className="navLink">
-                            {/* <AiOutlineUser /> */}
                             Mon compte
                         </Link>
                     </li>
                     <li className="navItem">
                         <p className="navLink">Bonjour {name}</p>
                     </li>
-                    {/* <li className="navItem">
-                        <Link to="/orders" className="navLink">
-                            Orders
-                        </Link>
-                    </li> */}
                 </ul>
             ) : (
                 <ul

@@ -62,7 +62,6 @@ const RgpdBanner = () => {
                             >
                                 Refuser
                             </button>
-                            <a className="btn transparent">Learn more</a>
                         </div>
                     </div>
                 </div>

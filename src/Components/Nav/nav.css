@@ -28,10 +28,6 @@
     display: none;
 }
 
-/*test
-.menuDiv {
-}*/
-
 .menuIcon {
     display: none;
     justify-content: center;
@@ -55,7 +51,6 @@
 
 .navLink {
     text-decoration: none;
-    /* font-family: ; */
     border: 3px solid transparent;
     color: white;
     font-size: 15px;
@@ -81,12 +76,6 @@
 .navIcon {
     display: none;
 }
-
-/* FONCTIONNE PAS */
-/* .navItem:hover {
-    border-bottom: 3px solid white;
-    color: white;
-} */
 
 /*=============== MEDIA QUERIES ================*/
 
@@ -121,8 +110,9 @@
     }
 
     .logoNav {
-        display: none; /* display none la balise est toujour dans le dom mais ça masque */
-        /* visibility: hidden;*/ /*sa balise n'est pas suupprimé ça laisse un trou a la place a l'ecran*/
+        display: none;
+        /* display none la balise est toujours dans le dom mais ça masque */
+        /* visibility: hidden;*/ /*sa balise n'est pas supprimé du dom ça laisse un trou a la place a l'ecran*/
     }
 
     .centerMenu {
@@ -170,6 +160,6 @@
     }
 
     .navLink:hover {
-        border: 0px;
+        border: 1px solid white;
     }
 }
