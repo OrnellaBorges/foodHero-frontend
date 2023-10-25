@@ -10,18 +10,15 @@ import UserAds from "./UserAds/UserAds";
 //import user from "../../../../assets/users/avatar3.jpg";
 
 const Listing = (props) => {
-    const userId = props.userId;
-    return (
-        <section className="listingSection">
-            <header className="linstingHeading flex">
-                <h1 className="listingTitle">Listing Section</h1>
-            </header>
-            <div className="listingContent">
-                <UserAds userId={userId} />
-                {/* <RegisteredAds /> */}
-            </div>
-        </section>
-    );
+  const userId = props.userId;
+  return (
+    <section className="listingSection">
+      <div className="listingContent">
+        <UserAds userId={userId} />
+        {/* <RegisteredAds /> */}
+      </div>
+    </section>
+  );
 };
 
 export default Listing;

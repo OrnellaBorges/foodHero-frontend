@@ -17,108 +17,76 @@ import cookie from "../../assets/cookie3.jpeg"; */
 //import image from "../../../../../assets/food/riz.jpg";
 
 const UserAds = (props) => {
-    //const { userId } = useParams();
+  //const { userId } = useParams();
 
-    // ici on va faire un fetch
-    /* const recupUserAnnonces = [
-        {
-            id: 1,
-            title: "Lasagnes",
-            price: 3,
-            description: "description du plat",
-            date: "12/03/2023",
-            ville: "LILLE",
-            image: { image },
-            userId: 3,
-            userPseudo: "mika4ever",
-        },
-        {
-            id: 2,
-            title: "Lasagnes",
-            price: 3,
-            description: "description du plat",
-            date: "12/03/2023",
-            ville: "LILLE",
-            image: { image },
-            userId: 3,
-            userPseudo: "mika4ever",
-        },
-    ]; */
+  //ici on stock grace a useParams l'id de l'utilisateur connecté qui a été mis dans le link de allAdsCard
 
-    //ici on stock grace a useParams l'id de l'utilisateur connecté qui a été mis dans le link de allAdsCard
+  const userId = props.userId;
 
-    const userId = props.userId;
+  console.log("userId", userId);
 
-    console.log("userId", userId);
+  //const { userId } = useParams(3);
 
-    //const { userId } = useParams(3);
+  //const userId = 1;
 
-    //const userId = 1;
+  const [userAds, setUserAds] = useState([]);
+  const [isError, setIsError] = useState(false);
+  //const [status, setStatus] = useState(0);
 
-    const [userAds, setUserAds] = useState([]);
-    const [isError, setIsError] = useState(false);
-    //const [status, setStatus] = useState(0);
-
-    console.log("userAds", userAds);
-    console.log("userAds.length", userAds.length);
-    useEffect(() => {
-        //console.log("userId", userId);
-        // appel de la fonction allUserAds()
-        allUserAds(userId)
-            .then((res) => {
-                /* console.log("res", res.userAds);
+  console.log("userAds", userAds);
+  console.log("userAds.length", userAds.length);
+  useEffect(() => {
+    //console.log("userId", userId);
+    // appel de la fonction allUserAds()
+    allUserAds(userId)
+      .then((res) => {
+        /* console.log("res", res.userAds);
                 console.log("res", res); */
-                if (res.status === 200) {
-                    if (res.userAds.length > 0) {
-                        setUserAds(res.userAds);
-                    }
-                }
+        if (res.status === 200) {
+          if (res.userAds.length > 0) {
+            setUserAds(res.userAds);
+          }
+        }
 
-                if (res.status !== 200) {
-                    setIsError(true);
-                }
-            })
-            .catch((err) => {
-                console.log("err", err);
-            });
-    }, []);
+        if (res.status !== 200) {
+          setIsError(true);
+        }
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
 
-    return (
-        <>
-            <section className="cardsContainer">
-                <h2 className="title-container">Vos annonces :</h2>
-                {userAds.length > 0 ? (
-                    <ul className="testUl">
-                        {/* .map pour chaque annonce tu retournes un li */}
-                        {userAds.map((annonce) => (
-                            <li key={annonce.id} className="testLi">
-                                {/* <img src={annonce.image} alt={annonce.titre} /> */}
-                                <h3 className="title-card">{annonce.title}</h3>
-                                <p className="text-card">
-                                    Prix : {annonce.price} €
-                                </p>{" "}
-                                {/* ici il n'y a pas d'interpolation ???? */}
-                                <p className="text-card">
-                                    Date : {annonce.creationDate}
-                                </p>
-                                <p className="texte-card">
-                                    {annonce.description}
-                                </p>
-                                {/* <p className="texte">
+  return (
+    <>
+      <section className="cardsContainer">
+        <h2 className="title-container">Vos annonces :</h2>
+        {userAds.length > 0 ? (
+          <ul className="testUl">
+            {/* .map pour chaque annonce tu retournes un li */}
+            {userAds.map((annonce) => (
+              <li key={annonce.id} className="testLi">
+                {/* <img src={annonce.image} alt={annonce.titre} /> */}
+                <h3 className="title-card">{annonce.title}</h3>
+                <p className="text-card">Prix : {annonce.price} €</p>{" "}
+                {/* ici il n'y a pas d'interpolation ???? */}
+                <p className="text-card">Date : {annonce.creationDate}</p>
+                <p className="texte-card">{annonce.description}</p>
+                {/* <p className="texte">
                                 Auteur : {annonce.auteur}
                             </p> */}
-                                <Link to="/userOneAd">
-                                    <Button text="More details" />
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p className="message">Pas d'annonces</p>
-                )}
-            </section>
-        </>
-    );
+                <Link to="/userOneAd">
+                  <Button text="More details" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="message">Vous n'avez pas d'annonces</p>
+        )}
+      </section>
+    </>
+  );
 };
 
 export default UserAds;

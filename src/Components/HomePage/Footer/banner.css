@@ -1,0 +1,61 @@
+.banner-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    height: 60px; /* Ajustez la hauteur de la bannière selon vos besoins */
+    overflow: hidden;
+}
+
+.scrolling-text {
+    display: flex;
+    animation: scrollText 10s linear infinite; /* Ajustez la durée de défilement ici */
+}
+
+.active {
+    margin-right: 20px; /* Espace entre les mots */
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.stock-ticker-container {
+    width: 100%;
+    overflow: hidden;
+    /* background-color: #000; */
+    color: #fff;
+}
+
+.stock-ticker {
+    display: flex;
+    animation: scrollTicker 20s linear infinite; /* Ajustez la durée de défilement ici */
+}
+
+.stock-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0 10px;
+    width: max-content; /* Largeur d'un élément (correspond à stockWidth dans le composant) */
+}
+
+@keyframes scrollTicker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
