@@ -125,7 +125,7 @@ function App() {
       path: "/userOneAd",
       element: (
         <div>
-          <UserOneAd />
+          <UserOneAd isLogged={isLogged} userId={userInfos.id} />
         </div>
       ),
     },
@@ -133,7 +133,7 @@ function App() {
       path: "/create",
       element: (
         <div>
-          <CreateAds />
+          <CreateAds isLogged={isLogged} userId={userInfos.id} />
         </div>
       ),
     },

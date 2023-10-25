@@ -1,78 +1,90 @@
 .bannerStyle {
-    position: sticky;
-    text-align: center;
-    position: relative;
-    opacity: 0.3;
-    background-color: white;
-    z-index: 3;
+  position: sticky;
+  text-align: center;
+  position: relative;
+  opacity: 0.3;
+  background-color: white;
+  z-index: 3;
 }
 .bannerStyle img {
-    width: 100%;
+  width: 100%;
+}
+
+.titleInfo-container {
+  position: absolute;
+  top: 0;
+  bottom: 200px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid blue;
+  height: 300px;
 }
 
 .titleBanner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fbc35b;
-    font-size: 50px;
-    padding: 10px;
-    z-index: 4;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  color: #fbc35b;
+  font-size: 50px;
+  padding: 10px;
+  z-index: 4;
 }
 
 .infoImg-container {
-    width: 100%;
+  width: 100%;
 }
 
 .containerImgtext {
-    border: 1px solid red;
-    text-align: center;
-    margin-top: 80px;
+  border: 1px solid red;
+  text-align: center;
+  margin-top: 80px;
 }
 
 .text-title {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .textBlock {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
-    width: 80%;
-    margin: 0 auto;
-    font-size: var(--h3FontSize);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+  font-size: var(--h3FontSize);
 }
 
 .conclusion-container {
-    text-align: center;
-    width: 70%;
-    margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .info-image-Container {
-    width: 60%;
-    margin: 0 auto;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .infoBtn {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 
 @media screen and (min-width: 768px) {
-    .containerImgtext {
-        display: flex;
-        padding: 0 20px;
-    }
+  .containerImgtext {
+    display: flex;
+    padding: 0 20px;
+  }
 
-    .textBlock {
-        text-align: left;
-    }
+  .textBlock {
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 1080px) {
-    .textBlock {
-        font-size: var(--h2FontSize);
-    }
+  .textBlock {
+    font-size: var(--h2FontSize);
+  }
 }

@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import SubmitButton from "../../Buttons/submitButton";
 
 import "./editAd.css";
-//import { createOneAd } from "../../api/ApiAds";
+import { createOneAd } from "../../../api/ApiAds";
 
-const CreateAds = () => {
+const CreateAds = (props) => {
   // STATES
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -18,10 +18,13 @@ const CreateAds = () => {
   const [isFormError, setIsFormError] = useState(false);
   const [isApiError, setIsApiError] = useState(false);
 
+  const [isError, setIsError] = useState("");
+  const [isSuccess, setIsSuccess] = useState("");
+
   //const [isValidForm, setIsValidForm] = useState(false);
 
   //State pour changer de couleur le bouton submit en vert lorsque l'annonce a bien été crée donc on doit recevoir reponse positiv de l'api apiError a true
-  const [isSuccess, setIsSuccess] = useState(false);
+  //const [isSuccess, setIsSuccess] = useState(false);
 
   const onSubmitForm = (e) => {
     // ici on accroche cette FONCTION a la balise form directement via l'attribut onSubmit={onSubmitForm} comme un onclick elle va permettre de:
@@ -31,25 +34,37 @@ const CreateAds = () => {
     // 2-de renvoyer un msg d'erreur si l'user n'a pas rempli tous les champs obligatoirs
 
     if (title === "" || description === "" || price === "") {
+      setIsApiError(true);
       setIsFormError(true);
     } else {
+      // creation d'un objet a envoyer dans la fonction createOneAd
+      const datas = {
+        title,
+        price,
+        description,
+      };
       // Partir vers l'api...demande des datas par ne requete ajax axios qui est dans la fonction :
-      //createOneAd()
+      createOneAd(datas)
+        .then((res) => {
+          // 1-si le status est différent de 200 alors on va chercher le msg d'erreur
+          if (res.status === 200) {
+            setIsError("");
+            setIsSuccess(res.msg);
+          } else {
+            // 2-on stock se msg d'erreur dans un state
+            setIsError(res.msg);
+            setIsSuccess("");
+          }
+        })
+        .catch((err) => {
+          console.log("err", err);
+        });
 
-      // On récupère la réponse de l'api et on stok la rep
-      const retourDeLapiPositif = true;
-      if (retourDeLapiPositif) {
-        setIsApiError(false);
+      //modifier les states
+      /* setIsApiError(false);
         setIsSuccess(true);
-        setIsFormError(false);
-      } else {
-        setIsApiError(true);
-        setIsFormError(false);
-      }
-
-      // doit mettre le bouton en vert quand l'annonce est bien créé dans la BDD.
+        setIsFormError(false); */
     }
-    // 3-faire appel a la fonction saveCompleteAd qui permet de :
   };
 
   /*/FONCTION qui fait appel aux useEffect
@@ -123,7 +138,7 @@ const CreateAds = () => {
           {/* // INFO > En cas de soucis on fait un ternaire qui
                         renvoi le msg d'erreur en rouge si isError est a true >>> isError sera "true"*/}
 
-          {isFormError && (
+          {/*   {isFormError && (
             <p className="errorMsg">
               Veuillez saisir les informations requises.
             </p>
@@ -136,8 +151,11 @@ const CreateAds = () => {
 
           {isSuccess && (
             <p className="successMsg">Votre annonce à bien été créé!</p>
-          )}
+          )} */}
 
+          {isSuccess && <p className="successMsg">{successMsg}</p>}
+          {isError && <p className="errorMsg">{errorMsg}</p>}
+          <button type="submit">Envoyer</button>
           <div className="formButtonContainer">
             <SubmitButton text="Sauvegarder" />
             <Link to="/dashboard">

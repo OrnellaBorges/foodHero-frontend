@@ -26,7 +26,7 @@ const Hero = () => {
                     </Link>
                 </div>*/}
         <div className="cardSection ">
-          <div className="rightCard ">
+          <div className="Card ">
             <div className="cardContent">
               <h1>Ne jetez plus vos restes vendez-les !</h1>
               <p>

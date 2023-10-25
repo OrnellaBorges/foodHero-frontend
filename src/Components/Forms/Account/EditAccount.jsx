@@ -5,7 +5,7 @@ import { updateProfil } from "../../../api/ApiUser";
 import Button from "../../Buttons/Button";
 import "./edit.css";
 
-function EditAccount(props) {
+const EditAccount = (props) => {
   const userId = props.userId;
 
   const [firstName, setFirstName] = useState();
@@ -141,17 +141,6 @@ function EditAccount(props) {
       </div>
     </div>
   );
-}
+};
 
 export default EditAccount;
-
-/*<div className="form-group">
-                    <label>Image de profil</label>
-                    <input
-                        type="url"
-                        name="profileImage"
-                        value={user.profileImage}
-                        onChange={handleInputChange}
-                    />
-                <FontAwesomeIcon icon={faPencilAlt} />
-                </div>*/

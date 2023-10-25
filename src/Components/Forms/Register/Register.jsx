@@ -75,10 +75,6 @@ const Register = () => {
           className="formContainer"
           name="registerForm"
         >
-          {/* // INFO > En cas de soucis on fait un ternaire qui
-                        renvoi le msg d'erreur en rouge si ça rentre dans le
-                        catch de l'axios au dessus comme isError sera a true*/}
-
           {successMsg && <p className="successMsg">{successMsg}</p>}
           {errorMsg && <p className="errorMsg">{errorMsg}</p>}
 
