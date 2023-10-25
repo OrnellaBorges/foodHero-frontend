@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getOneUser } from "../../api/ApiUser";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { FontAwesomeIcon } from "@fortawesome/fontawesome-svg-core";
+import { getOneUser } from "../../../api/ApiUser";
 
-import Button from "../Buttons/Button";
-
-//import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
-//import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import Button from "../../Buttons/Button";
 
 import "./edit.css";
 

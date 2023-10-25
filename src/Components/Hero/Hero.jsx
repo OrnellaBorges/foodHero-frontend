@@ -28,7 +28,7 @@ const Hero = () => {
                 <div className="cardSection ">
                     <div className="rightCard ">
                         <div className="cardContent">
-                            <h1>Ne jetez plus vendez !</h1>
+                            <h1>Ne jetez plus vos restes vendez-les !</h1>
                             <p>
                                 Partagez, cuisinez, economisez... et si votre
                                 frigo pouvais parler, il dirait quoi ?

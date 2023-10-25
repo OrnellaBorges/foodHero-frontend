@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link, useNavigate, Navigate, useParams } from "react-router-dom";
-import { getOneUser } from "../../api/ApiUser";
+import { getOneUser } from "../../../api/ApiUser";
 
 //import components
-import Button from "../Buttons/Button";
+import Button from "../../Buttons/Button";
 
 import "./userProfile.css";
 
-import adminImage from "../../assets/users/albert4.png";
+import adminImageDefault from "../../../assets/users/albert4.png";
 
 const UserProfile = (props) => {
     const navigate = useNavigate();
@@ -16,41 +15,10 @@ const UserProfile = (props) => {
     const [cooker, setCooker] = useState({});
     console.log("props.userId", props.userId);
 
-    // Les données de l'utilisateur
-    /* const user = {
-        firstName: "Albert",
-        lastName: "Einstein",
-        email: "e=mc2@lycos.fr",
-        address: "53 rue de la Relativité ",
-        phone: "+1 555-123-4567",
-        profileImage: { adminImage },
-    }; */
-
-    /* useEffect(()=>{
-        setFirstName(user.infos.firstName)
-        setLastName(user.infos.lastName)
-        setAddress(user.infos.address)
-        setZip(user.infos.zip)
-        setCity(user.infos.city)
-        setPhone(user.infos.phone)
-    }, [user]) */
-
-    //const [data, setData] = useState(null);
-    /* useEffect(() => {
-        oneUser(adId)
-            .then((res) => {
-                console.log("res.data.oneAd[0]", res.data.oneAd[0]);
-                setAd(res.data.oneAd[0]);
-            })
-            .catch((err) => {
-                console.log("err", err);
-            });
-    }, []); */
-
     const onLogout = () => {
-        props.logoutUser(); // on execute la fonction passé en props (handleLogoutUser)
-        localStorage.removeItem("fh-token"); // ici on detruit le token
-        navigate("/"); // ici on te redirige vers la home
+        props.logoutUser();
+        localStorage.removeItem("fh-token");
+        navigate("/");
     };
 
     useEffect(() => {
@@ -71,8 +39,7 @@ const UserProfile = (props) => {
                     <div className="user-info">
                         <div className="userImage">
                             <img
-                                src={adminImage}
-                                /* src={user.profileImage} */
+                                src={adminImageDefault}
                                 alt="Profil de l'utilisateur"
                             />
                         </div>

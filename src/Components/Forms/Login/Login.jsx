@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-// sert a naviguer entre les pages c'est une REDIRECTION
 import { Link, useNavigate, Navigate } from "react-router-dom";
-// sert a remplacer les balises <a> et a naviguer aussi AU CLICK c'est un lien
 
-//import "./Login.scss";
 import "./form.css";
-import { loginUser } from "../../api/ApiUser";
+import { loginUser } from "../../../api/ApiUser";
 
 // import components
-import Button from "../Buttons/Button";
-import SubmitButton from "../Buttons/submitButton";
+import Button from "../../Buttons/Button";
+import SubmitButton from "../../Buttons/submitButton";
 
 //import Icons
 /* import { FaUserShield } from "react-icons/fa";

@@ -1,16 +1,18 @@
 import "./App.css";
 import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
-import Login from "./Components/Forms/Login/Login";
+
 import ForgotPassword from "./Components/ForgotPwd/ForgotPassword";
-import Register from "./Components/Forms/Register/Register";
 import Home from "./Components/HomePage/Home";
 import Cookie from "./Components/Concent/Cookie";
+
 import Infos from "./Components/Intro/Infos";
+
+import Login from "./Components/Forms/Login/Login";
+import Register from "./Components/Forms/Register/Register";
 import CreateAds from "./Components/Forms/FormsAds/CreateAds";
-//import Account from "./Components/Account/Account";
-import UserProfile from "./Components/Form/Account/UserProfile";
-import Filter from "./Components/FilterComponent/FilterContainer";
-import EditAccount from "./Components/Account/EditAccount";
+import UserProfile from "./Components/Forms/Account/UserProfile";
+
+import EditAccount from "./Components/Forms/Account/EditAccount";
 import EditAd from "./Components/Forms/FormsAds/EditAd";
 import OneAd from "./Components/AdsCards/OneAd/OneAd";
 import UserOneAd from "./Components/Dashboard/Components/ListingSection/UserAds/UserOneAd";
@@ -90,14 +92,6 @@ function App() {
             ),
         },
         {
-            path: "/filter",
-            element: (
-                <div>
-                    <Filter />
-                </div>
-            ),
-        },
-        {
             path: "/register",
             element: (
                 <div>
@@ -119,14 +113,6 @@ function App() {
             element: (
                 <div>
                     <Infos />
-                </div>
-            ),
-        },
-        {
-            path: "/account",
-            element: (
-                <div>
-                    <Account />
                 </div>
             ),
         },
@@ -169,14 +155,6 @@ function App() {
             element: (
                 <div>
                     <CreateAds />
-                </div>
-            ),
-        },
-        {
-            path: "/orders",
-            element: (
-                <div>
-                    <Orders />
                 </div>
             ),
         },
