@@ -9,6 +9,8 @@ import "./editAd.css";
 import { createOneAd } from "../../../api/ApiAds";
 
 const CreateAds = (props) => {
+  const userId = props.userId;
+
   // STATES
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -59,11 +61,6 @@ const CreateAds = (props) => {
         .catch((err) => {
           console.log("err", err);
         });
-
-      //modifier les states
-      /* setIsApiError(false);
-        setIsSuccess(true);
-        setIsFormError(false); */
     }
   };
 
@@ -104,11 +101,7 @@ const CreateAds = (props) => {
                 id="price"
                 placeholder="Enter Your Price"
                 onChange={(e) => {
-                  /* console.log(e);
-                                    console.log(
-                                        "e.target.value",
-                                        e.target.value
-                                    ) */ setPrice(e.currentTarget.value);
+                  setPrice(e.currentTarget.value);
                 }}
               />
             </div>
@@ -153,8 +146,9 @@ const CreateAds = (props) => {
             <p className="successMsg">Votre annonce à bien été créé!</p>
           )} */}
 
-          {isSuccess && <p className="successMsg">{successMsg}</p>}
-          {isError && <p className="errorMsg">{errorMsg}</p>}
+          {isSuccess && <p className="successMsg">{isSuccess}</p>}
+
+          {isError && <p className="errorMsg">{isError}</p>}
           <button type="submit">Envoyer</button>
           <div className="formButtonContainer">
             <SubmitButton text="Sauvegarder" />

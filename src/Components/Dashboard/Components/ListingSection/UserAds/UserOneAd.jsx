@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { editOneAd } from "../../../../../api/ApiAds";
+import { oneAd } from "../../../../../api/ApiAds";
 
 import "./oneAd.css";
 
@@ -14,21 +14,29 @@ import DeleteButton from "../../../../Buttons/Button";
 import pasta from "../../../../../assets/pasta.jpg";
 
 //import icons
+const UserOneAd = (props) => {
+  const userId = props.userId;
+  const { adId } = useParams();
+  console.log("adId", adId);
 
-const UserOneAd = () => {
-  const ad = {
-    id: 30,
-    title: "Annonce 30",
-    price: 3.5,
-    date: "2023-10-03",
-    description: "Ceci est la description de l'annonce.",
-    auteur: "Auteur 3",
-    userId: 2,
-  };
+  const [ad, setAd] = useState([]);
+  //console.log("ad.userId", ad.userId);
+
+  useEffect(() => {
+    oneAd(adId)
+      .then((res) => {
+        console.log("res", res);
+        //console.log("res.data.oneAd[0]", res.data.oneAd[0]);
+        //setAd(res.data.oneAd[0]);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
 
   return (
     <>
-      <div className="oneAd">
+      <section className="oneAd">
         <div className="containerInfo">
           <div className="imageCard-container">
             <img
@@ -40,14 +48,14 @@ const UserOneAd = () => {
           </div>
 
           <div className="adInfo">
-            <h4 className="adTitle">{ad.title}</h4>
+            <h4 className="adTitle">titre</h4>
             <div className="jesaispas">
-              <p className="adDescription">{ad.description}</p>
-              <p className="price">prix: {ad.price} €</p>
+              <p className="adDescription">description</p>
+              <p className="price">prix: 10 €</p>
             </div>
             <div className="buttonContainer flex">
               <div className="buttonContainer">
-                <Link to={`/editAd/${ad.id}`}>
+                <Link to={`/editAd/${adId}`}>
                   <EditButton text="modifier l'annonce" />
                 </Link>
 
@@ -55,13 +63,10 @@ const UserOneAd = () => {
                   <DeleteButton text="supprimer l'annonce" />
                 </Link>
               </div>
-              {/* <Link to={`/userProfile/${ad.userId}`}>
-                            <Button text="Contacter le cooker" />
-                        </Link> */}
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
