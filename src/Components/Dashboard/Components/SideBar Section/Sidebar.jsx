@@ -5,20 +5,18 @@ import { useParams } from "react-router-dom";
 
 //IMPORT ICONS FROM REACT ICONS
 import { GiHamburger } from "react-icons/gi";
-import { MdDeliveryDining, MdOutlineExplore } from "react-icons/md";
-import { BsTrophy, BsCreditCard2Back } from "react-icons/bs";
+import { MdOutlineExplore } from "react-icons/md";
 import { LuUser2 } from "react-icons/lu";
-import { BiTrendingUp, BiSolidHome } from "react-icons/bi";
-//import { IoCalendarNumberOutline } from "react-icons/io";
+import { BiSolidHome } from "react-icons/bi";
 
 //import style
 import "./sidebar.scss";
 import "../../../../index.scss";
 
 //import assets and images
-//import logo from "../../../../assets/logo2.png";
 import adminImage from "../../../../assets/users/albert4.png";
 
+//Redux
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser, connectUser } from "../../../../slices/userSlice";
 
@@ -29,15 +27,12 @@ const Sidebar = (props) => {
   const { isLogged } = user;
   const { firstName, lastName } = user.infos;
   const userId = user.infos.id;
-  console.log("userId", userId);
-
-  console.log("userId", userId);
 
   return (
     <>
       {isLogged && (
-        <div className="sidebar flex" data-mika="mika">
-          <div className="sidebarHeader flex sidebarLogo">
+        <div className="sidebar ">
+          <div className="sidebarHeader sidebarLogo">
             <div className="iconContainer">
               <GiHamburger className="icon sidebarIcon" />
             </div>

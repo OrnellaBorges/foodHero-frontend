@@ -1,73 +1,83 @@
 .oneAd {
-    border: 10px solid rgb(83, 80, 179);
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 50px auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* .contentContainer {
-    
-} */
-
-.adInfo {
-    background-color: rgb(205, 0, 250);
-    color: rgb(228, 199, 248);
+.containerInfo {
+  text-align: center;
+  width: 100%;
 }
 
-.adInfo .jesaispas p {
-    padding: 1rem;
-}
-/* .singleCard:hover {
-    background-color: rgb(254, 202, 106);
-    box-shadow: 0 2px 2px var(--inputColor);
-} */
-
-.adTitle {
-    padding: 1rem;
-    font-size: 2rem;
-}
-
-.ingredientContainer {
-    border: 3px solid yellow;
-}
-.ingredientsList {
-    list-style: none;
-    width: max-content;
-    border: 3px solid red;
-}
-.ingredient {
-    list-style: none;
-    border: 3px solid red;
-    padding: 0.5rem;
+.imageCard-container {
+  width: 100%;
 }
 
 .imgAd {
-    max-width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.adInfo {
+  flex: 2;
+}
+
+.adTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.adDescription {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.price:last-child {
+  margin-bottom: 0;
+}
+
+.price:last-child {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .buttonContainer {
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin-top: 10px;
 }
 
-.addCart-btn {
-    padding: 0.8rem;
-    background: transparent;
-    border: 3px solid white;
-    border-radius: 10px;
-    color: white;
-    font-weight: 800;
-    align-items: center;
-    margin: auto;
-    justify-content: center;
-    font-size: 1rem;
-    width: max-content;
-    gap: 0.5rem;
-    transition: 0.3s ease;
-    padding: 0.8rem 1.5rem;
-    margin-top: 1rem;
+/* Media query pour les écrans plus petits */
+@media (max-width: 768px) {
+  .oneAd {
+    flex-direction: column;
+  }
+
+  .imageCard-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
 
-.addCart-btn:hover {
-    background: white;
-    color: rgb(226, 184, 0);
+/* Media query pour les écrans plus grands */
+@media (min-width: 768px) {
+  .containerInfo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .imgAd {
+    max-width: 60%;
+  }
 }

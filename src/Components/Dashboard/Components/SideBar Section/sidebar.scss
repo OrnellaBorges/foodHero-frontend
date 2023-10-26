@@ -20,6 +20,7 @@
 }
 
 .sidebar {
+  display: flex;
   background-color: #090125;
 
   width: 20%;
@@ -34,11 +35,10 @@
   }
 
   .sidebarHeader {
+    text-align: center;
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 40px;
-
     .icon {
       font-size: 25px;
       padding-right: 2px;
@@ -121,7 +121,6 @@
 
 @media screen and (max-width: 768px) {
   .sidebarMenu {
-    border: 3px solid green;
     width: 100%;
 
     .sideBarList {

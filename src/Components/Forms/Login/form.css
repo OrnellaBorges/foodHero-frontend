@@ -10,7 +10,7 @@
 .formHeader {
   text-align: center;
   width: 80%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .formTitle {
@@ -59,9 +59,7 @@ label {
   color: #009900;
 }
 .formButtonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 /* Styles for the Save Modification button */

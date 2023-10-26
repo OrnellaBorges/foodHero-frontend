@@ -139,9 +139,8 @@
     position: absolute;
     font-size: 25px;
 
-    /*A CORRIGER*/
     top: 10%;
-    left: 94%;
+    left: 80%;
   }
   .closeNav:hover {
     color: white;

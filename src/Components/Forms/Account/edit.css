@@ -39,7 +39,7 @@
   margin-bottom: 10px;
 }
 .formTitle {
-  color: black;
+  color: var(--whiteColor);
 }
 
 label {

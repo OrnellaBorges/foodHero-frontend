@@ -1,22 +1,22 @@
 .mainContent {
-    width: 82%;
-    height: 100%;
-    padding: 2rem;
-    overflow: auto;
+  width: 82%;
+  height: 100%;
+  padding: 1rem;
+  overflow: auto;
 
-    .dashbordBody {
-        margin-top: 2rem;
-        gap: 2rem;
-        align-items: flex-start;
-    }
+  .dashbordBody {
+    margin-top: 2rem;
+    gap: 2rem;
+    align-items: flex-start;
+  }
 }
 
 /* =============== Media Queries ====================*/
 
 @media screen and (max-width: 768px) {
-    .mainContent {
-        .dashbordBody {
-            flex-direction: column;
-        }
+  .mainContent {
+    .dashbordBody {
+      flex-direction: column;
     }
+  }
 }

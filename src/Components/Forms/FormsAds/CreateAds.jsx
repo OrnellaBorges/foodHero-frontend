@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-// import components
-import SubmitButton from "../../Buttons/submitButton";
-
 import "./editAd.css";
 import { createOneAd } from "../../../api/ApiAds";
-
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, connectUser } from "../../../slices/userSlice";
 const CreateAds = (props) => {
-  const userId = props.userId;
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const userId = user.infos.id;
 
   // STATES
   const [title, setTitle] = useState("");
@@ -44,6 +44,7 @@ const CreateAds = (props) => {
         title,
         price,
         description,
+        userId,
       };
       // Partir vers l'api...demande des datas par ne requete ajax axios qui est dans la fonction :
       createOneAd(datas)
@@ -55,7 +56,7 @@ const CreateAds = (props) => {
           } else {
             // 2-on stock se msg d'erreur dans un state
             setIsError(res.msg);
-            setIsSuccess("");
+            setIsSuccess(res.msg);
           }
         })
         .catch((err) => {
@@ -63,11 +64,6 @@ const CreateAds = (props) => {
         });
     }
   };
-
-  /*/FONCTION qui fait appel aux useEffect
-    const createAd = () => {
-        //cette fonction fait appel a la fonction qui fait la requete au back 
-    };*/
 
   return (
     <>
@@ -123,18 +119,18 @@ const CreateAds = (props) => {
               }}
             ></textarea>
           </div>
-
-          {isSuccess && <p className="successMsg">{isSuccess}</p>}
-
-          {isError && <p className="errorMsg">{isError}</p>}
-          <button type="submit">Envoyer</button>
           <div className="formButtonContainer">
-            <SubmitButton text="Sauvegarder" />
-            <Link to="/dashboard">
-              <button className="btn">Back to Dashboard</button>
+            {isSuccess && <p className="successMsg">{isSuccess}</p>}
+
+            {isError && <p className="errorMsg">{isError}</p>}
+            <button type="submit" className="btn">
+              Envoyer
+            </button>
+            <Link to="/dashboard" className="btn">
+              Back to Dashboard
             </Link>
-            <Link to="/">
-              <button className="btn">Back to Home</button>
+            <Link to="/" className="btn">
+              Back to Home
             </Link>
           </div>
         </form>

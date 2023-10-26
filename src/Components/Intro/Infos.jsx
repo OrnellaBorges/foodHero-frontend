@@ -5,9 +5,7 @@ import "./info.css";
 
 //import assets
 import table from "../../assets/table.png";
-//import gaspi from "../../assets/gaspillage.jpg";
 import gaspi from "../../assets/gaspi.jpeg";
-import Button from "../Buttons/Button";
 
 const Infos = () => {
   return (
@@ -96,6 +94,11 @@ const Infos = () => {
             particuliers. Pour reduire la précarité alimentaire et le gaspillage
             nous avons tous un rôle à jouer.
           </p>
+
+          <h2 className="text-title">Nous contacter</h2>
+          <p>FOODHERO</p>
+          <p> 5 place de la Louche - 59000 Lille </p>
+          <p>06.07.08.09.10</p>
           <Link to="/" className="btn infoBtn">
             Retour à la page d'acceuil
           </Link>
