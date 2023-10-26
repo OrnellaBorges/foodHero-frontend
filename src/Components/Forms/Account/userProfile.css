@@ -1,178 +1,68 @@
-/* Style de la section de profil */
 .profile {
-    padding: 20px;
-    background-color: #f7f7f7;
-    height: 100vh;
-    width: 80%;
-    margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  height: 100vh;
+  width: 80%;
+  margin: 0 auto;
 }
-
-/* Style de la barre latérale du profil */
 .profilSidebar {
-    padding: 20px;
-    background-color: #090125;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    color: #f7f7f7;
+  padding: 20px;
+  background-color: #090125;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  color: #f7f7f7;
+  text-align: center;
 }
 
 .titleAccount {
-    font-size: 24px;
-    font-weight: bold;
-    color: #f7f7f7;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f7f7f7;
 }
 
 .user-info {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .userImage img {
-    max-width: 100px;
-    border-radius: 50%;
-    /* Ajout de styles pour un cercle */
-    border: 3px solid #007bff; /* Bordure bleue */
+  max-width: 100px;
+  border-radius: 50%;
+  border: 3px solid #007bff;
 }
 
 .user-info h2 {
-    font-size: 18px;
-    margin-top: 10px;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
-/* Style de la partie centrale d'informations du profil */
 .infoContainer {
-    padding: 20px;
-    background-color: #ffffff;
+  padding: 20px;
+  background-color: #ffffff;
 }
 .listItem {
-    list-style-type: none;
-    padding: 10px;
+  list-style-type: none;
+  padding: 10px;
 }
 
 .buttonsContainer {
-    padding: 2%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* .profile {
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: orange;
-    border-radius: 5px;
-    width: 80%;
-    height: 100vh;
-    margin: 0 auto;
-}
-
-.profilSidebar {
-    flex: 1;
-    background-color: #fff;
-    border: 2px solid green;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.titleAccount {
-    font-size: 24px;
-    margin: 10px 0;
-    color: #333;
-}
-
-user-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-user-info img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 10px 0;
-}
-
-user-info h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-.user-details h3 {
-    padding: 1rem;
-    text-align: left;
-}
-
-.infoContainer {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 100%;
-    border-radius: 10px;
-    background-color: rgb(188, 175, 250);
-}
-
-.list-container {
-    padding: 0 20px 20px;
-    list-style: none;
-}
-
-.listItem {
-    padding: 1rem 0;
-    gap: 3px;
-}
-
-.infoContainer {
-    flex: 2;
-    border: 1px solid red;
-    border-radius: 5px;
-}
-
-user-details h3 {
-    font-size: 18px;
-    color: #333;
-}
-
-user-details p {
-    margin: 5px 0;
-    color: #555;
-}
-
-.buttonsContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid rgb(255, 255, 182);
-}
-
-footer button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-footer button:hover {
-    background-color: #0056b3;
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* ============== MEDIA QUERIES ===========*/
 
 @media screen and (min-width: 768px) {
-    .profile {
-        display: flex;
-    }
-    .profilSidebar {
-        flex: 1;
-    }
-    .infoContainer {
-        flex: 2;
-    }
+  .profile {
+    display: flex;
+  }
+  .profilSidebar {
+    flex: 1;
+  }
+  .infoContainer {
+    flex: 2;
+  }
 }

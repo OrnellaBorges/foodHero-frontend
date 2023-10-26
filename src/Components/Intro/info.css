@@ -1,34 +1,10 @@
-.bannerStyle {
-  position: sticky;
-  text-align: center;
-  position: relative;
-  opacity: 0.3;
-  background-color: white;
-  z-index: 3;
-}
-.bannerStyle img {
-  width: 100%;
-}
-
 .titleInfo-container {
-  position: absolute;
-  top: 0;
-  bottom: 200px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid blue;
-  height: 300px;
+  text-align: center;
 }
 
 .titleBanner {
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   color: #fbc35b;
-  font-size: 50px;
+  font-size: 30px;
   padding: 10px;
   z-index: 4;
 }
@@ -38,9 +14,11 @@
 }
 
 .containerImgtext {
-  border: 1px solid red;
   text-align: center;
-  margin-top: 80px;
+
+  width: 80%;
+  margin: 30px auto;
+  background-color: white;
 }
 
 .text-title {
@@ -61,6 +39,7 @@
   text-align: center;
   width: 70%;
   margin: 0 auto;
+  font-size: var(--h3FontSize);
 }
 
 .info-image-Container {

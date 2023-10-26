@@ -1,170 +1,168 @@
 .navMenuDiv {
-    text-align: left;
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
 }
 
 .menuList {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .navItem {
-    margin: 12px;
-    color: white;
+  margin: 12px;
+  color: white;
 }
 
 .leftMenu,
 .rightMenu {
-    background-color: #090125;
+  background-color: #090125;
 }
 
 .centerMenu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .closeNav {
-    display: none;
+  display: none;
 }
 
 .menuIcon {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
 }
 .logo-container {
-    width: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .brand {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    padding: 10px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding: 10px;
 }
 
 .navLink {
-    text-decoration: none;
-    border: 3px solid transparent;
-    color: white;
-    font-size: 15px;
-    padding: 0.5rem;
-    text-align: center;
-    white-space: nowrap;
+  text-decoration: none;
+  border: 3px solid transparent;
+  color: white;
+  font-size: 15px;
+  padding: 0.5rem;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .create {
-    background-color: #007bff;
-    border-radius: 10px;
+  background-color: #007bff;
+  border-radius: 10px;
 }
 .create:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .navLink:hover {
-    border: 3px solid white;
-    color: white;
-    border-radius: 10px;
+  border: 3px solid white;
+  color: white;
+  border-radius: 10px;
 }
 
 .navIcon {
-    display: none;
+  display: none;
 }
 
 /*=============== MEDIA QUERIES ================*/
 
 @media screen and (max-width: 768px) {
-    .leftMenu,
-    .rightMenu {
-        flex-direction: column;
-        position: absolute;
+  .leftMenu,
+  .rightMenu {
+    flex-direction: column;
+    position: absolute;
 
-        left: 50%;
+    left: 50%;
 
-        height: max-content;
+    height: max-content;
 
-        width: 80%;
-        padding: 1rem 0rem;
-        transform: translate(-50%);
-        transition: 0.3s ease;
-        z-index: 3000;
-    }
-    .navMenuDiv {
-        justify-content: center;
-    }
+    width: 80%;
+    padding: 1rem 0rem;
+    transform: translate(-50%);
+    transition: 0.3s ease;
+    z-index: 3000;
+  }
+  .navMenuDiv {
+    justify-content: center;
+  }
 
-    .leftMenu {
-        top: 100%;
-        padding-top: 1rem;
-    }
+  .leftMenu {
+    top: 100%;
+    padding-top: 1rem;
+  }
 
-    .rightMenu {
-        top: 203%;
-        padding-bottom: 1rem;
-    }
+  .rightMenu {
+    top: 250%;
+    padding-bottom: 1rem;
+  }
 
-    .logoNav {
-        display: none;
-        /* display none la balise est toujours dans le dom mais ça masque */
-        /* visibility: hidden;*/ /*sa balise n'est pas supprimé du dom ça laisse un trou a la place a l'ecran*/
-    }
+  .logoNav {
+    display: none;
+  }
 
-    .centerMenu {
-        width: 80%;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  .centerMenu {
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    .link {
-        font-size: 15px;
-        font-weight: 600;
-    }
+  .link {
+    font-size: 15px;
+    font-weight: 600;
+  }
 
-    .link:hover {
-        color: white;
-    }
+  .link:hover {
+    color: white;
+  }
 
-    .closeNav {
-        display: block;
-        color: white;
-        position: absolute;
-        font-size: 25px;
+  .closeNav {
+    display: block;
+    color: white;
+    position: absolute;
+    font-size: 25px;
 
-        /*A CORRIGER*/
-        top: 10%;
-        left: 94%;
-    }
-    .closeNav:hover {
-        color: white;
-    }
+    /*A CORRIGER*/
+    top: 10%;
+    left: 94%;
+  }
+  .closeNav:hover {
+    color: white;
+  }
 
-    .navIcon {
-        display: flex;
-        font-size: 25px;
-        margin-right: 50px;
-        color: white;
-    }
+  .navIcon {
+    display: flex;
+    font-size: 25px;
+    margin-right: 50px;
+    color: white;
+  }
 
-    .activeNav {
-        top: 6rem;
-    }
+  .activeNav {
+    top: 6rem;
+  }
 
-    .closedNav {
-        display: none;
-    }
+  .closedNav {
+    display: none;
+  }
 
-    .navLink:hover {
-        border: 1px solid white;
-    }
+  .navLink:hover {
+    border: 1px solid white;
+  }
 }

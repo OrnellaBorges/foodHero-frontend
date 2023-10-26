@@ -12,94 +12,83 @@ import adminImageDefault from "../../../assets/users/albert4.png";
 import { logoutUser } from "../../../slices/userSlice";
 
 const UserProfile = (props) => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const { cookerId } = useParams();
-    const [cooker, setCooker] = useState({});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { cookerId } = useParams();
+  const [cooker, setCooker] = useState({});
 
-    const user = useSelector(selectUser);
+  const user = useSelector(selectUser);
 
-    const userId = String(user.infos.id);
+  const userId = String(user.infos.id);
 
-    const onLogout = () => {
-        /* props.logoutUser();
+  const onLogout = () => {
+    /* props.logoutUser();
         localStorage.removeItem("fh-token");
         navigate("/"); */
 
-        window.localStorage.removeItem("fh-token");
-        dispatch(logoutUser());
-        navigate("/");
-    };
+    window.localStorage.removeItem("fh-token");
+    dispatch(logoutUser());
+    navigate("/");
+  };
 
-    useEffect(() => {
-        getOneUser(cookerId)
-            .then((res) => {
-                setCooker(res.data.oneUser[0]);
-            })
-            .catch((err) => {
-                console.error("err", err);
-            });
-    }, []);
+  useEffect(() => {
+    getOneUser(cookerId)
+      .then((res) => {
+        setCooker(res.data.oneUser[0]);
+      })
+      .catch((err) => {
+        console.error("err", err);
+      });
+  }, []);
 
-    return (
-        <>
-            <section className="profile">
-                <aside className="profilSidebar">
-                    <h1 className="titleAccount">USER PROFIL</h1>
-                    <div className="user-info">
-                        <div className="userImage">
-                            <img
-                                src={adminImageDefault}
-                                alt="Profil de l'utilisateur"
-                            />
-                        </div>
+  return (
+    <>
+      <section className="profile">
+        <aside className="profilSidebar">
+          <h1 className="titleAccount">USER PROFIL</h1>
+          <div className="user-info">
+            <div className="userImage">
+              <img src={adminImageDefault} alt="Profil de l'utilisateur" />
+            </div>
 
-                        <h2>
-                            {cooker.firstName} {cooker.lastName}
-                        </h2>
-                    </div>
-                </aside>
+            <h2>
+              {cooker.firstName} {cooker.lastName}
+            </h2>
+          </div>
+        </aside>
 
-                <div className="infoContainer">
-                    <div className="user-details">
-                        <h3>Your Profil Info:</h3>
-                        <ul className="list-container">
-                            <li className="listItem">
-                                <h4>Email:</h4>
-                                <p>{cooker.email}</p>
-                            </li>
-                            <li className="listItem">
-                                <h4>Adresse:</h4>
-                                <p>{cooker.address}</p>
-                            </li>
-                            <li className="listItem">
-                                <h4>Téléphone:</h4>
-                                <p>{cooker.phoneNumber}</p>
-                            </li>
-                        </ul>
-                    </div>
+        <div className="infoContainer">
+          <div className="user-details">
+            <h3>Your Profil Info:</h3>
+            <ul className="list-container">
+              <li className="listItem">
+                <h4>Email:</h4>
+                <p>{cooker.email}</p>
+              </li>
+            </ul>
+          </div>
 
-                    {cookerId === userId && (
-                        <div className="buttonsContainer">
-                            <Link to="/editAccount" className="btn">
-                                Modifier le profil
-                            </Link>
-                            <Link to="/dashboard" className="btn">
-                                Back to Dashboard
-                            </Link>
-                            <button onClick={() => onLogout()} className="btn">
-                                {" "}
-                                Se deconnecter
-                            </button>
-                            <Link to="/" className="btn">
-                                Retour à la page d'accueil
-                            </Link>
-                        </div>
-                    )}
-                </div>
-            </section>
-        </>
-    );
+          {cookerId === userId && (
+            <div className="buttonsContainer">
+              <Link to="/editAccount" className="btn">
+                Modifier le profil
+              </Link>
+              <Link to="/dashboard" className="btn">
+                Back to Dashboard
+              </Link>
+              <button onClick={() => onLogout()} className="btn">
+                {" "}
+                Se deconnecter
+              </button>
+              <Link to="/" className="btn">
+                Retour à la page d'accueil
+              </Link>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default UserProfile;

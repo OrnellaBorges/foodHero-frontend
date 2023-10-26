@@ -12,65 +12,57 @@ import UserOneAd from "./Components/Dashboard/Components/ListingSection/UserAds/
 import { Routes, Route } from "react-router-dom";
 import RequireDataAuth from "./helpers/require-data-auth";
 import Header from "./Components/HomePage/Header/Header";
+import Footer from "./Components/HomePage/Footer/Footer";
 
 function App() {
-    return (
-        <div className="App">
-            <Header />
-            <main>
-                <Routes>
-                    <Route
-                        exact
-                        path="/"
-                        element={<RequireDataAuth child={Home} auth={false} />}
-                    />
-                    <Route exact path="/register" element={<Register />} />
-                    <Route exact path="/login" element={<Login />} />
-                    <Route
-                        exact
-                        path="/editAccount"
-                        element={
-                            <RequireDataAuth child={EditAccount} auth={true} />
-                        }
-                    />
-                    <Route
-                        exact
-                        path="/create"
-                        element={
-                            <RequireDataAuth child={CreateAds} auth={true} />
-                        }
-                    />
-                    <Route
-                        exact
-                        path="/userOneAd/:adId"
-                        element={
-                            <RequireDataAuth child={UserOneAd} auth={false} />
-                        }
-                    />
-                    <Route
-                        exact
-                        path="/dashboard"
-                        element={
-                            <RequireDataAuth child={Dashboard} auth={true} />
-                        }
-                    />
-                    <Route
-                        exact
-                        path="/editAd/:adId"
-                        element={<RequireDataAuth child={EditAd} auth={true} />}
-                    />
-                    <Route
-                        exact
-                        path="/userProfile/:cookerId"
-                        element={
-                            <RequireDataAuth child={UserProfile} auth={false} />
-                        }
-                    />
-                    <Route exact path="/infos" element={<Infos />} />
-                </Routes>
-            </main>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Header />
+      <main>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<RequireDataAuth child={Home} auth={false} />}
+          />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route
+            exact
+            path="/editAccount"
+            element={<RequireDataAuth child={EditAccount} auth={true} />}
+          />
+          <Route
+            exact
+            path="/create"
+            element={<RequireDataAuth child={CreateAds} auth={true} />}
+          />
+          <Route
+            exact
+            path="/userOneAd/:adId"
+            element={<RequireDataAuth child={UserOneAd} auth={false} />}
+          />
+          <Route
+            exact
+            path="/dashboard"
+            element={<RequireDataAuth child={Dashboard} auth={true} />}
+          />
+          <Route
+            exact
+            path="/editAd/:adId"
+            element={<RequireDataAuth child={EditAd} auth={true} />}
+          />
+          <Route
+            exact
+            path="/userProfile/:cookerId"
+            element={<RequireDataAuth child={UserProfile} auth={false} />}
+          />
+          <Route exact path="/infos" element={<Infos />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

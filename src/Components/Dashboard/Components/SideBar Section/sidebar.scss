@@ -1,106 +1,105 @@
 :root {
-    /* colors */
-    --primaryColor2: hsl(0, 0%, 28%);
-    --hoverColor: hsl(93, 75%, 76%);
-    --paleGreen: hsl(96, 75%, 89%);
-    --whiteColor: hsl(0, 0%, 100%);
-    --blackColor: hsl(0, 0%, 18%);
-    --greyText: hsl(0, 0%, 75%);
-    --bgColor: hsl(113, 11%, 85%);
-    --inputColor: hsl(330, 12%, 97%);
+  /* colors */
+  --primaryColor2: hsl(0, 0%, 28%);
+  --hoverColor: hsl(93, 75%, 76%);
+  --paleGreen: hsl(96, 75%, 89%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(113, 11%, 85%);
+  --inputColor: hsl(330, 12%, 97%);
 
-    /* font and typo */
-    --biggestFontSize: 2.5rem;
-    --h1FontSize: 1.5rem;
-    --h2FontSize: 1.25rem;
-    --h3FontSize: 1rem;
-    --normalFontSize: 0.938rem;
-    --smallFontSize: 0.813rem;
-    --smallestFontSize: 0.75rem;
+  /* font and typo */
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
 }
 
 .sidebar {
-    background-color: #090125;
+  background-color: #090125;
 
-    width: 20%;
+  width: 20%;
 
-    gap: 4rem;
-    flex-direction: column;
+  gap: 4rem;
+  flex-direction: column;
+  align-items: center;
+
+  .sidebarLogo {
+    cursor: pointer;
+    color: white;
+  }
+
+  .sidebarHeader {
+    width: 100%;
+    justify-content: center;
     align-items: center;
+    padding: 40px;
 
-    .sidebarLogo {
-        cursor: pointer;
-        color: white;
+    .icon {
+      font-size: 25px;
+      padding-right: 2px;
     }
-
-    .sidebarHeader {
-        border: 3px solid blue;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        padding: 40px;
-
-        .icon {
-            font-size: 25px;
-            padding-right: 2px;
-        }
-        .brand {
-            font-weight: 600;
-            font-size: 30px;
-            color: aliceblue;
-            font-family: "Montserrat", sans-serif;
-        }
+    .brand {
+      font-weight: 600;
+      font-size: 30px;
+      color: aliceblue;
+      font-family: "Montserrat", sans-serif;
     }
+  }
 }
 
 .sidebarUser {
-    text-align: center;
-    color: white;
-    .containerImg {
-        width: 65%;
-        margin: 0 auto;
-        border-radius: 400px;
-        overflow: hidden;
-        border: 5px solid rgb(152, 167, 241);
-    }
-    p {
-        padding-top: 10px;
-    }
-    .userName {
-        font-weight: bold;
-    }
+  text-align: center;
+  color: white;
+  .containerImg {
+    width: 65%;
+    margin: 0 auto;
+    border-radius: 400px;
+    overflow: hidden;
+    border: 5px solid rgb(152, 167, 241);
+  }
+  p {
+    padding-top: 10px;
+  }
+  .userName {
+    font-weight: bold;
+  }
 }
 
 .sidebarMenu {
-    width: 100%;
-    padding: 5px;
+  width: 100%;
+  padding: 5px;
 
-    .sideBarList {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .sideBarList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .sidebarMenu-link {
-        color: white;
-        align-items: center;
-        border: 2px solid transparent;
-        &:hover {
-            color: rgb(152, 167, 241);
-            border-bottom: 2px solid rgb(152, 167, 241);
-        }
+  .sidebarMenu-link {
+    color: white;
+    align-items: center;
+    border: 2px solid transparent;
+    &:hover {
+      color: rgb(152, 167, 241);
+      border-bottom: 2px solid rgb(152, 167, 241);
     }
+  }
 
-    .iconMenu {
-        font-size: 20px;
-        padding: 1px;
-    }
+  .iconMenu {
+    font-size: 20px;
+    padding: 1px;
+  }
 
-    .smallText {
-        font-size: 18px;
-        padding: 0.3rem;
-    }
+  .smallText {
+    font-size: 18px;
+    padding: 0.3rem;
+  }
 }
 /*   .sidebarFooter {
 
@@ -109,89 +108,41 @@
 
 .sidebarUser,
 .sidebarMenu {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
 }
 .list {
-    text-decoration: none;
-    list-style: none;
+  text-decoration: none;
+  list-style: none;
 }
-
-/* .helpCard {
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-
-  .icon {
-    position: absolute;
-    background: var(--hoverColor);
-    border: 10px solid green;
-    font-size: 3rem;
-    border-radius: 50%;
-    top: -8px;
-    right: 50%;
-    transform: translate(50%);
-    z-index: 100;
-  }
-
-  .cardContent {
-    position: relative;
-    padding: 1rem;
-    background: var(--hoverColor);
-    border-radius: 10px;
-    overflow: hidden;
-
-    h3 {
-      font-size: var(--h3FontSize);
-      margin-top: 1rem;
-      padding: 1rem 0;
-      font-weight: 800;
-      color: var(--blackColor);
-    }
-
-    p {
-      font-size: var(--normalFontSize);
-      color: var(--textColor);
-      padding-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .btn {
-      position: relative;
-      color: var(--textColor);
-      z-index: 1000;
-    }
-  }
-} */
 
 /*==================MEDIA QUERIES===============*/
 
 @media screen and (max-width: 768px) {
-    .sidebarMenu {
-        border: 3px solid green;
-        width: 100%;
+  .sidebarMenu {
+    border: 3px solid green;
+    width: 100%;
 
-        .sideBarList {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .sidebarMenu-link {
-            .iconMenu {
-                font-size: 18px;
-            }
-            font-size: 15px;
-            .smallText {
-                display: none;
-            }
-        }
-
-        .iconMenu {
-            font-size: 30px;
-        }
+    .sideBarList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+
+    .sidebarMenu-link {
+      .iconMenu {
+        font-size: 18px;
+      }
+      font-size: 15px;
+      .smallText {
+        display: none;
+      }
+    }
+
+    .iconMenu {
+      font-size: 30px;
+    }
+  }
 }
