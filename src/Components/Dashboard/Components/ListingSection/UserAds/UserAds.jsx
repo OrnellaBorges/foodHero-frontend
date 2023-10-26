@@ -66,15 +66,10 @@ const UserAds = (props) => {
             {/* .map pour chaque annonce tu retournes un li */}
             {userAds.map((annonce) => (
               <li key={annonce.id} className="testLi">
-                {/* <img src={annonce.image} alt={annonce.titre} /> */}
                 <h3 className="title-card">{annonce.title}</h3>
                 <p className="text-card">Prix : {annonce.price} €</p>{" "}
-                {/* ici il n'y a pas d'interpolation ???? */}
                 <p className="text-card">Date : {annonce.creationDate}</p>
                 <p className="texte-card">{annonce.description}</p>
-                {/* <p className="texte">
-                                Auteur : {annonce.auteur}
-                            </p> */}
                 <Link to="/userOneAd">
                   <Button text="More details" />
                 </Link>

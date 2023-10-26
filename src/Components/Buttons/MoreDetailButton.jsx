@@ -3,7 +3,7 @@ import "./button.css";
 
 const MoreDetailButton = () => {
   return (
-    <button className="btn" type="button" onClick={onClickDetailAd}>
+    <button className="btn" type="button">
       {text}
     </button>
   );
