@@ -1,149 +1,76 @@
 import "./App.css";
 import Dashboard from "./Components/Dashboard/Components/Dashboard/Dashboard";
-
 import Home from "./Components/HomePage/Home";
-
 import Infos from "./Components/Intro/Infos";
-
 import Login from "./Components/Forms/Login/Login";
 import Register from "./Components/Forms/Register/Register";
 import CreateAds from "./Components/Forms/FormsAds/CreateAds";
 import UserProfile from "./Components/Forms/Account/UserProfile";
-
 import EditAccount from "./Components/Forms/Account/EditAccount";
 import EditAd from "./Components/Forms/FormsAds/EditAd";
-import OneAd from "./Components/AdsCards/OneAd/OneAd";
 import UserOneAd from "./Components/Dashboard/Components/ListingSection/UserAds/UserOneAd";
-
-import { useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import RequireDataAuth from "./helpers/require-data-auth";
+import Header from "./Components/HomePage/Header/Header";
 
 function App() {
-  const [userInfos, setUserInfos] = useState({}); // infos de l'utilisateur loggué lorsque l'user s'est log dans la page loggin alors on a fait remonté les data dans app
-  const [isLogged, setIsLogged] = useState(false);
-
-  console.warn("userInfos", userInfos);
-
-  const handleLoginUser = (userInfos, isLoggedStatus) => {
-    setUserInfos(userInfos);
-    setIsLogged(isLoggedStatus);
-  };
-
-  const handleLogoutUser = () => {
-    setUserInfos({});
-    setIsLogged(false);
-  };
-
-  // creation du router ??? // on met dans un tableau des objets
-  const router = createBrowserRouter([
-    {
-      path: "/userProfile/:cookerId",
-      element: (
-        <div>
-          <UserProfile logoutUser={handleLogoutUser} userId={userInfos.id} />
+    return (
+        <div className="App">
+            <Header />
+            <main>
+                <Routes>
+                    <Route
+                        exact
+                        path="/"
+                        element={<RequireDataAuth child={Home} auth={false} />}
+                    />
+                    <Route exact path="/register" element={<Register />} />
+                    <Route exact path="/login" element={<Login />} />
+                    <Route
+                        exact
+                        path="/editAccount"
+                        element={
+                            <RequireDataAuth child={EditAccount} auth={true} />
+                        }
+                    />
+                    <Route
+                        exact
+                        path="/create"
+                        element={
+                            <RequireDataAuth child={CreateAds} auth={true} />
+                        }
+                    />
+                    <Route
+                        exact
+                        path="/userOneAd/:adId"
+                        element={
+                            <RequireDataAuth child={UserOneAd} auth={false} />
+                        }
+                    />
+                    <Route
+                        exact
+                        path="/dashboard"
+                        element={
+                            <RequireDataAuth child={Dashboard} auth={true} />
+                        }
+                    />
+                    <Route
+                        exact
+                        path="/editAd/:adId"
+                        element={<RequireDataAuth child={EditAd} auth={true} />}
+                    />
+                    <Route
+                        exact
+                        path="/userProfile/:cookerId"
+                        element={
+                            <RequireDataAuth child={UserProfile} auth={false} />
+                        }
+                    />
+                    <Route exact path="/infos" element={<Infos />} />
+                </Routes>
+            </main>
         </div>
-      ),
-    },
-    {
-      path: "/login",
-      element: (
-        <div>
-          <Login loginUser={handleLoginUser} />
-        </div>
-      ),
-    },
-    {
-      path: "/",
-      element: (
-        <div>
-          <Home
-            isLogged={isLogged}
-            userId={userInfos.id}
-            userName={userInfos.firstName}
-          />
-        </div>
-      ),
-    },
-    {
-      path: "/editAccount",
-      element: (
-        <div>
-          <EditAccount isLogged={isLogged} userId={userInfos.id} />
-        </div>
-      ),
-    },
-    {
-      path: "/dashboard",
-      element: (
-        <div>
-          <Dashboard
-            isLogged={isLogged}
-            user={userInfos}
-            userId={userInfos.id}
-            firstName={userInfos.firstName}
-            lastName={userInfos.lastName}
-          />
-        </div>
-      ),
-    },
-    {
-      path: "/register",
-      element: (
-        <div>
-          <Register />
-        </div>
-      ),
-    },
-
-    {
-      path: "/infos",
-      element: (
-        <div>
-          <Infos />
-        </div>
-      ),
-    },
-
-    {
-      path: "/editAd/:adId",
-      element: (
-        <div>
-          <EditAd />
-        </div>
-      ),
-    },
-
-    {
-      path: "/oneAd/:adId",
-      element: (
-        <div>
-          <OneAd />
-        </div>
-      ),
-    },
-    {
-      path: "/userOneAd",
-      element: (
-        <div>
-          <UserOneAd isLogged={isLogged} userId={userInfos.id} />
-        </div>
-      ),
-    },
-    {
-      path: "/create",
-      element: (
-        <div>
-          <CreateAds isLogged={isLogged} userId={userInfos.id} />
-        </div>
-      ),
-    },
-  ]);
-
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+    );
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { allAds } from "../../api/ApiAds";
+//import { allAds } from "../../api/ApiAds";
 //import axios from "axios";
 
 import "./AllAdsCards.css";
@@ -13,83 +13,87 @@ import lasagnes from "../../assets/lasagna1.jpeg";
 import cookie from "../../assets/cookie3.jpeg"; */
 import { Link } from "react-router-dom";
 
-//import icons
+import { useSelector, useDispatch } from "react-redux";
+import { selectAds } from "../../slices/adSlice";
+
+import { formatDate } from "../../helpers/formatDate";
 
 const AllAdsCards = () => {
-  /* STATES  */
-  const [annoncesRecentes, setAnnoncesRecentes] = useState([]);
-  const [status, setStatus] = useState(0);
+    const products = useSelector(selectAds);
 
-  /* par defaut on initialise la current page a la page 1 qu'on stock dans un state */
-  const [currentPage, setCurrentPage] = useState(1);
+    /* par defaut on initialise la current page a la page 1 qu'on stock dans un state */
+    const [currentPage, setCurrentPage] = useState(1);
 
-  //ici on recup le nombre total d'annonce et on stock dans la constante total qui est initialisé a 0 au départ car il n'y a rien
-  const [total, setTotal] = useState(0);
-  console.log("total", total);
+    //ici on recup le nombre total d'annonce et on stock dans la constante total qui est initialisé a 0 au départ car il n'y a rien
+    const [total, setTotal] = useState(products.ads.length);
 
-  // on met ici la limite du nombre d'elements qu'on veut voir à l'ecran
-  const limit = 10;
+    // on met ici la limite du nombre d'elements qu'on veut voir à l'ecran
+    const limit = 5;
 
-  useEffect(() => {
-    // appel de la fonction allAds()
-    allAds()
-      .then((res) => {
-        console.log("res.allAds", res.allAds);
-        setStatus(res.status);
-        setAnnoncesRecentes(res.allAds);
-        setTotal(res.allAds.length);
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
-  }, []);
+    useEffect(() => {
+        setTotal(products.ads.length);
+    }, [products]);
 
-  return (
-    <>
-      {status === 200 ? (
-        <section className="cards-container">
-          <h1 className="mainTitle">Toutes les annonces</h1>
+    const visibleProducts = products.ads.slice(
+        (currentPage - 1) * limit,
+        (currentPage - 1) * limit + limit
+    );
 
-          {/* Mapper la liste annoncesRecente
+    return (
+        <>
+            {products.ads.length > 0 ? (
+                <section className="cards-container">
+                    <h1 className="mainTitle">Toutes les annonces</h1>
+
+                    {/* Mapper la liste annoncesRecente
                 la liste doit faire apparaitre toutes les annonces les plus recentes dans le temps et 10 max */}
 
-          <div className="mappedList">
-            <ul className="testUl">
-              {/* .map pour chaque annonce tu retournes un li */}
-              {annoncesRecentes.map((annonce) => (
-                <li key={annonce.id} className="testLi">
-                  {/* <img src={annonce.image} alt={annonce.title} /> */}
-                  <h3 className="title-card">{annonce.title}</h3>
-                  <p className="text">Prix : {annonce.price} €</p>
-                  <p className="texte">Date :{annonce.creationDate}</p>
-                  <p className="texte">{annonce.description}</p>
+                    <div className="mappedList">
+                        <ul className="testUl">
+                            {/* .map pour chaque annonce tu retournes un li */}
+                            {visibleProducts.map((annonce) => (
+                                <li key={annonce.id} className="testLi">
+                                    {/* <img src={annonce.image} alt={annonce.title} /> */}
+                                    <h3 className="title-card">
+                                        {annonce.title}
+                                    </h3>
+                                    <p className="text">
+                                        Prix : {annonce.price} €
+                                    </p>
+                                    <p className="texte">
+                                        Date :{" "}
+                                        {formatDate(annonce.creationDate)}
+                                    </p>
+                                    <p className="texte">
+                                        {annonce.description}
+                                    </p>
 
-                  <Link to={`/oneAd/${annonce.id}`}>
-                    <Button text="More details" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <Pagination
-              currentPage={currentPage}
-              total={total}
-              limit={limit}
-              onChangePage={(page) => setCurrentPage(page)}
-            />
-          </div>
-        </section>
-      ) : (
-        <section className="cards-container">
-          <h1 className="mainTitle">Toutes les annonces</h1>
-          <div className="containerMessage">
-            <h2 className="statusError">
-              OOPS... Nous avons rencontré un problème.
-            </h2>
-          </div>
-        </section>
-      )}
-    </>
-  );
+                                    <Link to={`/userOneAd/${annonce.id}`}>
+                                        <Button text="More details" />
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <Pagination
+                            currentPage={currentPage}
+                            total={total}
+                            limit={limit}
+                            onChangePage={(page) => setCurrentPage(page)}
+                        />
+                    </div>
+                </section>
+            ) : (
+                <section className="cards-container">
+                    <h1 className="mainTitle">Toutes les annonces</h1>
+                    <div className="containerMessage">
+                        <h2 className="statusError">
+                            OOPS... Nous avons rencontré un problème.
+                        </h2>
+                    </div>
+                </section>
+            )}
+        </>
+    );
 };
 
 export default AllAdsCards;

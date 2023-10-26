@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Ordersv1 = () => {
-  //states and events
-  /*  const [order, setOrder] = useState(null);
+    //states and events
+    /*  const [order, setOrder] = useState(null);
   const [orderDetail, setOrderDetail] = useState([]);
   const [user, setUser] = useState(null);
 
@@ -17,15 +17,14 @@ const Ordersv1 = () => {
         if (res.status === 200) {
           recupOrder();
         } else {
-          console.log(res);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }; */
 
-  return (
-    <div>HOLA</div>
-    /* <section>
+    return (
+        <div>HOLA</div>
+        /* <section>
       <Link to="/dashboard">Return to dashboard</Link>
       {/* <h2>Commande numéro {props.params.id}</h2>
         {user !== null && <article>
@@ -105,7 +104,7 @@ const Ordersv1 = () => {
         </button>
       </div>
     </section> */
-  );
+    );
 };
 
 export default Ordersv1;

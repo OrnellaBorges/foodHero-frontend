@@ -9,25 +9,19 @@ import Sidebar from "../SideBar Section/Sidebar";
 import Footer from "../../../HomePage/Footer/Footer";
 
 const Dashboard = (props) => {
-  const user = props.user;
-  console.log("user", user);
-  return (
-    <>
-      <div className="dashboard">
-        <div className="dashboardContainer flex">
-          <Sidebar
-            isLogged={props.isLogged}
-            user={props.user}
-            userId={props.userId}
-            firstName={props.firstName}
-            lastName={props.lastName}
-          />
-          <Body userId={props.userId} />
-        </div>
-        <Footer />
-      </div>
-    </>
-  );
+    const user = props.user;
+
+    return (
+        <>
+            <div className="dashboard">
+                <div className="dashboardContainer flex">
+                    <Sidebar />
+                    <Body userId={props.userId} />
+                </div>
+                <Footer />
+            </div>
+        </>
+    );
 };
 
 export default Dashboard;

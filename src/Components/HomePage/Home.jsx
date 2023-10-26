@@ -6,21 +6,21 @@ import AllAdsCards from "../AdsCards/AllAdsCards";
 import Rgpd from "../Concent/RgpdBanner";
 //import Cookie from "../Cookie/Cookie";
 
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, connectUser } from "../../slices/userSlice";
+
 const Home = (props) => {
-  return (
-    <div className="hp">
-      <Header
-        isLogged={props.isLogged}
-        userId={props.userId}
-        name={props.userName}
-      />
-      {/* <Cookie /> */}
-      <Hero />
-      <Rgpd />
-      <AllAdsCards />
-      <Footer />
-    </div>
-  );
+    const user = useSelector(selectUser);
+
+    return (
+        <div className="hp">
+            {/* <Cookie /> */}
+            <Hero />
+            {/* <Rgpd /> */}
+            <AllAdsCards />
+            <Footer />
+        </div>
+    );
 };
 
 export default Home;

@@ -18,31 +18,31 @@ import { LuConciergeBell } from "react-icons/lu";
 //import { IoNotificationsCircleSharp } from "react-icons/io";
 
 const Top = () => {
-  const totalAmount = 12;
-  return (
-    <section className="topSection">
-      <div className="headerSection">
-        <h1 className="title"> Admin DashBoard</h1>
-      </div>
-      <div className="cardSection flex">
-        <div className="rightCard">
-          <div className="cardContent">
-            <h1>Au four et au moulin.</h1>
-            <p>Faites bouillir la marmite!.</p>
-            <div className="topCardButtons flex">
-              <Link to="/">
-                <button className="fillBtn">Explore</button>
-              </Link>
+    const totalAmount = 12;
+    return (
+        <section className="topSection">
+            <div className="headerSection">
+                <h1 className="title"> Admin DashBoard</h1>
             </div>
-          </div>
+            <div className="cardSection flex">
+                <div className="rightCard">
+                    <div className="cardContent">
+                        <h1>Au four et au moulin.</h1>
+                        <p>Faites bouillir la marmite!.</p>
+                        <div className="topCardButtons flex">
+                            <Link to="/" className="fillBtn">
+                                Explore
+                            </Link>
+                        </div>
+                    </div>
 
-          <div className="videoDiv">
-            <video src={video} autoPlay loop muted></video>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                    <div className="videoDiv">
+                        <video src={video} autoPlay loop muted></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Top;

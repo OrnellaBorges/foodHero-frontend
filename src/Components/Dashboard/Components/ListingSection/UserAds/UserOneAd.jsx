@@ -6,69 +6,92 @@ import { Link } from "react-router-dom";
 import { oneAd } from "../../../../../api/ApiAds";
 
 import "./oneAd.css";
-
+import { formatDate } from "../../../../../helpers/formatDate";
 import EditButton from "../../../../Buttons/Button";
 import DeleteButton from "../../../../Buttons/Button";
 
 //import assets
 import pasta from "../../../../../assets/pasta.jpg";
 
-//import icons
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, connectUser } from "../../../../../slices/userSlice";
+
 const UserOneAd = (props) => {
-  const userId = props.userId;
-  const { adId } = useParams();
-  console.log("adId", adId);
+    const user = useSelector(selectUser);
+    const userId = String(user.infos.id);
+    const { adId } = useParams();
+    const [ad, setAd] = useState({});
 
-  const [ad, setAd] = useState([]);
-  //console.log("ad.userId", ad.userId);
+    useEffect(() => {
+        oneAd(adId)
+            .then((res) => {
+                setAd(res.data.oneAd[0]);
+            })
+            .catch((err) => {
+                console.error("err", err);
+            });
+    }, []);
 
-  useEffect(() => {
-    oneAd(adId)
-      .then((res) => {
-        console.log("res", res);
-        //console.log("res.data.oneAd[0]", res.data.oneAd[0]);
-        //setAd(res.data.oneAd[0]);
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
-  }, []);
-
-  return (
-    <>
-      <section className="oneAd">
-        <div className="containerInfo">
-          <div className="imageCard-container">
-            <img
-              className="
+    return (
+        <>
+            <section className="oneAd">
+                <div className="containerInfo">
+                    <div className="imageCard-container">
+                        <img
+                            className="
                     imgAd"
-              src={pasta}
-              alt="pates au poulet et aux champignons"
-            />
-          </div>
+                            src={pasta}
+                            alt="pates au poulet et aux champignons"
+                        />
+                    </div>
 
-          <div className="adInfo">
-            <h4 className="adTitle">titre</h4>
-            <div className="jesaispas">
-              <p className="adDescription">description</p>
-              <p className="price">prix: 10 €</p>
-            </div>
-            <div className="buttonContainer flex">
-              <div className="buttonContainer">
-                <Link to={`/editAd/${adId}`}>
-                  <EditButton text="modifier l'annonce" />
-                </Link>
+                    {/* //loader a mettre */}
+                    {/* {Object.keys(ad).length === 0 && <p>fetch en cours</p>} */}
 
-                <Link to="">
-                  <DeleteButton text="supprimer l'annonce" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+                    {Object.keys(ad).length !== 0 && (
+                        <div className="adInfo">
+                            <h4 className="adTitle">{ad.title}</h4>
+                            <div className="jesaispas">
+                                <p className="adDescription">
+                                    {ad.description}
+                                </p>
+                                <p className="price">prix : {ad.price} €</p>
+                                <p className="price">
+                                    Date : {formatDate(ad.creationDate)}
+                                </p>
+                            </div>
+                            {ad.userId !== userId && (
+                                <div className="buttonContainer flex">
+                                    <Link
+                                        to={`/userProfile/${ad.userId}`}
+                                        className="btn"
+                                    >
+                                        Contacter le cookers
+                                    </Link>
+                                </div>
+                            )}
+                            {ad.userId === userId && (
+                                <div className="buttonContainer flex">
+                                    <div className="buttonContainer">
+                                        <Link
+                                            to={`/editAd/${adId}`}
+                                            className="btn"
+                                        >
+                                            modifier l'annonce
+                                        </Link>
+
+                                        <Link to="" className="btn">
+                                            supprimer l'annonce
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
+            </section>
+        </>
+    );
 };
 
 export default UserOneAd;

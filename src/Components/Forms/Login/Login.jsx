@@ -34,32 +34,29 @@ const Login = (props) => {
             email: e.target.email.value,
             password: e.target.password.value,
         };
-        console.log("dataFormLogin", dataFormLogin);
 
         // Fonction envoyer a back les data recupéré des champs : on doit l'envoyer au back on utilise la fonction qui fait cette action et on lui passe en argument dataFormLogin
         loginUser(dataFormLogin) //on passe l'objet dataFormLogin
             .then((res) => {
-                console.log("res", res);
                 // 1-si le status est différent de 200 alors on va chercher le msg d'erreur
                 if (res.status === 200) {
-                    const { email, id, firstName, lastName } = res.user; // ici on fait une destructuration
+                    //const { email, id, firstName, lastName } = res.user; // ici on fait une destructuration
 
                     // 1.1 -on construit un objet userInfo
-                    const userInfos = {
+                    /* const userInfos = {
                         id: String(id),
                         email: email,
                         firstName: firstName,
                         lastName: lastName,
-                    };
+                    }; */
 
                     // 1.2 -on declare une constante isLoggedStatu qu'on met a true
-                    const isLoggedStatus = true;
+                    //const isLoggedStatus = true;
 
-                    props.loginUser(userInfos, isLoggedStatus);
+                    //props.loginUser(userInfos, isLoggedStatus);
 
                     // 1.3 ICI ON ENVOI DAND LE LS le token qui a été fait par le back lors du submit
                     localStorage.setItem("fh-token", res.token);
-                    //console.log("res", res);
 
                     //  1.4 on redirige l'user vers la home lorsqu'il s'est connecté
                     navigate("/");
@@ -69,7 +66,7 @@ const Login = (props) => {
                 }
             })
             .catch((err) => {
-                console.log("err", err);
+                console.error("err", err);
             });
     };
 
@@ -110,7 +107,7 @@ const Login = (props) => {
                         {/* <BsShieldLockFill className="icon" /> */}
                         <label htmlFor="password">Password</label>
                         <input
-                            type="text"
+                            type="password"
                             id="password"
                             name="password"
                             placeholder="Enter Password"
@@ -164,13 +161,12 @@ export default Login;
         // mais on a a besoin de la librairie axios alorq il faut installer axios
 
         // INFO > on peut creer les axios dans une autre page a part mais on le garde ici pour l'instant
-        Axios.post(`${apiUrl}api/v1/user/login`, {
+        axios.post(`${apiUrl}api/v1/user/login`, {
             loginUserName: loginUserName,
             loginPassword: loginPassword,
         })
             //on utilise le .then en cas de succes il utilise cette methode et on passe en argument
             .then(() => {
-                console.log("User has been loged");
             })
 
             // en cas d' erreur ça passe dans le catch et ça renvoit

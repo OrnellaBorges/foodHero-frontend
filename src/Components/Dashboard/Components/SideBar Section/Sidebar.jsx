@@ -19,25 +19,27 @@ import "../../../../index.scss";
 //import logo from "../../../../assets/logo2.png";
 import adminImage from "../../../../assets/users/albert4.png";
 
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, connectUser } from "../../../../slices/userSlice";
+
 const Sidebar = (props) => {
-    console.log("props", props);
-    const { isLogged, userId, firstName, lastName, user } = props; // Destructuration de props pour éviter d'écrire "props."
-    console.log("lastName", lastName);
-    //console.log("userId", userId);
+    //const dispatch = useDispatch();
+    const user = useSelector(selectUser);
+    const { isLogged } = user;
+    const { userId, firstName, lastName } = user.infos;
+    //const { isLogged, userId, firstName, lastName, user } = props; // Destructuration de props pour éviter d'écrire "props."
     /*     const navigate = useNavigate();
     const { cookerId } = useParams(); */
     //const [user, setUser] = useState({}); // au départ c'est un objet vide
-    // console.log("props.user", props.user);
 
     // useEffect qui permet de recup si l'user est bien connecté et recup ses datas
     /* useEffect(() => {
         getOneUser(userId)
             .then((res) => {
-                console.log("res", res);
                 //setCooker(res.data.oneUser[0]);
             })
             .catch((err) => {
-                console.log("err", err);
+                console.error("err", err);
             });
     }, []); */
 
@@ -54,7 +56,7 @@ const Sidebar = (props) => {
     return (
         <>
             {isLogged && (
-                <div className="sidebar flex">
+                <div className="sidebar flex" data-mika="mika">
                     <div className="sidebarHeader flex sidebarLogo">
                         <div className="iconContainer">
                             <GiHamburger className="icon sidebarIcon" />
@@ -80,7 +82,7 @@ const Sidebar = (props) => {
                                     <p className="smallText">Home</p>
                                 </Link>
                             </li>
-                            <li className="listItem">
+                            {/* <li className="listItem">
                                 <Link
                                     to="/Orders"
                                     className="sidebarMenu-link flex"
@@ -88,14 +90,14 @@ const Sidebar = (props) => {
                                     <MdDeliveryDining className="iconMenu" />
                                     <p className="smallText">My Orders</p>
                                 </Link>
-                            </li>
+                            </li> */}
                             <li className="listItem">
                                 <Link to="/" className="sidebarMenu-link flex">
                                     <MdOutlineExplore className="iconMenu" />
                                     <p className="smallText">Exploree</p>
                                 </Link>
                             </li>
-                            <li className="listItem">
+                            {/* <li className="listItem">
                                 <Link
                                     to="/userAds"
                                     className="sidebarMenu-link flex"
@@ -103,7 +105,7 @@ const Sidebar = (props) => {
                                     <BsTrophy className="iconMenu" />
                                     <p className="smallText">My ads</p>
                                 </Link>
-                            </li>
+                            </li> */}
                             <li className="listItem">
                                 <Link
                                     to={`/userProfile/${userId}`}

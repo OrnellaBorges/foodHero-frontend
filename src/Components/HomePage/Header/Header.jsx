@@ -13,11 +13,11 @@ import {selectUser} from "../slices/userSlice"
  */
 
 const Header = (props) => {
-  return (
-    <header className="header">
-      <Nav isLogged={props.isLogged} userId={props.userId} name={props.name} />
-    </header>
-  );
+    return (
+        <header className="header">
+            <Nav />
+        </header>
+    );
 };
 
 export default Header;

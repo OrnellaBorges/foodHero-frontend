@@ -6,18 +6,28 @@ import { getOneUser } from "../../../api/ApiUser";
 import Button from "../../Buttons/Button";
 
 import "./userProfile.css";
-
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, connectUser } from "../../../slices/userSlice";
 import adminImageDefault from "../../../assets/users/albert4.png";
+import { logoutUser } from "../../../slices/userSlice";
 
 const UserProfile = (props) => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const { cookerId } = useParams();
     const [cooker, setCooker] = useState({});
-    console.log("props.userId", props.userId);
+
+    const user = useSelector(selectUser);
+
+    const userId = String(user.infos.id);
 
     const onLogout = () => {
-        props.logoutUser();
+        /* props.logoutUser();
         localStorage.removeItem("fh-token");
+        navigate("/"); */
+
+        window.localStorage.removeItem("fh-token");
+        dispatch(logoutUser());
         navigate("/");
     };
 
@@ -27,7 +37,7 @@ const UserProfile = (props) => {
                 setCooker(res.data.oneUser[0]);
             })
             .catch((err) => {
-                console.log("err", err);
+                console.error("err", err);
             });
     }, []);
 
@@ -69,21 +79,21 @@ const UserProfile = (props) => {
                         </ul>
                     </div>
 
-                    {cookerId === props.userId && (
+                    {cookerId === userId && (
                         <div className="buttonsContainer">
-                            <Link to="/editAccount">
-                                <Button text="Modifier le profil" />
+                            <Link to="/editAccount" className="btn">
+                                Modifier le profil
                             </Link>
-                            <Link to="/dashboard">
-                                <Button text="Supprimer le profil" />
+                            <Link to="/dashboard" className="btn">
+                                Back to Dashboard
                             </Link>
-                            <Link to="/dashboard">
-                                <Button text="Back to Dashboard" />
-                            </Link>
-                            <button onClick={() => onLogout()}>
+                            <button onClick={() => onLogout()} className="btn">
                                 {" "}
                                 Se deconnecter
                             </button>
+                            <Link to="/" className="btn">
+                                Retour à la page d'accueil
+                            </Link>
                         </div>
                     )}
                 </div>

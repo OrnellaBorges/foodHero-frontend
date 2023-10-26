@@ -4,16 +4,20 @@ const initialState = {
     ads: [],
 };
 
-export const adsSlice = createSlice({
-    name: "Ads",
+export const adSlice = createSlice({
+    name: "ads",
     initialState,
     reducers: {
-        loadAd: (state, action) => {
+        loadAds: (state, action) => {
             state.ads = action.payload;
+        },
+        updateAd: (state, action) => {
+            console.log("action.payload", action.payload);
+            //state.ads = action.payload;
         },
     },
 });
 
-export const { loadAd } = adSlice.actions;
+export const { loadAds } = adSlice.actions;
 export const selectAds = (state) => state.ads;
-export default adsSlice.reducer;
+export default adSlice.reducer;
