@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
-// import components
-import SubmitButton from "../../Buttons/submitButton";
 
 import "./editAd.css";
 import { oneAd, editOneAd } from "../../../api/ApiAds";
@@ -75,13 +73,12 @@ const EditAd = () => {
     oneAd(adId)
       .then((res) => {
         const adRetrieved = res.data.oneAd[0];
-        // Utilisez les données pour initialiser les états correspondants
+
         setTitle(adRetrieved.title);
         setDescription(adRetrieved.description);
         setPrice(adRetrieved.price);
         setAdUserId(adRetrieved.userId);
 
-        // Activez le bouton après avoir pré-rempli les champs
         setDisabled(false);
       })
       .catch((error) => {

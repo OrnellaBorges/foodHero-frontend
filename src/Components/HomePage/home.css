@@ -1,77 +1,37 @@
-/* .header-nav nav {
-    text-align: left;
-    border-bottom: 1px solid grey;
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-nav nav .list1,
-.header-nav nav .list2 {
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.header-nav nav .list1 icons {
-    width: 20%;
-}
-
-.logo-container {
-    width: 200px;
-}
-
-.header-nav nav .list1 a,
-.header-nav nav .list2 a {
-    text-decoration: none;
-    font-family: "Fjalla One", cursive;
-    color: black;
-    font-size: 18px;
-    padding: 15px;
-}
-.header-nav .header-pict {
-    text-align: center;
-    padding: 180px 0 80px 0;
-     background-image: url(assets/cook.jpg);
-    text-shadow: 0 2px 0 black, 0 -2px 0 black;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-} */
 .footer {
-    background: #333;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer-section {
-    flex-basis: 25%;
+  flex-basis: 25%;
 }
 
 .footer h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer li {
-    margin: 5px 0;
-    font-size: 1rem;
+  margin: 5px 0;
+  font-size: 1rem;
 }
 
 .footer a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 .footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
