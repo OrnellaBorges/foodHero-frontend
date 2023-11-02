@@ -1,0 +1,109 @@
+/* Styles for the form container */
+.formContainer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles for the form header */
+.formHeader {
+  text-align: center;
+  background-color: #090125;
+  color: white;
+  width: 80%;
+  margin: 20px auto 0;
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styles for input divs */
+.inputDiv {
+  margin-bottom: 20px;
+}
+
+/* Styles for labels */
+label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styles for input fields */
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Styles for the error and success messages */
+.errorMsg,
+.successMsg {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.errorMsg {
+  background-color: #ffcccc;
+  color: #ff0000;
+}
+
+.successMsg {
+  background-color: #ccffcc;
+  color: #009900;
+}
+
+.formButtonContainer {
+  text-align: center;
+}
+
+/* Styles for the Save Modification button */
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styles for the error state of the Save Modification button */
+.submit-button-error {
+  background-color: #ff0000;
+}
+
+/* Styles for the success state of the Save Modification button */
+.submit-button-success {
+  background-color: #009900;
+}
+
+/*MEDIA QUERIES*/
+
+/* Pour les écrans de 768px et plus */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  .formButtonContainer {
+    display: flex;
+  }
+}
+
+/* Pour les écrans de 1080px et plus */
+@media screen and (min-width: 1080px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

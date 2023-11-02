@@ -1,0 +1,36 @@
+.dashboard {
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+
+  .dashboardContainer {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--inputColor);
+  }
+}
+
+// RESPONSIVE
+@media screen and (max-width: 500px) {
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media screan and (max-width: 918px) {
+  .heading {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media screan and (max-width: 990px) {
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

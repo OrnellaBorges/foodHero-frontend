@@ -1,0 +1,34 @@
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacement entre les options de filtre */
+}
+
+.filter-option {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%; /* Pour obtenir une forme circulaire */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.filter-option:hover {
+    background-color: #ccc;
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+/* Style des icônes */
+i {
+    color: #333;
+    font-size: 18px;
+}
+
+/* Style au clic (exemple de changement de couleur) */
+.filter-option:active {
+    background-color: #ff5733;
+}

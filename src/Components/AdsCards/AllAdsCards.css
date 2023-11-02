@@ -1,0 +1,125 @@
+.cards-container {
+    padding: 0px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 0;
+}
+
+.mainTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+.mappedList {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.mappedList h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.testUl {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.testLi {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    width: 100%;
+}
+
+.title-card {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
+img {
+    width: 100%;
+}
+.imageZoom:hover {
+    transform: scale(1.1);
+}
+
+.text {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.testLi a {
+    text-decoration: none;
+}
+
+.containerMessage {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.statusError {
+    font-size: 20px;
+    color: #ff0000;
+}
+
+/* =============== Media Queries ====================*/
+
+@media screen and (min-width: 768px) {
+    .testUl {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .testLi {
+        width: 300px;
+    }
+
+    .singleCard {
+        margin-bottom: 0px;
+    }
+
+    .imgCard-container {
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .testUl {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .testLi {
+        width: 300px;
+    }
+
+    .singleCard {
+        margin-bottom: 0px;
+    }
+
+    .imgCard-container {
+        max-width: 300px;
+    }
+}

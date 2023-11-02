@@ -1,0 +1,81 @@
+.loginPage,
+.registerPage {
+  width: 80%;
+  margin: 0 auto;
+  .hheader {
+    text-align: center;
+    padding: 1rem 0;
+    border: 3px solid blue;
+
+    img-container {
+      width: 60px;
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 25px;
+      color: var(--blackColor);
+      font-weight: 600;
+    }
+  }
+  .formContainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    .successMessage {
+      display: block;
+      color: var(--whiteColor);
+      background-color: green;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    .showMessage {
+      display: block;
+      color: var(--whiteColor);
+      background-color: red;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    .icon {
+      color: var(--greyText);
+    }
+
+    label {
+      color: var(--blackColor);
+      font-weight: 400;
+      font-size: 14px;
+      padding: 0.5rem 0;
+      display: block;
+    }
+
+    input {
+      gap: 0.5rem;
+      padding: 1rem;
+      background-color: var(--inputColor);
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      width: 200px;
+    }
+  }
+
+  .loginFooter {
+    bottom: 10px;
+    padding: 0 1rem;
+    height: 20%;
+    left: 10px;
+    right: 0;
+    justify-content: space-beetween;
+    backdrop-filter: blur(1px);
+
+    .text {
+      color: var(--blackColor);
+    }
+  }
+}

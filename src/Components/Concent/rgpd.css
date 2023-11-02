@@ -1,0 +1,32 @@
+.rgpd-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rgpd-banner p {
+  margin: 0;
+}
+
+.accept-button,
+.reject-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+
+.accept-button:hover,
+.reject-button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,10 @@
+.seeAllBtn {
+    border: 2px solid transparent;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 10px;
+
+    &:hover {
+        border: 2px solid red;
+    }
+}
